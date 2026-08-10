@@ -21,4 +21,4 @@ summary: 了解最新版本的 NetApp Console 本地部署中的新增功能和�
 [[introducing-netapp-console-local-deployment]]
 === 介绍 NetApp Console 本地部署
 
-https://docs.netapp.com/us-en/console-local/netapp-console-local.html["了解 NetApp Console 本地部署"]。
+https://docs.netapp.com/us-en/console-local/concept-netapp-console-local.html["了解 NetApp Console 本地部署"]。
