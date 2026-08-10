@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: concept-workload-analyzer.html 
+keywords: workload analyzer, volume analysis, latency, throughput, capacity, performance, netapp console 
+summary: 了解 Workload Analyzer 如何帮助您调查卷级性能、容量和数据保护问题。 
+---
+= 了解 NetApp Console 本地部署 Workload Analyzer
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用 NetApp Console 本地部署 Workload Analyzer 查看单个卷在一段时间内的行为。您可以从卷本身、警报或清单中调查性能降级、容量趋势和资源争用问题。
+
+
+
+[[how-workload-analyzer-identifies-root-causes]]
+== Workload Analyzer 如何识别根本原因
+
+使用 Workload Analyzer 跨六个部分关联单个卷的指标，以便快速识别根本原因。选择一个卷和一个时间范围，以便在同一窗口中同时查看事件、性能和容量。此视图可以帮助您确定存储是否是应用程序问题的可能来源，或者其他层（如网络）是否导致了问题。
+
+当您已经知道哪个卷受到影响时，分析器最为有用。如果您从警报或卷清单中打开它，NetApp Console 本地部署会在选定卷的情况下打开分析器，以便您可以专注于分析窗口和图表。
+
+分析器一次跟踪一个卷，因此使用它来调查特定问题，而不是比较多个卷。
+
+作为此评估的一部分，请查看容量部分。当 ONTAP 系统使用率超过 85% 时，高利用率本身就会导致性能问题，因此可用容量不足可以解释性能图表本身无法说明的延迟。
+
+确定根本原因后，您可以直接从分析器中操作。当自动选项可用时，Console 本地部署提供带有引导步骤或一键修正的 Fix-It 建议。
+
+
+NOTE: LUN 的工作负载图表不能提供与卷的图表相同级别的详细信息，因此在分析 LUN 时，您将看到较少的统计信息。
+
+
+
+[[access-workload-analyzer]]
+== 访问工作负载分析器
+
+可以通过以下几种方式打开 Workload Analyzer：
+
+* 从 *Health* 菜单中，选择 *Workload Analyzer*，然后在 *Volume* 字段中搜索并选择要调查的卷。
+* 从 *Storage > Fleets > Inventory* 页面，导航到要分析的卷，然后从操作菜单中选择 *Analyze*。
+* 从 *Alerts > Overview* 页面中，为要调查的卷选择一个警报，然后从警报详细信息中选择 *Analyze*。
+
+
+您还可以分析 LUN，但它们显示的统计信息少于卷。
+
+
+
+[[analyze-latency-throughput-and-storage-capacity]]
+== 分析延迟、吞吐量和存储容量
+
+使用以下六个部分调查卷：
+
+卷选择:: 选择要调查的卷和时间范围，以便所有图表和事件都与相同的工作负载和分析窗口保持一致。
+事件时间轴:: 查看分析窗口期间选定卷的当前和历史配置更改、警告警报和关键警报。使用此部分将"发生了什么变化"与性能或容量行为的变化相关联。
+延迟分析:: 查看随时间推移的卷延迟，可以作为总计查看，也可以按延迟中心细分——网络、数据处理、聚合操作、集群互连等。如果卷使用 QoS 策略，则分析器将策略的最大和最小延迟限制显示为参考线，以便您可以查看工作负载与限制阈值的接近程度。切换预测以预测延迟是否趋向警告阈值或临界阈值。
+吞吐量分析:: 查看一段时间内的 IOPS 和 MB/s，以及可选的读/写/其他细分。如果卷使用 QoS 策略，分析器将显示 IOPS 和吞吐量限制线。切换预测以预测需求是否趋向于 QoS 限制。
+资源利用率:: 查看在分析窗口期间为卷提供服务的节点和聚合的繁忙程度。分析器将每个资源绘制为独立的行，而不是堆叠值，因此您可以识别特定节点或聚合是否为争用源。切换预测以预测是否有任何资源正朝着高利用率阈值发展。
+容量分析:: 查看卷中的物理空间和可用空间随时间的变化情况。悬停以查看存储效率明细，包括重复数据删除、压缩和数据缩减节省情况。切换预测以预测卷何时达到警告或临界容量阈值。切换到快照视图，查看快照空间如何根据配置的快照预留进行跟踪。
+
+
+
+
+[[forecast-capacity-and-performance-trends]]
+== 预测容量和性能趋势
+
+使用每个分析部分中的预测切换可将图表时间线扩展到当前时间之外，并根据观察到的趋势预测未来值。虚线将预测值与实际数据区分开来。当预测表明可能发生阈值违规时，分析器还会显示洞察消息，以及预计的违规时间。
+
+.相关信息
+link:task-analyzer-volume-latency-investigate.html["调查卷上的高延迟"]。link:task-analyzer-volume-throughput-investigate.html["调查卷上的高吞吐量需求"]。link:task-analyzer-volume-capacity-investigate.html["调查卷的容量增长情况"]。link:reference-workload-analyzer-metrics.html["了解 NetApp Console 本地部署中的 Workload Analyzer 指标"]。

@@ -1,0 +1,31 @@
+= 
+:allow-uri-read: 
+
+
+转到 Azure 门户，并为一个或多个订阅的 Console 代理虚拟机分配 Azure 自定义角色。
+
+.步骤
+. 在 Azure 门户中，打开 *Subscriptions* 服务并选择您的订阅。
++
+从*订阅*服务中分配角色非常重要，因为这指定了订阅级别的角色分配范围。_scope_ 定义了访问权限应用到的资源集。如果在不同级别（例如，在虚拟机级别）指定范围，则您在 NetApp Console 内完成操作的能力将受到影响。
+
++
+https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview["Microsoft Azure 文档：了解 Azure RBAC 的范围"^]
+
+. 选择 *访问控制 (IAM)* > *添加* > *添加角色分配*。
+. 在*角色*选项卡中，选择*Console Operator*角色，然后选择*下一步*。
++
+
+NOTE: Console Operator 是策略中提供的默认名称。如果您为角色选择了其他名称，请改为选择该名称。
+
+. 在*成员*选项卡中，完成以下步骤：
++
+.. 分配对*托管身份*的访问权限。
+.. 选择 *Select members*，选择创建 Console agent 虚拟机的订阅，在 *Managed identity* 下，选择 *Virtual machine*，然后选择 Console agent 虚拟机。
+.. 选择*选择*。
+.. 选择 *Next*。
+.. 选择 *Review + assign*。
+.. 如果要管理其他 Azure 订阅中的资源，请切换到该订阅，然后重复这些步骤。
+
+
+

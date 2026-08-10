@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept-secure-access.html 
+keywords: security, access control, MFA, multi-factor authentication, AD, Active Directory, LDAP, LDAPS, directory services, authentication, zero trust, secure access governance, reduce attack surface, netapp console local 
+summary: 了解 NetApp Console 本地部署中提供的安全选项，包括 Active Directory 集成和多因素身份验证。 
+---
+= 了解如何安全访问 NetApp Console 本地部署
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署提供多层安全性，以保护您的存储管理环境并控制谁可以访问它。
+
+
+
+[[active-directory-integration]]
+== Active Directory 集成
+
+将 NetApp Console 本地部署连接到 Active Directory，以便用户可以使用其现有的公司凭据登录。这样无需在 Console 本地部署中单独设置密码，并支持为添加到组织中的用户进行目录支持的登录。
+
+link:task-iam-active-directory-integrate.html["将 Active Directory 与 NetApp Console 本地部署集成"]。
+
+
+
+[[multi-factor-authentication]]
+== 多因素身份验证
+
+用户可以启用多因素身份验证 (MFA) 作为额外的验证层，以防止未经授权的访问，即使凭据已泄露。
+
+link:task-user-settings.html["为 NetApp Console 本地部署启用 MFA"]。
+
+
+
+[[identity-and-access-management]]
+== 身份和访问管理
+
+对用户进行身份验证后，控制和监控他们可以在 NetApp Console 本地部署中执行的操作。
+
+使用基于角色的访问控制来定义每个成员可以查看和管理的内容。将成员分配给特定舰队，以便他们仅访问与其职责相关的存储资源。
+
+* link:concept-identity-and-access-management.html["了解 NetApp Console 本地部署身份和访问管理"]
+* link:concept-iam-rbac.html["了解 NetApp Console 本地部署基于角色的访问控制"]
+* link:task-iam-manage-members-permissions.html["在 NetApp Console 本地部署中添加成员并分配角色"]
+* link:task-iam-users-fleets-assign.html["在 NetApp Console 本地部署中管理机群访问分配"]
+
+
+
+
+[[audit-logging]]
+== 审核日志记录
+
+跟踪 NetApp Console 本地部署中的所有用户活动（包括 API 和服务帐户用户），以进行合规性和安全性调查。
+
+link:task-audit-console-activity.html["查看 NetApp Console 本地部署的审核日志"]。

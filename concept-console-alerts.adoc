@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: concept-console-alerts.html 
+keywords: alerts, alerting, fleet monitoring, severity, impact area, netapp console local 
+summary: 了解 NetApp Console 本地部署中的存储警报如何帮助您监控整个组织和机群中本地 ONTAP 集群的运行状况。 
+---
+= 了解 NetApp Console 本地部署中的警报
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署会生成警报，用于识别本地 ONTAP 集群上的运行状况问题以及 NetApp Backup and Recovery 操作。
+
+Console 本地部署将来自 ONTAP 集群以及备份和恢复操作的警报整合到单个视图中。Alerts 页面包括仪表板、警报列表和系统视图，以便您可以查看整个组织的警报，或将其范围缩小到特定的机群或系统。每个警报都会标识受影响的系统、其严重程度及其影响区域。
+
+在 Console 本地部署中使用警报，以便：
+
+* 检测容量、连接性、数据保护、性能和安全问题。
+* 按严重程度和影响区域排列警报的优先级。
+* 在 System Manager 或 Workload Analyzer 中打开警报，然后在页面提供时运行引导式或自动化的 Fix-It 操作。
+* 通过电子邮件将通知路由到具有指定访问角色的用户，或通过 webhook 将警报数据发送到外部系统。
+* 将警报列表导出到 CSV 文件以进行离线分析。
+
+
+
+
+[[alert-severity-and-impact-areas]]
+== 警报严重程度和影响区域
+
+每个警报都包括严重程度和影响区域：
+
+* *严重程度*表示从最高到最低的紧急程度：严重、重大、轻微、警告和信息。
+* *影响区域*确定受影响的域：容量、连接性、数据保护、性能和安全性。
+
+
+
+
+[[alert-sources-and-scope]]
+== 警报来源和范围
+
+* *ONTAP 警报*源自 NetApp Console 本地部署发现的本地集群上的 ONTAP 事件管理系统 (EMS)。 link:https://docs.netapp.com/us-en/ontap-ems/acp-auto-events.html["详细了解 ONTAP EMS 和可用警报。"^]
+* *NetApp Backup and Recovery alerts* 源自备份和恢复操作。 link:https://docs.netapp.com/us-en/data-services-backup-recovery/reference-audit-actions.html["详细了解 NetApp Backup and Recovery 警报。"^]
+* 您的权限决定您可以查看哪些机群。将视图范围扩展到整个组织、特定机群或单个系统。*系统运行状况*选项卡显示每个系统的状态，*警报*选项卡显示选定范围的当前警报列表。
+* CSV 导出反映当前范围、搜索文本和筛选器。
+
+
+
+
+[[alert-notification-rules]]
+== 警报通知规则
+
+创建通知规则，以确定哪些警报生成通知以及由谁接收通知。通知规则具有以下特征：
+
+* 它匹配服务（例如 ONTAP 管理或 Backup and Recovery）、严重程度、影响区域和目标系统上的警报。
+* 对于电子邮件传递，它向具有指定访问角色的用户发送通知。对于 Webhook 传递，它将警报数据发送到配置的端点——对该数据的访问由接收应用程序控制，而非由 Console 本地部署控制。
+* 它适用于特定系统，而非整个集群。
+* 它可以在计划的维护窗口期间静音，以抑制预期的警报。
+
+
+控制台本地部署包括安装后立即激活的默认通知规则。默认规则监控所有服务和系统的关键严重性警报，并仅向控制台通知中心发送通知——在您设置之前，不会配置电子邮件或 Webhook 传递。您可以查看和调整此规则，并创建与您的环境相匹配的自定义规则。
+
+信息级别的警报在警报页面中可见，但不会通过通知发送，除非您明确创建包含信息严重级别的规则。
+
+.相关信息
+* link:task-alerts-monitor.html["监控和调查警报"]
+* link:task-alert-rules-manage.html["创建和管理警报通知规则"]
+* link:reference-ontap-alerts.html["了解 NetApp Console 本地部署中的 ONTAP 警报"]
+

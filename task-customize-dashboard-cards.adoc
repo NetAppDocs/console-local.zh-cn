@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: task-customize-dashboard-cards.html 
+keywords: add card, dashboard card, card template, widget, preview, netapp console local 
+summary: 通过设置范围、模板、资源和时间窗口，在 NetApp Console 本地部署中自定义仪表板卡。 
+---
+= 在 NetApp Console 本地部署中自定义卡片
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，当您需要将操作员的关注点集中在最重要的信号上时，请自定义仪表板卡，例如 SLA 风险、容量压力或反复出现的警报噪声。使用本主题可围绕团队需要做出的运营决策来定制仪表板视图。
+
+
+
+[[before-you-begin]]
+== 开始之前
+
+* 创建或打开希望将卡片放置到的控制面板。
+* 查看 link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"] 中的可用模板和指标。
+
+
+
+
+[[add-cards-while-refining-an-existing-dashboard]]
+== 在优化现有仪表板的同时添加卡片
+
+当您正在优化现有仪表板并需要快速添加回答特定操作问题的卡片时，请使用此选项。
+
+.步骤
+. 打开要添加卡片的控制面板。
+. 选择 *Add Card*。
+. 选择卡片的*资源类型*，例如机群、系统或卷，然后从可用资源列表中选择资源。
+. 选择*下一步*以继续选择指标和卡片类型。
+. 选择要显示的指标。您可以按类型筛选可用指标：*指标类型*：*性能*、*容量*、*运行状况*或*警报*，或按名称搜索特定指标。可用指标取决于您选择的资源类型。
++
+link:reference-dashboard-card-templates.html#metrics-list["了解可用的指标。"]
+
+. 选择要包含在管理面板中的卡片，然后选择*下一步*。
++
+一次只能选择一张卡。卡片预览显示所选指标和资源类型的实时数据。
+
+. 为您的卡片命名。该名称在控制面板中必须是唯一的。
+. 查看卡片预览，输入卡片名称和描述，然后选择*添加*。
+. 对其他卡片重复这些步骤。
+. 保存仪表板。
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+* link:task-dashboard-create.html["创建自定义仪表板"]
+* link:task-dashboard-manage.html["管理自定义仪表板"]
+* link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]
+

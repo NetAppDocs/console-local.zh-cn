@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard-create.html 
+keywords: create dashboard, custom dashboard, add dashboard, metrics, cards, card templates, fleet monitoring, storage visibility, performance monitoring, capacity monitoring, netapp console local 
+summary: 在 NetApp Console 本地部署中创建自定义仪表板，添加卡片，并保存可用的监控视图。 
+---
+= 在 NetApp Console 本地部署中构建用于监控目标的仪表板
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中创建自定义仪表板，添加卡片，并为日常操作保存监控视图。
+
+如果您只需要可以直接使用的组织级监控，请从预定义的主页仪表板开始。在需要特定于角色的视图、资源级别定位或定制卡片布局时，请创建自定义仪表板。
+
+.Console 本地部署仪表板指南
+* 只有创建仪表板的用户才能查看它。即使将其添加到控制台主页，也不能与其他用户共享仪表板。
+* 您只能查看您有权查看的资源。如果在可用资源列表中未看到资源，则表示您没有查看该资源的权限。
+* 在开始之前，请确定您希望仪表板跟踪的指标类型和资源。 link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]
+
+
+
+
+[[build-a-dashboard-for-your-monitoring-goals]]
+== 为您的监控目标构建仪表板
+
+当您需要一个地方来监控与您的角色相关的指标时，请创建一个控制面板，例如机群健康状况、性能热点和警报趋势。
+
+.步骤
+. 选择 *Storage > Dashboards*。
+. 选择*添加控制面板*。
++
+控制台本地部署将创建一个具有默认名称且无描述的新仪表板。
+
+. 选择 *Add Card*。
+. 选择卡片的*资源类型*，例如机群、系统或卷，然后从可用资源列表中选择资源。
+. 选择*下一步*以继续选择指标和卡片类型。
+. 选择要显示的指标。您可以按类型筛选可用指标：*指标类型*：*性能*、*容量*、*运行状况*或*警报*，或按名称搜索特定指标。可用指标取决于您选择的资源类型。
++
+link:reference-dashboard-card-templates.html#metrics-list["了解可用的指标。"]
+
+. 选择要包含在管理面板中的卡片，然后选择*下一步*。
++
+一次只能选择一张卡。卡片预览显示所选指标和资源类型的实时数据。
+
+. 为您的卡片命名。该名称在控制面板中必须是唯一的。
+. 查看卡片预览，输入卡片名称和描述，然后选择*添加*。
+. 对其他卡片重复这些步骤。
+. 选择铅笔图标以编辑仪表板名称和描述，以说明其用途。
+. 选择"添加卡片"按钮右侧的操作菜单，然后选择*保存仪表板*。
++
+已保存的仪表板可在*存储 > 仪表板*下找到。
+
+. 也可以从操作菜单中选择 *添加至主页*，将此控制面板添加至您的主页。控制面板已添加至主页。只有您可以查看您创建的自定义仪表板。不与他人共享。
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+* link:task-customize-dashboard-cards.html["在 NetApp Console 本地部署中自定义仪表板卡"]
+* link:task-dashboard-manage.html["在 NetApp Console 本地部署中管理仪表板"]
+

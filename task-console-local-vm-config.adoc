@@ -1,0 +1,179 @@
+---
+sidebar: sidebar 
+permalink: task-console-local-vm-config.html 
+keywords: Console local VM, vcenter, esxi, increase cpu, increase ram, vm maintenance, Console local maintenance, Console local operating system, Console local host 
+summary: 您可以在部署 Console 本地部署后对现有 VCenter 或 ESXi 主机进行更改。例如，您可以增加托管 Console 本地部署的 VM 实例的 CPU 或 RAM。 
+---
+= 维护您的 vCenter 或 ESXi 主机以进行 NetApp Console 本地部署
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，您可以在部署 Console 本地部署后对现有 VCenter 或 ESXi 主机进行更改。例如，您可以增加托管 Console 本地部署的虚拟机实例的 CPU 或 RAM。
+
+使用 VM Web 控制台执行以下维护任务：
+
+* 增加磁盘大小
+* 重新启动控制台本地部署
+* 更新静态路由
+* 更新搜索域
+
+
+.限制
+您只能通过维护控制台查看（不更新）有关 IP 地址、DNS 和网关的信息。
+
+
+
+[[access-the-vm-maintenance-console]]
+== 访问VM维护控制台
+
+您可以从 vSphere 客户端访问维护控制台。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+
+
+
+
+[[change-the-maint-user-password]]
+=== 更改维护用户密码
+
+您可以更改 `maint`用户的密码。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `1`以查看 `System Configuration`菜单。
+. 输入 `1`以更改维护用户密码，然后按照屏幕上的提示操作。
+
+
+
+
+[[increase-the-cpu-or-ram-of-the-vm-instance]]
+=== 增加VM实例的CPU或RAM
+
+您可以增加托管 Console 本地部署的 VM 实例的 CPU 或 RAM。
+
+编辑 VCenter 或 ESXi 主机中的 VM 实例设置，然后使用维护控制台应用更改。
+
+.VSphere 客户端中的步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 右键单击 VM 实例并选择*编辑设置*。
+. 增加用于 /opt 或 /var 分区的硬盘空间。
++
+.. 选择 *Hard Disk 2* 以增加用于 /opt 的硬盘空间。
+.. 选择 *Hard Disk 3* 以增加用于 /var 的硬盘空间。
+
+
+. 保存更改。
+
+
+.维护控制台中的步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `1 to view the `System Configuration`菜单。
+. 输入 `2`并按照屏幕提示操作。控制台扫描新设置并增加分区大小。
+
+
+
+
+[[view-network-settings-for-the-console-local-deployment-vm]]
+=== 查看 Console 本地部署虚拟机的网络设置
+
+查看 vSphere 客户端中 Console 本地部署虚拟机的网络设置，以确认或排除网络问题。您只能查看（不能更新）以下网络设置：IP 地址和 DNS 详细信息。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `2`以查看 `Network Configuration`菜单。
+. 输入介于 1 到 6 之间的数字以查看相应的网络设置。
+
+
+
+
+[[update-the-static-routes-for-the-console-local-deployment-vm]]
+=== 更新 Console 本地部署虚拟机的静态路由
+
+根据需要添加、更新或删除控制台本地部署虚拟机的静态路由。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `2`以查看 `Network Configuration`菜单。
+. 输入 `7`以更新静态路由，然后按照屏幕提示操作。
+. 按 Enter。
+. （可选）进行其他更改。
+. 按  `9` 提交更改。
+
+
+
+
+[[update-domain-search-settings-for-the-console-local-deployment-vm]]
+=== 更新 Console 本地部署虚拟机的域搜索设置
+
+您可以更新 Console 本地部署虚拟机的搜索域设置。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `2``以查看 `Network Configuration`菜单。
+. 输入 `8`以更新域搜索设置，然后按照屏幕上的提示操作。
+. 按 Enter。
+. （可选）进行其他更改。
+. 按  `9` 提交更改。
+
+
+
+
+[[access-the-console-local-deployment-diagnostic-tools]]
+[[connect-vcenter-host]]
+=== 访问 Console 本地部署诊断工具
+
+访问诊断工具以对 Console 本地部署的问题进行故障排除。NetApp 支持人员在排查问题时可能会要求您执行此操作。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `3`以查看支持和诊断菜单。
+. 进入 `1`以访问诊断工具，然后按照屏幕上的提示操作。
+
+
+
+
+[[access-the-console-local-deployment-diagnostic-tools-remotely]]
+=== 远程访问 Console 本地部署诊断工具
+
+您可以使用 Putty 等工具远程访问诊断工具。通过分配一次性密码，启用对 Console 本地部署虚拟机的 SSH 访问。
+
+SSH 访问启用了复制和粘贴等高级终端功能。
+
+.步骤
+. 打开 VSphere 客户端并登录到 VCenter。
+. 选择托管 Console 本地部署的 VM 实例。
+. 选择 *Launch Web Console*。
+. 使用创建 VM 实例时指定的用户名和密码登录到 VM 实例。用户名是 `maint`，密码是您在创建 VM 实例时指定的密码。
+. 输入 `3`以查看 `Support and Diagnostics`菜单。
+. 进入 `2`以访问诊断工具，并按照屏幕提示配置一个 24 小时后到期的一次性密码。
+. 请使用 SSH 工具（如 Putty），使用您配置的用户名 `diag`和一次性密码连接到 Console 本地部署虚拟机。
+

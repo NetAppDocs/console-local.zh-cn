@@ -1,0 +1,124 @@
+= 
+:allow-uri-read: 
+
+
+手动安装期间联系的端点:: 当您在自己的 Linux 主机上手动安装 Console 代理时，Console 代理的安装程序需要在安装过程中访问以下 URL：
+
+
+[cols="2*"]
+|===
+| 端点 | 目的 
+
+
+| \https://mysupport.netapp.com |  
+
+
+| \https://signin.b2c.netapp.com | （此端点是 https://mysupport.netapp.com 的 CNAME URL） 
+
+
+| \https://cloudmanager.cloud.netapp.com/tenancy |  
+
+
+| \https://stream.cloudmanager.cloud.netapp.com |  
+
+
+| \https://production-artifacts.cloudmanager.cloud.netapp.com |  
+
+
+ a| 
+* 选项 1（推荐）：
++
+** \https://bluexpinfraprod.eastus2.data.azurecr.io
+** \https://bluexpinfraprod.azurecr.io
+
+
+* 选项 2:
++
+** \https://*.blob.core.windows.net
+** \https://cloudmanagerinfraprod.azurecr.io
+
+
+
+ a| 
+要获取映像，安装程序需要访问这两组端点之一。^1^ 建议使用选项 1 中列出的端点，因为它们更安全。我们建议您设置防火墙以允许选项 1 中列出的端点，同时不允许选项 2 中列出的端点。请注意以下有关这些端点的信息：
+
+* 从 Console 代理的 3.9.47 版本开始，支持选项 1 中列出的端点。与以前版本的 Console 代理不向后兼容。
+* Console 代理首先联系选项 2 中列出的端点。如果无法访问这些端点，Console 代理将自动联系选项 1 中列出的端点。
+* 如果您将 Console 代理与 NetApp Backup and Recovery 或 NetApp Ransomware Resilience 结合使用，则不支持选项 1 中的端点。在此情况下，您可以禁止选项 1 中列出的端点，同时允许选项 2 中列出的端点。
+
+
+|===
+手动安装期间联系的端点:: 在自己的 Linux 主机上手动安装 Console 代理时，Console 代理的安装程序需要在安装过程中访问多个 URL。
+
+
+[cols="2*"]
+|===
+| 端点 | 目的 
+
+
+| \https://mysupport.netapp.com |  
+
+
+| \https://signin.b2c.netapp.com | 此端点是 https://mysupport.netapp.com 的 CNAME URL 
+
+
+| \https://cloudmanager.cloud.netapp.com/tenancy |  
+
+
+| \https://stream.cloudmanager.cloud.netapp.com |  
+
+
+| \https://production-artifacts.cloudmanager.cloud.netapp.com |  
+
+
+2+| *AWS Government region* 如果您在 AWS Government region 中安装 Console agent，安装程序还需要访问以下端点： 
+
+
+ a| 
+\https://*.blob.core.windows.net
+ a| 
+
+
+
+ a| 
+\https://cloudmanagerinfraprod.azurecr.io
+ a| 
+
+
+
+2+| *Azure Government region* 如果在 Azure Government region 中安装 Console agent，则安装程序还需要访问以下端点： 
+
+
+ a| 
+\https://*.blob.core.windows.net
+ a| 
+
+
+
+ a| 
+\https://occmclientinfragov.azurecr.us
+ a| 
+
+
+
+2+| *商业或主权区域* 如果您在商业区域或主权区域安装 Console 代理，可以在两组端点之间进行选择： 
+
+
+ a| 
+**选项 1（推荐）：** * \https://bluexpinfraprod.eastus2.data.azurecr.io * \https://bluexpinfraprod.azurecr.io
+
+**选项 2：** * \https://*.blob.core.windows.net * \https://cloudmanagerinfraprod.azurecr.io
+ a| 
+建议使用选项 1 中列出的端点，因为它们更安全。我们建议您设置防火墙以允许选项 1 中列出的端点，同时不允许选项 2 中列出的端点。请注意以下有关这些端点的信息：
+
+* 从 Console 代理的 3.9.47 版本开始，支持选项 1 中列出的端点。与以前版本的 Console 代理不向后兼容。
+* Console 代理首先联系选项 2 中列出的端点。如果无法访问这些端点，Console 代理将自动联系选项 1 中列出的端点。
+* 如果您将 Console 代理与 NetApp Backup and Recovery 或 NetApp Ransomware Resilience 结合使用，则不支持选项 1 中的端点。在此情况下，您可以禁止选项 1 中列出的端点，同时允许选项 2 中列出的端点。
+
+
+|===
++
+
+建议使用选项 1 中列出的端点，因为它们更安全。我们建议您设置防火墙以允许选项 1 中列出的端点，同时禁止选项 2 中列出的端点。请注意以下有关这些端点的信息：** 从 Console 代理的 3.9.47 版本开始，支持选项 1 中列出的端点。与先前版本的 Console 代理不向后兼容。** Console 代理首先联系选项 2 中列出的端点。如果无法访问这些端点，Console 代理会自动联系选项 1 中列出的端点。** 如果您将 Console 代理与 NetApp Backup and Recovery 或 NetpApp Ransomware Resilience 配合使用，则不支持选项 1 中的端点。在此情况下，您可以禁止选项 1 中列出的端点，同时允许选项 2 中列出的端点。
+
+主机可能会在安装过程中尝试更新操作系统软件包。主机可以联系这些操作系统软件包的不同镜像站点。

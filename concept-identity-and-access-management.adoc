@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: concept-identity-and-access-management.html 
+keywords: iam overview, overview, how iam works, iam example, organization, folders, fleets, resources, members, roles, permissions, resource hierarchy, identity and access management, access roles, iam, authentication, directory users, AD, Active Directory, directory services 
+summary: '使用 NetApp Console 本地部署的身份和访问管理 (IAM)，根据您的业务层次结构（例如按位置、部门或机群）来构建和控制资源访问。' 
+---
+= 了解 NetApp Console 本地部署身份和访问管理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署中的身份和访问管理 (IAM) 可控制谁可以登录、如何验证身份、用户可以访问哪些资源以及他们可以执行哪些操作。在 NetApp Console 本地部署中，IAM 包括基于角色的访问控制 (RBAC)、多因素身份验证 (MFA) 和目录支持的身份验证，以及支持委派管理的层次结构和审计模型。
+
+使用此页面可以从高层次了解 NetApp Console 本地部署 IAM 模型。有关详细的层次结构规划示例，link:concept-folders-fleets-overview.html["了解 NetApp Console 本地部署中的文件夹和机群"]。
+
+
+NOTE: 您必须具有 _Super admin_、_Organization admin_ 或 _Folder or fleet admin_ 角色才能管理 NetApp Console 中的 IAM。
+
+
+
+[[what-iam-means-in-netapp-console-local-deployment]]
+== IAM 在 NetApp Console 本地部署中的含义
+
+NetApp Console 本地部署 IAM 结合了身份验证、访问控制、委派和可审核性：
+
+* _Authentication_ 决定用户登录的方式，无论是使用本地凭据还是通过目录配置。
+* _Authorization_ 根据预定义的角色和您分配它们的范围，确定成员在登录后可以执行的操作。
+* _Hierarchy and scoping_ 确定成员可以访问的文件夹、队列和资源。
+* _成员和凭据管理_确定如何添加用户、服务帐户以及如何管理 MFA 和服务帐户机密。
+* _Audit and compliance tracking_ 记录与 IAM 相关的活动，以便您可以查看谁更改了访问权限以及何时更改。
+
+
+
+
+[[how-authentication-works]]
+== 身份验证的工作原理
+
+NetApp Console 本地部署支持本地身份和外部身份集成。
+
+您可以将 NetApp Console 本地部署与 Active Directory 集成，以便用户使用其现有的公司凭据登录。这消除了在 Console 本地部署中使用单独密码的需要，并允许管理员在分配访问权限时查找目录用户。
+
+对于本地用户，MFA 添加了另一个验证步骤，以降低凭据泄露时未经授权访问的风险。
+
+要详细了解身份验证和安全登录选项，link:concept-secure-access.html["了解 NetApp Console 本地部署中的安全访问"]。
+
+
+
+[[how-authorization-works]]
+== 授权的工作原理
+
+用户登录后，NetApp Console 本地部署使用 RBAC 来确定该用户可以查看的内容和执行的操作。
+
+Active Directory 或 LDAP 集成处理身份验证。NetApp Console 本地部署授权保持独立：管理员在组织、文件夹或机群级别分配预定义角色，以控制每个成员可以访问的内容。
+
+同一角色授予不同的有效访问权限，具体取决于您分配该角色的范围。此模型允许您向中央管理员授予广泛的访问权限，同时将区域或团队级别的管理员限制在其管理的机群范围内。
+
+您在组织或文件夹级别分配的角色由子作用域继承。此继承模型是 NetApp Console 如何跨文件夹和队列委派访问权限的关键部分。
+
+NetApp 按照最小权限原则设计 NetApp Console 本地部署角色，以便每个角色仅包含其任务所需的权限。
+
+link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署中基于角色的访问控制和角色继承"]。
+
+
+
+[[how-the-iam-hierarchy-works]]
+== IAM层次结构的工作原理
+
+NetApp Console 本地部署使用层次结构对资源进行分组并限定访问范围。组织位于顶层，其次是文件夹，然后是队列，最后是与这些队列关联的资源（包括可能的子文件夹）。
+
+这种层次结构使委派成为可能。例如，组织管理员可以管理整个组织的访问权限，而 Folder 或 fleet 管理员只能管理其所拥有的层次结构部分中的资源和成员。
+
+NetApp Console IAM 基于三种类型的组件：定义层次结构的组织组件、在该层次结构中分配的资源以及控制谁可以访问什么的成员和角色。
+
+由于角色通过此层次结构继承，因此您的文件夹和队列设计直接影响每个访问分配的适用范围。
+
+link:task-iam-manage-folders-fleets.html["了解如何为贵组织添加队列。"^]。
+
+
+
+[[member-security-and-credentials]]
+== 成员安全性和凭据
+
+NetApp Console 本地部署中的 IAM 还包括用于在账户存在后确保成员访问安全的操作控制。
+
+对于本地用户，管理员可以通过指导密码重置、删除或暂时禁用 MFA 以及查看本地用户 MFA 行为来帮助用户恢复访问权限。对于服务帐户，管理员可以在机密丢失或轮换时重新创建凭据。
+
+这些控件是 IAM 的一部分，因为它们决定了身份如何随时间保持安全，而不仅仅是最初分配访问权限的方式。
+
+link:task-manage-member-security.html["了解如何管理成员安全"]。
+
+
+
+[[audit-iam-activity]]
+== 审核 IAM 活动
+
+NetApp Console 本地部署中的 IAM 包括审查和导出与访问相关活动的能力。
+
+从"审核"页面，您可以查看与管理组织相关的操作，例如添加成员、创建队列以及关联资源。您还可以按 Tenancy 服务筛选审核记录，以专注于与 IAM 相关的更改，或将审核日志导出到外部系统。
+
+可审计性是一项重要的 IAM 原则，因为它允许您验证谁更改了访问权限、何时发生更改以及更改是否成功。
+
+link:task-audit-console-activity.html["了解如何审核 NetApp Console 本地部署活动"]。
+
+
+
+[[next-steps-with-iam-in-netapp-console]]
+== 在 NetApp Console 中使用 IAM 的后续步骤
+
+* link:task-iam-fleet-mgmt-get-started.html["开始在 NetApp Console 中使用身份和访问权限"]
+* link:concept-secure-access.html["了解 NetApp Console 本地部署中的安全访问"]
+* link:concept-iam-rbac.html["了解 NetApp Console 本地部署中的 RBAC"]
+* link:task-audit-console-activity.html["监控或审核 Console 本地部署活动"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["了解用于 NetApp Console IAM 的 API"^]
+

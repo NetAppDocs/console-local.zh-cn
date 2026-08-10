@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-manage-member-security.html 
+keywords: member security, password reset, MFA, multi-factor authentication, service account, credentials, netapp console local, AD, Active Directory, directory services 
+summary: 管理 NetApp Console 本地部署中的成员安全设置，包括密码重置、MFA 管理和服务帐户凭据。 
+---
+= 在 NetApp Console 本地部署中管理成员安全性
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+通过管理成员安全设置，保护用户对 NetApp Console 本地部署组织的访问权限。您可以指导本地用户更改自己的密码、管理本地用户的多因素身份验证 (MFA) 以及重新创建服务帐户凭据。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+
+
+[[reset-user-passwords-local-users-only]]
+== 重置用户密码（仅限本地用户）
+
+管理员不能直接重置本地用户密码。
+
+通过选择 *Forgot password?* ，引导本地用户从 Console 本地部署登录页面重置密码。
+
+
+NOTE: 此选项不适用于目录用户。
+
+
+
+[[manage-a-local-users-multi-factor-authentication-mfa]]
+== 管理本地用户的多因素身份验证(MFA)
+
+如果本地用户失去对其 MFA 设备的访问权限，您可以删除或禁用其 MFA 配置。
+
+
+NOTE: 多重身份验证仅适用于本地用户。目录用户无法通过 Console 本地部署启用 MFA。
+
+请使用以下指南选择正确的操作：
+
+* 当用户暂时无法访问其 MFA 设备时，选择*禁用*。禁用 MFA 后，用户可在八小时内无需 MFA 登录一次，之后系统将自动重新启用 MFA。
+* 当用户必须完全重置 MFA 时，选择*移除*。删除 MFA 后，用户在未配置 MFA 的情况下登录，直到他们再次配置 MFA。
+
+
+如果用户已保存恢复代码，则可以使用此代码登录。如果用户没有恢复代码，请禁用 MFA，以便用户可以登录并重新获得访问权限。
+
+
+NOTE: 要管理本地用户的多因素身份验证，您必须拥有与受影响用户相同域中的电子邮件地址。
+
+.步骤
+. 选择*管理* > *身份和访问*。
+. 选择 *Members*。
+. 在"成员"页面中，导航到表中的成员，选择 image:icon-action.png["带三个点的图标"] 然后选择"管理多因素身份验证"。
+. 选择是删除还是禁用用户的 MFA 配置。
+
+
+.完成后
+查看审核日志，以确认谁更改了 MFA 访问权限、何时更改以及操作是否成功。link:task-audit-console-activity.html["了解如何审核 NetApp Console 本地部署活动"]。
+
+
+
+[[recreate-the-credentials-for-a-service-account]]
+== 重新创建服务帐户的凭据
+
+如果丢失或需要更新，您可以为服务帐户创建新凭据。
+
+创建新凭据会删除旧凭据。不能使用旧的凭据。
+
+.步骤
+. 选择*管理* > *身份和访问*。
+. 选择 *Members*。
+. 在 Members 表中，导航到服务帐户，选择 image:icon-action.png["带三个点的图标"]，然后选择 *Recreate secrets*。
+. 选择*重新创建*。
+. 下载或复制客户端 ID 和客户端密钥。
++
+Console 本地部署仅显示一次客户端密码。请务必复制或下载并安全存储。
+
+

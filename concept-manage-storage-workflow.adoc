@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept-manage-storage-workflow.html 
+keywords: storage management workflow, storage classes, provisioning, storage class policies, ONTAP, fleet, drift detection, compliance monitoring, storage governance, operational efficiency, netapp console local 
+summary: 了解有关在 NetApp Console 本地部署中管理存储的信息，包括存储类、策略和置备方法。 
+---
+= NetApp Console 本地部署中的存储管理工作流程概述
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，netApp Console（本地）可帮助您使用一致、可重用的标准大规模管理 ONTAP 存储。您无需为每个卷或 LUN 做出一次性决策，而是一次性定义已批准的行为，并将其应用于整个集群——无论是手动配置、使用自动放置，还是使用 AI 辅助的计划与审批工作流。
+
+此页面是存储管理员使用 Fleet、存储类策略和存储类管理 ONTAP 存储的起点。它整理了端到端工作流程，并链接到详细的操作步骤。
+
+如果您不熟悉这些概念，请从[了解如何使用 NetApp Console 本地部署管理存储](concept-manage-storage.html)开始。
+
+
+
+[[prerequisites-and-dependencies]]
+== 前提条件和依赖关系
+
+组织管理员确保已发现存储系统并将其分配给正确的队列。在系统在队列中可用并通过 RBAC 授予访问权限之前，存储管理员无法将标准应用于队列或在队列中进行配置。
+
+需要 RBAC 访问权限 确认您有权访问将在其中定义标准和配置存储的队列。
+
+
+
+[[typical-workflow]]
+== 典型工作流
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 查看队列和访问权限
+[role="quick-margin-list"]
+* 查看可用队列并确认您有权访问要管理存储的队列。
+* 在创建或分配存储标准之前，请验证权限和范围。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 定义存储类策略
+[role="quick-margin-list"]
+* 定义表示您的标准的存储类策略。
+* 将要求（性能、保护、放置）捕获到可重用策略中。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 创建存储类
+[role="quick-margin-list"]
+* 通过将策略组合到工作负载模板中来创建存储类。
+* 使用一致的模板来确保按照您的标准配置工作负载。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"] 将存储类与舰队关联
+[role="quick-margin-list"]
+* 将存储类与适用的队列关联。
+* 将类的作用域设置到正确的机群，以便在配置过程中显示正确的选项。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 调配卷或 LUN
+[role="quick-margin-list"]
+* 使用与您的操作模型匹配的方法设置卷或 LUN。
+* 选择与您的团队请求、批准和提供存储的方式相一致的工作流程。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 监控工作负载并纠正漂移
+[role="quick-margin-list"]
+* 监控工作负载，以检测与已定义策略的偏差。
+* 修正不合规配置以恢复策略对齐。
+

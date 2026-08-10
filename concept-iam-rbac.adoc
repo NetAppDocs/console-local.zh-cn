@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept-iam-rbac.html 
+keywords: roles, permissions, role-based access control, rbac, iam, identity and access management, least privilege, access control, NetApp Console local access, organization access, folder access, fleet access, resource access, directory users, AD, Active Directory, directory services 
+summary: '使用基于角色的访问控制 (RBAC) 管理用户对 NetApp Console 本地部署的访问，在组织、文件夹或群组级别分配预定义角色。每个角色都授予特定权限，用于定义用户可以在其分配的范围内执行的操作。' 
+---
+= 了解 NetApp Console 本地部署中基于角色的访问控制
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用基于角色的访问控制 (RBAC) 管理用户对 NetApp Console 本地部署的访问，在组织、文件夹或群组级别分配预定义角色。每个角色都授予特定权限，用于定义用户可以在其分配的范围内执行的操作。
+
+NetApp 在设计 Console 本地部署角色时遵循最小权限原则，因此每个角色仅包含执行其任务所需的权限。这种方法通过将访问权限限制为每个成员所需的内容来增强安全性。
+
+将资源整理到文件夹和队列后，为组织成员分配特定文件夹或队列的一个或多个角色，使他们只能执行其职责。
+
+例如，您可以为成员分配特定舰队级别的 Backup and Recovery 管理员角色，允许他们对该舰队内的资源执行备份和恢复操作，而无需授予他们对整个组织的更广泛访问权限。同一用户可以被授予您组织内多个舰队的角色。
+
+您可以为同一范围或不同范围的成员分配多个角色，具体取决于他们的职责。例如，较小的组织可能会在组织级别为同一成员同时分配 Storage admin 和 Backup and Recovery admin 角色，而较大的组织可能在机群级别为每个角色分配不同的成员。
+
+
+
+[[types-of-console-organization-members]]
+== Console 组织成员类型
+
+NetApp Console 本地部署支持以下类型的成员：
+
+* _Users_：单个用户可以是您添加到 NetApp Console 本地部署中使用本地凭据的本地用户，也可以是通过您的集成 Active Directory 或 LDAP 服务进行身份验证的目录用户。两种类型的用户都可以在 NetApp Console 本地部署中分配角色以访问资源。
+* _Service accounts_：应用程序或服务用于通过 API 与 NetApp Console 本地部署交互的非人工帐户。您可以将服务帐户直接添加到您的 Console 本地部署组织。
+
+
+link:task-iam-manage-members-permissions.html#add-members["了解如何向贵组织添加成员。"]
+
+
+
+[[predefined-roles-in-netapp-console-local-deployment]]
+== NetApp Console 本地部署中的预定义角色
+
+NetApp Console 本地部署包括可分配给组织成员的预定义角色。每个角色都包含权限，用于指定成员可在其分配的范围（组织、文件夹或舰队）内执行的操作。
+
+NetApp Console 本地部署角色使用最小权限原则，确保成员仅拥有其任务所需的权限，并按其提供的访问类型对角色进行分类：
+
+* 平台角色：提供 Console 本地部署管理权限
+* 数据服务角色：提供管理特定数据服务的权限，例如 Ransomware Resilience 和 Backup and Recovery
+* 应用程序角色：提供用于管理存储以及审核 Console 本地部署事件和警报的权限
+
+
+您可以根据成员的职责为其分配多个角色。例如，您可以为成员分配特定机群的 Storage admin 角色和 Backup and Recovery admin 角色。
+
+要为成员选择访问权限，请将角色类别与成员的职责相匹配，然后在与成员应具有该访问权限的范围相匹配的范围（组织、文件夹或舰队）中分配角色。link:concept-folders-fleets-overview.html#organization-design-examples["了解不同组织如何在 NetApp Console 本地部署中构建角色和范围"].
+
+link:reference-iam-predefined-roles.html["了解可分配给 NetApp Console 本地部署中的成员的预定义角色"]。
+
+
+
+[[how-role-inheritance-works]]
+[[role-inheritance]]
+== 角色继承的工作原理
+
+在组织或文件夹级别分配角色时，该角色将由层次结构中该部分的子作用域继承。这意味着组织级角色适用于整个组织，文件夹级角色适用于该文件夹中的所有子文件夹和舰队，舰队级角色仅适用于该舰队中的资源。
+
+使用与您希望成员保留的访问权限匹配的范围。例如，当成员需要在一个区域中跨多个队列拥有相同访问权限时，请在文件夹级别分配角色。当成员只需访问一个队列时，请在队列级别分配角色。
+
+您不能在较低的作用域覆盖继承的访问权限。如果成员从组织或文件夹继承角色，请在最初授予该角色的更高作用域更改该分配。
+
+link:concept-folders-fleets-overview.html["了解 NetApp Console 本地部署中的文件夹和机群"]。link:task-iam-manage-roles.html["管理成员访问权限"]。link:task-iam-users-fleets-assign.html["管理机群访问分配"]。

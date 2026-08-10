@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task-iam-switch-fleets.html 
+keywords: switch fleets, fleets, navigate between fleets, fleet navigation, iam, identity and access management, netapp console local 
+summary: 如果您的组织包含多个队列，并且您具有这些队列的访问权限，则可以随时在它们之间进行切换。 
+---
+= 在 NetApp Console 本地部署中切换车队
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，如果您有权访问多个集群，则可以随时在它们之间进行切换。
+
+
+NOTE: 查看任何*身份和访问权限*页面时，您无法切换到其他机群。
+
+.步骤
+. 在 Console 本地部署的顶部标题中，选择 *Scope*。
+. 浏览组织中的机群，选择所需的机群，然后选择 *Switch*。
++
+image:screenshot-iam-switch-projects-select.png["\"范围\"菜单的屏幕截图，您可以在其中选择新的机群。"]
+
+

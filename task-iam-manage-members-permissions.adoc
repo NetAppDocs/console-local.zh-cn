@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-members-permissions.html 
+keywords: user, directory user, directory users, service account, member, role, permissions, organization, fleet, folder, iam, identity and access management, access roles, add members, grant permissions, AD, Active Directory, directory services 
+summary: 添加成员并分配角色，以跨组织资源层次结构的不同级别提供权限。 
+---
+= 将成员添加到 NetApp Console 本地部署组织
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将成员添加到 NetApp Console 本地部署组织并分配角色，以授予用户、服务帐户和目录用户在组织、文件夹或群组级别的访问权限。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员（针对他们管理的文件夹和车队）。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+
+
+[[before-you-begin]]
+== 开始之前
+
+* 创建与贵组织匹配的文件夹和车队层次结构。link:task-iam-manage-folders-fleets.html["了解如何使用文件夹和队列组织资源"]。
+* 在分配成员访问权限之前，请将资源与正确的队列关联。link:task-iam-manage-resources.html["了解如何管理文件夹和队列中的资源"]。
+* 如果要添加目录用户，请先集成目录服务。link:task-iam-active-directory-integrate.html["了解如何与您的目录服务集成"]。
+
+
+
+
+[[understand-how-access-is-granted-in-netapp-console-local-deployment]]
+== 了解如何在 NetApp Console 本地部署中授予访问权限
+
+NetApp Console 使用基于角色的访问控制 (RBAC) 来管理权限。为成员分配角色以提供所需的访问权限。每个角色都定义了特定资源的允许操作。
+
+请注意以下有关在 NetApp Console 本地部署中授予访问权限的信息：
+
+* 必须将每个用户显式添加到您的组织，并至少分配一个角色，该用户才能访问资源。
+* 在组织或文件夹级别分配的角色由子作用域继承，因此请仔细选择分配作用域，仅在需要时授予成员访问权限。link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署中的角色继承"]。
+
+
+
+
+[[add-members-to-your-organization]]
+[[add-members]]
+== 将成员添加到您的组织
+
+NetApp Console 支持三种类型的成员：用户帐户、目录用户和服务帐户。
+
+
+NOTE: 在添加用户之前，必须首先配置电子邮件服务器以与 Console 本地部署配合使用。 link:task-console-configure-notifications-delivery.html["了解如何配置电子邮件服务器。"]
+
+目录用户通过您的集成目录服务进行身份验证，但您仍然必须单独添加每个目录用户并在 Console 本地部署中分配角色。直接在 Console 中创建服务帐户。
+
+要访问 Console 本地部署，所有成员必须至少明确分配一个角色。
+
+添加成员时，请选择成员需要访问的组织、文件夹或舰队，并分配他们所需的起始角色。
+
+
+
+[[add-a-user-account]]
+=== 添加用户帐户
+
+要将用户添加到组织、文件夹或队列，以便他们可以访问资源，您必须具有组织管理员或文件夹或队列管理员角色。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择 *Members*。
+. 选择*添加成员*。
+. 对于*成员类型*，请保持选择*用户*。
+. 对于*用户的电子邮件*，输入与他们创建的登录名关联的用户的电子邮件地址。
+. 请使用*选择组织、文件夹或 Fleet* 部分，选择成员需要访问的位置。
++
+请注意以下事项：
+
++
+** 您只能选择您有权限的文件夹和车队。
+** 选择组织或文件夹时，您将授予成员对其所有内容的权限。
+** 您只能在组织级别分配*Organization admin*角色。
+
+
+. *选择一个类别*，然后选择一个*角色*，为成员提供所选组织、文件夹或队列所需的起始权限。
++
+link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+. 要允许访问更多文件夹、队列或角色，请选择 *Add role*，选择文件夹、队列或角色类别，然后选择一个角色。
+. 选择 *Add*。
++
+Console 通过电子邮件将说明发送给用户。
+
+
+
+
+
+[[add-a-service-account]]
+[[service-account]]
+=== 添加服务帐户
+
+需要自动执行任务或安全连接到 Console API 时，请添加服务帐户。创建帐户后，复制其客户端 ID 和客户端密钥，以供将使用该帐户的集成使用。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择 *Members*。
+. 选择*添加成员*。
+. 对于 *Member Type*，选择 *Service account*。
+. 输入服务帐户的名称。
+. 使用*选择组织、文件夹或队列*部分，选择服务账号需要访问的位置。
++
+请注意以下事项：
+
++
+** 您只能从您有权限的文件夹和队列中进行选择。
+** 选择一个组织或文件夹将授予成员访问其所有内容的权限。
+** 您只能在组织级别分配*Organization admin*角色。
+
+
+. 选择一个 *Category*，然后选择一个 *Role*，为服务帐户提供所选组织、文件夹或 fleet 所需的起始权限。
++
+link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+. 要允许访问更多文件夹、队列或角色，请选择 *Add role*，选择文件夹、队列或角色类别，然后选择一个角色。
+. 下载或复制客户端 ID 和客户端密钥。
++
+Console 仅显示一次客户端密码。请安全地复制它；如果丢失，您可以稍后重新创建。
+
+. 选择*Close*。
+
+
+
+
+[[add-a-directory-user-to-your-organization]]
+== 将目录用户添加到您的组织
+
+从集成目录服务中添加用户并授予其第一个角色。例如，从 Active Directory 中添加新的存储工程师，并在 `Production-US-East`机群中分配 Storage admin 角色，以便他们可以在该机群中工作。
+
+添加目录用户之前，必须先配置目录服务。link:task-iam-active-directory-integrate.html["了解如何与您的目录服务集成"].
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择 *Members*。
+. 选择*添加成员*。
+. 对于*成员类型*，选择*目录用户*。
+. 对于*用户的电子邮件*，请输入要添加的目录用户的电子邮件地址。此电子邮件地址必须与用户在您的目录中登录时关联的电子邮件地址匹配。
+. 使用*选择组织、文件夹或舰队*部分选择目录用户需要访问的位置。
++
+请注意以下事项：
+
++
+** 您只能从您有权限的文件夹和队列中进行选择。
+** 选择一个组织或文件夹将授予成员访问其所有内容的权限。
+** 您只能在组织级别分配*Organization admin*角色。
+
+
+. 选择一个*Category*，然后选择一个*Role*，为目录用户提供所选组织、文件夹或队列所需的起始权限。
++
+link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+. 要授予用户对其他文件夹、队列或角色的额外访问权限，请选择 *Add role*，选择文件夹或队列、角色类别，然后选择一个角色。
+

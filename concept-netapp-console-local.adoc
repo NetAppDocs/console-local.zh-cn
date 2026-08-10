@@ -1,0 +1,125 @@
+---
+sidebar: sidebar 
+permalink: concept-netapp-console-local.html 
+keywords: netapp console local, overview, self-hosted, data sovereignty, storage management, ONTAP, fleet management, RBAC, policy enforcement, storage governance 
+summary: 了解 NetApp Console 本地部署，这是一个可以在您自己的环境中部署的自托管存储管理平台。 
+---
+= 了解 NetApp Console 本地部署
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署允许您在自己的基础架构中托管和运行 NetApp Console 自主控制平面。
+
+您可以获得统一的存储管理、策略实施、大规模自动化和 AI 辅助操作。数据、元数据或管理流量均不会离开您的环境。
+
+
+
+[[deploy-and-operate-console-in-your-own-infrastructure]]
+== 在自己的基础架构中部署和操作 Console
+
+NetApp Console 本地部署在您自己的基础架构中运行，因此您的团队可以控制部署、连接和日常操作。您需要部署 Console 代理、维护 Console 虚拟机，并管理监控和管理流量所需的网络路径。这使企业管理员能够完全控制操作边界，同时将管理数据保留在环境内部。
+
+* link:task-install-agent-on-prem-ova.html["在 vCenter 中使用 OVA 安装 NetApp Console 本地部署"]。
+* link:task-console-local-vm-config.html["维护您的 vCenter 或 ESXi 主机以进行 NetApp Console 本地部署"]。
+* link:reference-ports-on-prem.html["了解 NetApp Console 本地部署中本地控制台代理的端口"]。
+
+
+
+
+[[automate-storage-operations-with-apis-and-service-accounts]]
+== 通过 API 和服务帐户自动执行存储操作
+
+NetApp Console 本地部署支持基于 API 的集成，因此您的组织可以自动执行可重复的存储操作。服务帐户允许应用程序使用分配的角色进行身份验证和操作。适用于交互式用户的基于角色的访问控制和审核控制管理这些操作。这支持企业自动化，同时保持访问范围和责任。
+
+* link:task-iam-manage-members-permissions.html["将成员添加到 NetApp Console 本地部署组织"]。
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["了解用于 NetApp Console IAM 的 API"^]
+
+
+
+
+[[control-access-with-rbac-and-active-directory-integration]]
+== 使用 RBAC 和 Active Directory 集成控制访问
+
+NetApp Console 本地部署提供基于零信任的角色访问控制 (RBAC)，限制用户在其管理的机群和资源中可查看和执行的操作。您可以与 Active Directory 集成，以便用户使用其现有的企业凭据登录，本地用户还可以添加多因素身份验证 (MFA) 以实现额外的验证层。访问治理与组织更广泛的身份和访问管理实践保持一致。
+
+* link:concept-identity-and-access-management.html["了解 NetApp Console 本地部署中的身份和访问管理"]。
+* link:concept-secure-access.html["了解如何安全访问 NetApp Console 本地部署"]。
+
+
+
+
+[[organize-fleets-and-delegate-storage-administration]]
+== 组织机群并委派存储管理
+
+NetApp Console 本地部署通过将资源组织到文件夹和机群中来扩展管理。您可以将机群映射到环境、业务部门或区域，然后在组织、文件夹或机群范围内委派管理，以保持所有权清晰。这种结构有助于大型存储团队在不影响策略一致性或治理的情况下分配工作。
+
+* link:concept-folders-fleets-overview.html["了解 NetApp Console 本地部署中的文件夹和机群"]。
+* link:concept-storage-fleets.html["了解 NetApp Console 本地部署中的存储机群"]。
+
+
+
+
+[[track-and-export-administrative-activity-for-compliance]]
+== 跟踪和导出管理活动以实现合规性
+
+每次管理操作都会生成审计记录。安全和合规团队可以使用这些记录来调查事件、显示控制有效性并满足审计要求。通过 Webhook 将审核日志导出到您的 syslog 服务器，以实现集中监控、更长时间的保留和分析。由于 NetApp Console 本地部署在您自己的环境中运行，因此日志数据永远不会离开您的基础架构。
+
+* link:task-audit-console-activity.html["审核 NetApp Console 本地部署活动"]。
+
+
+
+
+[[provision-storage-consistently-with-storage-class-policies]]
+== 根据存储类策略一致地调配存储
+
+NetApp Console 本地部署通过存储类（将性能、容量和分层策略捆绑到可重用定义中的模板）强制实施一致的存储行为。管理员定义一次存储标准。管理员和自动化工作流将那些已批准的类用于整个环境中的所有配置活动。这可以防止配置漂移，减少初级管理员在配置决策上花费的时间，并确保每个工作负载立即符合组织的标准。配置完成后，Console 本地部署将继续监控每个工作负载的合规性。
+
+* link:concept-manage-storage.html["了解如何使用 NetApp Console 本地部署管理存储"]。
+
+
+
+
+[[monitor-storage-class-compliance-and-remediate-drift-automatically]]
+== 监控存储类合规性并自动补救漂移
+
+NetApp Console 本地部署根据用于配置每个工作负载的存储类对其进行监控。当工作负载因直接集群配置更改或性能降低而发生漂移时，NetApp Console 本地部署会立即标记违规。管理员可以遵循引导式修复步骤或配置自动修复，以解决常见的漂移情况，而无需手动干预。这种持续执行降低了审计风险，并使您的环境在计划审核之间保持合规。
+
+
+
+[[monitor-storage-health-and-receive-alerts-across-fleets]]
+== 监控存储运行状况并接收跨机群的警报
+
+NetApp Console 本地部署为您提供一个统一位置，用于监控所管理的每个集群的运行状况和性能。全集群控制面板显示需要关注的集群和卷。自定义控制面板允许管理员构建与其职责相匹配的监控视图。Workload Analyzer 将延迟、吞吐量、资源利用率和配置更改随时间进行关联，帮助您在问题影响工作负载之前确定根本原因。
+
+配置电子邮件和 Webhook 交付渠道，以便在条件发生变化时向正确的团队发送警报。组织管理员设置目标，存储管理员在警报规则中应用目标，以便响应路径与您的运营模型相匹配。这有助于企业团队更快地响应容量、性能和保护事件。
+
+* link:concept-monitor-storage.html["了解如何在 NetApp Console 本地部署中监控存储运行状况"]。
+* link:task-console-configure-notifications-delivery.html["在 NetApp Console 本地部署中设置通知传递渠道"]。
+* link:task-alert-rules-manage.html["在 NetApp Console 本地部署中配置警报的通知规则"]。
+
+
+
+
+[[provision-storage-and-investigate-alerts-with-natural-language]]
+== 使用自然语言配置存储并调查警报
+
+NetApp Console 本地部署可以连接到您自己的大型语言模型 (LLM)，以提供 AI 辅助的存储管理。您可以用简单的语言描述工作负载以获取配置计划，要求 Console 调查活动警报，或获取有关存储环境的上下文答案。每个 AI 操作都会保持在您的存储类以及适用于您的帐户的基于角色的访问控制范围内，您必须确认敏感操作，然后才能继续。Console 本地部署仅向管理员配置的 LLM 端点发送请求。
+
+* link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]。
+
+
+
+
+[[back-up-and-restore-storage-with-netapp-backup-and-recovery]]
+== 使用 NetApp Backup and Recovery 备份和还原存储
+
+除了配置和监控之外，NetApp Console 本地部署还允许您访问 NetApp Backup and Recovery，以便您可以从同一界面保护数据。您可以备份和还原数据，以满足您的保护和恢复要求。将数据保护与存储管理结合在一起，可以保持治理的一致性，并减少团队运营所需的工具数量。
+
+* link:concept-data-services.html["了解 NetApp Console 本地部署中的数据服务"]。
+

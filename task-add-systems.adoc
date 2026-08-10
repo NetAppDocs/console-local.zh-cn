@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task-add-systems.html 
+keywords: add storage systems, ONTAP, cluster, discover storage, fleet, storage discovery, centralized monitoring, storage management, netapp console local 
+summary: 将存储系统添加到 NetApp Console 本地部署。 
+---
+= 将存储系统添加到 NetApp Console 本地部署
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将存储系统添加到 NetApp Console 本地部署，以实现对存储基础架构的监控、清单管理和管理。添加存储系统后，Console 本地部署将发现该系统并开始收集可用于监控和管理任务的信息。
+
+开始之前，请确保您具有添加存储系统所需的权限，并且可以从 Console 本地部署访问存储系统。
+
+.步骤
+. 选择 *Storage > Management*。
+. 从 Scope 下拉列表中，选择要将存储系统添加到的群组。
+. 选择*添加系统*。
+. 请输入所需的存储系统详细信息，包括连接信息和凭据。
+. 查看您输入的信息并选择*添加*。
++
+已将存储系统添加至所选群组。Console 本地部署开始发现和监控系统。根据环境和网络连接，系统可能需要几分钟才能显示为完全受管。
+
+
+
+
+NOTE: 您还可以通过选择 *Add system* 并提供所需的系统信息，从 *Administration > Identity and access* 页面添加存储系统。

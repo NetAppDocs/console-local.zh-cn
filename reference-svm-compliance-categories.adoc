@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: reference-svm-compliance-categories.html 
+keywords: svm compliance, storage vm compliance, security compliance, svm security, compliance categories, netapp console local 
+summary: 有关 NetApp Console 本地部署中的 Storage VM 安全合规性类别和推荐设置的参考。 
+---
+= Storage VM 安全合规性类别（NetApp Console 本地部署）
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此参考可查看 NetApp Console 本地部署中显示的 Storage VM (SVM) 安全合规性类别，包括建议值以及每个类别是否影响整体合规性状态。
+
+这些类别基于 ONTAP 安全态势检查。
+
+[cols="20,50,15,15"]
+|===
+| 类别 | 该类别检查的内容 | 建议值 | 影响整体合规性 
+
+
+| 审核日志 | 是否启用 SVM 审核日志记录。 | 已启用 | 是 
+
+
+| 不安全的 SSH 设置 | SSH 是否配置了不安全的密码，例如以  `cbc` 开头的密码。 | 否 | 是 
+
+
+| 登录横幅 | 是否为访问 SVM 的用户配置登录横幅。 | 已启用 | 是 
+
+
+| LDAP 加密 | 是否启用 LDAP 加密。 | 已启用 | 否 
+
+
+| NTLM 身份验证 | 是否启用 NTLM 身份验证。 | 已启用 | 否 
+
+
+| LDAP 负载签名 | 是否启用 LDAP 负载签名。 | 已启用 | 否 
+
+
+| CHAP 设置 | 是否启用 CHAP。 | 已启用 | 否 
+
+
+| Kerberos V5 | 是否启用 Kerberos V5 身份验证。 | 已启用 | 否 
+
+
+| NIS 身份验证 | 是否配置了 NIS 身份验证。 | 已禁用 | 否 
+
+
+| FPolicy 状态激活 | FPolicy是否已创建并处于活动状态。 | 是 | 否 
+
+
+| SMB 加密已启用 | 是否已启用 SMB 签名和密封。 | 是 | 否 
+
+
+| SMB 签名已启用 | 是否启用 SMB 签名。 | 是 | 否 
+|===

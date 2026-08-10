@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-storage-class-drift-remediate.html 
+keywords: storage class drift, drift remediation, compliance, fix-it, guided remediation, automated remediation, drift detection, storage governance, storage standards, netapp console local 
+summary: 在 NetApp Console 本地部署中查找、分析和修正存储类漂移。 
+---
+= 修正 NetApp Console 本地部署中的存储类偏移
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，查找与漂移相关的警报，分析漂移发现，并修复不再符合其存储类意图的工作负载。
+
+.必需角色
+存储管理员
+
+
+NOTE: 您只能在拥有权限的队列中查看和修复工作负载。
+
+
+
+[[remediate-drift]]
+== 补救漂移
+
+当工作负载不再与其存储类意图匹配时，NetApp Console 本地部署会引发警报。使用警报分析漂移并应用推荐的补救措施。
+
+您可以直接从警报中应用一些修正。对于其他问题，请更新工作负载配置或分配其他存储类以恢复合规性。修正工作流程在应用更改之前显示预期的影响。
+
+.步骤
+. 选择 *Storage > Storage classes*。
++
+存储类漂移摘要显示在*按存储类划分的漂移*区域中。完整列表显示在表格中。
+
+. 在*漂移*列中，选择相关存储类的*查看*。
++
+此时会打开*提醒>概览*页面，其中应用了筛选器。
+
+. 选择一个警报以打开警报详细信息页面。
+. 选择*分析*。
+. 请查看 *Workload analyzer* 中的结果。
++
+有关配置漂移结果，请比较预期设置和实际设置，以确定更改的内容。
+
+. 选择建议的修正操作，例如 *Fix it*。
+. 查看建议的更改并应用修复措施。
+. 返回 *Storage > Storage classes*，确认工作负载不再显示为已漂移。
++
+合规性评估可能需要几分钟才能反映最近的配置更改。如果工作负载仍列为"漂移"，请返回警报详细信息页面并选择*分析*以查看任何剩余结果。
+
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:concept-storage-classes.html#storage-class-drift-and-compliance["了解 NetApp Console 本地部署中的存储类漂移和合规性"]
+* link:concept-console-alerts.html["了解有关存储警报的信息"]
+* link:task-alerts-monitor.html["查看提醒"]
+

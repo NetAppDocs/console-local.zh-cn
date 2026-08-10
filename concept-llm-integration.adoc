@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: concept-llm-integration.html 
+keywords: LLM, AI, artificial intelligence, AI-assisted management, large language model, proxy, openai-compatible, netapp console 
+summary: 了解 NetApp Console 本地部署如何与 OpenAI 和 OpenAI 兼容模型集成，包括提供商、代理和安全决策。 
+---
+= 了解 LLM 在 NetApp Console 本地部署中的集成
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署连接到大型语言模型 (LLM)，用于 AI 辅助存储管理。设置完成后，用户可以使用自然语言配置存储、调查警报并获取存储指导。
+
+
+NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理以启用 AI 功能的文档。通过此预览产品，NetApp 保留在正式发布之前修改产品详情、内容和时间表的权利。
+
+AI 辅助管理让用户能够以简单语言描述请求，同时 Console 本地部署应用您的存储策略。
+
+控制台本地部署仅向您配置的端点发送 LLM 请求。
+
+
+
+[[what-you-can-do-with-ai-assisted-storage-management]]
+== 您可以使用 AI 辅助存储管理做什么
+
+当您启用 LLM 集成时，Console 本地部署通过 Console 助手提供三种功能：
+
+* *Storage provisioning* 以通俗易懂的语言描述工作负载要求。Console 本地部署根据您的存储类推荐并运行配置计划。
+* *Alert response* 要求 Console 本地部署调查活动警报。它会分析问题，并根据分配的权限建议或运行操作。
+* *搜索和指导* 询问有关您的存储环境或 ONTAP 管理的问题。Console 本地部署从文档和当前集群状态返回上下文答案。
+
+
+
+
+[[choose-read-only-or-readwrite-access-for-the-console-assistant]]
+== 为 Console assistant 选择只读或读/写访问权限
+
+用户根据他们想要的结果选择助手访问模式：
+
+* 用于指导和调查的*只读*模式，无需进行基础架构更改。
+* 用于引导执行的*读/写*模式。控制台本地部署显示建议的操作，请求确认，然后运行更改。
+
+
+
+
+[[understand-what-controls-console-assistant-actions]]
+== 了解控制台助理操作的控制因素
+
+Console 本地部署通过平台上使用的相同治理模型控制 Console 助手操作：
+
+* 基于角色的访问控制限制了每个用户可以查看和操作的内容。
+* 存储策略限制配置和相关操作。
+* Console 助理在运行存储更改操作之前需要确认。
+
+
+
+
+[[choose-an-llm-provider-path]]
+== 选择 LLM 提供商路径
+
+NetApp Console 本地部署支持以下 LLM 提供程序类型：
+
+* *OpenAI* 用于直接访问 OpenAI 模型。
+* *OpenAI-compatible* 适用于兼容的端点，例如企业网关或代理服务。
+* Anthropic 的 Claude 模型。
+
+
+模型可用性取决于您配置的端点。在 Console 本地部署的列表中选择一个模型。
+
+有关支持的型号详细信息，请参见 link:reference-llm-supported-models.html["了解 NetApp Console 本地部署中受支持的 LLM 提供程序和模型"]。
+
+
+
+[[understand-where-llm-requests-go]]
+== 了解 LLM 请求的去向
+
+数据流取决于您选择的端点路径：
+
+* 如果配置 OpenAI 端点，Console 本地部署会将提示和上下文发送到 OpenAI 端点。
+* 如果配置与 OpenAI 兼容的终结点，则 Console 本地部署会将提示和上下文发送到组织配置的兼容终结点。
+
+
+
+
+[[protect-llm-credentials-and-control-admin-access]]
+== 保护 LLM 凭据并控制管理员访问
+
+保护与这些控件的集成：
+
+* 将 API 密钥视为特权凭据，并根据组织策略进行轮换。
+* 查看提供商端的使用情况和警报，以检测意外活动。
+
+
+
+
+[[connect-your-llm]]
+== 连接 LLM
+
+做出这些决定后，请继续link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"]。
+
+如果连接或运行时检查失败，请参见 link:task-llm-troubleshoot-integration.html["对 LLM 集成进行故障排除"]。

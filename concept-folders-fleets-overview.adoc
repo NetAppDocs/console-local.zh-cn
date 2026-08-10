@@ -1,0 +1,183 @@
+---
+sidebar: sidebar 
+permalink: concept-folders-fleets-overview.html 
+keywords: folders, fleets, organization, resource hierarchy, access control, IAM, roles, members, netapp console local 
+summary: 了解如何使用文件夹和存储机群在 NetApp Console 本地部署中组织资源和控制访问。 
+---
+= 了解 NetApp Console 本地部署中的文件夹和机群
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，使用文件夹和存储舰队根据您的业务结构（按位置、部门或工作负载类型）来组织 NetApp 资源并控制访问。
+
+此页面用于层次结构策略和机群设计模式。有关成员、角色和资源范围的完整 IAM 模型，link:concept-identity-and-access-management.html["了解 NetApp Console 本地部署中的身份和访问管理"]。
+
+您可以按层次结构组织资源：组织位于顶部，然后是文件夹（可能包含其他文件夹或舰队），然后是包含存储系统的舰队。在组织、文件夹或舰队级别分配访问角色，以便用户拥有对资源的正确访问权限。
+
+
+NOTE: 要管理 NetApp Console 本地部署中的文件夹和队列，您必须具有组织管理员或文件夹或队列管理员角色。
+
+
+
+[[organizational-components]]
+== 组织组成部分
+
+组织组件——组织、文件夹和队列——形成一个层次结构，确定资源的分组方式以及访问权限的委派方式。
+
+组织:: 组织是 NetApp Console 本地部署层次结构的顶层，通常代表您的公司。您的组织由文件夹、舰队、成员、角色和资源组成。资源与舰队相关联，成员在组织、文件夹或舰队级别被分配角色。
+文件夹:: 文件夹对相关舰队进行分组，按位置、站点或业务部门对其进行组织。无法将存储系统直接与文件夹关联，但在文件夹级别为成员分配角色可使其访问该文件夹中的所有舰队。
++
+--
+
+NOTE: 组织管理员可以将资源添加到文件夹，以将资源与队列关联的任务委派给文件夹或队列管理员。link:task-iam-manage-resources.html["将资源与文件夹和队列关联"]。
+
+--
+车队:: Fleet 对存储系统进行分组。将资源分配给 Fleet，并在 Fleet 级别授予成员访问权限。资源可以属于多个 Fleet。拥有 Fleet 访问权限的成员可以管理该 Fleet 中的资源。
++
+--
+例如，根据您的需求，您可以将本地 ONTAP 系统与单个机群或组织中的所有机群相关联。
+
+link:task-iam-manage-folders-fleets.html["了解如何创建文件夹和存储舰队"]。
+
+--
+
+
+
+
+[[resources]]
+== 资源
+
+资源是 Console 本地部署已识别并可分配给群组的存储系统。将资源与群组关联，以便有权访问该群组的用户可以管理该资源。
+
+例如，您可以将 ONTAP 集群与一个机群或组织中的所有机群相关联。如何关联资源取决于您组织的需求。
+
+link:task-iam-manage-resources.html["了解如何将资源与队列关联"]。
+
+
+
+[[members-and-roles]]
+== 成员和角色
+
+成员是组织中的用户和服务帐户。角色定义他们可以执行的操作以及在层次结构的哪个级别执行（组织、文件夹或群组）。
+
+成员:: 组织的成员是用户帐户或服务帐户。服务帐户通常由应用程序使用，以在无需人工干预的情况下完成指定任务。
++
+--
+具有组织管理员角色的用户可以向贵组织添加新成员。必须显式添加所有用户（包括服务帐户和 Active Directory 用户）并授予至少一个角色，才能访问 Console 本地部署。
+
+--
+
+
+link:task-iam-manage-members-permissions.html["了解如何向组织中添加成员"]。
+
+访问角色:: Console 本地部署提供可分配给组织成员的访问角色。
++
+--
+将成员与角色关联时，您可以为整个组织、特定文件夹或特定队列授予该角色。您选择的角色将授予成员对层次结构选定部分中资源的访问权限。
+
+NetApp Console 本地部署提供了符合最小特权原则的细粒度角色，这意味着访问角色的设计旨在仅向成员授予其所需的访问权限。
+
+随着职责的扩展，用户可以拥有多个角色。
+
+--
+
+
+
+
+[[role-inheritance]]
+=== 角色继承
+
+在组织或文件夹级别分配角色时，其下的子文件夹、队列和资源将继承该角色，因此文件夹和队列设计决定了每个分配的适用范围。
+
+link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署中的角色继承"]。
+
+
+
+[[organization-design-examples]]
+== 组织设计示例
+
+正确的组织结构取决于组织的规模和团队的组织方式。以下示例演示了不同的组织如何使用文件夹和舰队层次结构来有效管理访问权限。
+
+
+
+[[small-organization-strategy]]
+=== 小型组织策略
+
+对于用户数少于 50 且集中式存储管理的组织，请考虑使用超级管理员和超级查看者角色的简化方法。
+
+*示例：ABC Corporation（5 人团队）*
+
+* *结构*：拥有 3 个舰队的单一组织（生产、开发、备份）
+* *角色*：
++
+** 2名高级成员：具有完全管理权限的超级管理员角色
+** 3 名团队成员：超级查看者角色，用于在没有修改权限的情况下进行监控
+
+
+* *优势*：简化管理，降低角色复杂性，适用于需要广泛访问权限的团队
+
+
+
+
+[[multi-regional-enterprise-strategy]]
+=== 多区域企业战略
+
+对于拥有区域运营和专业团队的大型组织，使用代表地理或业务部门边界的文件夹实施分层方法。
+
+*示例：XYZ Corporation（跨国公司）*
+
+* *结构*：组织 > 区域文件夹（北美、欧洲、亚太地区）> 每个地区的车队
+* *平台角色*：
++
+** 1 组织管理员：全局监督和策略管理
+** 3 个文件夹或机群管理员：区域控制（每个区域一个）
+** 1 Federation admin：公司目录服务集成
+
+
+* *按地区划分的存储角色*：
++
+** 存储管理员：发现和管理指定区域中的存储系统
+** 存储查看器：监控跨区域的存储资源
+** 系统健康专员：无需修改系统即可管理存储健康
+
+
+* *好处*：通过角色隔离、区域自治和遵守当地法规来增强安全性
+
+
+
+
+[[departmental-specialization-strategy]]
+=== 部门专业化策略
+
+对于拥有需要特定访问权限的专业团队的组织，请根据职能职责使用有针对性的角色分配。
+
+*示例：TechCorp（中型科技公司）*
+
+* *结构*：组织 > 部门文件夹（IT、安全、开发）> 车队特定资源
+* *专业角色*：
++
+** 安全团队：Ransomware resilience admin 和 Classification viewer 角色
+** 备份团队：用于全面备份操作的备份和恢复超级管理员
+** 开发团队：测试环境管理的存储管理员
+** 合规团队：负责监控和支持案例管理的运营支持分析师
+
+
+* *优势*：量身定制的访问控制、提高运营效率以及明确的专业任务问责制
+
+
+
+
+[[next-steps]]
+== 后续步骤
+
+* link:task-iam-manage-folders-fleets.html["创建文件夹和存储舰队"]
+* link:task-iam-manage-resources.html["将资源与文件夹和队列关联"]
+* link:task-iam-users-fleets-assign.html["管理机群访问分配"]
+* link:task-audit-console-activity.html["监控或审核控制台本地部署操作"]
+

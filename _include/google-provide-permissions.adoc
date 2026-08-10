@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+将服务帐户与 Console 代理 VM 关联。
+
+.步骤
+. 转到 Google Cloud 门户，并将服务帐户分配给 Console agent VM 实例。
++
+https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["Google Cloud 文档：更改实例的服务帐户和访问范围"^]
+
+. 如果要管理其他项目中的资源，请通过将具有 Console 代理角色的服务帐户添加到该项目来授予访问权限。您需要为每个项目重复此步骤。
+

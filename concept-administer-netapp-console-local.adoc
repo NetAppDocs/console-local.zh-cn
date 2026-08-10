@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: concept-administer-netapp-console-local.html 
+keywords: administer Console local deployment, audit, audit log, compliance, SIEM, webhook, VM maintenance, access management, demonstrate compliance, operational visibility, netapp console local 
+summary: 了解如何管理和监控 NetApp Console 本地部署，包括审核活动、订阅、维护、故障排除和成员访问。 
+---
+= 了解 NetApp Console 本地部署中的管理和监控
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+部署 NetApp Console 本地部署后，使用管理和监控工具查看活动、维护 VM 和管理成员访问。
+
+
+
+[[audit-activity]]
+== 审核活动
+
+查看用户和 API 活动，跟踪 Console 操作的状态，下载审核日志，并在需要更长保留期或进行其他分析时将日志导出到外部工具。
+
+* link:task-audit-console-activity.html["审核 NetApp Console 本地部署活动"]
+* link:task-console-configure-notifications-delivery.html["在 NetApp Console 本地部署中设置通知传递渠道"]
+
+
+
+
+[[licenses-and-subscriptions]]
+== Licenses and subscriptions
+
+使用 Licenses and subscriptions 信息了解 NetApp Console 环境的服务授权和订阅状态。
+
+link:https://docs.netapp.com/us-en/console-licenses-subscriptions/index.html["了解许可证和订阅"^]。
+
+
+
+[[maintain-and-troubleshoot-the-console-local-deployment-vm]]
+== 维护控制台本地部署虚拟机并排除故障
+
+维护托管 Console 本地部署的虚拟机，检查网络和系统设置，访问诊断工具，并在服务或代理不按预期运行时排除问题。
+
+link:task-console-local-vm-config.html["维护您的 vCenter 或 ESXi 主机以进行控制台本地部署"]。
+
+
+
+[[manage-users-and-access]]
+== 管理用户和访问权限
+
+查看整个组织的成员访问权限，在机群级别调整访问权限，并管理安全设置，例如 MFA 恢复和服务帐户凭据。
+
+* link:task-iam-manage-roles.html["在 NetApp Console 中管理成员访问权限"]
+* link:task-iam-users-fleets-assign.html["查看或更改 NetApp Console 本地部署中的机群访问分配"]
+* link:task-manage-member-security.html["在 NetApp Console 本地部署中管理成员安全性"]
+

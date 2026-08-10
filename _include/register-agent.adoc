@@ -1,0 +1,24 @@
+= 
+:allow-uri-read: 
+
+
+登录到 Console 并将 Console 代理与您的组织关联。登录方式取决于使用 Console 的模式。如果在标准模式下使用 Console，请通过 SaaS 网站登录。如果以受限或专用模式使用 Console，则可以从 Console 代理主机本地登录。
+
+.步骤
+. 打开 Web 浏览器并输入控制台代理主机 URL：
++
+Console 主机 URL 可以是本地主机、专用 IP 地址或公用 IP 地址，具体取决于主机的配置。例如，如果 Console 代理位于没有公共 IP 地址的公共云中，则必须从与 Console 代理主机有连接的主机输入专用 IP 地址。
+
+. 注册或登录。
+. 登录后，设置 Console：
++
+.. 指定要与 Console 代理关联的 Console 组织。
+.. 输入系统的名称。
+.. 在*您是否在安全环境中运行？*下，保持限制模式禁用状态。
++
+在本地安装 Console 代理时，不支持受限模式。
+
+.. 选择*Let's start*。
+
+
+

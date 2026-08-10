@@ -1,0 +1,99 @@
+---
+indexpage:
+  title: NetApp Console 本地部署文档
+  summary: 使用 NetApp Console 本地部署
+  keywords: storage management, data protection, operational efficiency, cost optimization,
+    business continuity, unified management, self-hosted, high availability, LLM integration,
+    role-based access control, storage provisioning
+  lead: 使用 NetApp Console 本地部署来管理、监控和保护您的存储基础架构。
+  tiles:
+  - title: 了解 NetApp Console 本地部署
+    links:
+    - title: 了解 NetApp Console 本地部署
+      url: "/concept-netapp-console-local.html"
+    - title: 了解身份和访问管理
+      url: "/concept-identity-and-access-management.html"
+    - title: 了解如何使用 NetApp Console 本地部署管理存储
+      url: "/concept-manage-storage.html"
+    - title: 了解 LLM 集成（AI 辅助管理）
+      url: "/concept-llm-integration.html"
+    - title: 了解 NetApp Backup and Recovery
+      url: "/concept-data-services.html"
+    - title: 比较 NetApp Console 本地部署和 NetApp Console
+      url: "/console-differences.html"
+  - title: 部署 Console 本地部署并添加存储系统
+    links:
+    - title: 了解如何部署 Console 本地部署
+      url: "/concept-deploy-netapp-console-local.html"
+    - title: 在您的 vCenter 环境中安装 Console 本地部署
+      url: "/task-install-agent-on-prem-ova.html"
+    - title: 将存储系统添加到 NetApp Console 本地部署
+      url: "/task-add-systems.html"
+    - title: 设置 NetApp Console 的快速入门
+      url: "/task-quick-start-console-setup.html"
+    - title: 连接您的 LLM 并启用 Console 助理
+      url: "/task-llm-connect.html"
+    - title: 连接电子邮件服务器以接收通知
+      url: "/task-console-configure-notifications-delivery.html"
+  - title: 设置访问权限和组织
+    links:
+    - title: 开始使用身份和访问权限
+      url: "/task-iam-fleet-mgmt-get-started.html"
+    - title: 创建文件夹和队列
+      url: "/task-iam-manage-folders-fleets.html"
+    - title: 添加成员并分配角色
+      url: "/task-iam-manage-members-permissions.html"
+    - title: 与 Active Directory 集成
+      url: "/task-iam-active-directory-integrate.html"
+  - title: 配置并标准化存储
+    links:
+    - title: 了解存储类和策略
+      url: "/concept-storage-classes.html"
+    - title: 创建存储类
+      url: "/task-storage-class-manage.html"
+    - title: 手动预配存储
+      url: "/task-provisioning-manual.html"
+    - title: 自动配置存储
+      url: "/task-provisioning-automated.html"
+  - title: 监控、调查和修复存储
+    links:
+    - title: 了解如何在 NetApp Console 中监控存储运行状况
+      url: "/concept-monitor-storage.html"
+    - title: 查看主页指标
+      url: "/task-storage-dashboard.html"
+    - title: 开始在 NetApp Console 本地部署中使用仪表板
+      url: "/task-dashboard-get-started.html"
+    - title: 使用 Workload Analyzer 调查卷
+      url: "/concept-workload-analyzer.html"
+    - title: 查看和管理警报
+      url: "/task-alerts-monitor.html"
+  - title: 使用 AI 辅助管理
+    links:
+    - title: 使用 NetApp Console 助手
+      url: "/task-console-asst-use.html"
+    - title: 支持的 LLM 提供商和模型
+      url: "/reference-llm-supported-models.html"
+  - title: 维护 Console 本地部署
+    links:
+    - title: 维护已安装 vCenter 的控制台本地部署
+      url: "/task-console-local-vm-config.html"
+    - title: 审核 NetApp Console 本地部署操作
+      url: "/task-audit-console-activity.html"
+  - title: API 文档
+    links:
+    - title: 智能体平台
+      url: "/agentic/get-configs.html"
+    - title: 资产
+      url: "/asset/get-organizations-aggregates.html"
+    - title: 身份和访问管理
+      url: "/tenancyv4/get-fleets.html"
+    - title: 存储管理
+      url: "/storage-management/get-v1-organizations-capacitypolicies.html"
+  - title: 博客和社区
+    links:
+    - title: NetApp Console 本地部署
+      url: https://www.netapp.com/console
+    - title: NetApp Data Services
+      url: https://www.netapp.com/data-services/
+    - title: NetApp 社区
+      url: https://community.netapp.com/

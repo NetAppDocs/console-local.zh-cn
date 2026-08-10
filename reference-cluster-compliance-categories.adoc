@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-cluster-compliance-categories.html 
+keywords: cluster compliance, security compliance, cluster security, ontap cluster security, compliance categories, netapp console local 
+summary: 有关 NetApp Console 本地部署中的集群安全合规性类别和建议设置的参考。 
+---
+= NetApp Console 本地部署中的集群安全合规性类别
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此参考可查看 NetApp Console 本地部署中显示的集群安全合规性类别，包括建议值以及每个类别是否影响整体合规性状态。
+
+这些类别基于 ONTAP 安全态势检查。
+
+[cols="20,50,15,15"]
+|===
+| 类别 | 该类别检查的内容 | 建议值 | 影响整体合规性 
+
+
+| 全局 FIPS | 是否启用 FIPS 140-2 模式。启用后，TLSv1 和 SSLv3 将被禁用，只允许 TLSv1.1 和 TLSv1.2。 | 已启用 | 是 
+
+
+| Telnet | 是否启用 Telnet 访问。SSH 是推荐的安全远程访问方法。 | 已禁用 | 是 
+
+
+| 不安全的 SSH 设置 | SSH 是否配置了不安全的密码，例如以  `cbc` 开头的密码。 | 否 | 是 
+
+
+| 登录横幅 | 是否为系统访问配置登录横幅。 | 已启用 | 是 
+
+
+| 集群对等 | 对等集群之间的通信是否已加密。必须在源集群和目标集群上都启用加密。 | 已加密 | 是 
+
+
+| 网络时间协议 | 是否为集群配置了一个或多个 NTP 服务器。NetApp 建议至少配置三个 NTP 服务器以实现弹性。 | 已配置 | 是 
+
+
+| OCSP | 是否已为 SSL/TLS 证书验证启用在线证书状态协议验证。 | 已启用 | 否 
+
+
+| 远程审核日志记录 | 日志转发 (syslog) 是否已加密。 | 已加密 | 是 
+
+
+| AutoSupport HTTPS 传输 | 是否将 HTTPS 用作 AutoSupport 消息的默认传输协议。 | 已启用 | 是 
+
+
+| 默认管理员用户 | 是否禁用内置默认admin帐户。 | 已禁用 | 是 
+
+
+| SAML 用户 | 是否已将 SAML 配置为单点登录和支持 MFA 的身份验证。 | 否 | 否 
+
+
+| Active Directory 用户 | 是否已为集群访问配置 Active Directory 身份验证。 | 否 | 否 
+
+
+| LDAP 用户 | 是否为集群访问配置了 LDAP 身份验证。 | 否 | 否 
+
+
+| 证书用户 | 是否已为基于证书的用户配置集群登录。 | 否 | 否 
+
+
+| 本地用户 | 是否为集群登录配置了本地用户。 | 否 | 否 
+
+
+| 远程 shell | 是否启用 RSH。SSH 是安全远程访问的首选方式。 | 已禁用 | 是 
+
+
+| MD5 正在使用 | ONTAP 用户帐户是否仍使用 MD5 哈希，而非更强的哈希（例如 SHA-512）。 | 否 | 是 
+
+
+| 证书颁发者类型 | 集群使用的证书颁发者类型。 | CA 签名 | 否 
+|===

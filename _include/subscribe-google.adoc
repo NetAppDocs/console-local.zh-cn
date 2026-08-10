@@ -1,0 +1,65 @@
+= 
+:allow-uri-read: 
+
+
+.步骤
+. 选择 *Administration* > *Credentials*。
+. 选择*组织凭据*。
+. 选择与 Console 代理关联的一组凭据的操作菜单，然后选择 *Configure Subscription*。+需要新的屏幕截图 (TS) image:screenshot_gcp_add_subscription.png["一组现有凭据的操作菜单的屏幕截图。"]
+. 要使用所选凭据配置现有订阅，请从下拉列表中选择 Google Cloud 项目和订阅，然后选择*配置*。
++
+image:screenshot_gcp_associate.gif["为 Google Cloud 凭据选择的 Google Cloud 项目和订阅的屏幕截图。"]
+
+. 如果您还没有订阅，请选择 *Add Subscription > Continue*，然后按照 Google Cloud Marketplace 中的步骤操作。
++
+
+NOTE: 在完成以下步骤之前，请确保您在 Google Cloud 帐户中同时拥有账单管理员权限以及 NetApp Console 登录权限。
+
++
+.. 重定向到 https://console.cloud.google.com/marketplace/product/netapp-cloudmanager/cloud-manager["Google Cloud Marketplace 上的 NetApp Intelligent Services 页面"^]后，请确保在顶部导航菜单中选择了正确的项目。
++
+image:screenshot_gcp_cvo_marketplace.png["Google Cloud 中 Cloud Volumes ONTAP 市场页面的屏幕截图。"]
+
+.. 选择*订阅*。
+.. 选择相应的账单账户并同意条款与条件。
+.. 选择*订阅*。
++
+此步骤会将您的转移请求发送至 NetApp。
+
+.. 在弹出对话框中，选择*向 NetApp, Inc. 注册*
++
+此步骤必须完成，才能将 Google Cloud 订阅与您的 Console 组织或帐户关联。在从此页面重定向并登录到 Console 之前，链接订阅的过程尚未完成。
+
++
+image:screenshot_gcp_marketplace_register.png["注册弹出窗口的屏幕截图。"]
+
+.. 完成*订阅分配*页面上的步骤：
++
+
+NOTE: 如果您的组织中已有人从您的账单账户订阅了市场，则您将被重定向到 https://bluexp.netapp.com/ontap-cloud?x-gcp-marketplace-token=["NetApp Console 中的 Cloud Volumes ONTAP 页面"^]。如果出现意外情况，请联系您的 NetApp 销售团队。Google 仅允许每个 Google 账单账户使用一个订阅。
+
++
+*** 选择要与此订阅关联的 Console 组织或帐户。
+*** 在 *Replace existing subscription* 字段中，选择是否要使用此新订阅自动替换一个组织或帐户的现有订阅。
++
+Console 将使用此新订阅替换组织或帐户中所有凭据的现有订阅。如果一组凭据从未与订阅关联，则此新订阅将不会与这些凭据关联。
+
++
+对于所有其他组织或帐户，您需要通过重复这些步骤手动关联订阅。
+
+*** 选择 * 保存 *。
++
+以下视频显示了从 Google Cloud Marketplace 订阅的步骤：
+
++
+.从 Google Cloud Marketplace 订阅
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
+
+
+.. 完成此过程后，返回 Console 中的"凭据"页面并选择此新订阅。
++
+image:screenshot_gcp_associate.gif["订阅分配页面的屏幕截图。"]
+
+
+
+

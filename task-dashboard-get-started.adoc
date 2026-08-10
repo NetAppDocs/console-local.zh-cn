@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard-get-started.html 
+keywords: dashboards, quick start, get started, custom dashboards, predefined dashboards, monitoring, netapp console local 
+summary: 通过查看主页和预定义的仪表板、创建自定义仪表板并使其保持最新状态，开始使用 NetApp Console 本地部署中的仪表板。 
+---
+= 开始在 NetApp Console 本地部署中使用仪表板
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，按照此工作流程从宏观到微观监控视图：查看主页仪表板、查看预定义仪表板、创建自定义仪表板，并保持仪表板为最新状态。
+
+.必需的访问角色
+所有角色。仪表板仅显示您有权查看的资源。如果在可用资源列表中未看到资源，则表示您没有查看该资源的权限。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 在主页上查看基线运行状况
+[role="quick-margin-para"]
+使用主页仪表板查看组织级容量、警报、性能和数据保护状态。
+
+[role="quick-margin-list"]
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:concept-monitor-storage.html["了解 NetApp Console 本地部署中的存储监控"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 查看其他预定义的仪表板
+[role="quick-margin-para"]
+打开 *存储 > 仪表板*，查看预定义的仪表板以获取其他特定于角色的视图。
+
+[role="quick-margin-list"]
+* link:task-dashboard-manage.html["在 NetApp Console 本地部署中管理仪表板"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 构建用于重点监控的自定义仪表板
+[role="quick-margin-para"]
+当您需要所选资源、指标和时间窗口的目标视图时，请创建自定义仪表板。
+
+[role="quick-margin-list"]
+* link:task-dashboard-create.html["创建自定义仪表板"]
+* link:task-customize-dashboard-cards.html["在 NetApp Console 本地部署中自定义仪表板卡"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"] 保持信息板的最新状态
+[role="quick-margin-para"]
+通过编辑、复制或删除自定义仪表板，在优先级发生变化时更新仪表板。
+
+[role="quick-margin-list"]
+* link:task-dashboard-manage.html["在 NetApp Console 本地部署中管理仪表板"]
+* link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]
+
+
+.相关信息
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+

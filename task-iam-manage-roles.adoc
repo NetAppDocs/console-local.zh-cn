@@ -1,0 +1,143 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-roles.html 
+keywords: fleets, access, resources, user roles, iam, identity and access management, folder, organization, permissions, roles, members, access roles, directory users, AD, Active Directory, directory services 
+summary: 管理 Console 组织中的成员访问权限。分配角色以设置权限。成员离开时将其移除。 
+---
+= 在 NetApp Console 本地部署中管理成员访问权限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，跨多个文件夹或组查看或更改用户的角色，例如检查存储工程师可以访问的所有内容、在另一个区域添加新角色，或在职责发生变化时撤销该用户的访问权限。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员（针对他们管理的文件夹和车队）。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+您可以根据需要通过两种方式查看和管理访问权限。如果要查看特定用户在组织中所有资产中的角色，请使用 *Members* 页面。
+
+如果要确认谁可以访问特定车队，请查看分配给该车队的成员。link:task-iam-users-fleets-assign.html["管理机群访问分配"].
+
+要添加新成员、服务帐户或目录用户并分配其第一个角色，请改用入职任务。link:task-iam-manage-members-permissions.html["添加成员并分配角色"]。
+
+
+
+[[understand-how-access-is-granted-in-netapp-console]]
+== 了解如何在 NetApp Console 中授予访问权限
+
+NetApp Console 使用基于角色的访问控制 (RBAC) 来管理成员权限。您可以在组织、文件夹或机群级别分配预定义的角色，具体视成员所需的访问权限范围而定。
+
+
+
+[[using-role-inheritance]]
+[[role-inheritance]]
+=== 使用角色继承
+
+在组织或文件夹级别分配的角色由其下方的子作用域继承，因此请在您最初授予该角色的更高作用域中更改继承的分配。
+
+link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署中的角色继承"]。
+
+
+
+[[view-roles-assigned-to-a-member]]
+[[manage-permissions]]
+== 查看分配给成员的角色
+
+在进行更改之前，请准确确认成员担任的角色及其范围。例如，检查团队成员是否已在 `Production-EU-West` fleet 中拥有 Storage admin 角色。
+
+如果您有_文件夹或车队管理员_角色，该页面将显示组织中的所有成员。但是，您只能查看和管理您所管理的文件夹和车队的权限。link:reference-iam-predefined-roles.html["了解 NetApp Console 本地部署中的文件夹或群组管理员操作"]。
+
+. 在*成员*页面中，导航到表中的成员，选择 image:icon-action.png["由三个并排的点组成的图标"]，然后选择*查看详细信息*。
+. 在表中，展开希望查看成员所分配角色的组织、文件夹或队列的相应行，然后在 *Role* 列中选择 *View*。
+
+
+
+
+[[assign-or-modify-member-access]]
+== 分配或修改成员访问权限
+
+每当职责发生变化时，您都可以调整成员的访问权限。例如，当团队成员承担第二个区域的备份职责时，请在该区域的机群中添加 Backup and Recovery 管理员角色，而无需更改其现有的存储角色。
+
+如果需要添加新成员并分配其第一个角色，请参阅 link:task-iam-manage-members-permissions.html#add-members["添加成员并分配角色"]。
+
+
+
+[[add-an-access-role-to-an-existing-member]]
+=== 向现有成员添加访问角色
+
+当成员的职责范围扩大时，为其授予组织、文件夹或 fleet 级别的额外角色。例如，为 Storage admin 指定组织级别的 Backup and recovery admin 角色，以便他们可以跨每个 fleet 管理备份和恢复任务，而不会失去其现有存储权限。
+
+您可以为成员分配组织、文件夹或队列的访问角色。
+
+成员可以在同一 fleet 和不同 fleet 中担任多个角色。例如，较小的组织可能会将所有可用的访问角色分配给同一用户，而较大的组织可能会让用户执行更专业的任务。或者，您也可以为一个用户分配组织级别的 Ransomware resilience admin 角色。在该示例中，用户将能够对组织内的所有 fleet 执行 Ransomware resilience 任务。
+
+您的访问角色策略应与您组织 NetApp 资源的方式保持一致。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择 *Members*。
+. 选择一个成员选项卡：*用户*、*目录用户*或*服务帐户*。
+. 选择要分配角色的成员旁边的操作菜单 image:icon-action.png["带有三个垂直点的图标"]，然后选择*添加角色*。
+. 要添加角色，请完成对话框中的步骤：
++
+** *选择一个组织、文件夹或队列*：选择成员应具有权限的资源层次结构级别。
++
+如果选择组织或文件夹，则成员将对组织或文件夹中的所有内容拥有权限。
+
+** *Select a category*：选择一个角色类别。link:reference-iam-predefined-roles.html["了解访问角色"^]。
+** 选择一个*角色*：选择一个角色，为成员提供与您选择的组织、文件夹或舰队关联的资源的权限。
+** *Add role*：如果要提供对组织内其他文件夹或队列的访问权限，请选择 *Add role*，指定其他文件夹或队列或角色类别，然后选择角色类别和相应的角色。
+
+
+. 选择*添加新角色*。
+
+
+
+
+[[change-a-members-assigned-role]]
+=== 更改成员的分配角色
+
+当成员的职责发生变化时，将成员的现有角色替换为其他角色。例如，当 `Production-US-East`队列中的 Storage viewer 需要 Storage admin 角色时。
+
+
+NOTE: 每个用户必须至少有一个角色。您无法从用户中删除所有角色。如果需要删除所有角色，请从组织中删除该用户。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择 *Members*。
+. 选择一个成员选项卡：*用户*、*目录用户*或*服务帐户*。
+. 在*成员*页面中，导航到表中的成员，选择 image:icon-action.png["由三个并排的点组成的图标"]，然后选择*查看详细信息*。
+. 在表中，展开要更改成员分配角色的组织、文件夹或队列的相应行，然后在*角色*列中选择*查看*，以查看分配给此成员的角色。
+. 您可以更改成员的现有角色或删除角色。
++
+.. 要更改成员的角色，请选择您要更改的角色旁边的*更改*。您只能将角色更改为同一角色类别中的角色。例如，您可以从一个数据服务角色更改为另一个。确认更改。
+.. 要取消分配成员的角色，请选择角色旁边的 image:icon-delete.png["类似垃圾桶的图标"] 以取消分配成员的相应角色。系统将提示您确认删除。
+
+
+
+
+
+
+[[remove-a-member-from-your-organization]]
+=== 从组织中删除成员
+
+当成员离开组织或以某种方式更改角色，不再需要访问 Console 时，请删除该成员。例如，当承包商的合同结束或员工转移到 Console 组织以外的团队时。
+
+[NOTE]
+====
+.目录用户
+从目录中删除用户会阻止该用户进行身份验证。您还应从 Console 组织中删除该用户，以保持成员列表的准确性，并删除在 Console 本地部署中分配的任何角色。
+
+====
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择 *Members*。
+. 选择一个成员选项卡：*用户*、*目录用户*或*服务帐户*。
+. 在*成员*页面中，导航到表中的成员，选择 image:icon-action.png["由三个并排的点组成的图标"] 然后选择*删除用户*。
+. 请确认您要从组织中删除此成员。
+

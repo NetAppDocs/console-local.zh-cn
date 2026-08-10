@@ -1,0 +1,87 @@
+---
+sidebar: sidebar 
+permalink: task-provisioning-manual.html 
+keywords: provisioning, provision storage, create volume, create LUN, ONTAP, storage class, fleet, NAS, SAN, manual provisioning, netapp console 
+summary: 使用 NetApp Console 本地部署调配存储资源。 
+---
+= 在 NetApp Console 本地部署中设置存储
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中预置卷和 LUN，使存储资源可用于您的工作负载。在预置期间，您可以选择存储类以应用预定义的存储策略和组织标准。
+
+.必需的访问角色
+超级管理员、组织管理员、文件夹或舰队管理员或存储管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+
+
+[[provision-a-volume]]
+== 预配卷
+
+.步骤
+. 选择 *Storage > Management*。
+. 选择 *Fleets*。
+. 选择要预置的机群。
+. 选择 *Add*。
+. 从菜单中，选择 *Volume*。
+. 在*卷详细信息*下：
++
+.. 输入卷名称。
+.. 输入容量（如果需要，请选择单位）。
+.. （可选）选择要应用存储类策略的存储类。如果不选择，则在没有存储类策略的情况下配置卷。
+
+
+. 在*系统详细信息*下：
++
+.. 从适用于选定车队的符合条件的系统中选择一个系统。
+.. 选择 Storage VM。
+
+
+. 在*主机(NAS)详细信息*下，选择主机访问卷的方式：
++
+.. 通过 NFS 导出（导出策略控制哪些 NFS 主机可以访问卷）
+.. 通过 SMB/CIFS 共享
+
+
+. 选择 *Add*。
+
+
+
+
+[[provision-a-lun]]
+== 配置 LUN
+
+.步骤
+. 选择 *Storage > Management*。
+. 选择 *Fleets*。
+. 选择要预置的机群。
+. 选择 *Add*。
+. 从菜单中，选择 *LUNs*。
+. 在 *LUN 存储详细信息* 下：
++
+.. 请输入前缀名称。
+.. 输入要使用该前缀创建的 LUN 数。
+.. 输入每个 LUN 的容量（如果需要，请选择单位）。
+.. （可选）选择要应用存储类策略的存储类。如果不选择，则在没有存储类策略的情况下调配 LUN。
+
+
+. 在*系统详细信息*下：
++
+.. 选择一个系统（如果出现提示）。
+.. 选择 Storage VM。
+
+
+. 在*主机(SAN)详细信息*下，选择主机访问卷的方式：
++
+.. 选择主机操作系统（例如，Windows 或 Linux）以设置 LUN 对齐和块大小的建议默认值。
+.. 选择主机映射组以控制哪些启动器可以访问 LUN。
+
+
+. 选择 *Add*。
+

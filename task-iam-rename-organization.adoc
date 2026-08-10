@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-iam-rename-organization.html 
+keywords: rename organization, change organization name, name change, rename, change name, iam, ID, integration, fleet, organization, API, identity and access management 
+summary: 如果需要，可以更改 NetApp Console 本地部署组织的名称。 
+---
+= 管理您的 NetApp Console 本地部署组织和机群 ID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，您的 NetApp Console 组织具有名称和 ID。您可以为组织选择一个名称以便于识别。您可能还需要检索某些集成的组织 ID。
+
+.必需的访问角色
+超级管理员或组织管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+
+
+[[rename-your-organization]]
+== 重命名您的组织
+
+您可以重命名组织。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择*组织*。
+. 从*组织*页面，导航到表中的第一行，选择 image:icon-action.png["由三个并排的点组成的图标"]，然后选择*编辑组织*。
++
+image:screenshot-iam-edit-organization.png["\"概述\"页面的屏幕截图，其中显示操作图标和\"编辑组织\"选项。"]
+
+. 输入新的组织名称，然后选择*Apply*。
+
+
+
+
+[[get-the-organization-id]]
+== 获取组织 ID
+
+组织 ID 用于与 Console 进行某些集成。
+
+您可以从组织页面查看组织 ID，并将其复制到剪贴板以满足您的需求。
+
+.步骤
+. 选择 *Administration > Identity and access* > *Organization*。
+. 在*组织*页面上，在摘要栏中查找您的组织 ID 并将其复制到剪贴板。您可以保存此内容供日后使用，也可以将其直接复制到需要使用的地方。
+
+
+
+
+[[obtain-the-id-for-a-fleet]]
+[[fleet-id]]
+== 获取机群的 ID
+
+如果使用 API，则需要获取队列的 ID。
+
+.步骤
+. 在*组织*页面中，导航到表中的机群并选择 image:icon-action.png["由三个并排的点组成的图标"]
++
+将显示机群 ID。
+
+. 要复制 ID，请选择"复制"按钮。
++
+image:screenshot-iam-project-id.png["选择队列的操作菜单后，显示队列 ID 的文件夹和队列表的屏幕截图。"]
+
+
+
+.相关信息
+* link:concept-identity-and-access-management.html["了解身份和访问管理"]
+* link:task-iam-fleet-mgmt-get-started.html["开始在 NetApp Console 中使用身份和访问权限"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["了解用于身份和访问的 API"^]
+

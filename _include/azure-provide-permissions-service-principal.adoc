@@ -1,0 +1,20 @@
+= 
+:allow-uri-read: 
+
+
+. 选择 *Administration > Credentials*。
+. 选择*添加凭据*，然后按照向导中的步骤操作。
++
+.. *凭据位置*：选择 *Microsoft Azure > Agent*。
+.. *定义凭据*：输入有关授予所需权限的 Microsoft Entra 服务主体的信息：
++
+*** 应用程序（客户端） ID
+*** 目录（租户） ID
+*** Client Secret
+
+
+.. *Marketplace Subscription*：立即订阅或选择现有订阅，将 Marketplace 订阅与这些凭据相关联。
+.. *审核*：确认有关新凭据的详细信息，然后选择*添加*。
+
+
+

@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: task-provisioning-automated.html 
+keywords: automated provisioning, automation, policy-driven, storage class, netapp console 
+summary: 使用存储类和策略在 NetApp Console 本地部署中配置自动存储置备。 
+---
+= 在 NetApp Console 本地部署中自动调配存储
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，使用自动化配置，根据存储类别标准和机群容量分配存储。当您希望获得一致的结果并减少手动决策时，自动化配置是最佳选择。
+
+.必需的访问角色
+超级管理员、组织管理员、文件夹或舰队管理员或存储管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+自动配置通常根据容量和性能余量从机群中的可用系统中选择最合适的位置，然后使用与存储类一致的设置来配置工作负载。
+
+
+
+[[before-you-begin]]
+== 开始之前
+
+* 请确保在目标机群中至少发现一个 ONTAP 集群。
+* 如果要获得类驱动的结果，请确保存储类存在并与 fleet 关联。
+

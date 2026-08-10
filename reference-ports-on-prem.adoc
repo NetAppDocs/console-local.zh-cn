@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: reference-ports-on-prem.html 
+keywords: networking, network requirements, ports, on-premises, TCP, HTTP, HTTPS, firewall, connectivity requirements, Console agent, agent connectivity, netapp console local 
+summary: 当手动安装在本地 Linux 主机上时，Console 代理使用_入站_端口。请参阅这些端口以进行规划。 
+---
+= NetApp Console 本地部署中内部部署 Console 代理的端口
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，当手动安装到本地 Linux 主机上时，Console 代理使用_入站_端口。请参阅这些端口以进行规划。
+
+这些入站规则适用于所有 NetApp Console 部署模式。
+
+[cols="10,10,80"]
+|===
+| 协议 | 端口 | 目的 
+
+
+| HTTP | 80  a| 
+* 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问
+* 在 Cloud Volumes ONTAP 升级过程中使用
+
+
+
+
+| HTTPS | 443 | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+|===

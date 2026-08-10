@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: task-llm-troubleshoot-integration.html 
+keywords: LLM, AI, troubleshooting, openai, openai-compatible, proxy, endpoint, api key, netapp console 
+summary: 通过设置、助手可用性、运行时错误和凭据问题的快速分类流程，对 NetApp Console 本地部署中的 LLM 集成进行故障排除。 
+---
+= 排除 NetApp Console 本地部署中的 LLM 集成故障
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此快速分流流程来诊断和解决 NetApp Console 本地部署中的常见 LLM 集成问题。
+
+
+NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理以启用 AI 功能的文档。通过此预览产品，NetApp 保留在正式发布之前修改产品详情、内容和时间表的权利。
+
+如果您尚未完成设置，请参见 link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"]。
+
+
+
+[[triage-llm-integration-issues-quickly]]
+== 快速分类 LLM 集成问题
+
+. 在*管理 > AI Tools*中验证 AI Tools 配置。
++
+确认提供程序类型、端点 URL、API 密钥、所选模型和出站网络访问。
+
+. 在控制面板上验证助手可用性。
++
+确认预期用户和组织的 *Console assistant* 按钮是否显示。
+
+. 验证运行时行为。
++
+运行一个简单的只读请求，并确认提供程序端点可访问性、模型可用性和提供程序服务运行状况。
+
+
+
+
+
+[[troubleshoot-by-symptom]]
+== 按症状排查故障
+
+[cols="1,1,2,2"]
+|===
+| 症状 | 可能的原因 | 需要检查的内容 | 下一步操作 
+
+
+| 在 AI Tools 中保存或测试失败 | 配置或连接不匹配 | 提供程序类型、端点 URL、API 密钥格式、所选模型和出站访问 | 请更正验证失败的值，然后再次保存 
+
+
+| *Console assistant* 按钮缺失 | 不正常的集成状态、组织不匹配或 RBAC 不匹配 | 成功的 AI Tools 保存、集成状态、当前组织和预期访问角色 | 刷新会话并使用已知良好的管理员账号进行验证 
+
+
+| 助手已打开但请求失败 | 提供程序或运行时路径问题 | 端点可达性、该端点上的模型可用性、提供程序限制和临时提供程序状态 | 修复端点/模型不匹配或提供方端限制问题后重试 
+
+
+| 助理响应缓慢或不一致 | 提示大小、端点性能或网络/代理不稳定性 | 短提示测试、提供商服务健康状况和网络/代理稳定性 | 使用较短的提示，尝试其他支持的模型，并稳定网络或代理路由 
+|===
+
+
+[[respond-to-llm-credential-exposure-or-misuse]]
+== 应对 LLM 凭据泄露或滥用
+
+如果怀疑 API 密钥泄露或未经授权使用：
+
+. 撤销提供程序系统中的现有 API 密钥。
+. 创建新的 API 密钥。
+. 更新 *Administration > AI Tools* 中的密钥。
+. 使用只读助手测试验证重新连接是否成功。
+

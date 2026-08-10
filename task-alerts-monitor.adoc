@@ -1,0 +1,198 @@
+---
+sidebar: sidebar 
+permalink: task-alerts-monitor.html 
+keywords: view alerts, alerts overview, alerts dashboard, org-wide alerts, fleet alerts, netapp console local 
+summary: 从 NetApp Console 本地部署中的警报概述页面查看整个组织或特定机群的活动警报。 
+---
+= 监控和调查 NetApp Console 本地部署中的警报
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+监控和调查 NetApp Console 本地部署中的警报，以保持存储正常运行并最大限度地减少中断。
+
+查看整个组织或特定机群的活动警报，按严重程度和影响区域排定优先级，并调查根本原因，以便在问题升级前解决问题。当警报包含建议的操作或 Fix It 选项时，您可以直接从调查转入补救。
+
+.必需的访问角色
+除 Federation admin 和 Federation viewer 之外的所有角色。具有 Federation admin 或 Federation viewer 角色的用户无法查看警报。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+对于 ONTAP 警报，您可以直接从警报页面访问 System Manager 和 Workload Analyzer 等工具以调查和解决问题。
+
+对于外部报告，您可以将警报列表导出为 CSV 文件进行离线分析。
+
+
+NOTE: 您还可以设置通知规则，以通过电子邮件或 Webhook 接收警报。link:task-alert-rules-manage.html["了解如何设置警报通知"]。
+
+
+
+[[available-alerts]]
+== 可用警报
+
+NetApp Console 本地部署支持 ONTAP 和 NetApp Backup and Recovery 的警报。
+
+* link:reference-ontap-alerts.html["了解 NetApp Console 本地部署中的 ONTAP 警报"]
+* link:https://docs.netapp.com/us-en/data-services-backup-recovery/reference-audit-actions.html["详细了解 NetApp Backup and Recovery 警报。"^]
+
+
+
+
+[[view-the-alerts-dashboard]]
+== 查看警报控制面板
+
+使用警报仪表板可快速查看所选范围的当前警报活动。控制面板按严重程度和影响区域汇总活动警报，并包含一个图表，显示过去 24 小时内的警报分布情况，以便您快速发现趋势。
+
+您可以筛选控制面板，以专注于关键警报或特定影响区域的警报。
+
+.步骤
+. 选择 *Health > Alerts > Overview*。
+. 从范围选择器中，选择以下选项之一：
++
+** *全部*（默认）以查看您有权访问的所有队列的警报
+** 仅可查看该队列警报的特定队列
+
+
+. 根据您需要查看的警报筛选仪表板，包括：
++
+** 严重程度（严重、警告或信息）
+** 按影响区域分组的关键警报
+** 影响区域（安全性、保护、可用性、性能、容量或配置）
+
+
+
+
+
+
+[[view-all-alerts]]
+== 查看所有提醒
+
+使用"警报"选项卡可查看所选范围的活动警报的完整列表。列表将更新以反映当前组织或机群范围，您可以按名称或描述搜索列表中的特定警报。
+
+.步骤
+. 选择 *Health > Alerts > Overview*。
+. 从范围选择器中，选择以下选项之一：
++
+** *全部*（默认）以查看您有权访问的所有队列的警报
+** 仅可查看该队列警报的特定队列
+
+
+. 选择*Alerts*选项卡以查看选定范围的活动警报的完整列表。
+. （可选）按名称或描述搜索列表中的特定警报。
++
+image:screenshot-alerts-search.png["按名称或描述搜索提醒"]
+
+
+
+
+
+[[view-alerts-by-system]]
+== 按系统查看警报
+
+您可以查看特定系统在机群或组织内的警报。
+
+.步骤
+. 选择 *Health > Alerts > Overview*。
+. 从范围选择器中，选择以下选项之一：
++
+** *全部*（默认）以查看您有权访问的所有队列的警报
+** 仅可查看该队列警报的特定队列
+
+
+. 选择 *Systems health* 选项卡以查看与所选范围内的系统关联的警报摘要。
+. 在相应系统的行上选择*查看警报*，以查看与该系统关联的活动警报的完整列表。
+
+
+
+
+[[investigate-an-alert]]
+== 调查警报
+
+您可以调查警报，查看是什么触发了警报，以及谁收到了通知。
+
+在调查 ONTAP 警报时，您还可以直接转到生成警报的系统的 System Manager 界面，以查看其他详细信息并采取相应措施。
+
+.步骤
+. 选择 *Health > Alerts > Overview*。
+. 从范围选择器中，选择以下选项之一：
++
+** *全部*（默认）以查看您有权访问的所有队列的警报
+** 仅可查看该队列警报的特定队列
+
+
+. 在任一选项卡中，选择要调查的警报的名称以查看其详细信息。
++
+image:screenshot-alerts-investigate.png["查看警报详细信息"]
+
+. 如果适用，请选择 VM 或集群名称，以打开生成警报的系统的 System Manager 界面。
++
+image:screenshot-alerts-details.png["查看警报详细信息并导航到System Manager"]
+
+
+
+
+
+[[remediate-an-alert]]
+== 修正警报
+
+当警报包含建议的操作或"修复"选项时，可使用它从调查转入补救，而无需离开警报详细信息。
+
+.步骤
+. 选择 *Health > Alerts > Overview*。
+. 从范围选择器中，选择以下选项之一：
++
+** *全部*（默认）以查看您有权访问的所有队列的警报
+** 仅可查看该队列警报的特定队列
+
+
+. 选择要修正的警报。
+. 查看警报详细信息，然后选择建议的操作或 *Fix It* 选项（如果可用）。
+. 按照指导步骤应用补救措施，然后返回警报详细信息以确认警报状态。
+
+
+如果该操作解决了问题，警报将不再显示为该范围的活动警报。如果警报仍处于活动状态，请再次查看警报详细信息并继续调查。
+
+
+
+[[analyze-an-alert]]
+== 分析警报
+
+您可以在 Workload Analyzer 中分析 ONTAP 警报，以了解触发它的原因。
+
+在调查 ONTAP 警报时，您还可以直接转到生成警报的系统的 System Manager 界面，以查看其他详细信息并采取相应措施。
+
+.步骤
+. 选择 *Health > Alerts > Overview*。
+. 从范围选择器中，选择以下选项之一：
++
+** *全部*（默认）以查看您有权访问的所有队列的警报
+** 仅可查看该队列警报的特定队列
+
+
+. 选择 *Systems health* 选项卡以查看选定范围的活动警报的完整列表。
+. 在任一选项卡中，选择要调查的警报的名称以查看其详细信息。
++
+image:screenshot-alerts-investigate.png["查看警报详细信息"]
+
+. 如果适用，选择 *Analyze* 以打开生成警报的系统的工作负载分析器界面。
++
+image:screenshot-alerts-analyze.png["查看警报详细信息并导航到Workload Analyzer"]
+
+. 输入触发警报期间的时间范围，然后选择 *Analyze* 以查看分析结果。 link:concept-workload-analyzer.html["了解 Workload Analyzer。"]
+
+
+
+
+[[export-alerts-to-csv]]
+== 将警报导出为CSV
+
+将 NetApp Console 本地部署中的警报列表导出到 CSV 文件以进行离线分析或报告。导出反映当前范围（组织或机群）、搜索文本和筛选器。
+
+.步骤
+. 选择 *Health > Alerts*，然后选择 *Alerts* 选项卡。
+. 设置范围（组织或机群）并应用您希望包含在导出中的任何过滤器或搜索文本。
+. 选择下载图标，将警报列表导出为 CSV 文件。
+

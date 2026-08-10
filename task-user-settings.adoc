@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: task-user-settings.html 
+keywords: user profile, mfa, change password, role, login, multi-factor, authentication, dark mode, read-only mode, contact admin, AD, Active Directory, directory services 
+summary: '您可以修改 Console 配置文件，包括更改密码、启用多因素身份验证 (MFA) 以及查看 Console 管理员是谁。' 
+---
+= 管理 NetApp Console 本地部署用户设置
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，您可以修改 Console 本地部署配置文件，包括更改密码、启用多因素身份验证 (MFA) 以及查看控制台管理员是谁。
+
+
+
+[[change-your-display-name]]
+== 更改您的显示名称
+
+您可以更改 Console 本地部署显示名称，该名称会将您标识给其他用户。您无法更改用户名或电子邮件地址。
+
+.步骤
+. 选择 Console 本地部署右上角的配置文件图标，以查看用户设置面板。
+. 选择姓名旁边的*编辑*图标。
+. 在 *Name* 字段中输入新的显示名称。
+
+
+
+
+[[configure-multi-factor-authentication]]
+[[task-user-mfa]]
+== 配置多因素身份验证
+
+配置多因素身份验证 (MFA)，以便在登录 NetAppConsole 本地部署时通过要求第二种验证方法来提高安全性。
+
+通过 NetApp 支持站点登录的用户无法启用 MFA。如果您属于这种情况，则在个人资料设置中将看不到启用 MFA 的选项。
+
+如果您的用户帐户用于 API 访问，请勿启用 MFA。为用户帐户启用多重身份验证后，将停止 API 访问。使用服务帐户进行所有 API 访问。
+
+
+NOTE: 如果您的帐户使用 Active Directory 或其他集成目录服务进行身份验证，则无法通过控制台本地部署为您的帐户配置 MFA。
+
+.开始之前
+* 您必须已将身份验证应用（例如 Google Authenticator 或 Microsoft Authenticator）下载到您的设备。
+* 您需要密码才能设置多重身份验证。
+
+
+
+NOTE: 如果无法访问身份验证应用或丢失恢复代码，请与控制台管理员联系以获取帮助。
+
+.步骤
+. 选择 Console 右上角的配置文件图标，查看用户设置面板。
+. 选择*多重身份验证*标题旁边的*配置*。
+. 按照提示为您的账号设置 MFA。
+. 完成后，系统会提示您保存恢复代码。选择复制代码或下载包含代码的文本文件。请将这些代码保存在安全的地方。如果您失去对身份验证应用程序的访问权限，则需要恢复代码。
++
+
+NOTE: 如果需要使用恢复代码登录，请在恢复代码提示期间按 UI 中显示的顺序使用它们。
+
++
+设置 MFA 后，每次登录时，Console 本地部署都会提示您从身份验证应用中输入一次性代码。
+
+
+
+
+
+[[regenerate-your-mfa-recovery-code]]
+== 重新生成您的 MFA 恢复代码
+
+您只能使用一次恢复代码。如果您丢失了，请创建一个新的。
+
+.步骤
+. 选择 Console 本地部署右上角的配置文件图标，以查看用户设置面板。
+. 选择*多因素身份验证*标题旁边的 image:icon-action.png["由三个并排的点组成的图标"]。
+. 选择*重新生成恢复代码*。
+. 复制生成的恢复代码并将其保存在安全的位置。
+
+
+
+
+[[delete-your-mfa-configuration]]
+== 删除您的 MFA 配置
+
+删除 MFA 会移除下次登录时的第二个验证步骤。若要再次使用 MFA，必须从用户设置中重新配置。
+
+
+NOTE: 如果无法访问身份验证应用或恢复代码，则需要联系组织管理员以重置 MFA 配置。
+
+.步骤
+. 选择 Console 本地部署右上角的配置文件图标，以查看用户设置面板。
+. 选择*多因素身份验证*标题旁边的 image:icon-action.png["由三个并排的点组成的图标"]。
+. 选择 *Delete*。
+
+
+
+
+[[contact-your-organization-administrator]]
+[[contact-admin]]
+== 请联系您的组织管理员
+
+如果您需要联系您的组织管理员，可以直接从 Console 向他们发送电子邮件。管理员管理组织内的用户帐户和权限。
+
+
+NOTE: 要使用*联系管理员*功能，您必须为浏览器配置默认电子邮件应用程序。
+
+.步骤
+. 选择 Console 本地部署右上角的配置文件图标，以查看用户设置面板。
+. 选择*Contact admins*以向您的组织管理员发送电子邮件。
+. 选择要使用的电子邮件应用程序。
+. 完成电子邮件并选择*发送*。
+
+
+
+
+[[configure-dark-mode-dark-theme]]
+== 配置深色模式（深色主题）
+
+您可以将 Console 本地部署设置为以深色模式显示。
+
+.步骤
+. 选择 Console 本地部署右上角的配置文件图标，以查看用户设置面板。
+. 移动*深色主题*滑块以启用它。
+

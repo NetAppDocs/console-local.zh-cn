@@ -1,0 +1,499 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-backup-rec-roles.html 
+keywords: backup and recovery roles, NetApp Backup and Recovery, backup admin, restore admin, clone admin, backup and recovery viewer, backup and recovery super admin, roles, permissions, rbac, access control, identity and access management, netapp console local 
+summary: 您可以将以下角色分配给用户，以便为他们提供对 Console 内 NetApp Backup and Recovery 的访问权限。Backup and Recovery 角色使您能够灵活地为用户分配特定于其在组织内需要完成的任务的角色。如何分配角色取决于您自己的业务和存储管理实践。 
+---
+= NetApp Backup and Recovery 在 NetApp Console 本地部署中的角色
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，您可以将以下角色分配给用户，以便为他们提供对 Console 内 NetApp Backup and Recovery 的访问权限。Backup and Recovery 角色使您能够灵活地为用户分配特定于其在组织内需要完成的任务的角色。如何分配角色取决于您自己的业务和存储管理实践。
+
+该服务使用以下特定于 NetApp Backup and Recovery 的角色。
+
+* *备份和恢复超级管理员*：在 NetApp Backup and Recovery 中执行任何操作。
+* *Backup and recovery backup admin*：在 NetApp Backup and Recovery 中执行备份到本地快照、复制到辅助存储以及备份到对象存储操作。
+* *备份和恢复还原管理*：使用 NetApp Backup and Recovery 还原工作负载。
+* *备份和恢复克隆管理*：使用 NetApp Backup and Recovery 克隆应用程序和数据。
+* *备份和恢复查看器*：查看 NetApp Backup and Recovery 中的信息，但不执行任何操作。
+
+
+有关所有 NetApp Console 访问角色的详细信息，请参见 https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Console 设置和管理文档"^]。
+
+
+
+[[roles-used-for-common-actions]]
+== 用于常见操作的角色
+
+下表显示了每个 NetApp Backup and Recovery 角色可以为所有工作负载执行的操作。
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| 功能和操作 | 备份和恢复超级管理员 | 备份和恢复备份管理员 | 备份和恢复还原管理员 | 备份和恢复克隆管理 | 备份和恢复查看器 
+
+
+| 添加、编辑或删除主机 | 是 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 安装插件 | 是 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 添加凭据（主机、实例、vCenter） | 是 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 查看控制面板和所有选项卡 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+| 开始免费试用 | 是 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 启动工作负载发现 | 否 | 是  a| 
+是
+ a| 
+是
+ a| 
+否
+
+
+
+| 查看许可证信息 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+| 激活许可证 | 是 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 查看主机 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+6+| *计划*： 
+
+
+| 激活计划 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+否
+
+
+
+| 暂停计划 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+否
+
+
+
+6+| *策略和保护*： 
+
+
+| 查看保护计划 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+| 创建、修改或删除保护计划 | 是 | 是  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 还原工作负载 | 是 | 否  a| 
+是
+ a| 
+否
+ a| 
+否
+
+
+
+| 创建、拆分或删除克隆 | 是 | 否  a| 
+否
+ a| 
+是
+ a| 
+否
+
+
+
+| 创建、修改或删除策略 | 是 | 是  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *报告*： 
+
+
+| 查看报告 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+| 创建报告 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+否
+
+
+
+| 删除报告 | 是 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *从 SnapCenter 导入并管理主机*： 
+
+
+| 查看导入的 SnapCenter 数据 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+| 从 SnapCenter 导入数据 | 是 | 是  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 管理（迁移）主机 | 是 | 是  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *配置设置*： 
+
+
+| 配置日志目录 | 是 | 是  a| 
+是
+ a| 
+否
+ a| 
+否
+
+
+
+| 关联或删除实例凭据 | 是 | 是  a| 
+是
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *Buckets*： 
+
+
+| 查看存储桶 | 是 | 是  a| 
+是
+ a| 
+是
+ a| 
+是
+
+
+
+| 创建、编辑或删除存储桶 | 是 | 是  a| 
+否
+ a| 
+否
+ a| 
+否
+
+|===
+
+
+[[roles-used-for-workload-specific-actions]]
+== 用于特定于工作负载的操作的角色
+
+下表显示了每个 NetApp Backup and Recovery 角色可以对特定工作负载执行的操作。
+
+
+
+[[kubernetes-workloads]]
+=== Kubernetes 工作负载
+
+下表显示了每个 NetApp Backup and Recovery 角色可以为特定于 Kubernetes 工作负载的操作执行的操作。
+
+[cols="20,20,15,15a,15a"]
+|===
+| 功能和操作 | 备份和恢复超级管理员 | 备份和恢复备份管理员 | 备份和恢复还原管理员 | 备份和恢复查看器 
+
+
+| 查看群集、命名空间、存储类和 API 资源 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 添加新的 Kubernetes 集群 | 是 | 是  a| 
+否
+ a| 
+否
+
+
+
+| 更新集群配置 | 是 | 否  a| 
+否
+ a| 
+否
+
+
+
+| 从管理中删除集群 | 是 | 否  a| 
+否
+ a| 
+否
+
+
+
+| 查看应用程序 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 创建和定义新的应用程序 | 是 | 是  a| 
+否
+ a| 
+否
+
+
+
+| 更新应用程序配置 | 是 | 是  a| 
+否
+ a| 
+否
+
+
+
+| 从管理中删除应用程序 | 是 | 是  a| 
+否
+ a| 
+否
+
+
+
+| 查看受保护的资源和备份状态 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 使用策略创建备份并保护应用程序 | 是 | 是  a| 
+否
+ a| 
+否
+
+
+
+| 取消对应用程序的保护并删除备份 | 是 | 是  a| 
+否
+ a| 
+否
+
+
+
+| 查看恢复点和资源查看器结果 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 从恢复点还原应用程序 | 是 | 否  a| 
+是
+ a| 
+否
+
+
+
+| 查看 Kubernetes 备份策略 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 创建 Kubernetes 备份策略 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 更新备份策略 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 删除备份策略 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 查看执行挂钩和挂钩源 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 创建执行挂钩和挂钩源 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 更新执行挂钩和挂钩源 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 删除执行挂钩和挂钩源 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 查看执行挂钩模板 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 创建执行挂钩模板 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 更新执行挂钩模板 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 删除执行挂钩模板 | 是 | 是  a| 
+是
+ a| 
+否
+
+
+
+| 查看工作负载摘要和分析仪表板 | 是 | 是  a| 
+是
+ a| 
+是
+
+
+
+| 查看 StorageGRID 桶和存储目标 | 是 | 是  a| 
+是
+ a| 
+是
+
+|===

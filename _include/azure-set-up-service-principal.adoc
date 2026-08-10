@@ -1,0 +1,138 @@
+= 
+:allow-uri-read: 
+
+
+. 确保您在 Azure 中拥有创建 Active Directory 应用程序并将应用程序分配给角色的权限。
++
+有关详细信息，请参阅 https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/["Microsoft Azure 文档：必需的权限"^]
+
+. 从 Azure 门户打开 *Microsoft Entra ID* 服务。
++
+image:screenshot_azure_ad.png["显示 Microsoft Azure 中的 Active Directory 服务。"]
+
+. 在菜单中，选择 *App registrations*。
+. 选择*New registration*。
+. 指定有关应用程序的详细信息：
++
+** *名称*：输入应用程序的名称。
+** *帐户类型*：选择帐户类型（任何帐户类型都可以与 NetApp Console 配合使用）。
+** *重定向 URI*：您可以将此字段留空。
+
+
+. 选择*注册*。
++
+您已创建 Active Directory 应用程序和服务主体。
+
+
+
+. 创建自定义角色：
++
+请注意，可以使用 Azure 门户、Azure PowerShell、Azure CLI 或 REST API 创建 Azure 自定义角色。以下步骤演示如何使用 Azure CLI 创建角色。如果您希望使用其他方法，请参阅 https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles#steps-to-create-a-custom-role["Azure 文档"^]
+
++
+.. 复制 link:reference-permissions-azure.html["Console 代理的自定义角色权限"] 的内容并将其保存在 JSON 文件中。
+.. 通过将 Azure 订阅 ID 添加到可分配范围来修改 JSON 文件。
++
+您应为用户将从中创建 Cloud Volumes ONTAP 系统的每个 Azure 订阅添加 ID。
+
++
+*示例*
+
++
+[source, json]
+----
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+----
+.. 使用 JSON 文件在 Azure 中创建自定义角色。
++
+以下步骤介绍了如何在 Azure Cloud Shell 中使用 Bash 创建角色。
+
++
+*** 启动 https://docs.microsoft.com/en-us/azure/cloud-shell/overview["Azure Cloud Shell"^]并选择 Bash 环境。
+*** 上传 JSON 文件。
++
+image:screenshot_azure_shell_upload.png["Azure Cloud Shell 的屏幕截图，您可以在其中选择上传文件的选项。"]
+
+*** 使用 Azure CLI 创建自定义角色：
++
+[source, azurecli]
+----
+az role definition create --role-definition Connector_Policy.json
+----
++
+现在应该有一个名为 Console Operator 的自定义角色，可将其分配给 Console 代理虚拟机。
+
+
+
+
+
+. 将应用程序分配给角色：
++
+.. 在 Azure 门户中，打开*订阅*服务。
+.. 选择订阅。
+.. 选择 *Access control (IAM) > Add > Add role assignment*。
+.. 在*角色*选项卡中，选择*Console Operator*角色，然后选择*下一步*。
+.. 在*成员*选项卡中，完成以下步骤：
++
+*** 保持*用户、组或服务主体*处于选中状态。
+*** 选择*选择成员*。
++
+image:screenshot-azure-service-principal-role.png["向应用程序添加角色时显示\"成员\"页面的 Azure 门户的屏幕截图。"]
+
+*** 搜索应用程序的名称。
++
+下面是一个示例：
+
++
+image:screenshot_azure_service_principal_role.png["Azure 门户的屏幕截图，其中显示了 Azure 门户中的添加角色分配表单。"]
+
+*** 选择应用程序并选择 *Select*。
+*** 选择 *Next*。
+
+
+.. 选择 *Review + assign*。
++
+服务主体现在具有部署 Console 代理所需的 Azure 权限。
+
++
+如果要从多个 Azure 订阅部署 Cloud Volumes ONTAP，则必须将服务主体绑定到每个订阅。在 NetApp Console 中，您可以选择部署 Cloud Volumes ONTAP 时要使用的订阅。
+
+
+
+
+
+. 在 *Microsoft Entra ID* 服务中，选择 *App registrations*，然后选择应用程序。
+. 选择 *API permissions > Add a permission*。
+. 在 *Microsoft APIs* 下，选择 *Azure Service Management*。
++
+image:screenshot_azure_service_mgmt_apis.gif["显示 Azure Service Management API 权限的 Azure 门户的屏幕截图。"]
+
+. 选择"以组织用户身份访问 Azure 服务管理"，然后选择"添加权限"。
++
+image:screenshot_azure_service_mgmt_apis_add.gif["显示添加 Azure Service Management APIs 的 Azure 门户的屏幕截图。"]
+
+
+
+. 在 *Microsoft Entra ID* 服务中，选择 *App registrations*，然后选择应用程序。
+. 复制 *Application (client) ID* 和 *Directory (tenant) ID*。
++
+image:screenshot_azure_app_ids.gif["显示 Microsoft Entra IDy 中应用程序的应用程序（客户端）ID 和目录（租户）ID 的屏幕截图。"]
+
++
+将 Azure 帐户添加到 Console 时，需要提供应用程序（客户端）ID 和应用程序的目录（租户）ID。Console 使用这些 ID 以编程方式登录。
+
+
+
+. 打开 *Microsoft Entra ID* 服务。
+. 选择*应用程序注册*并选择您的应用程序。
+. 选择 *Certificates & secrets > New client secret*。
+. 提供有关密钥和持续时间的说明。
+. 选择 *Add*。
+. 复制客户端密钥的值。
++
+image:screenshot_azure_client_secret.gif["显示 Microsoft Entra 服务主体的客户端密钥的 Azure 门户的屏幕截图。"]
+
+

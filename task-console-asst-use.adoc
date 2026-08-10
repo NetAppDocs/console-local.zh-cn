@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: task-console-asst-use.html 
+keywords: console assistant, ai assistant, ask questions, provision storage, natural language, agentic, netapp console local 
+summary: 使用控制台助手在 NetApp Console 本地部署中配置存储、调查警报并获取自然语言答案。 
+---
+= 在 NetApp Console 本地部署中使用 NetApp Console 助理
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用 NetApp Console 本地部署中的 NetApp Console 助手来管理存储并通过自然语言获取答案。用简单的语言描述您的需求，NetApp Console 本地部署将在您的存储策略和基于角色的访问权限范围内执行相应操作。
+
+
+NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理以启用 AI 功能的文档。通过此预览产品，NetApp 保留在正式发布之前修改产品详情、内容和时间表的权利。
+
+助理的操作受您分配的基于角色的访问权限的限制。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+
+
+[[see-what-you-can-do-with-the-console-assistant]]
+== 了解您可以使用控制台助理执行的操作
+
+控制台助手是 NetApp Console 本地部署的自然语言界面。提出问题或描述任务，它会返回答案或建议的操作。该助手提供以下功能：
+
+* *调配存储* 用通俗易懂的语言描述工作负载。Assistant 会推荐一个存储类和位置，然后在您确认详细信息后创建卷或 LUN。例如，要求其创建具有特定容量的 CIFS 卷。Assistant 标识集群和存储虚拟机 (SVM)，填写所需参数，并预配存储。
+* *搜索并获取指导* 询问有关存储环境的问题，查找 Console 本地部署功能，并从 NetApp 文档和当前机群状态中获取上下文答案。
+* *Investigate alerts* 要求助理查看活动警报。它会分析问题并提出修复建议，或者在您确认的情况下执行补救措施。
+
+
+助理仅向管理员在 Console 本地部署中配置的 LLM 端点发送请求。它会在执行存储更改操作之前请求确认，所有操作均遵循分配给您帐户的基于角色的访问控制。
+
+
+
+[[confirm-that-you-can-use-the-console-assistant]]
+== 确认您可以使用 Console 助手
+
+* 组织管理员或超级管理员必须通过将大型语言模型 (LLM) 连接到 Console 本地部署来启用 Console 助理。如果您在仪表板上没有看到 *Console 助理* 按钮，请让您的管理员启用它。有关详细信息，请参见 link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"]。
+* 确保您具有希望助理执行的操作所需的基于角色的访问控制。
+
+
+
+
+[[ask-the-console-assistant-a-question-or-request-an-action]]
+== 向 Console 助理提问或请求操作
+
+打开 Console 助理，选择访问模式，然后输入描述您的请求的提示。
+
+.步骤
+. 从 NetApp Console 本地部署仪表板中，选择 *Console assistant* 按钮。
+. 选择访问模式：
++
+** 选择*只读*即可提出问题并获得指导，无需进行更改。
+** 选择*Read/write*以允许助手对您的存储基础设施进行操作。
+
+
+. 输入描述您的问题或任务的提示，然后选择*Send*。
++
+例如： `Create a 10GiB volume for home directories named home, and share it with Everyone set to FULL_CONTROL.`
+
+. 请查看该助理的回复：
++
+** 对于问题，助手会返回一个答案，您可以根据该答案采取行动。
+** 对于操作，助理显示建议的操作，询问缺少的详细信息（如权限级别），然后在继续之前要求确认。
+
+
+. 确认操作。对于异步操作，例如卷创建，助手创建作业以完成请求。
+. 要查看请求，请咨询助手。例如，输入 `Let me know when the job completes`，助手将返回当前状态。
+

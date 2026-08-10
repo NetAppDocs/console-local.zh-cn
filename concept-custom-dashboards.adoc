@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: concept-custom-dashboards.html 
+keywords: dashboards, predefined dashboards, custom dashboards, cards, card templates, metrics, KPI, fleet health, performance monitoring, capacity monitoring, storage visibility, netapp console local, monitoring 
+summary: 了解预定义的主页仪表板和自定义仪表板如何在 NetApp Console 本地部署中协同工作。 
+---
+= 了解 NetApp Console 本地部署中的自定义仪表板
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中使用自定义仪表板，为特定团队、机群、工作负载和运营目标创建重点监控视图。自定义仪表板通过为广泛、始终可用的监控添加有针对性的可见性，从而对主页仪表板进行补充。
+
+
+
+[[how-dashboard-types-work-together]]
+== 控制面板类型如何协同工作
+
+主页控制面板:: 用于容量、警报、性能容量、许可证和数据保护状态的即用型监控窗格。视图已预配置并自动更新。link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]。
+自定义信息板:: 根据预定义卡片生成的特定角色监控视图，包括可选范围、指标、目标资源和时间窗口。
+
+
+同时使用两者：* 从主页开始进行每日基线监控。* 使用自定义仪表板按团队、机群、工作负载或运营问题进行重点调查。
+
+一次可以将一个自定义控制面板添加到主页。
+
+
+
+[[understand-custom-dashboards]]
+== 了解自定义信息板
+
+自定义仪表板是您在网格上排列的已保存卡片集合。每张卡片都基于预定义的卡片模板，其中包含指标和图表类型。添加卡片时，需要配置作用域、目标对象、聚合和时间窗口。
+
+自定义控制面板和卡片仅供您使用。每张卡片仅显示您有权查看的存储资源的数据。
+
+您可以从主页中删除自定义控制面板，并在监控优先级发生变化时添加其他控制面板。
+
+
+
+[[monitor-what-matters]]
+== 监控重要事项
+
+卡片模板按指标类型组织，因此您可以将控制面板的重点放在特定的运营区域。例如，使用容量卡观察增长速度超过预期的卷，或使用警报卡跟踪繁忙集群上的重复故障：
+
+性能:: 整个集群、系统、SVM、卷和 LUN 的延迟、IOPS、吞吐量、利用率和性能容量。
+容量:: 跨机群、系统、SVM、卷、LUN 和本地层的已用容量、可用容量、已用容量百分比和快照容量。
+运行状况:: 运行状况状态、降级或关键对象计数、故障磁盘、网络接口错误和热对象。
+警报:: 关键警报计数、按严重程度划分的警报、按受影响区域划分的警报、最近的警报以及一段时间内的警报趋势。
+
+
+有关预定义卡片和指标的完整目录，请参见 link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]。
+
+
+
+[[resource-types]]
+== 资源类型
+
+您可以将卡片范围扩展到 ONTAP 存储层次结构的任何级别：舰队、群集、系统（节点）、SVM、卷、LUN 和本地层（聚合）。可用的资源类型取决于您选择的卡片模板。
+
+
+
+[[plan-dashboard-views]]
+== 计划信息板视图
+
+围绕存储管理目标（如工作负载性能分类、容量规划、健康风险检测和警报优先级排序）组织自定义仪表板。
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:task-dashboard-get-started.html["开始在 NetApp Console 本地部署中使用仪表板"]
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]
+

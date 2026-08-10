@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task-analyzer-volume-throughput-investigate.html 
+keywords: throughput, IOPS, MB per second, read write, workload demand, QoS, resource utilization, workload analyzer, performance troubleshooting, netapp console local 
+summary: 使用 Workload Analyzer 调查卷的高吞吐量需求，以了解 IOPS 和每秒 MB 的模式并识别读写不平衡。 
+---
+= 调查 NetApp Console 本地部署中卷上的高吞吐量
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中使用 Workload Analyzer 检查卷随时间变化的 IOPS 和吞吐量需求。
+
+当卷的工作负载消耗的 IOPS 或吞吐量超过预期时，请确定是什么推动了需求。吞吐量分析部分显示 IOPS 和 MB/s，以及可选的读取、写入和其他细分，以便您可以确定哪种类型的 I/O 推动了高需求，以及该需求是否趋向于 QoS 限制。
+
+如果您从警报或卷清单中打开分析器，则已选择卷，您可以专注于时间范围和吞吐量图表。
+
+.步骤
+. 使用以下方法之一打开 Workload Analyzer：
++
+** 从 *Health* 菜单中，选择 *Workload Analyzer*，然后在 *Volume* 字段中搜索并选择要调查的卷。
+** 从 *Storage > Fleets > Inventory* 页面，导航到要分析的卷，然后从操作菜单中选择 *Analyze*。
+** 从 *Alerts > Overview* 页面中，为要调查的卷选择一个警报，然后从警报详细信息中选择 *Analyze*。
+
+
+. 设置*时间范围*以覆盖高需求时期，然后选择*分析*。
+. 滚动到*吞吐量分析*部分。
+. 打开 *View* 下拉菜单并选择 *Breakdown (RWO)*。
++
+对于 IOPS 和 MB/s，图表分为读取、写入和其他组件。这使您可以确定是读取密集型访问模式、写入密集型模式还是两者的组合在推动需求。
+
+. 使用组件选取器启用或禁用要检查的指标：
++
+** *Read IOPS* 和 *Write IOPS* — 按 I/O 方向的每秒操作数
+** *读取 MB/s* 和 *写入 MB/s* — 按 I/O 方向以 MB/s 表示的吞吐量
+** *其他 IOPS* 和 *其他 MB/s* — 元数据和其他非数据操作
+** *QoS IOPS Limit* 和 *QoS MB/s Limit* — 仅在卷使用 QoS 策略时显示的策略上限
+** *云吞吐量* — 向云写入和从云读取的 MB/s，仅针对通过 FabricPool 将容量分层到云的工作负载显示
+
+
+. 将鼠标悬停在图表中的峰值上，可查看该时间点每个组件的确切值和百分比明细。
++
+悬停工具提示还显示每个类别的平均 I/O 大小（吞吐量除以 IOPS），这可以指示工作负载是执行大型顺序 I/O 还是执行小型随机 I/O。
+
+. 启用 *Show Forecast* 以预测当前吞吐量趋势是否将达到 QoS IOPS 或 MB/s 限制。
++
+如果预测线接近 QoS 限制线，ONTAP 可能会很快限制工作负载。
+
+. 如果希望在不显示明细的情况下查看总需求，请打开*查看*下拉列表并选择*总计*。
++
+总计视图显示单个 IOPS 行和单个 MB/s 行，这对于快速了解总体需求摘要非常有用。
+
+
+
+.完成后
+使用您观察到的吞吐量模式来决定接下来要做什么：
+
+* 如果读取 IOPS 相对于写入 IOPS 非常高，请考虑预读设置或缓存是否可以减少卷上的负载。
+* 如果工作负载接近或已达到 QoS IOPS 或 MB/s 限制，请使用 QoS 限制线和相关指标定义来确认限制并决定是否需要调整限制。
+* 如果吞吐量高且延迟也升高，请检查*资源利用率*部分以确定底层节点或聚合是否处于争用状态。比较同期的吞吐量峰值、延迟峰值和资源利用率。
+* 如果分析器在需求增加的同时显示快速容量或快照增长，请查看容量和快照指标，以了解这种增长可能会如何影响卷。
+
+
+link:task-analyzer-volume-latency-investigate.html["调查卷上的高延迟"]。link:reference-workload-analyzer-metrics.html["了解 NetApp Console 本地部署中的 Workload Analyzer 指标"]。

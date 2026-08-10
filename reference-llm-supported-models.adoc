@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: reference-llm-supported-models.html 
+keywords: LLM, supported models, OpenAI, OpenAI-compatible, model selection, netapp console 
+summary: 查看可以在 NetApp Console 本地部署中使用的 LLM 提供程序类型和模型。 
+---
+= 在 NetApp Console 本地部署中支持的 LLM 提供程序和模型
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署支持 OpenAI、OpenAI 兼容和 Anthropic LLM 提供程序类型。您可以选择的模型取决于您配置的提供程序类型和端点。
+
+
+NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理以启用 AI 功能的文档。通过此预览产品，NetApp 保留在正式发布之前修改产品详情、内容和时间表的权利。
+
+选择与您的性能、成本和治理要求相匹配的型号。
+
+
+
+[[see-how-provider-type-affects-model-availability]]
+== 了解提供程序类型如何影响模型可用性
+
+您选择的提供程序类型决定了哪些模型显示在 Console 本地部署模型列表中：
+
+* *OpenAI* — 提供直接 OpenAI 集成的模型。
+* *OpenAI-compatible* — 提供企业兼容端点公开的模型。
+* *Anthropic* — 提供用于直接 Anthropic 集成的模型。
+
+
+根据端点配置、代理或网关行为以及组织策略，您看到的模型可能会有所不同。提供程序类型因连接的端点和端点公开的模型而不同，而非传输协议。
+
+
+
+[[supported-openai-models]]
+== 支持的 OpenAI 模型
+
+* GPT-5.4
+* GPT-5.5
+
+
+
+
+[[supported-anthropic-models]]
+== 支持的 Anthropic 模型
+
+* Claude Sonnet 4.6
+* Claude Opus 4.6、4.7 & 4.8
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"]。
+* link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]。
+

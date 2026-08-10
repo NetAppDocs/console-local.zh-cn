@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-resources.html 
+keywords: resource, hierarchy, association, access, resource permissions, resource hierarchy, iam, identity and access management 
+summary: 通过将用户添加到 NetApp Console 本地部署组织中的队列和文件夹来控制用户对资源的访问。在队列级别向用户授予访问权限。 
+---
+= 管理 NetApp Console 本地部署中的文件夹和队列中的资源
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+通过将资源与正确的文件夹或群组关联来管理 NetApp Console 本地部署中的资源访问，这些文件夹或群组控制哪些团队可以访问和管理它们。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+将资源放置在合适的团队可以管理的位置，在所有权发生变更时进行移动，并在不再需要时删除关联。
+
+_resource_ 是 Console 本地部署识别的实体，例如存储资源或备份和恢复工作负载。
+
+
+
+[[console-resource-types]]
+== 控制台资源类型
+
+控制台本地部署同时支持存储资源和备份与恢复工作负载。将任一资源类型与机群关联，以控制访问和管理。
+
+存储资源:: 存储资源是组织中最常见的资源类型。将存储系统添加到 Console 本地部署时，请将其与机群关联，以便相应的团队可以访问和管理它。例如，添加 ONTAP 集群后，将其与 `Production-US-East`机群关联。
+备份和恢复工作负载:: 备份和恢复工作负载也被视为资源。您可以通过将工作负载与机群关联来分配成员访问备份和恢复工作负载的权限。例如，通过将备份和恢复工作负载与成员可以访问的机群关联并授予相应的备份和恢复角色，为成员分配对该工作负载的访问权限。
+
+
+
+
+[[view-the-resources-in-your-organization]]
+== 查看组织中的资源
+
+查看组织中的资源以查找特定资源，并查看其关联的队列或文件夹。如果您尚未创建任何文件夹或队列，则所有资源都与组织下的默认队列直接关联。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择*资源*。
+. 选择*高级搜索和过滤*。
+. 使用可用选项查找资源：
++
+** *按资源名称搜索*：输入文本字符串并选择 *添加*。
+** *平台*：选择一个或多个平台，例如 Amazon Web Services。
+** *资源*：选择一个或多个资源，例如 Cloud Volumes ONTAP。
+** *组织、文件夹或队列*：选择整个组织、特定文件夹或特定队列。
+
+
+. 选择*搜索*。
+
+
+
+
+[[associate-a-resource-with-a-folder-or-fleet]]
+[[associate-resource]]
+== 将资源与文件夹或群组关联
+
+将资源与队列或文件夹关联，以便相应的团队可以对其进行管理。例如，添加 ONTAP 集群后，将其与 `Production-US-East`队列关联，以便该队列的区域存储管理员可以对其进行管理。
+
+
+NOTE: 具有组织管理员角色的用户可以将资源添加到文件夹，以将队列关联任务委托给该文件夹的文件夹或队列管理员。link:task-iam-manage-folders-fleets.html#associate-resource-folder["将资源与文件夹关联"]。
+
+.步骤
+. 从*资源*页面，导航到表中的资源，选择 image:icon-action.png["由三个并排的点组成的图标"] 然后选择*关联到文件夹或群组*。
+. 选择一个文件夹或队列，然后选择 *Accept*。
+. 要关联其他文件夹或队列，请选择 *Add folder or fleet*，然后选择相应的文件夹或队列。
++
+请注意，您只能从具有管理员权限的文件夹和队列中进行选择。
+
+. 选择*关联资源*。
++
+** 如果将资源与队列关联，则拥有这些队列权限的成员现在可以从 Console 访问资源。
+** 如果您将资源与文件夹关联，_Folder or fleet admin_ 现在可以访问该资源，并将其与文件夹中的舰队关联。link:task-iam-manage-folders-fleets.html#associate-resource-folder["将资源与文件夹关联"].
+
+
+
+
+
+
+[[view-the-folders-and-fleets-associated-with-a-resource]]
+[[view-folders-and-fleets]]
+== 查看与资源关联的文件夹和群组
+
+验证资源与哪些队列或文件夹关联。
+
+
+NOTE: 要查看哪些成员具有对资源的访问权限，请查看分配给关联文件夹或舰队的成员。link:task-iam-users-fleets-assign.html["管理机群访问分配"].
+
+.步骤
+. 从*资源*页面，导航到表中的资源，选择 image:icon-action.png["由三个并排的点组成的图标"]，然后选择*查看详细信息*。
+
+
+以下示例显示了与一个队列关联的资源。
+
+image:screenshot-iam-resource-details.png["资源详细信息页面的屏幕截图，其中显示了与直接位于组织下方的队列相关联的资源。"]
+
+
+NOTE: 要查看哪些成员有权访问资源，请查看关联的文件夹或舰队。
+
+link:task-iam-users-fleets-assign.html["管理机群访问分配"]。link:task-iam-manage-roles.html["管理成员访问权限"]。
+
+
+
+[[remove-a-resource-from-a-folder-or-fleet]]
+[[remove-resource]]
+== 从文件夹或队列中删除资源
+
+删除资源与文件夹或机群的关联，以防止成员在该处管理该资源。
+
+
+NOTE: 要从整个组织中删除存储系统，请转到*系统*页面并删除系统。
+
+.步骤
+. 从*资源*页面，导航到表中的资源，选择 image:icon-action.png["由三个并排的点组成的图标"]，然后选择*查看详细信息*。
+. 要从文件夹或队列中删除资源，请选择文件夹或队列旁边的 image:icon-delete.png["垃圾桶的图标"]。
+. 选择*删除*以删除关联。
+
+
+
+
+[[move-a-resource-between-fleets]]
+== 在机群之间移动资源
+
+通过删除资源与当前队列的关联，然后将其与目标队列关联，从而将资源从一个队列移动到另一个队列。
+
+
+NOTE: 关联更改后，对资源的访问权限立即更改。如果可能，请在一个维护窗口内完成这两个步骤。
+
+.步骤
+. 从*资源*页面，导航到表中的资源，选择 image:icon-action.png["由三个并排的点组成的图标"]，然后选择*查看详细信息*。
+. 选择当前队列旁边的 image:icon-delete.png["垃圾桶的图标"]，然后选择*删除*。
+. 选择*添加文件夹或 fleet*。
+. 选择目标队列并选择 *Accept*。
+. 选择*关联资源*。
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:concept-identity-and-access-management.html["了解 NetApp Console 中的身份和访问权限"]
+* link:task-iam-fleet-mgmt-get-started.html["开始在 NetApp Console 中使用身份和访问权限"]
+* link:task-iam-users-fleets-assign.html["移动资源后管理队列访问分配"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["了解用于身份和访问的 API"^]
+

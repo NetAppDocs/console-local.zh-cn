@@ -1,0 +1,10 @@
+= 介绍 NetApp Console 本地部署
+:allow-uri-read: 
+
+
+
+
+[[introducing-netapp-console-local-deployment]]
+=== 介绍 NetApp Console 本地部署
+
+https://docs.netapp.com/us-en/console-local/netapp-console-local.html["了解 NetApp Console 本地部署"]。

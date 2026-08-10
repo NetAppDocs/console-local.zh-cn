@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: faq-netapp-console-local.html 
+keywords: faq, frequently asked questions, frequently asked questions about netapp console local, netapp console local, storage classes, storage class policies, storage fleets, folders, rbac, role inheritance, active directory, mfa, workload analyzer, alerts, custom dashboards, llm, ai-assisted management, backup and recovery, audit, ontap 
+summary: 有关 NetApp Console 本地部署的常见问题，包括部署、存储类、集群、RBAC、监控、AI 辅助管理和数据保护。 
+---
+= NetApp Console 本地部署常见问题
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+此常见问题解答可解答有关 NetApp Console 本地部署的常见问题。它侧重于部署、设置和管理 Console 本地部署时有用的概念、先决条件和系统行为。
+
+
+
+[[get-started-with-netapp-console-local-deployment]]
+== 开始使用 NetApp Console 本地部署
+
+.什么是 NetApp Console 本地部署，为什么要使用自托管选项？
+NetApp Console 本地部署是一个自托管部署选项，可在您自己的本地环境中运行 Console 控制平面。它可提供统一的存储管理和自动化——配置、策略实施、漂移检测和修复——同时将您的数据、元数据和管理流量完全保留在自己的基础架构中，因此您可以在不牺牲数据主权的情况下获得运营优势。link:concept-netapp-console-local.html["了解 NetApp Console 本地部署"]。
+
+.如何部署 NetApp Console 本地部署？
+使用预配置的 OVA 映像将 NetApp Console 本地部署部署为 VMware vCenter 环境中的虚拟应用装置。部署后，发现您的存储并添加成员和分配角色以开始使用。link:concept-deploy-netapp-console-local.html["了解部署选项"]。
+
+.是否需要许可证或订阅才能使用 NetApp Console 本地部署？
+否。您无需许可证或订阅即可开始使用 NetApp Console 本地部署。但是，从 Console 本地部署可访问的某些 NetApp 数据服务（例如 NetApp Backup and Recovery）已获得许可或基于订阅，可能会产生相关成本。
+
+.NetApp Console 本地部署中存储管理的建议设置顺序是什么？
+典型的工作流程是：将存储系统发现到正确的队列中，定义存储类策略，从这些策略创建存储类，将类与适用的队列相关联，使用类配置卷或 LUN，然后监控偏差并进行修复以保持工作负载的一致性。link:concept-manage-storage.html["了解有关管理存储的信息"]。
+
+
+
+[[storage-classes-and-policies]]
+== 存储类和策略
+
+.什么是存储类？为什么要使用存储类？
+存储类是一种可重用的模板，它在从存储类策略组装的单个命名对象中捕获组织的存储标准（性能、容量、安全性和数据保护）。当您使用存储类进行配置时，Console 本地部署会自动实施这些标准，而无需针对每个工作负载做出配置决策，之后它会监控该类的工作负载，并在其偏离合规状态时向您发出警报。link:concept-storage-classes.html["了解存储类"]。
+
+.什么是存储类策略，它们如何与存储类相关联？
+存储类策略是组合构建存储类的构建基块。每个策略都控制存储行为的一个维度，因此您可以独立定义策略，然后将它们组装到类中。这使您可以在多个类中重用相同的策略，或在一个地方更新策略，并将该更改应用于使用该策略的每个类。link:concept-storage-class-policies.html["了解存储类策略"]。
+
+.我可以创建哪些类型的存储类策略？
+NetApp Console 本地部署包括四种类型的存储类策略：
+
+* *性能策略*：设置用于放置和漂移检测的预期 IOPS/TB、峰值 IOPS/TB、绝对最小 IOPS 和预期延迟目标。
+* *容量策略*：控制 NAS 的空间预留、自动增长、FabricPool 分层以及 FlexVol 或 FlexGroup 配置。
+* *安全策略*：设置加密、勒索软件保护和 FIPS 要求。
+* *数据保护策略*：设置每个间隔保留的快照数量，以实现一致的备份计划。
+
+
+link:concept-storage-class-policies.html["了解存储类策略"]。
+
+.我是否必须从头开始构建存储类和策略？
+否。Console 本地部署包括跨所有四种策略类型和预定义存储类的系统定义策略。您可以按原样使用它们，也可以将其复制为针对组织要求量身定制的自定义策略和类的起点。link:concept-storage-class-policies.html["了解存储类策略"]。
+
+.在创建存储类之前，我需要设置什么？
+在创建存储类之前，请确保：
+
+* 请至少发现一个 ONTAP 集群，以便 Console 本地部署在放置期间具有要评估的存储目标。
+* 具有组织管理员角色。
+* 创建用于捕获性能、容量和其他要求的存储类策略，因为类是由策略组合而成的。
+
+
+link:concept-storage-classes.html["了解存储类"]。
+
+.当工作负载偏离其存储类的合规性时会发生什么？
+配置后，Console 本地部署会根据其存储类持续评估每个工作负载。当工作负载因直接更改集群配置或性能下降而发生漂移时，Console 会立即标记违规行为并发出警报。您可以按照引导式修复步骤操作，或配置自动修复以解决常见的漂移情况。link:concept-storage-classes.html["了解存储类"]。
+
+
+
+[[storage-fleets-and-folders]]
+== 存储队列和文件夹
+
+.什么是存储机群？为什么要使用存储机群？
+存储队列将您共同管理的存储系统分组。您无需逐个集群配置策略或访问集群，只需在队列级别应用一次，队列中的每个集群即可按照相同的标准运行，从而减少重复工作并保持行为一致。link:concept-storage-fleets.html["了解存储队列"]。
+
+.文件夹和舰队有什么区别？
+文件夹将相关舰队分组（例如，按区域或业务部门），并且不能将存储系统直接关联，而舰队将您管理的存储系统分组在一起。文件夹是一种组织和访问委派工具，对于没有 IAM 权限的成员不可见——成员访问的是舰队，而不是文件夹。link:concept-folders-fleets-overview.html["了解文件夹和舰队"]。
+
+.将存储类与群组关联如何影响调配？
+当您将存储类与群组关联时，Console 本地部署会将该类的策略应用于群组内的所有配置。在群组中配置的工作负载会自动继承性能、容量和分层规则，而无需管理员选择或验证设置，从而使群组与类之间的关联成为跨集群实施一致标准的主要方式。link:concept-storage-fleets.html["了解存储队列"]。
+
+
+
+[[provisioning-storage]]
+== 调配存储
+
+.NetApp Console 本地部署支持哪些配置方法？
+NetApp Console 本地部署支持三个配置工作流，所有这些工作流均强制实施存储类，并受 RBAC 和审计日志管理：
+
+* *手动配置*：您可以选择目标系统和配置详细信息以进行显式控制。
+* *自动配置*：您提供工作负载输入和可选存储类，Console 将推荐最合适的放置方案。
+* *AI 辅助（代理）配置*：您用自然语言描述所需内容，Console 提出一个计划，供您在配置之前审核和批准。
+
+
+link:concept-manage-storage.html["了解有关管理存储的信息"]。
+
+
+
+[[monitoring-and-alerts]]
+== 监控和警报
+
+.如何监控存储的运行状况和性能？
+NetApp Console 本地部署提供全集群健康和性能仪表板，以发现需要关注的集群或卷，用于深入卷调查的工作负载分析器，可配置的警报和通知，以及引导或自动修复。link:concept-monitor-storage.html["了解有关存储监控的信息"]。
+
+.Workload Analyzer 的作用是什么？
+Workload Analyzer 在同一窗口中显示单个卷随时间变化的行为，关联延迟、吞吐量、IOPS、资源利用率、容量和配置更改，以便您可以查明根本原因。它可以帮助您确定存储或其他层（如网络）是否是应用程序问题的根源，您可以直接从分析器中执行 Fix-It 建议。link:concept-workload-analyzer.html["了解 Workload Analyzer"]。
+
+.为什么即使性能图表看起来正常，卷也可能具有高延迟？
+可用容量不足可能是原因。当 ONTAP 系统使用率超过 85% 时，高利用率本身就会导致性能问题，因此 Workload Analyzer 的容量部分可以解释性能图表本身无法说明的延迟。link:concept-workload-analyzer.html["了解 Workload Analyzer"]。
+
+.NetApp Console 本地部署中的警报来自哪里？它们是如何分类的？
+警报源自已发现集群上的 ONTAP 事件管理系统 (EMS) 以及 NetApp Backup and Recovery 操作，并整合到单个组织范围的视图中。每个警报都标识受影响的系统、严重程度（如严重、警告或信息）和影响区域（容量、连接、数据保护、性能或安全性）。Console 仅显示您权限允许的机群的警报。link:concept-console-alerts.html["了解警报"]。
+
+.警报通知规则如何决定谁会收到通知？
+通知规则会匹配有关服务、严重性、影响区域和目标系统的警报，然后通过电子邮件或 Webhook 向具有指定访问角色的用户发送通知。请注意，规则适用于特定系统，而不是机群，并且可以在计划的维护窗口期间静音。Console 包括默认规则，并允许您创建自定义规则。link:concept-console-alerts.html["了解警报"]。
+
+.我可以使用自定义控制面板做些什么？
+自定义仪表板让您可以从预定义的模板组装卡片，选择范围、指标、聚合、目标资源和时间窗口，从而构建个性化的监控视图。模板涵盖性能、容量、运行状况和警报，您可以将卡片范围扩展到 ONTAP 层次结构的任何级别。每个仪表板和卡片均为您专有，仅显示您有权查看的资源的数据。link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]。
+
+
+
+[[identity-and-access]]
+== 身份和访问
+
+.基于角色的访问控制在 NetApp Console 本地部署中如何工作？
+RBAC 允许您为组织、文件夹或舰队级别的成员分配预定义的最低权限角色，相同的角色会根据分配范围授予不同的有效访问权限。这样，您可以向中央管理员授予广泛的访问权限，同时将区域或团队管理员限制为其所管理的舰队。link:concept-iam-rbac.html["了解基于角色的访问控制"]。
+
+.角色继承是如何工作的，我可以在较低范围内覆盖它吗？
+在组织或文件夹级别分配的角色由其下方的所有子文件夹、舰队和资源继承，因此您的文件夹和舰队设计决定了分配的适用范围。您不能在较低的作用域覆盖继承的访问权限——如需更改，请在最初授予权限的较高作用域修改分配。link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署中的角色继承"]。
+
+.有哪些类别的预定义角色可用？
+NetApp Console 本地部署将预定义角色分为三类：
+
+* *平台角色*：Console 管理权限，例如组织管理员、文件夹或机群管理员、Federation 管理员以及超级管理员或超级查看器。
+* *应用程序角色*：存储和监控权限，例如存储管理员、存储查看器和操作支持分析师。
+* *数据服务角色*：特定数据服务的权限，例如 Backup and Recovery 角色以及 Classification 查看器。
+
+
+link:reference-iam-predefined-roles.html["了解预定义的访问角色"]。
+
+.为什么要将 NetApp Console 本地部署与 Active Directory 集成？
+与 Active Directory 集成后，用户可以使用其现有的企业凭据登录，无需单独的 Console 密码，管理员也可以在分配访问权限时查找目录用户。授权保持独立：Console 仍使用自己的角色来控制每个成员可以执行的操作link:concept-secure-access.html["了解安全访问"]。
+
+.多重身份验证如何为 Console 用户工作？
+本地用户可以启用多因素身份验证 (MFA)，以添加另一个验证步骤，从而降低凭据泄露时未经授权访问的风险。通过目录身份验证的用户无法通过 Console 本地部署启用 MFA。link:concept-secure-access.html["了解安全访问"].
+
+
+
+[[ai-assisted-management]]
+== AI 辅助管理
+
+.NetApp Console 本地部署支持哪些 LLM 提供商进行 AI 辅助管理？
+您可以为以下受支持的提供程序类型提供自己的订阅或服务访问权限：OpenAI 或 OpenAI 兼容。然后在配置过程中提供有效的 API 密钥。您还需要部署具有集群访问权限的 Console、到已配置端点的出站网络连接、组织管理员角色以及用于指导配置的存储类。link:concept-llm-integration.html["了解 LLM 集成"]。
+
+.启用 LLM 集成是否会将我的存储数据或查询发送给第三方服务？
+控制台仅将提示和相关上下文发送到您配置的 LLM 端点。如果该端点是第三方云服务，则数据将通过 HTTPS 发送到该服务。如果该端点是与 OpenAI 兼容的内部服务，则数据将保留在该集成的内部路径上。所有 AI 操作也遵循您的 RBAC，敏感操作需要您的确认。link:concept-llm-integration.html["了解 LLM 集成"]。
+
+.Console 助理可以做什么，以及如何控制它是否会更改我的存储？
+连接 LLM 后，Console 助手允许用户使用自然语言配置存储、调查警报并获取答案。用户选择一种访问模式：在*只读*模式下，助手应答并提供指导而不进行任何更改；而在*读/写*模式下，它可以对存储基础架构执行操作，但会显示详细信息，供用户在每次更改前查看和确认。link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"].
+
+
+
+[[data-protection-and-auditing]]
+== 数据保护和审计
+
+.NetApp Console 本地部署提供哪些数据保护功能？
+NetApp Console 本地部署使您可以访问 NetApp Backup and Recovery，以便从同一界面备份和恢复数据，从而保持治理的一致性，并减少团队操作的工具数量。link:concept-data-services.html["了解数据服务"].
+
+.NetApp Console 本地部署如何支持审核和日志保留？
+每项管理操作都会生成一个审核记录，您可以从"审核"页面查看和筛选该记录。您可以通过 webhook 将审核日志导出到您自己的 syslog 服务器，以便这些日志到达您的集中式监控或 SIEM 工具，从而实现更长时间的保留和分析。由于 Console 在您的环境中运行，日志数据永远不会离开您的基础架构。link:task-audit-console-activity.html["审核 NetApp Console 本地部署活动"].

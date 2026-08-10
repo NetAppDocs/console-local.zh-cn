@@ -1,0 +1,13 @@
+= 
+:allow-uri-read: 
+
+
+使用基于 Web 的 NetApp Console 时从计算机联系的端点::
++
+--
+从 Web 浏览器访问 Console 的计算机必须能够连接多个端点。您需要使用 Console 设置 Console 代理，并用于 Console 的日常使用。
+
+link:reference-networking-saas-console.html["为 NetApp 控制台准备网络"]。
+
+--
+

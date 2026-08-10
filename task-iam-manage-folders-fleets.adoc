@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: task-iam-manage-folders-fleets.html 
+keywords: folders, fleets, resource hierarchy, create folders, create fleets, iam, identity and access management, fleet id, initial iam setup, fleet hierarchy design, folder hierarchy configuration, rbac setup, tenancy setup, organizational onboarding, team structure alignment, delegated administration model, access governance planning, operational readiness 
+summary: 添加文件夹和工作队以匹配您的业务结构。创建文件夹和工作队后，您可以将资源与它们关联，并管理成员对这些工作队的访问权限。 
+---
+= 将文件夹和机群添加到 NetApp Console 本地部署组织
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+创建文件夹和队列以匹配您的业务结构，控制访问权限，并在 NetApp Console 本地部署中组织资源。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+NetApp Console 本地部署在您创建组织时会创建一个默认群组。您可以添加更多群组并将其与文件夹分组。link:concept-identity-and-access-management.html["了解 NetApp Console 中的资源层次结构"]。
+
+
+
+[[using-folders-and-fleets-to-organize-resources]]
+== 使用文件夹和队列组织资源
+
+文件夹和 fleet 是您用来将组织塑造成与团队实际工作方式相匹配的两个构建模块。例如，每个区域一个文件夹，每个区域内都有一个生产 fleet 和一个开发 fleet。
+
+* 文件夹对相关队列进行分组，并支持委派管理和角色继承。
+* 队列是您关联资源以进行管理以及向用户授予操作访问权限的地方。
+
+
+您可以先创建文件夹和 fleet，然后再添加资源和成员访问权限。这使您可以在 Console 本地部署中添加用户和资源之前规划资源层次结构。如果您的结构已定义，您可以在创建 fleet 时添加资源并分配访问权限。您可以随时更新 fleet。
+
+例如，将生产集群置于生产舰队中，将测试集群置于测试舰队中，并仅授予每个团队对其所属舰队的访问权限。
+
+
+
+[[folders]]
+=== 文件夹
+
+文件夹按业务结构（例如业务部门、地区或团队）组织机群。您可以嵌套文件夹以映射您的组织结构。
+
+在文件夹级别分配的角色由子文件夹和车队继承。您还可以使用文件夹将车队分配任务委派给该部分层次结构的文件夹或车队管理员。
+
+
+NOTE: 成员在队列中工作，而不是在文件夹中工作。仅与文件夹关联的资源在与队列关联之前，成员无法对其进行管理。
+
+例如，区域企业可以使用文件夹按业务部门和工作负载组织 ONTAP 存储。它可能会为北美创建顶级文件夹，为生产和开发创建子文件夹，并为托管 SAP、VMware 和备份卷的 ONTAP 集群创建机群。分配给北美文件夹的存储管理员将继承对所有子机群的访问权限，而应用程序团队只能访问他们管理的机群。
+
+
+
+[[fleets]]
+=== 车队
+
+将资源与队列关联，以便成员可以对其进行管理。队列可以直接存在于组织下或文件夹中。
+
+例如，一家医疗保健公司在独立的生产和开发集群中使用 ONTAP 存储。生产集群运行临床应用程序和病历数据库，而开发集群支持测试和验证。这种分离可以保护实时数据，实施更严格的生产访问控制，支持可审计性和最小权限控制，并允许开发团队在不影响面向患者的工作负载的情况下开展工作。
+
+用户在*系统*页面上的已分配队列之间导航，以管理与每个队列关联的资源。
+
+
+
+[[add-a-folder-or-fleet]]
+== 添加文件夹或队列
+
+当您需要为资源和成员访问权限设置新边界时，请添加一个舰队；当您想要对相关舰队进行分组并委派其管理时，请添加一个文件夹。例如，添加一个 `Production`文件夹，其中包含一个 `Production-US-East`舰队和一个 `Production-EU-West`舰队，然后仅为其舰队分配区域主管的文件夹或舰队管理员角色。
+
+您最多可以创建七个层次结构级别。
+
+您可以在创建队列或文件夹时添加资源并分配成员访问权限，也可以稍后执行此操作。
+
+.步骤
+. 选择 *Administration > Identity and access*。
+. 选择*组织*。
+. 在 *Organization* 页面中，选择 *Add folder or fleet*。
+. 选择 *Folder* 或 *Fleet*。
+. 在*名称和位置*中：输入名称并选择文件夹或队列的位置。
+
+
+[[associate-resource-folder]]
+. 可选：展开 *Resources* 部分，将资源与队列或文件夹关联。
++
+.. 选中要关联的资源旁边的复选框，然后选择 *Associate with the fleet*。如果您尚未将系统添加到 Console 本地部署，可以稍后执行此步骤。
++
+
+NOTE: 在将资源分配给队列之前，成员无法访问文件夹中的资源。
+
+
+
+. 可选：展开 *Access* 部分，将访问权限分配给成员。选择 *Add a member* 以分配访问权限和角色。默认情况下，创建队列的用户有权访问该队列。
++
+link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+. 选择 *Add*。
+
+
+
+
+[[rename-a-folder-or-fleet]]
+== 重命名文件夹或机群
+
+根据需要重命名文件夹或队列。重命名不会影响关联的资源或成员访问权限。
+
+.步骤
+. 在*组织*页面中，导航到表中的车队或文件夹，选择 image:icon-action.png["带三个点的图标"]，然后选择*编辑文件夹*或*编辑车队*。
+. 在*编辑*页面上，输入一个新名称并选择*应用*。
+
+
+
+
+[[delete-a-folder-or-fleet]]
+== 删除文件夹或舰队
+
+删除不再需要的文件夹和队列，例如在团队重组或队列完成后。
+
+在删除文件夹或机群之前，请完成以下检查：
+
+* 确认此文件夹或车队不包含资源。link:task-iam-manage-resources.html#remove-resource["了解如何删除资源关联"]。
+* 审查仍有权访问该文件夹或机群的成员。link:task-iam-users-fleets-assign.html["查看成员访问权限分配"].
+* 根据需要删除或更新成员访问权限。link:task-iam-users-fleets-assign.html["修改成员访问分配"]。
+* 如果要删除舰队，请先将资源转移到目标舰队。link:task-iam-manage-resources.html["了解如何在队列之间移动资源"]。
+
+
+.步骤
+. 在*组织*页面中，导航到表中的机群或文件夹，选择 image:icon-action.png["带三个点的图标"]，然后选择*删除*。
+. 确认要删除此文件夹或舰队。
+
+
+
+
+[[manage-fleets-and-folders-in-netapp-console-local-deployment]]
+== 在 NetApp Console 本地部署中管理机群和文件夹
+
+初始设置后，您可以执行以下操作：
+
+* *管理文件夹和队列的资源关联*：link:task-iam-manage-resources.html["了解如何将资源与队列和文件夹关联"]。
+* *查看或更新一个文件夹或车队的访问权限*：link:task-iam-users-fleets-assign.html["了解如何授予用户对队列的访问权限"]。
+* *跨多个文件夹和队列管理一个成员*：link:task-iam-manage-roles.html["了解如何管理成员访问权限"]。
+* *添加其他成员并分配启动权限*：link:task-iam-manage-members-permissions.html["了解如何管理成员和权限"]。
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:concept-identity-and-access-management.html["了解 NetApp Console 中的身份和访问权限"]
+* link:task-iam-fleet-mgmt-get-started.html["开始在 NetApp Console 中使用身份和访问权限"]
+* link:task-iam-users-fleets-assign.html["管理机群访问分配"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["了解身份和访问 API"^]
+

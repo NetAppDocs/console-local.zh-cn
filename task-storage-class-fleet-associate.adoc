@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: task-storage-class-fleet-associate.html 
+keywords: associate, storage class, fleet, assign, netapp console 
+summary: 将存储类与 NetApp Console 本地部署中的群组关联，以应用一致的存储策略。 
+---
+= 在 NetApp Console 本地部署中将存储类与机群关联
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将存储类与 NetApp Console 本地部署中的队列相关联，以实施特定于环境的标准，控制操作员可以使用的选项，并简化针对指定类的合规性检查。
+
+.必需的访问角色
+超级管理员、组织管理员、文件夹或舰队管理员或存储管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+
+
+[[associate-a-storage-class-with-a-fleet]]
+== 将存储类与群组相关联
+
+将存储类与机群相关联，以便在该机群内进行配置和持续合规性监控。
+
+.步骤
+. 打开要管理的车队。
+. 找到存储类的舰队配置区域。
+. 选择一个或多个要与舰队关联的存储类。
+. 选择 * 保存 *。
+
+
+.验证
+. 在机群中启动配置工作流，并确认存储类可供选择。
+

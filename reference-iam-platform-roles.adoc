@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-platform-roles.html 
+keywords: predefined roles, iam roles, Organization admin, Folder or fleet admin, Super admin, Federation admin, platform roles, role, iam, identity and access management, netapp console local 
+summary: 将平台角色分配给用户，以授予管理 NetApp Console 本地部署、分配角色、添加用户和管理联盟的权限。 
+---
+= NetApp Console 本地部署平台访问角色
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将平台角色分配给用户，以授予管理 NetApp Console 本地部署、分配角色、添加用户、创建车队和管理用户身份验证的权限。
+
+.大型跨国组织的组织角色示例
+XYZ Corporation 按区域（北美、欧洲和亚太地区）组织数据存储访问，通过集中监督提供区域控制。
+
+XYZ Corporation 的 Console 本地部署中的*组织管理员*为每个区域创建一个初始组织和单独的文件夹。每个区域的*文件夹或队列管理员*在该区域的文件夹中组织队列（以及相关资源）。
+
+具有 *Folder or fleet admin* 角色的区域管理员通过添加资源和用户来主动管理其文件夹。这些区域管理员还可以添加、删除或重命名其管理的文件夹和 fleet。*Organization admin* 继承任何新资源的权限，从而保持对整个组织存储使用情况的可见性。
+
+在同一组织内，一个用户被分配了 *Federation admin* 角色，以管理组织与其公司 IdP 的联合。此用户可以添加或删除联合组织，但不能管理组织内的用户或资源。*Organization admin* 为用户分配 *Federation viewer* 角色，以检查联合状态并查看联合组织。
+
+下表显示了每个 Console 本地部署平台角色可以执行的操作。
+
+
+
+[[organization-administration-roles]]
+[[organization-admin-roles]]
+== 组织管理角色
+
+[cols="2,1,1"]
+|===
+| 任务 | 组织管理员 | 文件夹或舰队管理员 
+
+
+| 在控制台本地部署中创建、修改或删除系统（添加或发现系统） | 是 | 是 
+
+
+| 创建文件夹和舰队，包括删除 | 是 | 否 
+
+
+| 重命名现有文件夹和机群 | 是 | 是 
+
+
+| 分配角色并添加用户 | 是 | 是 
+
+
+| 将资源与文件夹和队列关联 | 是 | 是 
+
+
+| 注册支持并通过 Console 提交案例 | 是 | 是 
+
+
+| 使用未与显式访问角色关联的数据服务 | 是 | 是 
+
+
+| 查看审核页面和通知 | 是 | 是 
+|===
+
+
+[[federation-roles]]
+== 联合身份验证角色
+
+[cols="2,1,1"]
+|===
+| 任务 | 联盟管理员 | 联盟查看器 
+
+
+| 创建和更新目录服务集成 | 是 | 否 
+
+
+| 查看联盟及其详细信息 | 是 | 是 
+|===
+
+
+[[super-admin-and-viewer-roles]]
+[[super-admin-roles]]
+== 超级管理员和查看者角色
+
+*超级管理员*角色提供管理 Console 功能、存储和数据服务的完全访问权限。此角色适合负责管理和治理的人员。相比之下，*超级查看器*角色提供只读访问权限，非常适合需要了解情况但不进行更改的审核员或利益相关者。
+
+组织应谨慎使用 *Super admin* 访问权限，以最大限度地降低安全风险，并遵循最低权限原则。大多数组织应分配只具有必要权限的细粒度角色，以降低风险并提高可审核性。
+
+.超级角色示例
+ABC Corporation 拥有一个五人的小团队，他们利用 NetApp Console 进行数据服务和存储管理。他们没有分配多个角色，而是将 *Super admin* 角色分配给两名资深团队成员，由其处理所有管理任务，包括用户管理和资源配置。其余三名团队成员被分配了 *Super viewer* 角色，使他们能够监控存储运行状况和数据服务状态，但无法修改设置。
+
+[cols="2,1"]
+|===
+| 角色 | 继承的角色 
+
+
+ a| 
+超级管理员
+ a| 
+* 组织管理员
+* 文件夹或舰队管理员
+* 备份和恢复超级管理员
+* 存储管理员
+
+
+
+
+ a| 
+超级查看器
+ a| 
+* 组织查看器
+* 备份查看器
+* 存储查看器
+
+
+|===

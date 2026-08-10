@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: concept-monitor-storage.html 
+keywords: monitor, health, performance, alerts, workload analyzer, remediation, netapp console local, console local 
+summary: NetApp Console 本地部署提供全队列运行状况仪表板、深度卷分析、可配置警报以及引导式或自动修复，让您能够在存储问题影响工作负载之前识别并解决这些问题。 
+---
+= NetApp Console 本地部署中的存储监控
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署可帮助您通过仪表板、警报、深入分析和补救措施监控整个机群的存储，以便在问题影响工作负载之前发现并解决问题。
+
+
+
+[[monitor-fleet-wide-health-with-dashboards]]
+== 使用控制面板监控整个机群的运行状况
+
+从仪表板开始，快速查看存储运行状况和性能。使用主页查看一目了然的指标，打开预定义和自定义仪表板的仪表板表格，并在需要更多详细信息时进入警报、调查和修正。
+
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:task-dashboard-manage.html["在 NetApp Console 本地部署中保持仪表板处于最新状态"]
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+
+
+
+
+[[investigate-performance-issues]]
+== 调查性能问题
+
+使用 Workload Analyzer 调查单个卷上的性能问题。它将延迟、吞吐量、IOPS 和配置更改相关联，以便查明根本原因。
+
+* link:concept-workload-analyzer.html["了解 NetApp Console 本地部署 Workload Analyzer"]
+* link:task-analyzer-volume-latency-investigate.html["在 NetApp Console 本地部署中调查卷上的高延迟"]
+* link:task-analyzer-volume-throughput-investigate.html["调查 NetApp Console 本地部署中卷的高吞吐量需求"]
+* link:reference-workload-analyzer-metrics.html["了解 NetApp Console 本地部署中的 Workload Analyzer 指标"]
+
+
+
+
+[[configure-alerts-and-notifications]]
+== 配置警报和通知
+
+配置警报策略和通知渠道，以便合适的人员了解需要注意的存储条件。例如，将容量警告发送给存储团队，将保护警报发送给可以对其执行操作的备份管理员。
+
+link:task-alert-rules-manage.html["在 NetApp Console 本地部署中配置通知和警报策略"]。link:task-alerts-monitor.html["在 NetApp Console 本地部署中查看存储警报"]。
+
+
+
+[[remediate-issues]]
+== 补救问题
+
+当您检测到问题时，请直接从 NetApp Console 本地部署进行修复：
+
+* *自动修正* — NetApp Console 本地部署根据预定义的规则自动应用纠正措施。
+* *指导性补救措施* — 遵循分步建议，在完全控制每个操作的情况下解决问题。
+

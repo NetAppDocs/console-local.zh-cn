@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: concept-monitor-fleets-inventory.html 
+keywords: inventory, fleet inventory, systems, volumes, capacity, security, performance, monitoring, ONTAP, clusters, fleet visibility, capacity planning, storage governance, netapp console local 
+summary: 使用清单监控机群运行状况并调查 NetApp Console 本地部署中的存储资源。 
+---
+= 在 NetApp Console 本地部署中使用清单监控机群
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，使用清单监控机群运行状况并调查整个环境中的存储资源。清单提供容量、安全性和性能视图，可帮助您识别问题、了解资源利用率并跟踪受管存储系统。
+
+库存主要是一个信息和诊断工作区。从库存中，您可以查看整个机群的系统、卷和其他存储对象，并执行常见操作，例如调配存储资源。对于高级存储管理操作，NetApp Console 本地部署会将您重定向到 System Manager。
+
+
+
+[[access-inventory]]
+== 访问清单
+
+您可以从 Console 本地部署的几个区域访问*清单*，包括：
+
+* 主页
+* 机群概述页面
+* 机群运行状况卡和相关清单视图
+
+
+根据您进入*Inventory*的位置，显示的范围可以是组织级别或机群级别。
+
+
+
+[[inventory-views]]
+== 清单视图
+
+*Inventory* 提供多个视图，可帮助您分析存储环境的不同方面。
+
+容量:: 查看容量利用率并识别占用存储资源的系统、卷和其他存储对象。
+安全性:: 查看托管存储资源中与安全相关的信息和合规性状态。
+性能:: 分析与性能相关的指标，并确定可能需要进一步调查的资源。
+
+
+显示的信息因选定视图和对象类型而异。
+
+
+
+[[investigate-storage-resources]]
+== 调查存储资源
+
+使用 *Inventory* 以：
+
+* 监控机群运行状况
+* 查看存储容量使用情况
+* 跟踪托管存储系统
+* 确定卷和其他占用容量的对象
+* 调查潜在的安全或性能问题
+* 查找需要管理关注的资源
+
+
+*清单*可帮助您从对环境的高级可见性转向对特定存储资源的更详细调查。
+
+
+
+[[provision-storage-resources]]
+== 预配存储资源
+
+清单包括允许您调配存储资源（如卷和 LUN）的工作流。
+
+调配资源时，请选择现有托管存储系统并提供工作负载所需的配置设置。
+
+
+
+[[inventory-and-alerts]]
+== 库存和警报
+
+系统会针对您环境中的特定存储对象和条件生成警报。
+
+当您选择警报时，Console 本地部署可能会将您引导到 System Manager 以进行其他调查或管理操作。*清单*通过提供对存储环境和托管资源整体状态的更广泛可见性来补充警报。
+
+
+
+[[advanced-management-tasks]]
+== 高级管理任务
+
+*Inventory* 可帮助您识别需要操作的资源，但一些高级存储管理操作在 System Manager 中执行。
+
+示例包括：
+
+* 高级工作负载管理
+* 资源重新定位和优化任务
+* 详细的系统管理活动
+
+
+使用 *Inventory* 识别和调查问题，然后在需要更深入的管理功能时使用 System Manager。

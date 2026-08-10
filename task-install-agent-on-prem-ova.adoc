@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: task-install-agent-on-prem-ova.html 
+keywords: install agent, on-premises agent installation, vCenter, ESXi, VMware, OVA, deploy Console local deployment, agent deployment, netapp console local 
+summary: 如果您是 VMWare 用户，您可以使用 OVA 在您的 VCenter 中安装控制台代理。OVA 下载或 URL 可通过 NetApp Console 本地部署获得。 
+---
+= 在 vCenter 中使用 OVA 安装 NetApp Console 本地部署
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用 OVA 在 VCenter 中安装 NetApp Console 本地部署。OVA 下载或 URL 可通过 NetApp 支持站点获得。
+
+
+
+[[prepare-to-install-netapp-console-local-deployment]]
+== 准备安装 NetApp Console 本地部署
+
+安装前，请确保您的虚拟机主机符合要求，并且 NetApp Console 本地部署可以访问互联网和目标网络。要使用 NetApp Backup and Recovery 等 NetApp 数据服务，请为 NetApp Console 本地部署创建云提供商凭据，以代表您执行操作。
+
+
+
+[[review-netapp-console-local-deployment-host-requirements]]
+=== 查看 NetApp Console 本地部署主机要求
+
+在安装 NetApp Console 本地部署之前，请确保主机满足安装要求。
+
+* CPU：16 核或 16 个 vCPU
+* 内存：64 GB
+* 磁盘空间：596 GB（建议使用厚资源调配）
+* vSphere 7.0u3 或更高版本，使用虚拟硬件版本 19 或更高版本
+
+
+
+NOTE: 在 vCenter 环境中安装 NetApp Console 本地部署，而不是直接在 ESXi 主机上。
+
+
+
+[[set-up-network-access-for-the-netapp-console-local-deployment]]
+[[network-access-agent]]
+=== 设置 NetApp Console 本地部署的网络访问权限
+
+NetApp Console 本地部署使用固定地址空间进行服务间通信。IP 范围 10.42.0.0/16 和 10.43.0.0/16 用于内部网络。在部署 Console 本地部署之前，请确保这些 IP 范围未分配给 Console 本地部署可用的 VLAN 上的其他虚拟机、DHCP 范围、DNS 记录或负载均衡器 VIP 池。
+
+有关如何更改代理接口的 IP 地址的说明，请参阅知识库文章 Agent IP conflict with existing network。
+
+
+
+[[install-netapp-console-local-deployment-in-your-vcenter-environment]]
+== 在 VCenter 环境中安装 NetApp Console 本地部署
+
+NetApp 支持在 VCenter 环境中安装 NetApp Console 本地部署。OVA 文件包含一个预配置的虚拟机映像，您可以在 VMware 环境中部署该映像。
+
+
+
+[[download-the-ova-or-copy-the-url]]
+=== 下载 OVA 或复制 URL
+
+下载 OVA。
+
+. 从 NetApp 支持站点下载 Console 本地部署软件。
+
+
+
+
+[[deploy-netapp-console-local-deployment-in-your-vcenter]]
+=== 在 VCenter 中部署 NetApp Console 本地部署
+
+登录到您的 VCenter 环境以部署 Console 本地部署。
+
+.步骤
+. 如果您的环境需要，请将自签名证书上传到受信任的证书。您可以在安装后更换此证书。
+. 从内容库或本地系统部署 OVA。
++
+|===
+
+
+| 来自本地系统 | 从内容库 
+
+
+| a. 右键单击并选择 *Deploy OVF template……*。b. 从 URL 中选择 OVA 文件或浏览到其位置，然后选择 *下一步*。 | a. 转到您的内容库，然后选择 Console OVA。b. 选择 *Actions* > *New VM from this template* 
+|===
+. 完成 Deploy OVF Template 向导以部署 Console。
+. 选择虚拟机的名称和文件夹，然后选择*下一步*。
+. 选择一个计算资源，然后选择*下一步*。
+. 查看模板详细信息，然后选择*下一步*。
+. 接受许可协议，然后选择*下一步*。
+. 请选择要使用的代理配置类型：显式代理、透明代理或无代理。
+. 选择要在其中部署 VM 的数据存储，然后选择 *Next*。请确保其满足主机要求。
+. 选择要连接虚拟机的网络，然后选择*下一步*。请确保网络为 IPv4，并具有到所需端点的出站 Internet 访问权限。
+. 在*自定义模板*窗口中，填写以下字段：
++
+** *代理信息*
++
+*** 如果选择了显式代理，请输入代理服务器主机名或 IP 地址和端口号，以及用户名和密码。
+*** 如果选择了透明代理，请上传相应的证书。
+
+
+** *虚拟机配置*
++
+*** *跳过配置检查*：默认情况下，此复选框未选中，这意味着 NetApp Console 本地部署将运行配置检查以验证网络访问。
++
+**** NetApp 建议不选中此框，以便安装包括对 NetApp Console 本地部署的配置检查。配置检查验证 NetApp Console 本地部署是否具有所需端点的网络访问权限。如果由于连接问题导致部署失败，您可以从 NetApp Console 本地部署主机访问验证报告和日志。在某些情况下，如果您确信 NetApp Console 本地部署具有网络访问权限，则可以选择跳过检查。
+
+
+*** *维护密码*：为 `maint`用户设置密码，该用户可访问 NetApp Console 本地部署维护控制台。
+*** *NTP servers*：指定一个或多个用于时间同步的 NTP 服务器。
+*** *主机名*：设置此虚拟机的主机名。它不能包含搜索域。例如，console10.searchdomain.company.com 的 FQDN 应输入为 console10。
+*** *主 DNS*：指定用于名称解析的主 DNS 服务器。
+*** *辅助 DNS*：指定要用于名称解析的辅助 DNS 服务器。
+*** 搜索域：指定解析主机名时要使用的搜索域名。例如，如果 FQDN 是 console10.searchdomain.company.com，则输入 searchdomain.company.com。
+*** *IPv4 地址*：映射到主机名的 IP 地址。
+*** *IPv4 subnet mask*：IPv4 地址的子网掩码。
+*** *IPv4 网关地址*：IPv4 地址的网关地址。
+
+
+
+
+. 选择 *Next*。
+. 查看*准备完成*窗口中的详细信息，选择*完成*。
++
+vSphere 任务栏显示部署 NetApp Console 本地部署时的进度。
+
+. 启动此虚拟机。
+

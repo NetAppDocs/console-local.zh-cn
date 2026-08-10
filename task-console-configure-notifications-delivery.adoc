@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: task-console-configure-notifications-delivery.html 
+keywords: console local, SMTP, email server, webhook,  notifications delivery, alert routing, incident response, operational awareness, third-party integration, SIEM 
+summary: 配置 NetApp Console 本地部署的通知传递通道。 
+---
+= 在 NetApp Console 本地部署中设置通知传递渠道
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，您可以为警报通知设置多个通道，包括电子邮件和 Webhook。
+
+.必需的访问角色
+超级管理员或组织管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+默认情况下，Console 本地部署通过其内置通知系统显示通知。配置其他交付渠道可让您以最适合工作流程的方式接收通知。
+
+您可以通过相同的渠道发送所有通知，也可以针对不同的通知类型使用不同的渠道。例如，您可以通过电子邮件发送紧急存储警报，同时通过 webhook 将其他警报流量路由到第三方监控工具。
+
+设置通知投递通道后，您可以配置通知规则并将其分配给不同的通道。link:task-alert-rules-manage.html["了解如何配置通知规则"]。
+
+
+
+[[configure-an-email-server]]
+== 配置电子邮件服务器
+
+配置电子邮件服务器时，Console 本地部署会通过它发送通知、警报和用户邀请。Console 本地部署支持 SMTP 电子邮件服务器，该服务器可以是您现有的企业电子邮件服务器或第三方电子邮件服务。
+
+.步骤
+. 选择 *Administration > Console*。
+. 选择*Configuration*以打开系统配置页面。
+. 在*电子邮件服务器*部分，选择*配置*。
+. 输入电子邮件服务器的连接详细信息：
++
+** 添加发件人姓名和发件人电子邮件地址。
+** *SMTP 主机*：SMTP 服务器的主机名或 IP 地址。对于多台服务器，请输入主服务器。
+** 从*连接安全*下拉列表中选择连接协议。该端口已为您配置，且为只读：25 用于 SMTP with STARTTLS，或 465 用于 SMTPS。
++
+SMTPS（端口 465）立即建立加密连接，建议用于安全敏感的环境。STARTTLS（端口 25）从未加密的连接升级，如果加密协商失败，可能会回退到未加密的传输。
+
+
+
+. 选择*测试电子邮件*以向您指定的收件人发送测试电子邮件。
+. 测试成功后，选择 *Save* 保存配置。
++
+如果测试失败，请重新验证您输入的设置，并仔细检查 Console 本地部署是否具有对电子邮件服务器的网络访问权限。
+
+
+
+
+
+[[update-an-email-server-configuration]]
+=== 更新电子邮件服务器配置
+
+如果要使用其他电子邮件服务器，可以更新现有的电子邮件服务器配置。
+
+.步骤
+. 选择 *Administration > Console*。
+. 选择*Configuration*以打开系统配置页面。
+. 在*电子邮件服务器*部分，选择*配置*。
+. 选择*Clear fields*以清除现有配置。
+. 输入电子邮件服务器的新连接详细信息。
+. 选择*测试电子邮件*以向您指定的收件人发送测试电子邮件。
+. 测试成功后，选择 *Save* 保存新配置。
++
+如果测试失败，请重新验证您输入的设置，并仔细检查 Console 本地部署是否具有对电子邮件服务器的网络访问权限。
+
+
+
+
+
+[[remove-an-email-server-configuration]]
+=== 删除电子邮件服务器配置
+
+如果您不再希望 Console 本地部署发送电子邮件，则可以删除电子邮件服务器配置。
+
+.步骤
+. 选择 *Administration > Console*。
+. 选择*配置*以打开系统配置页面。
+. 在*电子邮件服务器*部分，选择*配置*。
+. 选择*Clear fields*以清除现有配置。
+. 选择 *Save* 保存已清除的配置，这将从 Console 本地部署中删除电子邮件服务器配置。
+
+
+
+
+[[configure-a-webhook]]
+== 配置 Webhook
+
+设置 Webhook，以便从 Console 本地部署向其他工具或服务发送通知。您可以配置多个 Webhook，每个 Webhook 指向不同的端点。例如，一个用于 SIEM，另一个用于值班寻呼服务。
+
+创建 webhook 后，具有 Storage admin 角色的用户可以将其分配给特定的警报规则。例如，他们可以将关键警报发送到电子邮件，同时通过 webhook 将所有警报发送到第三方监控工具。
+
+
+NOTE: Console 本地部署不会在 Webhook 端点上实施访问控制。任何可以访问端点 URL 的用户或系统都会收到警报数据。确保通过应用程序自己的访问控制，将对接收应用程序的访问权限限制为授权用户。
+
+.开始之前
+确认 Console 本地部署可以通过网络到达接收应用程序，并收集端点 URL、HTTP 方法以及该应用程序所需的任何身份验证或证书详细信息。
+
+.步骤
+. 选择 *Administration > Console*。
+. 选择*Configuration*以打开系统配置页面。
+. 在 *Webhook 集成* 部分，选择 *配置*。
+. 输入 Webhook 所需的详细信息：
++
+** Webhook 的描述性名称。
+** 接收应用程序提供的端点 URL。
+** HTTP 方法
+** 可选：PEM 格式的自签名证书。
+** 任何必需的标头或机密（身份验证凭据）。
+** 发送 Webhook 时使用的格式。支持 JSON 和 OTEL (OpenTelemetry)。
++
+将 JSON 用于通用 Webhook 和自定义 REST 端点。将 OTEL 用于本机使用 OpenTelemetry 信号的可观测性平台，例如 Grafana 或其他 OpenTelemetry 兼容的收集器。
+
+
+
+. 选择 *Test webhook* 以测试 webhook 连接，并确保 Console 本地部署可以成功将消息发送到接收应用程序。
+. 测试成功后，选择*保存*以创建 Webhook。
++
+保存 Webhook 后，用户可以在支持 Webhook 的位置选择它，例如警报传递选项。 link:task-alert-rules-manage.html["了解如何创建警报规则并分配用于警报传递的 Webhook。"]
+
+

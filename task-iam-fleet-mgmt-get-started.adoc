@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: task-iam-fleet-mgmt-get-started.html 
+keywords: iam, quick start, get started, get started with iam, identity and access management 
+summary: 通过创建文件夹和舰队层次结构、添加成员、添加资源并将这些资源放入正确的舰队，在 NetApp Console 本地部署中设置身份和访问权限。 
+---
+= 开始使用 NetApp Console 本地部署中的身份和访问权限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，设置文件夹和队列层次结构，添加成员和起始权限，并将资源添加到正确的队列中并进行放置，以便合适的团队可以访问和管理它们。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+您需要*组织管理员*或*超级管理员*角色才能完成初始设置。设置完成后，您可以根据组织的变化管理资源、成员访问权限和舰队访问权限。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 添加或发现资源
+[role="quick-margin-para"]
+将系统添加到 Console 本地部署。在初始设置过程中，通常在选择默认机群的同时添加系统。
+
+[role="quick-margin-para"]
+了解如何创建或发现资源：
+
+[role="quick-margin-list"]
+* https://docs.netapp.com/us-en/storage-management-ontap-onprem/index.html["本地 ONTAP 集群"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 创建您的文件夹和车队层次结构
+[role="quick-margin-para"]
+创建与业务层次结构匹配的其他队列和文件夹。
+
+[role="quick-margin-para"]
+link:task-iam-manage-folders-fleets.html["了解如何使用文件夹和队列组织资源"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 将资源与正确的队列关联
+[role="quick-margin-para"]
+在 Console 本地部署中添加或发现系统会自动将资源与当前选定的机群相关联。要使系统可供正确的团队使用，请将其与层次结构中的相应机群相关联。
+
+[role="quick-margin-list"]
+* link:task-iam-manage-resources.html["了解如何管理文件夹和队列中的资源"]。
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"] 添加成员并分配起始权限
+[role="quick-margin-para"]
+根据管理内容，在组织、文件夹或队列级别添加成员并为其分配角色。
+
+[role="quick-margin-para"]
+link:task-iam-manage-members-permissions.html["了解如何管理成员及其权限"]。
+
+
+
+[[after-initial-setup]]
+== 初始设置后
+
+初始设置完成后，根据组织变化管理访问权限和资源放置：
+
+* link:task-iam-manage-resources.html["管理文件夹和队列中的资源"]
+* link:task-iam-manage-roles.html["管理跨机群和文件夹的成员访问权限（以成员为中心）"]
+* link:task-iam-users-fleets-assign.html["管理谁可以访问特定机群或文件夹（以机群为中心）"]
+* link:task-iam-manage-folders-fleets.html#delete-a-folder-or-fleet["不再需要时删除文件夹和车队"]
+
+
+.相关信息
+* link:concept-identity-and-access-management.html["了解 NetApp Console 中的身份和访问管理"]
+* https://docs.netapp.com/us-en/console-automation/tenancyv4/overview.html["了解用于身份和访问的 API"^]
+

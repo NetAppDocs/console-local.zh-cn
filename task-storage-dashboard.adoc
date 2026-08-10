@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task-storage-dashboard.html 
+keywords: storage dashboard, home page, fleet health, capacity monitoring, IOPS, performance metrics, alerts, storage KPIs, monitoring, netapp console local 
+summary: 在 NetApp Console 本地部署中，您可以在主页上查看指标。 
+---
+= 在 NetApp Console 本地部署中查看主页指标
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+将 NetApp Console 本地部署中的主页面板用作监视存储运行状况和性能的默认起点。它提供了集群运行状况、警报、安全性、容量使用率、延迟、吞吐量和 IOPS 的高级指标。
+
+主页仪表板会自动限定范围，仅显示您有权查看的机群和系统。您还可以将自定义仪表板添加到主页，以进行特定角色的监控。
+
+将卡片用作分层分流工作流程。从 *Fleet health* 和 *Alerts* 开始，查找风险热点。使用 *System health status* 和 *Recommended remediations* 来识别受影响的资源。使用 *Capacity usage*、*Latency*、*Throughput* 和 *IOPS* 来调查根本原因。
+
+
+
+[[fleet-health]]
+== 集群运行状况
+
+*Fleet health* 卡显示前五个机群的高级状态摘要，包括系统计数、已用容量、安全合规性和关键警报。使用此卡确定哪些机群需要立即关注。选择机群名称，以查看选定机群的专属仪表板。
+
+
+
+[[recommended-remediations]]
+== 建议的补救措施
+
+*推荐补救措施*卡片列出了活动问题和建议措施。该卡片根据容量压力、离线资源和保护相关风险确定补救措施的优先级。
+
+
+
+[[alerts]]
+== 警报
+
+*警报*卡汇总选定时间范围内的警报量，并按严重程度对其进行分组。使用此卡了解当前的事件负载，并发现关键、警告或信息警报的近期变化。
+
+
+
+[[security]]
+== 安全性
+
+*Security* 卡汇总了合规性和保护指标，例如系统合规性和与勒索软件相关的控制措施。使用此视图可监控整个资源的安全趋势。
+
+
+
+[[capacity-usage]]
+== 容量使用情况
+
+*容量使用*卡显示所选机群或系统的预测和历史使用趋势。使用此卡识别增长模式并规划额外容量。
+
+
+
+[[latency]]
+== 延迟
+
+*延迟*卡跟踪所选系统随时间的响应时间行为。使用此趋势来检测新出现的性能延迟，并比较不同资源的相对延迟。
+
+
+
+[[throughput]]
+== 吞吐量
+
+*吞吐量*卡显示选定系统随时间的数据传输速率。使用此卡可了解工作负载强度并监控吞吐量需求变化。
+
+
+
+[[iops]]
+== IOPS
+
+*IOPS* 卡显示一段时间内的输入/输出操作速率。使用此卡可比较系统之间的活动水平，并确定持续或间歇性的 I/O 需求。
+
+
+
+[[dashboard-card-example-metric-card]]
+== 控制面板卡（指标卡示例）
+
+较低的*仪表板*区域可以包含用户选择的自定义仪表板，例如所选生产范围的平均延迟。使用这些卡片按团队、工作负载或目标进行重点监控。
+
+
+
+[[system-health-status]]
+== 系统运行状况
+
+*系统健康状态*卡片列出了各个系统及其当前健康状态。使用此卡可以快速识别运行异常的系统，并将状态变化与警报和性能信号相关联。
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+* link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]
+

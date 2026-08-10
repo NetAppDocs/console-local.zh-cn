@@ -1,0 +1,265 @@
+---
+sidebar: sidebar 
+permalink: reference-dashboard-card-templates.html 
+keywords: card templates, dashboard cards, metric types, chart types, performance, capacity, health, alerts, netapp console local 
+summary: NetApp Console 本地部署中预定义仪表板和自定义仪表板卡及指标的参考。 
+---
+= NetApp Console 本地部署中的预定义仪表板和自定义仪表板卡参考
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，预定义的仪表板和自定义仪表板卡模板为 ONTAP 性能、容量、运行状况和警报操作提供监控覆盖。
+
+
+
+[[predefined-dashboards]]
+== 预定义信息板
+
+以下是开箱即用的预定义仪表板。
+
+[cols="35,65"]
+|===
+| 名称 | 问题描述 
+
+
+| 卷 | 卷性能、容量、QoS、FabricPool、增长率和预测指标。 
+
+
+| 到满为止的时间 | ONTAP 集群、卷和聚合的预计存满时间。 
+
+
+| 安全性 | 安全合规性、加密、自主勒索软件保护和身份验证概述。 
+
+
+| SVM | ONTAP SVM 性能、容量、卷、LIF、协议（CIFS、FCP、iSCSI、NFS、NVMe/FC）、QoS 和延迟热图监控。 
+
+
+| 电源 | 监控节点、磁盘架和聚合的 ONTAP 集群功耗、温度和风扇速度。 
+
+
+| 节点 | ONTAP 节点性能、CPU、网络和后端监控。 
+
+
+| 网络 | 网络性能指标包括以太网、FibreChannel、NVMe/FC、链路聚合组和路由。 
+
+
+| LUN 数 | ONTAP LUN 性能、容量和效率监控。 
+
+
+| 运行状况 | ONTAP 集群运行状况监控包括错误、警告、EMS 警报、HA 问题、节点/磁盘/盘架运行状况、卷、许可证和网络端口。 
+
+
+| 聚合 | ONTAP 聚合容量、效率比和增长率监控。 
+|===
+
+
+[[dashboard-level-time-windows-and-aggregation]]
+== 仪表板级别的时间窗口和聚合
+
+可用的时间窗为 30 分钟、1 小时、24 小时、48 小时、7 天和 30 天。聚合选项因模板而异，包括全队汇总或 top-N 样式结果等视图。时间窗口和聚合在仪表板级别配置，并应用于仪表板中的所有卡片。
+
+
+
+[[dashboard-card-templates-and-metrics]]
+== 仪表板卡片模板和指标
+
+卡片是自定义控制面板的基石。每张卡都使用带有指标和图表类型的预定义模板，然后将该视图映射到特定的 ONTAP 对象和监控目标。
+
+
+NOTE: 卡片模板是预定义的，不是用户创建的。
+
+
+
+[[storage-operations-metric-index-at-a-glance]]
+[[metrics-list]]
+=== 存储操作指标索引（一目了然）
+
+指标类型与常见的存储管理结果一致，包括性能瓶颈、容量压力、健康风险和警报量。
+
+[cols="18,37,30,15"]
+|===
+| 指标类型 | 支持的指标 | 存储管理员用例 | 详细模板 
+
+
+| 性能 | 平均延迟、峰值延迟、IOPS、吞吐量(MB/s)、利用率、性能容量 | 识别瓶颈、持续压力和性能余量 | <<performance-templates,转至模板>> 
+
+
+| 容量 | 已用容量、可用容量、已用容量（%）、已用快照容量 | 跟踪增长、识别低可用容量区域并监控快照影响 | <<capacity-templates,转至模板>> 
+
+
+| 运行状况 | 健康状态、降级/关键对象、故障磁盘、网络接口错误、热对象（按延迟） | 检测健康退化并确定运营分诊的优先级 | <<health-templates,转至模板>> 
+
+
+| 警报 | 警报（严重），按严重程度划分的警报，按受影响区域划分的警报，最近的警报，警报趋势 | 随着时间的推移，监控活动事件和趋势警报量 | <<alerts-templates,转至模板>> 
+|===
+
+
+[[supported-ontap-object-hierarchy-resource-types]]
+=== 支持的 ONTAP 对象层次结构（资源类型）
+
+卡片数据可以在多个 ONTAP 对象级别表示，从集群级别的可见性到对象级别的故障排除。
+
+*资源类型*设置映射到以下一个或多个资源级别：
+
+* 车队
+* 集群
+* 系统 (节点)
+* SVM
+* 卷
+* LUN
+* 本地层（聚合）
+
+
+可用的资源级别取决于您选择的模板和指标。
+
+
+
+[[chart-types-for-operational-analysis]]
+=== 用于运营分析的图表类型
+
+图表类型会影响您解读趋势、比较、分布和时间点值的速度。
+
+[cols="25,75"]
+|===
+| 图表类型 | 最适合 
+
+
+| 折线图 | 时间序列趋势，如延迟、IOPS、吞吐量、利用率和一段时间内的警报趋势。 
+
+
+| 条形图 | 分类比较和分布，例如按严重程度或影响区域列出的警报。 
+
+
+| 饼图或环形图 | 比例分布，例如容量使用百分比。 
+
+
+| 表 | 详细的多列数据，例如已使用的容量、运行状况和最近的警报。 
+
+
+| 单个数字（stat） | 一目了然的单个键值，例如关键警报计数或故障磁盘。 
+|===
+
+
+[[performance-templates-for-workload-triage]]
+[[performance-templates]]
+=== 用于工作负载分类的性能模板
+
+性能模板侧重于指示工作负载压力的延迟、吞吐量和利用率信号。
+
+[cols="25,20,55"]
+|===
+| 模板 | 图表类型 | 问题描述 
+
+
+| 平均延迟 | 行 | 选定时间窗口内选定目标的平均延迟。 
+
+
+| 峰值延迟 | 行 | 在所选时间窗口内，在所选目标上观察到的最大延迟。 
+
+
+| IOPS | 行 | 跨选定目标的每秒 I/O 操作总数。 
+
+
+| 吞吐量 (MB/秒) | 行 | 跨选定目标的数据吞吐量总和。 
+
+
+| 利用率 | 行 | 所选目标的平均 CPU 或磁盘利用率。 
+
+
+| 性能容量 | 表 | 将当前利用率与最佳点进行比较的净空分析。 
+|===
+
+
+[[capacity-templates-for-growth-and-headroom]]
+[[capacity-templates]]
+=== 用于增长和净空的容量模板
+
+容量模板侧重于已消耗空间和可用空间，以支持增长规划和风险检测。
+
+[cols="25,20,55"]
+|===
+| 模板 | 图表类型 | 问题描述 
+
+
+| 已用容量 | 表 | 跨选定目标的已用容量总和。 
+
+
+| 空闲容量 | 表 | 选定目标的可用容量总和。 
+
+
+| 已用容量(%) | 饼图或环形图 | 选定目标的平均使用/总比率。 
+
+
+| 已用快照容量 | 表 | 跨选定目标消耗的快照空间总和。 
+|===
+
+
+[[health-templates-for-risk-detection]]
+[[health-templates]]
+=== 用于风险检测的健康模板
+
+运行状况模板侧重于对象状态和故障指标，以支持运营分流。
+
+[cols="25,20,55"]
+|===
+| 模板 | 图表类型 | 问题描述 
+
+
+| 运行状况状态 | 表 | 每个选定目标对象的最新健康状态。 
+
+
+| 已降级/关键对象 | 单个号码 | 运行状况状态不正常的对象计数。 
+
+
+| 故障磁盘 | 单个号码 | 所选系统中故障磁盘的总数。 
+
+
+| 网络接口错误 | 饼图或环形图 | 所选目标的网络接口错误计数器总和。 
+
+
+| 热对象（按延迟） | 表 | 按峰值延迟降序排列的资源。 
+|===
+
+
+[[alerts-templates-for-incident-prioritization]]
+[[alerts-templates]]
+=== 用于事件优先级排序的警报模板
+
+警报模板侧重于事件数量、严重程度和影响区域，以支持监控和优先级排序。
+
+[cols="25,20,55"]
+|===
+| 模板 | 图表类型 | 问题描述 
+
+
+| 警报（严重） | 单个号码 | 时间窗口内严重级别警报的计数。 
+
+
+| 警报（按严重程度） | 栏 | 按严重程度级别分组的警报。 
+
+
+| 警报（按影响区域） | 栏 | 按影响区域（例如容量、性能或安全性）分组的警报。 
+
+
+| 近期警报 | 表 | 最新提醒，按时间降序排列。 
+
+
+| 警报趋势 | 行 | 在所选时间窗口内每个时间段的警报计数。 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+* link:task-dashboard-create.html["创建自定义仪表板"]
+* link:task-customize-dashboard-cards.html["在 NetApp Console 本地部署中自定义仪表板卡"]
+* link:task-dashboard-manage.html["管理自定义仪表板"]
+

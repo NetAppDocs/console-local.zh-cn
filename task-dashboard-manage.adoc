@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: task-dashboard-manage.html 
+keywords: manage dashboard, view dashboards, edit dashboard, clone dashboard, delete dashboard, netapp console local 
+summary: 通过打开、编辑、克隆和删除自定义仪表板，在 NetApp Console 本地部署中查看和管理仪表板。 
+---
+= 在 NetApp Console 本地部署中管理仪表板
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中管理自定义仪表板，使视图与操作保持一致。随着团队、机群和优先级的变化，您可以编辑、复制和删除仪表板。
+
+此任务仅适用于*存储 > 仪表板*下的自定义仪表板。预定义的主页仪表板无法以相同的方式编辑。
+
+
+
+[[view-dashboards]]
+== 查看控制面板
+
+查看自定义和预定义的仪表板，以查找要打开、编辑、复制或删除的仪表板。
+
+
+TIP: 您可以复制预定义的仪表板以创建可编辑的自定义版本。
+
+.步骤
+. 选择 *Storage > Dashboards*。
+. 查看仪表板表格，找到要打开的仪表板。
+. 选择仪表板名称以打开它并查看其指标。
+. 如果需要，请使用可用操作编辑、复制或删除自定义控制面板。
+
+
+
+
+[[update-a-dashboard-as-priorities-change]]
+== 随着优先级的变化更新控制面板
+
+在运营优先级发生变化时编辑控制面板，以调整可见的卡片和指标。
+
+.步骤
+. 选择 *Storage > Dashboards*。
+. 打开要编辑的控制面板。
+. 通过从卡片的操作菜单中选择"编辑"，修改控制面板上的现有卡片。
+. 选择 *Add Card*，将新卡添加至仪表板。
++
+link:task-customize-dashboard-cards.html["在 NetApp Console 本地部署中自定义卡片"]。
+
+. 选择*保存更改*以保存控制面板。
++
+** 您也可以从操作菜单中选择 *Save as new dashboard*，将更改另存为新控制面板。如果要为其他团队或车队保留原始控制面板，同时根据当前监控需求创建新版本，则此选项非常有用。
+** 您还可以通过从操作菜单中选择*放弃更改*来选择放弃更改。如果要恢复到仪表板的上次保存版本，此选项非常有用。
+
+
+
+
+
+
+[[reuse-a-custom-dashboard-for-another-resource-or-fleet]]
+== 为其他资源或机群重复使用自定义仪表板
+
+如果要将经过验证的布局重用于其他团队、车队或监控场景，而无需从头开始重建，请复制仪表板。
+
+
+TIP: 您可以复制预定义的仪表板以创建可编辑的自定义版本。
+
+.步骤
+. 选择 *Storage > Dashboards*。
+. 对于要复制的控制面板，请从操作菜单中选择*复制*。
++
+控制台本地部署会创建一个副本，其中包括来自原始仪表板的所有卡片。
+
+. 为复制的仪表板提供名称和描述。
+. 选择您刚刚创建的重复控制面板。更改指标、资源和卡片类型，以适应新的监控场景。
++
+link:task-customize-dashboard-cards.html["在 NetApp Console 本地部署中自定义卡片"]。
+
+
+
+
+
+[[remove-dashboards-you-no-longer-use]]
+== 删除不再使用的控制面板
+
+如果仪表板不再支持当前操作，并且要将仪表板列表的重点放在活动用例上，请将其删除。
+
+.步骤
+. 选择 *Storage > Dashboards*。
+. 对于要删除的仪表板，选择*删除*。
+. 确认删除。
+
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:task-storage-dashboard.html["在 NetApp Console 本地部署中查看主页指标"]
+* link:task-dashboard-get-started.html["开始在 NetApp Console 本地部署中使用仪表板"]
+* link:concept-custom-dashboards.html["了解 NetApp Console 本地部署中的自定义仪表板"]
+* link:task-dashboard-create.html["创建自定义仪表板"]
+* link:task-customize-dashboard-cards.html["在 NetApp Console 本地部署中自定义仪表板卡"]
+

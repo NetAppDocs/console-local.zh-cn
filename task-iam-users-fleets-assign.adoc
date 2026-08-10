@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-iam-users-fleets-assign.html 
+keywords: assign members, fleet, folder, access control, roles, storage management, netapp console 
+summary: 审核或更改 NetApp Console 本地部署中文件夹和存储设备的成员访问分配。 
+---
+= 查看或更改 NetApp Console 本地部署中的机群访问分配
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+审核或更改 NetApp Console 本地部署中文件夹和存储设备的成员访问分配。文件夹和存储设备管理员通常从此视图工作，因为它仅显示他们管理的范围。
+
+.必需的访问角色
+超级管理员、组织管理员或文件夹或车队管理员。link:reference-iam-predefined-roles.html["了解访问角色"]。
+
+或者，您可以跨多个文件夹或队列管理特定成员的所有角色。link:task-iam-manage-roles.html["管理成员访问权限"]。
+
+
+
+[[how-folder-and-fleet-access-works]]
+== 文件夹和队列访问权限的工作原理
+
+控制台本地部署使用基于角色的访问控制 (RBAC)。在文件夹级别分配的角色适用于该文件夹中的所有队列和子文件夹；在队列级别分配的角色仅适用于该队列的资源。link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署中的角色继承"]。
+
+
+NOTE: 如果成员从文件夹或组织继承了角色，则无法在队列级别更改该角色。要更改继承的访问权限，请在较高范围内更改角色。
+
+
+
+[[view-members-assigned-to-a-folder-or-fleet]]
+== 查看分配给文件夹或队列的成员
+
+准确查看谁可以管理特定的文件夹或队列。例如，在将新的生产 ONTAP 集群与 `Production-US-East`队列关联之前，请打开队列的"访问权限"选项卡以确认谁有权访问。
+
+.步骤
+. 选择*管理* > *身份和访问*。
+. 选择*组织*。
+. 在"组织"页面中，导航到表中的文件夹或队列，选择 image:icon-action.png["带三个点的图标"]，然后选择 *Edit folder* 或 *Edit fleet*。
+. 选择*访问权限*以查看有权访问该文件夹或舰队的成员。
+
+
+
+
+[[modify-member-access-from-a-folder-or-fleet]]
+== 从文件夹或队列修改成员访问权限
+
+调整已属于您的组织的成员角色，范围限定为单个文件夹或舰队。例如，当团队成员从开发舰队迁移到生产舰队时，将其在生产舰队中的角色从 Storage viewer 提升为 Storage admin，而不影响其在其他位置的访问权限。
+
+要添加新成员并分配其第一个角色，请改用入职任务。link:task-iam-manage-members-permissions.html["添加成员并分配角色"]。
+
+.步骤
+. 在"组织"页面中，导航到表中的文件夹或队列，选择 image:icon-action.png["带三个点的图标"]，然后选择 *Edit folder* 或 *Edit fleet*。
+. 选择*访问权限*以查看具有访问权限的成员列表。
+. 修改成员访问权限：
++
+** *更改成员的角色*：对于具有组织管理员以外角色的任何成员，选择其现有角色并选择新角色。更改仅适用于此范围；从更高范围继承的角色不会显示在此处。
+** *删除此范围内的成员访问权限*：对于在此文件夹或舰队中直接定义角色的成员，请删除该角色以撤销其在此范围内的访问权限。这不会从您的组织中删除成员，也不会影响他们在其他范围内的角色。
++
+link:task-iam-manage-roles.html#remove-a-member-from-your-organization["从组织中删除成员"]。
+
+
+
+. 选择*应用*。
+

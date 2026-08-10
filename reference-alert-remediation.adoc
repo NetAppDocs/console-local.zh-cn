@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: reference-alert-remediation.html 
+keywords: alert remediation, fix-it, guided remediation, automated remediation, ONTAP alerts, storage alerts, compliance alerts, remediate drift, alert actions, netapp console local 
+summary: NetApp Console 本地部署中可用修复操作的参考，包括相关警报、影响区域和操作摘要。 
+---
+= NetApp Console 本地部署中的警报修复操作
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用此参考了解 NetApp Console 本地部署中*修复*可用的修复操作。对于每个操作，表格描述了操作的功能和相关警报。在运行之前，请查看确认对话框中的操作详细信息。
+
+
+
+[[remediation-actions]]
+== 修复操作
+
+[cols="20,17,28,12,23"]
+|===
+| 修正操作 | 警报名称 | 警报说明 | 影响区域 | 修正摘要 
+
+
+| *启用自动卷增长* | 卷已满 | 此卷的空间不足，已接近满容量。 | 容量 | 自动增加卷的大小（最高可达配置的限制），以降低空间耗尽的风险。 
+
+
+| *调整卷大小* | 卷已满 | 此卷的空间不足，已接近满容量。 | 容量 | 增加卷的大小以立即提供更多空间。 
+
+
+| *使卷联机* | 卷脱机 | 此卷已脱机，不提供数据。 | 可用性 | 使脱机卷联机，以便它可以恢复提供数据。 
+
+
+| *使聚合联机* | 聚合脱机 | 此聚合未联机，其上托管的卷可能不可用。 | 可用性 | 使脱机聚合联机以恢复对其托管卷的访问。 
+
+
+| *使 LUN 联机* | LUN 脱机 | 此 LUN 已脱机，主机访问不可用。 | 可用性 | 使脱机 LUN 联机，以便主机可以恢复访问和 I/O。 
+
+
+| *取消限制卷* | 卷受限 | 此卷处于受限状态，可能无法正常提供 I/O。 | 可用性 | 将受限卷恢复到联机状态，以便客户端可以再次访问它。 
+
+
+| *使 NVMe 命名空间联机* | NVMe 命名空间处于脱机状态 | NVMe 命名空间脱机，主机访问不可用。 | 可用性 | 使脱机 NVMe 命名空间联机以恢复主机访问。 
+
+
+| *启动集群间 LIF* | 集群间 LIF 已关闭 | 集群间 LIF 已关闭，集群到集群的通信可能会受到影响。 | 连接 | 启动集群间 LIF 以恢复用于复制的集群间连接。 
+
+
+| *重新启用 MetroCluster AUSO* | MetroCluster 自动计划外切换已禁用 | 此集群上的自动计划外切换已禁用。 | 可用性 | 重新启用自动计划外切换（AUSO），以便 MetroCluster 保护按预期工作。 
+
+
+| *配置 Service Processor 网络* | 未配置 Service Processor | 未配置服务处理器(SP)网络。 | 易管理性 | 配置 Service Processor (SP) 网络设置以启用带外管理访问。 
+
+
+| *分配未分配的磁盘* | 检测到未分配的磁盘 | 存在未分配的磁盘，并且可能未使用可用容量。将磁盘分配给节点，以便它们可用于存储。 | 可用性 | 将当前未分配的磁盘分配给节点，以便它们可用于存储。 
+
+
+| *根卷空间恢复* | 节点根卷空间不足 | 节点根卷上的可用空间不足，可能会影响正常的系统运行。 | 系统运行状况 | 通过删除最大的快照或最大的核心转储文件来释放节点根卷上的空间。删除是永久性的。 
+|===

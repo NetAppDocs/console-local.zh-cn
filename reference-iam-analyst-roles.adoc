@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: reference-iam-analyst-roles.html 
+keywords: operations support analyst, analyst roles, read-only access, monitoring access, alert access, audit access, identity and access management, access roles, rbac, netapp console local 
+summary: 您可以将运营支持分析师角色分配给用户，为他们提供对警报和监控的访问权限。具有此角色的用户也可以打开支持个案。 
+---
+= NetApp Console 本地部署中的运维支持分析师访问角色
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中，您可以将操作支持分析师角色分配给用户，以便为他们提供对警报和监控的访问权限。
+
+
+
+[[operational-support-analyst]]
+== 运营支持分析师
+
+[cols="1,2"]
+|===
+| 任务 | 可执行 
+
+
+| 查看存储系统 | 是 
+
+
+| 查看审核页面和通知 | 是 
+
+
+| 查看、下载和配置警报 | 是 
+|===

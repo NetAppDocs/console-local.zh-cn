@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: reference-storage-class-policies.html 
+keywords: storage class policies, performance policy, capacity policy, security policy, data protection policy, netapp console 
+summary: 引用 NetApp Console 本地部署中可用的系统定义存储类策略。 
+---
+= 查看 NetApp Console 本地部署中的预定义存储类策略
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Console 本地部署包括跨所有四种策略类型的系统定义策略。使用此参考信息确定创建或自定义存储类时最适合工作负载要求的策略。
+
+
+
+[[performance-policies]]
+== 性能策略
+
+至高性能:: 用于需要高突发 IOPS 和可预测的低延迟的 HPC、AI/ML 和分析工作负载。
+数据库数据的 Extreme:: 用于需要持续高 IOPS 和亚毫秒延迟的事务性数据库数据卷。
+数据库日志的 Extreme:: 用于需要最高 IOPS 基准的数据库事务日志卷，以防止写入瓶颈。
+Extreme for Database Shared Data:: 用于需要高吞吐量和一致延迟的多个主机访问的共享数据库卷。
+性能:: 适用于需要可靠性能但无极高 IOPS 要求的虚拟化和企业应用程序。
+值:: 用于对成本敏感的工作负载，如主目录、文件共享和存档。
+
+
+
+
+[[capacity-policies]]
+== 容量策略
+
+自动扩展容量:: 用于必须自动扩展以防止空间不足故障的生产工作负载。
+
+
+
+
+[[security-policies]]
+== 安全策略
+
+静态加密:: 用于需要加密以实现合规性的生产工作负载。
+勒索软件防护:: 用于包含需要主动勒索软件保护的敏感或关键业务数据的工作负载。
+标准安全:: 用于平台默认安全行为可接受的工作负载。
+
+
+
+
+[[data-protection-policies]]
+== 数据保护策略
+
+默认:: 用于需要短期恢复点的标准工作负载，而无需长期保留开销。
+3 个月-每小时:: 用于需要精细化全天内恢复点和三个月历史保留的受监管或业务关键型工作负载。
+30 天恢复:: 用于需要短期恢复点的标准工作负载，而无需长期保留开销。
+90 天恢复:: 用于需要精细化全天内恢复点和三个月历史保留的受监管或业务关键型工作负载。
+
