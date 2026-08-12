@@ -63,7 +63,7 @@ NetApp 支持在 VCenter 环境中安装 NetApp Console 本地部署。OVA 文�
 
 下载 OVA。
 
-. 从 NetApp 支持站点下载 Console 本地部署软件。
+. 从 link:https://mysupport.netapp.com/site/products/all/details/ncl/downloads-tab["NetApp 支持站点"^] 下载 Console 本地部署软件。
 
 
 

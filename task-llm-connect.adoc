@@ -40,7 +40,6 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 * 您的提供程序类型决定：OpenAI 或 OpenAI 兼容。 link:concept-llm-integration.html["了解提供者的选择。"]
 * 您选择的提供程序路径的有效 API 密钥。
 * 提供程序路径的端点 URL。
-* 您的代理或网关 URL（如果您的组织需要）。
 * LLM 提供商帐户的用户名或单点登录 (SSO) ID（如果需要）。
 * 从 Console 本地部署到选定端点的网络访问。
 * 计划允许的助理操作的存储类和基于角色的访问控制。
