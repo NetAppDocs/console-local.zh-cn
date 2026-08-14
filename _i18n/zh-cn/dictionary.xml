@@ -644,7 +644,6 @@
   <block id="651199ccd6df9afe47c1a01cb2014b9a" category="summary">了解 NetApp Console 本地部署中的存储警报如何帮助您监控整个组织和机群中本地 ONTAP 集群的运行状况。</block>
   <block id="46dd71654e83b60d5a2b63a64c91c06b" category="doc">了解 NetApp Console 本地部署中的警报</block>
   <block id="96753cfc199c67944d48d5550d8a331e" category="paragraph">NetApp Console 本地部署会生成警报，用于识别本地 ONTAP 集群上的运行状况问题以及 NetApp Backup and Recovery 操作。</block>
-  <block id="0f666f93d79761d7ae4fe8424d7a778b" category="paragraph">Console 本地部署将来自 ONTAP 集群以及备份和恢复操作的警报整合到单个视图中。Alerts 页面包括仪表板、警报列表和系统视图，以便您可以查看整个组织的警报，或将其范围缩小到特定的机群或系统。每个警报都会标识受影响的系统、其严重程度及其影响区域。</block>
   <block id="0855169a6f83f70eb10d05419bbd0b1b" category="paragraph">在 Console 本地部署中使用警报，以便：</block>
   <block id="df580541dc1d5961973ae67dcad8ac67" category="list-text">检测容量、连接性、数据保护、性能和安全问题。</block>
   <block id="a412e02ff5572e68270492382a758d4c" category="list-text">按严重程度和影响区域排列警报的优先级。</block>
@@ -653,27 +652,20 @@
   <block id="9b9ee1193cec05dc2a41ed3e6ece1ea0" category="list-text">将警报列表导出到 CSV 文件以进行离线分析。</block>
   <block id="5992368e63ad83386054845741a8a33e" category="section-title">警报严重程度和影响区域</block>
   <block id="af16cc6229a519a3b6fda7956cf3bbb6" category="paragraph">每个警报都包括严重程度和影响区域：</block>
-  <block id="a9c60291ee333f9f8b30a1d56049f2e3" category="list-text">*严重程度*表示从最高到最低的紧急程度：严重、重大、轻微、警告和信息。</block>
-  <block id="8746c2cdf631ab24a14a3cef70775b09" category="list-text">*影响区域*确定受影响的域：容量、连接性、数据保护、性能和安全性。</block>
   <block id="b464c96719ac8e689bf809558b1fbfb1" category="section-title">警报来源和范围</block>
-  <block id="6c6025ea2f97b33e2c486828e0d64c65" category="list-text">*ONTAP 警报*源自 NetApp Console 本地部署发现的本地集群上的 ONTAP 事件管理系统 (EMS)。 <block ref="9e05df594689e3a41c64bf5428dd8f1b" category="inline-link-macro-rx"></block></block>
   <block id="84a123db43de03103a06de7c20323cfc" category="inline-link-macro">详细了解 NetApp Backup and Recovery 警报。</block>
   <block id="ea0f0b01214b1b6564dedd1ccc0ef789" category="list-text">*NetApp Backup and Recovery alerts* 源自备份和恢复操作。 <block ref="ce19bb3d3f0370071bd0a63bda9b1cb0" category="inline-link-macro-rx"></block></block>
   <block id="8f7cb705f10a2a8a43e44be4e26bce29" category="list-text">您的权限决定您可以查看哪些机群。将视图范围扩展到整个组织、特定机群或单个系统。*系统运行状况*选项卡显示每个系统的状态，*警报*选项卡显示选定范围的当前警报列表。</block>
   <block id="e4512e69eb5052bb89ae3cb05beb2048" category="list-text">CSV 导出反映当前范围、搜索文本和筛选器。</block>
-  <block id="357c988d7b614f4a678bdeab216e8c0d" category="section-title">警报通知规则</block>
   <block id="0cd5a479aeee5c75de6058d04d42884c" category="paragraph">创建通知规则，以确定哪些警报生成通知以及由谁接收通知。通知规则具有以下特征：</block>
   <block id="bd219bf7059c2b33f0ec554be065e6f1" category="list-text">它匹配服务（例如 ONTAP 管理或 Backup and Recovery）、严重程度、影响区域和目标系统上的警报。</block>
   <block id="b2f7eced90ff21e599ef62d0fb532997" category="list-text">对于电子邮件传递，它向具有指定访问角色的用户发送通知。对于 Webhook 传递，它将警报数据发送到配置的端点——对该数据的访问由接收应用程序控制，而非由 Console 本地部署控制。</block>
-  <block id="5969773a182e2f8badfffe0e0dba85f4" category="list-text">它适用于特定系统，而非整个集群。</block>
   <block id="e4b0a25eea6bb99ae00f0d8840506e6a" category="list-text">它可以在计划的维护窗口期间静音，以抑制预期的警报。</block>
   <block id="4cf933aaee95403e05d1324cc29e0b21" category="paragraph">控制台本地部署包括安装后立即激活的默认通知规则。默认规则监控所有服务和系统的关键严重性警报，并仅向控制台通知中心发送通知——在您设置之前，不会配置电子邮件或 Webhook 传递。您可以查看和调整此规则，并创建与您的环境相匹配的自定义规则。</block>
   <block id="31a344bb0e11e5a55503d8881257edf1" category="paragraph">信息级别的警报在警报页面中可见，但不会通过通知发送，除非您明确创建包含信息严重级别的规则。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相关信息</block>
   <block id="82a2d6c3a1797413a862c7f45ba90fc6" category="inline-link-macro">监控和调查警报</block>
   <block id="c4b4941c3014489a62b6f0fd2b9cbe09" category="list-text"><block ref="c4b4941c3014489a62b6f0fd2b9cbe09" category="inline-link-macro-rx"></block></block>
-  <block id="bf4a2ffc2bbdd132b48f1c5434b4d680" category="inline-link-macro">创建和管理警报通知规则</block>
-  <block id="d0dcba044d6a8dc4a29573e265cf2310" category="list-text"><block ref="d0dcba044d6a8dc4a29573e265cf2310" category="inline-link-macro-rx"></block></block>
   <block id="ae385747b29e51a9811e8ce7976b7c6b" category="inline-link-macro">了解 NetApp Console 本地部署中的 ONTAP 警报</block>
   <block id="e77eeb959a8d6ff16124b745150a7b75" category="list-text"><block ref="e77eeb959a8d6ff16124b745150a7b75" category="inline-link-macro-rx"></block></block>
   <block id="98a9a9e956c44874c27b78d15a00bb40" category="summary">了解预定义的主页仪表板和自定义仪表板如何在 NetApp Console 本地部署中协同工作。</block>
@@ -2333,49 +2325,30 @@
   <block id="53ccb7bd8c0be53a952139ebd4454132" category="paragraph-title">必需的访问角色</block>
   <block id="ab92140b4fca6a428c4d9dd6177333dc" category="paragraph">超级管理员、组织管理员、存储管理员、运营支持分析员或 NetApp Backup and Recovery 的任何管理员角色。<block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>。</block>
   <block id="181c0a0c09dfe0f8ba7b3346903c6def" category="paragraph">使用通知规则，通过适合您环境的渠道将正确的警报发送给正确的人，同时减少与您无关的警报带来的噪音。通知规则是对"警报"页面的补充：您可以在"警报"工作流程中调查或修复警报，然后使用规则来控制将来发送类似警报的方式。</block>
-  <block id="9d9e3ddcd0ba1071d2727b34998919fe" category="paragraph">通知规则根据您定义的条件（例如服务、严重程度和影响区域）匹配警报，然后通过您选择的渠道发送通知。Console 本地部署包括您可以查看和调整的默认通知规则，您也可以创建自己的自定义规则。您还可以将规则静音，以便在计划事件（如维护窗口）期间暂时禁止通知。</block>
   <block id="ef9e7cefa30ba8567d3175e4dd97d705" category="inline-link-macro">配置通知传送</block>
   <block id="ed25804203fe0cfacd7338fe370fab02" category="list-text">若要通过电子邮件发送通知，您的组织管理员必须在 Console 本地部署中配置电子邮件服务器。要向外部系统发送通知，您的组织管理员必须配置 webhook。有关步骤，请参见 <block ref="672eea012e5868d936761017846dcdbf" category="inline-link-macro-rx"></block>。</block>
   <block id="6be1395fcc81300b6bceb20c8b98659a" category="list-text">默认情况下，Console 本地部署通知中心会显示通知，因此无需对控制台内通知进行其他设置。</block>
   <block id="aa0688cb1a2561ce4a0b9e33ec24c385" category="section-title">查看通知规则</block>
   <block id="3fd13d8d5fe12b342d50496d8c1b14ea" category="paragraph">通知规则页面是查看和管理适用于贵组织的每个规则的中心位置。每个规则都会显示其关键属性，以便您可以快速评估和调整警报行为。</block>
   <block id="994fd7486592f0f379c8f7c736e9858a" category="list-text">从左侧导航栏中，选择 *Health &gt; Alerts*。</block>
-  <block id="232cdeb16b6b2880fb174bcdb7470db1" category="list-text">选择*通知设置*。</block>
   <block id="3ea34819819081b3d79348ba42359018" category="list-text">查看列表中的规则。每个规则显示其活动状态、名称、其监视的服务和严重性级别、授权接收通知的角色、启用的传递通道、上次修改的时间以及任何计划的静音时间段。</block>
   <block id="386565a9df34302963e2a006eda691f7" category="list-text">要查找特定规则，请使用筛选器和搜索控件按活动状态、服务、严重程度、角色、频道或静音状态进行筛选。</block>
   <block id="18fcc442133be306ba0fe4ee156658f9" category="section-title">创建通知规则</block>
   <block id="91c2e6e70b23b2568543595701eead74" category="paragraph">创建通知规则以定义触发通知的条件以及通知的传递方式。</block>
-  <block id="aa9b63f1bf13ee27e6302024b407c536" category="admonition">您无法为机群设置通知规则。您只能为特定系统设置通知规则。在包含多个系统的大型环境中，建议按严重性创建更广泛的规则，而不是为每个系统重复创建规则——例如，一条涵盖所有系统的"严重"规则可作为通用规则，同时为需要不同路由或收件人的系统添加额外的针对性规则。</block>
   <block id="6a1b057cf8bcf8cfcb7fd2f2e5190889" category="paragraph-title">适用于所有系统的严重警报的通知规则示例</block>
-  <block id="df54dc817bfa65461d11b98d1e80e8dd" category="paragraph">假设您希望确保不会忽视任何关键警报，无论其来自哪个系统。您可以创建一个广泛的规则，将所有关键警报路由到存储管理员的 Console Notification Center。</block>
   <block id="4bbe632b2568b2274341aa0b83187f54" category="paragraph">在此示例中，您创建的规则具有以下设置：</block>
   <block id="61cf57ee3e9221a4a1af8b64894c7068" category="list-text">*服务*：全部</block>
-  <block id="96c8440cf70ffc5c99d3b6537771f675" category="list-text">*Severity*：严重</block>
-  <block id="c0eb8fd624cbe8c25fc9c9407c7efea7" category="list-text">*IAM role*：存储管理员</block>
-  <block id="c59b712970cde5ff67eb6de5c8da29fa" category="list-text">*System*：（留空以应用于所有系统）</block>
-  <block id="60d59c713d87c9724aa352ce6a1b5b34" category="list-text">*交付方式*：Console Notification Center</block>
   <block id="24d167f15a64099d232cbac6cb917eaa" category="paragraph">通过此规则，存储管理员可以在 Console 中看到所有系统上每个关键警报的通知。此规则用作基准，您可以用更有针对性的规则进行补充。</block>
   <block id="04a7d6a2d7e7d71268015fdcc29916b9" category="paragraph-title">存储管理员容量警报的目标通知规则示例</block>
   <block id="87d32c9b50b31ec68f42710a8b498763" category="paragraph">假设您的存储管理员需要立即响应特定生产系统上的关键容量问题，但您不希望严重程度较低的警报淹没其收件箱。您可以创建一个有针对性的规则，仅在系统触发关键容量警报时向存储管理员发送电子邮件。</block>
-  <block id="8d5c68803a7483180c2f579d68754ca3" category="list-text">*服务*：ONTAP 管理</block>
-  <block id="d76c9afc46a2bb4ffe8c662d24c3edbe" category="list-text">*影响区域*：容量</block>
-  <block id="50d993cad5510cc3b2bb8e1d14be3848" category="list-text">*系统*：&lt;system_name&gt;</block>
-  <block id="c809d6a68c232dcd6de973aa0339cb80" category="list-text">*交付方式*：电子邮件</block>
   <block id="252e427d2b81f9a3381633ba3969aa27" category="paragraph">设置此规则后，当发生关键容量警报时，Console 本地部署会向指定系统的所有存储管理员发送电子邮件。严重程度较低的警报（例如警告或信息）不会生成电子邮件，因此团队可以专注于需要紧急关注的问题。</block>
-  <block id="4c63fbe84255b1ec2a74b41ab272605d" category="list-text">选择*通知设置*，然后选择*添加规则*。</block>
   <block id="250976a2b8b2604800b3ad0e6e3ef5f3" category="list-text">定义规则匹配的条件：</block>
   <block id="de50f3dcf9e49c743a0a88531b406dab" category="list-text">*规则名称*：输入一个简洁、描述性的名称。此字段为必填项。</block>
   <block id="00d401a946554da9480911973c7c00c1" category="list-text">*Rule description*：可选择输入有关规则目的的其他上下文。</block>
   <block id="3b715376b628913b6afe9e9e38110dfb" category="list-text">*服务*：选择规则适用的一个或多个 ONTAP 或平台服务。</block>
   <block id="59748e8bb2446fd93cbff6d3aafaea68" category="list-text">*角色*：选择触发规则时用户必须具备的访问角色，以便接收通知。</block>
   <block id="1c176ff939cc688d8fcbfca4a11a6d45" category="list-text">*严重级别*：选择规则监控的严重级别，例如严重、警告、错误或信息。</block>
-  <block id="077f073ee19af6e75c93d302db769b91" category="list-text">*影响区域*：选择要匹配的运营区域，例如容量或性能。</block>
-  <block id="beb055f49bc5e9306f77d5676880c887" category="list-text">*Alert name*：选择触发规则的特定警报类型。</block>
-  <block id="f7689ae17ad0ec5b65160f8cab6da1a8" category="list-text">*系统*：选择规则适用的系统上下文。</block>
   <block id="99194c98d427b169878eeb0ceba35480" category="list-text">选择通知的传送渠道：</block>
-  <block id="5112c21de19690f21dfd0064336fe8de" category="list-text">*Email*：向具有选定角色的用户发送警报电子邮件。需要配置的电子邮件服务器。</block>
-  <block id="b1e0543a1c0bcd7043c7a36363478e54" category="list-text">*Webhook*：将警报数据发送到外部系统。需要选择已配置的 Webhook 集成。</block>
-  <block id="08eea354ae8007e70c04ae40c4189cae" category="list-text">*Console Notification Center*：为具有选定角色的用户显示实时警报。</block>
   <block id="86762968ec8f9332f58d8c0a6a2aa88f" category="list-text">可选地，要在计划期间（例如维护窗口）抑制来自此规则的通知，请设置 *Mute notifications* 计划，如果希望静音期间重复，请选择重复周期。您可以为每个规则添加多个静音窗口，这对于每周修补等定期维护周期非常有用。</block>
   <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">选择 *Create*。</block>
   <block id="097f6ad8650956a694d1f6618a1835bc" category="section-title">启用或禁用通知规则</block>
@@ -2408,7 +2381,6 @@
   <block id="38f6a4f788dc0bd7558156d75efe8105" category="paragraph">监控和调查 NetApp Console 本地部署中的警报，以保持存储正常运行并最大限度地减少中断。</block>
   <block id="521327c34bbf46075820c1d409196127" category="paragraph">查看整个组织或特定机群的活动警报，按严重程度和影响区域排定优先级，并调查根本原因，以便在问题升级前解决问题。当警报包含建议的操作或 Fix It 选项时，您可以直接从调查转入补救。</block>
   <block id="e7738982e1706c423ed1dc4d154a847c" category="paragraph-title">必需的访问角色</block>
-  <block id="cbfb02cc13518d81307068ccf3ad42c2" category="paragraph">除 Federation admin 和 Federation viewer 之外的所有角色。具有 Federation admin 或 Federation viewer 角色的用户无法查看警报。<block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>。</block>
   <block id="8925988857ff65e89454a4eb593456c2" category="paragraph">对于 ONTAP 警报，您可以直接从警报页面访问 System Manager 和 Workload Analyzer 等工具以调查和解决问题。</block>
   <block id="375606b0ccfefde5bee17bc22b7d863d" category="paragraph">对于外部报告，您可以将警报列表导出为 CSV 文件进行离线分析。</block>
   <block id="fc55a582a8dba8c098b8ae6afe46eb47" category="inline-link-macro">了解如何设置警报通知</block>
@@ -2426,7 +2398,6 @@
   <block id="8ba926ef4f90ffefbd189d250c5b3d19" category="list-text">根据您需要查看的警报筛选仪表板，包括：</block>
   <block id="3f4983c4d6a52d72256e16993979c96e" category="list-text">严重程度（严重、警告或信息）</block>
   <block id="cef4a8d30c1b18c6e2bed3dedd59f542" category="list-text">按影响区域分组的关键警报</block>
-  <block id="6efcfe6a265e05264d40d3dda6f3a76e" category="list-text">影响区域（安全性、保护、可用性、性能、容量或配置）</block>
   <block id="856fb1b715c481e17f07d981ccc7ebf4" category="section-title">查看所有提醒</block>
   <block id="69eb2dcfcf0f3a463a90960e81522f1e" category="paragraph">使用"警报"选项卡可查看所选范围的活动警报的完整列表。列表将更新以反映当前组织或机群范围，您可以按名称或描述搜索列表中的特定警报。</block>
   <block id="b86d6a92a51eed6dfd9938fac60df907" category="list-text">选择*Alerts*选项卡以查看选定范围的活动警报的完整列表。</block>
@@ -2438,7 +2409,6 @@
   <block id="65f78453bc07f64ca861c0ecfe39b780" category="list-text">选择 *Systems health* 选项卡以查看与所选范围内的系统关联的警报摘要。</block>
   <block id="42e73fcad32a3ab24bb2fab9280da0d9" category="list-text">在相应系统的行上选择*查看警报*，以查看与该系统关联的活动警报的完整列表。</block>
   <block id="0dc68aa31a49ba83f70b63f2b13bd416" category="section-title">调查警报</block>
-  <block id="34419c92550cbb45bc553b2679b6cf50" category="paragraph">您可以调查警报，查看是什么触发了警报，以及谁收到了通知。</block>
   <block id="b00e88e4dda7b3a7db43247892b70bdf" category="paragraph">在调查 ONTAP 警报时，您还可以直接转到生成警报的系统的 System Manager 界面，以查看其他详细信息并采取相应措施。</block>
   <block id="23c5bc9e250e82c9b5bf441030d5bdd6" category="list-text">在任一选项卡中，选择要调查的警报的名称以查看其详细信息。</block>
   <block id="9f64c529078a13eebc43993d1ac578d4" category="inline-image-macro">查看警报详细信息</block>
@@ -2612,10 +2582,6 @@
   <block id="5b7fa871f0c8458f8606108c4cfd4e0f" category="list-text">选择*Clear fields*以清除现有配置。</block>
   <block id="a3013708d2cf8c341a84dca962344504" category="list-text">输入电子邮件服务器的新连接详细信息。</block>
   <block id="21023e438743ec26a85fc29888772fe0" category="list-text">测试成功后，选择 *Save* 保存新配置。</block>
-  <block id="102683a93268c2aad1e3d9ec49c6f6ce" category="section-title">删除电子邮件服务器配置</block>
-  <block id="4ce419a04c17b42f5c371b2953946ebf" category="paragraph">如果您不再希望 Console 本地部署发送电子邮件，则可以删除电子邮件服务器配置。</block>
-  <block id="d36c245423608ab3299af01950915d86" category="list-text">选择*配置*以打开系统配置页面。</block>
-  <block id="b41468ddb6280e56c1f532bdaa2a21c4" category="list-text">选择 *Save* 保存已清除的配置，这将从 Console 本地部署中删除电子邮件服务器配置。</block>
   <block id="6a254a34bb4844c3f68630aa0250b116" category="section-title">配置 Webhook</block>
   <block id="f19efafccb40e70e49d027a90324485e" category="paragraph">设置 Webhook，以便从 Console 本地部署向其他工具或服务发送通知。您可以配置多个 Webhook，每个 Webhook 指向不同的端点。例如，一个用于 SIEM，另一个用于值班寻呼服务。</block>
   <block id="40654a9753bb71b1c30d40fe1fcb0377" category="paragraph">创建 webhook 后，具有 Storage admin 角色的用户可以将其分配给特定的警报规则。例如，他们可以将关键警报发送到电子邮件，同时通过 webhook 将所有警报发送到第三方监控工具。</block>
@@ -3215,7 +3181,6 @@
   <block id="336e4351e57a856f458961abc5062751" category="list-text">您的提供程序类型决定：OpenAI 或 OpenAI 兼容。 <block ref="78f935c14127e9543a594b2e8112c798" category="inline-link-macro-rx"></block></block>
   <block id="d8bd49d8fe4a0de7a2b03c1aec99e88b" category="list-text">您选择的提供程序路径的有效 API 密钥。</block>
   <block id="12415726cf97af159e3e05710842f040" category="list-text">提供程序路径的端点 URL。</block>
-  <block id="0a3c869dbd390ca2cdefafd338d2cf3d" category="list-text">LLM 提供商帐户的用户名或单点登录 (SSO) ID（如果需要）。</block>
   <block id="cfe024af8356a3decd0f09b47eff88fa" category="list-text">从 Console 本地部署到选定端点的网络访问。</block>
   <block id="1f3d7608a574b42ba681dcef64704661" category="list-text">计划允许的助理操作的存储类和基于角色的访问控制。</block>
   <block id="6d4074b2f4345e60985cf590c19c3368" category="section-title">将 LLM 连接到 NetApp Console 本地部署</block>
@@ -3235,9 +3200,6 @@
   <block id="1de83f5da1c16cfca8ca9ae1534dcf3b" category="paragraph"><block ref="263da31548d1ff54f99ec1ad656a62e4" category="inline-link-macro-rx"></block>。</block>
   <block id="4e0ef856d01b17ebeacb44ab6e813a5b" category="section-title">验证 LLM 集成是否有效</block>
   <block id="649811a3ff05f0c93f06c2fdaa3bbeed" category="paragraph">保存配置后，请验证助手的可用性和行为。</block>
-  <block id="d7f8652c7bc65256b550f9446fb404f0" category="list-text">确认 *Console assistant* 按钮出现在 NetApp Console 本地部署仪表板上。</block>
-  <block id="32755bc8ea4985295f55809c96237bd0" category="list-text">在*只读*模式下打开助手并运行基本查询。</block>
-  <block id="6a0aa36fa7b572549e4bf529b93925a4" category="list-text">在*读/写*模式下打开助手，确认存储更改操作需要用户确认后才能执行。</block>
   <block id="b9218edb7fcba77407a69cc8446ba839" category="list-text">验证需要操作工作流的用户是否具有所需的基于角色的访问控制。</block>
   <block id="3bc0e23bd46bad08da1876b2cc4430a7" category="inline-link-macro">使用 NetApp Console 助手</block>
   <block id="7d69bfcb234231881e32fc0c2d9f1364" category="paragraph">完成验证后，用户可以从仪表板打开 Console 助理，并以简单的语言描述任务。有关使用示例和最终用户工作流，请参见 <block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block>。</block>
@@ -3755,4 +3717,35 @@
   <block id="7886cf4f03a683503e8235a0eef59e73" category="list-text">*Anthropic* 适用于 Anthropic 的 Claude 模型。</block>
   <block id="dc666edc3ed6edcb6babcae67d26fcd2" category="list-text">从 <block ref="5574d9b8352359225831a51c7e6c17ee" category="inline-link-macro-rx"></block> 下载 Console 本地部署软件。</block>
   <block id="ad8f5be1c708f8e891508a0a9c643e0a" category="sidebar">NetApp 信任中心</block>
+  <block id="86fe53164e7d48e6addafc1fcdf26111" category="paragraph">控制台本地部署将来自 ONTAP 集群和备份和恢复操作的警报整合到单个视图中。"警报"页面包括一个仪表板、一个警报列表和一个显示组织中所有系统警报的视图。每个警报都会标识受影响的系统、其严重程度及其影响区域。</block>
+  <block id="fe055be6fd6957c00b782e6ba2e57773" category="list-text">*严重程度*表示从最高到最低的紧急程度：严重、警告和信息。</block>
+  <block id="60e4151f41d4a03ae921c4866360316f" category="list-text">*影响区域*确定受影响的域：可用性、容量、配置、性能、保护和安全性。</block>
+  <block id="4f4677e32164d37927668f239193f729" category="list-text">*ONTAP 警报*源自 Console 本地部署发现的本地集群上的 ONTAP 事件管理系统 (EMS)，以及从 ONTAP 收集的监控指标。 <block ref="9e05df594689e3a41c64bf5428dd8f1b" category="inline-link-macro-rx"></block></block>
+  <block id="b9ce699225d62badaa143b23f2a286ac" category="section-title">通知规则</block>
+  <block id="a9dd2aada57993b6f95023192190ead8" category="list-text">它适用于组织中的所有系统。</block>
+  <block id="a7ba1daf0536691400747397351ab72f" category="inline-link-macro">创建和管理通知规则</block>
+  <block id="4bdf746b4e7f6e6dfeb75b163f3de933" category="list-text"><block ref="4bdf746b4e7f6e6dfeb75b163f3de933" category="inline-link-macro-rx"></block></block>
+  <block id="6449f494e438a56acab5430a8fa9d46f" category="paragraph">通知规则根据您定义的条件（例如服务、严重程度和影响区域）匹配警报，然后通过您选择的渠道发送通知。Console 本地部署包括您可以查看和调整的默认通知规则，您也可以创建自己的自定义规则。您还可以将规则静音，以便在计划事件（如维护窗口）期间暂时禁止通知。</block>
+  <block id="e35f5087596b0e7233f53786114a613a" category="admonition">通知规则适用于组织中的所有系统。</block>
+  <block id="192722772d82aacac1ca6123672325c6" category="paragraph">假设您希望确保不会忽视任何关键警报，无论其来自哪个系统。您可以创建一个广泛的规则，将所有关键警报路由到存储管理员的 Console UI 通知。</block>
+  <block id="d7ccc5bae6b4903d6c255b3b045a4e55" category="list-text">*严重程度*：严重</block>
+  <block id="423dffa169e3740d81b0a59fd14bc925" category="list-text">*角色*：存储管理员</block>
+  <block id="3ee7a18f4aab3d155275f688c812b12b" category="list-text">*交付渠道*：控制台 UI 通知</block>
+  <block id="7c20f1cc356d3fb78cba60fb83153974" category="list-text">*服务*：ONTAP 管理</block>
+  <block id="830f3e0189ace7d0a984dfbb36e2fdc7" category="list-text">*影响领域*：容量</block>
+  <block id="1be5a6074654d08ae3538b278b8a8485" category="list-text">*交付渠道*：电子邮件</block>
+  <block id="c922d0c540b57d391bd538d480dfc9cd" category="list-text">选择*通知规则*，然后选择*添加规则*。</block>
+  <block id="a988d3b5adb4dd67097b18a868770bb4" category="list-text">*影响区域*：选择要匹配的运营区域，例如容量或性能。</block>
+  <block id="867364563b61efd0618777d3d71d7f8f" category="list-text">*Alerts*：表示将根据策略通知所有警报。</block>
+  <block id="576412b3f5d3de4868980e97973e7d8b" category="list-text">*Systems*：表示将根据策略通知组织中所有系统上报告的警报。</block>
+  <block id="ee71ff4f683cea1809ca49786f486a63" category="list-text">*电子邮件通知*：向具有选定角色的用户发送警报电子邮件。需要配置的电子邮件服务器。</block>
+  <block id="9d127813c946fea889954dd0fde53b15" category="list-text">*Webhook 集成*：将警报数据发送到外部系统。需要选择已配置的 Webhook 集成。</block>
+  <block id="3896fb60fecaecbb0615fc54dd14d98a" category="list-text">*Console UI notifications*：为具有选定角色的用户显示实时通知。</block>
+  <block id="c12f8f1d006dc546dc07a83b341eb41d" category="paragraph">所有角色。警报仅针对您有权查看的资源显示。如果在可用资源列表中未看到资源，则表示您没有查看其警报的权限。<block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>。</block>
+  <block id="038da7e0743ee2312ac64e6eca9d2b12" category="list-text">影响区域（可用性、容量、配置、性能、保护或安全性）</block>
+  <block id="15dabf59f40706e7567510f6c6998de1" category="list-text">漂移警报仅显示由配置漂移引起的警报</block>
+  <block id="6c630ee602118044ab23bd89b0b79149" category="paragraph">您可以调查警报以查看触发警报的原因。</block>
+  <block id="30ed16d592d987bc97f9c257fb0d026c" category="list-text">LLM 提供商帐户的用户名或 ID（如有需要）。</block>
+  <block id="e90cfbea605d047e2c768be5cc0d5d90" category="list-text">在*只读*模式下打开*控制台助手*并运行基本查询。</block>
+  <block id="ddbbb4fd6daa8474cc88e6beb3919a85" category="list-text">在*读/写*模式下打开*控制台助手*，确认更改存储的操作需要用户确认后才能执行。</block>
 </blocks>

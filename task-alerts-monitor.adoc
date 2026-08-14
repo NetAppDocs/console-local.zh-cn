@@ -19,7 +19,7 @@ summary: 从 NetApp Console 本地部署中的警报概述页面查看整个组�
 查看整个组织或特定机群的活动警报，按严重程度和影响区域排定优先级，并调查根本原因，以便在问题升级前解决问题。当警报包含建议的操作或 Fix It 选项时，您可以直接从调查转入补救。
 
 .必需的访问角色
-除 Federation admin 和 Federation viewer 之外的所有角色。具有 Federation admin 或 Federation viewer 角色的用户无法查看警报。link:reference-iam-predefined-roles.html["了解访问角色"]。
+所有角色。警报仅针对您有权查看的资源显示。如果在可用资源列表中未看到资源，则表示您没有查看其警报的权限。link:reference-iam-predefined-roles.html["了解访问角色"]。
 
 对于 ONTAP 警报，您可以直接从警报页面访问 System Manager 和 Workload Analyzer 等工具以调查和解决问题。
 
@@ -60,7 +60,8 @@ NetApp Console 本地部署支持 ONTAP 和 NetApp Backup and Recovery 的警报
 +
 ** 严重程度（严重、警告或信息）
 ** 按影响区域分组的关键警报
-** 影响区域（安全性、保护、可用性、性能、容量或配置）
+** 影响区域（可用性、容量、配置、性能、保护或安全性）
+** 漂移警报仅显示由配置漂移引起的警报
 
 
 
@@ -111,7 +112,7 @@ image:screenshot-alerts-search.png["按名称或描述搜索提醒"]
 [[investigate-an-alert]]
 == 调查警报
 
-您可以调查警报，查看是什么触发了警报，以及谁收到了通知。
+您可以调查警报以查看触发警报的原因。
 
 在调查 ONTAP 警报时，您还可以直接转到生成警报的系统的 System Manager 界面，以查看其他详细信息并采取相应措施。
 
