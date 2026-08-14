@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference-ports-on-prem.html 
-keywords: networking, network requirements, ports, on-premises, TCP, HTTP, HTTPS, firewall, connectivity requirements, Console agent, agent connectivity, netapp console local 
-summary: 当手动安装在本地 Linux 主机上时，Console 代理使用_入站_端口。请参阅这些端口以进行规划。 
+keywords: networking, network requirements, ports, on-premises, TCP, UDP, firewall, connectivity requirements, Console agent, agent connectivity, netapp console local, inbound ports, OVA 
+summary: NetApp Console 本地部署 OVA 管理自己的内部防火墙。如果您的环境在虚拟机上实施了外部防火墙策略，请确保可以从管理主机访问以下入站端口。 
 ---
-= NetApp Console 本地部署中内部部署 Console 代理的端口
+= NetApp Console 本地部署的入站端口
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,21 +14,39 @@ summary: 当手动安装在本地 Linux 主机上时，Console 代理使用_入�
 
 
 [role="lead"]
-在 NetApp Console 本地部署中，当手动安装到本地 Linux 主机上时，Console 代理使用_入站_端口。请参阅这些端口以进行规划。
-
-这些入站规则适用于所有 NetApp Console 部署模式。
+NetApp Console 本地部署 OVA 管理自己的内部防火墙。如果您的环境在虚拟机上实施了外部防火墙策略，请确保可以从管理主机访问以下入站端口。
 
 [cols="10,10,80"]
 |===
-| 协议 | 端口 | 目的 
+| 端口 | 协议 | 目的 
 
 
-| HTTP | 80  a| 
-* 提供从客户端 Web 浏览器到本地用户界面的 HTTP 访问
-* 在 Cloud Volumes ONTAP 升级过程中使用
+| 22 | TCP | 用于远程维护和诊断 shell 访问的 SSH 
 
 
+| 123 | UDP | 用于时间同步的 NTP 
 
 
-| HTTPS | 443 | 提供从客户端 Web 浏览器到本地用户界面的 HTTPS 访问 
+| 2379 | TCP | 用于 RKE2 控制平面 etcd 客户端流量的 etcd 客户端 API 
+
+
+| 2380 | TCP | etcd 用于 etcd 成员到成员复制的对等端口 
+
+
+| 6443 | TCP | 用于 kubectl 和 RKE2 API 访问的 Kubernetes API 服务器 
+
+
+| 8472 | UDP | 用于 RKE2 节点之间的 pod 到 pod 流量的 Canal/Flannel VXLAN 覆盖 
+
+
+| 9091 | TCP | 用于 CNI 健康和指标的 Calico Felix 指标端点 
+
+
+| 9100 | TCP | 用于主机指标抓取的 Prometheus node_exporter 
+
+
+| 9345 | TCP | RKE2 supervisor 和服务器注册端点 
+
+
+| 10250 | TCP | 用于 metrics-server 和 kube-apiserver 到 kubelet 的 Kubelet API 
 |===
