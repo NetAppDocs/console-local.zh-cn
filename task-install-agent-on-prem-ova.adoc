@@ -48,7 +48,6 @@ summary: 使用 OVA 在 VCenter 中安装 NetApp Console 本地部署。OVA 下�
 
 
 [[set-up-network-access-for-the-netapp-console-local-deployment]]
-[[network-access-agent]]
 === 设置 NetApp Console 本地部署的网络访问权限
 
 NetApp Console 本地部署使用固定地址空间进行服务间通信。IP 范围 10.42.0.0/16 和 10.43.0.0/16 用于内部网络。在部署 Console 本地部署之前，请确保这些 IP 范围未分配给 Console 本地部署可用的 VLAN 上的其他虚拟机、DHCP 范围、DNS 记录或负载均衡器 VIP 池。
