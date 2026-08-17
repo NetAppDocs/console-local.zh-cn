@@ -23,7 +23,7 @@ NetApp Console 本地部署允许您在自己的基础架构中托管和运行 N
 [[deploy-and-operate-console-in-your-own-infrastructure]]
 == 在自己的基础架构中部署和操作 Console
 
-NetApp Console 本地部署在您自己的基础架构中运行，因此您的团队可以控制部署、连接和日常操作。您需要部署 Console 代理、维护 Console 虚拟机，并管理监控和管理流量所需的网络路径。这使企业管理员能够完全控制操作边界，同时将管理数据保留在环境内部。
+NetApp Console 本地部署在您自己的基础架构中运行，因此您的团队可以控制部署、连接和日常操作。这使企业管理员能够完全控制操作边界，同时将管理数据保留在环境内部。
 
 * link:task-install-agent-on-prem-ova.html["在 vCenter 中使用 OVA 安装 NetApp Console 本地部署"]。
 * link:task-console-local-vm-config.html["维护您的 vCenter 或 ESXi 主机以进行 NetApp Console 本地部署"]。

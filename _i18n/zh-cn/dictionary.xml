@@ -1082,7 +1082,6 @@
   <block id="dbe73508391080b9a6912d86cd12081b" category="paragraph">NetApp Console 本地部署允许您在自己的基础架构中托管和运行 NetApp Console 自主控制平面。</block>
   <block id="beedafd761122a9080cda6f61cac7b4b" category="paragraph">您可以获得统一的存储管理、策略实施、大规模自动化和 AI 辅助操作。数据、元数据或管理流量均不会离开您的环境。</block>
   <block id="67e0c8d8a0aad1277b006016dd82f25c" category="section-title">在自己的基础架构中部署和操作 Console</block>
-  <block id="10aa80cd468ec0811813d44ef98bca90" category="paragraph">NetApp Console 本地部署在您自己的基础架构中运行，因此您的团队可以控制部署、连接和日常操作。您需要部署 Console 代理、维护 Console 虚拟机，并管理监控和管理流量所需的网络路径。这使企业管理员能够完全控制操作边界，同时将管理数据保留在环境内部。</block>
   <block id="00a758ee2cda4e4890c0ee5cfce54b04" category="inline-link-macro">在 vCenter 中使用 OVA 安装 NetApp Console 本地部署</block>
   <block id="3e3c94e96f9dd9a6b52f7e3bd29e96cd" category="list-text"><block ref="d8fb061273f01bc1c630b76c017340f0" category="inline-link-macro-rx"></block>。</block>
   <block id="dd67cc32b95952e9b3fce404242dfee2" category="inline-link-macro">维护您的 vCenter 或 ESXi 主机以进行 NetApp Console 本地部署</block>
@@ -1932,13 +1931,10 @@
   <block id="ad720d685bc721c408c448c0fe562369" category="summary">NetApp Console 本地部署已知限制参考。</block>
   <block id="7ffe052f293422713268a6bb9df1fc9f" category="doc">NetApp Console 本地部署中的已知限制</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="paragraph">已知限制指出本产品版本不支持的平台、设备或功能，或与其无法正常互操作的平台、设备或功能。请仔细查看这些限制。</block>
-  <block id="dceccbe9e562b7202ac801a976ca4d73" category="paragraph">这些限制特定于 NetApp Console 和管理的设置：代理、软件即服务 (SaaS) 平台等。</block>
   <block id="360330c9adc975e1008000d1df74a468" category="section-title">Console VM 限制</block>
   <block id="682a2eb88d49c213f5029c53633e10c9" category="section-title">可能与10.42.0.0/16和10.43.0.0/16范围内的IP地址发生冲突</block>
   <block id="3b9690f89f4029f3b099f8b7c371b951" category="section-title">不支持共享 Linux 主机</block>
-  <block id="55334f6c7481482659eaa1b0aef1601a" category="paragraph">与其他应用程序共享的 VM 不支持该代理。VM 必须专用于代理软件。</block>
   <block id="5ef1446cf0ab868961d473d928c394d6" category="section-title">第三方代理和扩展</block>
-  <block id="08ea771e22fb933fc1428178b36eb902" category="paragraph">代理虚拟机不支持第三方代理或虚拟机扩展。</block>
   <block id="3d8cb3230f2a32ea6afadc9475030feb" category="summary">在 NetApp Console 本地部署中监控的 ONTAP 警报参考，按影响类别组织。</block>
   <block id="a9a22f62e500b57a916841885d3320a2" category="doc">ONTAP 警报参考（NetApp Console 本地部署）</block>
   <block id="a3831fb324d31cc99ef99e375686386a" category="paragraph">此参考文档按影响类别列出 NetApp Console 本地部署可以监控的 ONTAP 警报。</block>
@@ -3094,7 +3090,6 @@
   <block id="5783f062ee67d1e08bcb603d908bec19" category="list-text">*删除此范围内的成员访问权限*：对于在此文件夹或舰队中直接定义角色的成员，请删除该角色以撤销其在此范围内的访问权限。这不会从您的组织中删除成员，也不会影响他们在其他范围内的角色。</block>
   <block id="1f68cc23ffd79d8b92a25e3163e1bcff" category="paragraph"><block ref="2b3106c38646014daf77549827b80860" category="inline-link-macro-rx"></block>。</block>
   <block id="24347b3ddf5a25cc9c27e54ae285ade1" category="list-text">选择*应用*。</block>
-  <block id="54ead9f62e4ad67dbab07d7ac18a67c2" category="summary">如果您是 VMWare 用户，您可以使用 OVA 在您的 VCenter 中安装控制台代理。OVA 下载或 URL 可通过 NetApp Console 本地部署获得。</block>
   <block id="732484ec48b3de6a355c4a8d10a6491f" category="paragraph">使用 OVA 在 VCenter 中安装 NetApp Console 本地部署。OVA 下载或 URL 可通过 NetApp 支持站点获得。</block>
   <block id="bfa61bc8df2f0d4cb1dd6df73376608c" category="section-title">准备安装 NetApp Console 本地部署</block>
   <block id="4e00644af1cd7d7ae6f52544a8dc1472" category="paragraph">安装前，请确保您的虚拟机主机符合要求，并且 NetApp Console 本地部署可以访问互联网和目标网络。要使用 NetApp Backup and Recovery 等 NetApp 数据服务，请为 NetApp Console 本地部署创建云提供商凭据，以代表您执行操作。</block>
@@ -3750,4 +3745,7 @@
   <block id="924c6a9c613412a0e4058026aa89a86a" category="cell">用于 metrics-server 和 kube-apiserver 到 kubelet 的 Kubelet API</block>
   <block id="50a807a194603f6075b05395337e3064" category="summary">您可以在部署 Console 本地部署后对现有 VCenter 或 ESXi 主机进行更改。</block>
   <block id="e137fee1052a69e09aea64b66a681285" category="paragraph">在 NetApp Console 本地部署中，您可以在部署 Console 本地部署后对现有 VCenter 或 ESXi 主机进行更改。</block>
+  <block id="c3bdc6c19998b310e22df96fbe31d526" category="paragraph">NetApp Console 本地部署在您自己的基础架构中运行，因此您的团队可以控制部署、连接和日常操作。这使企业管理员能够完全控制操作边界，同时将管理数据保留在环境内部。</block>
+  <block id="8797fdac4224deac7f57143811175742" category="paragraph">NetApp Console 本地部署不支持在与其他应用程序共享的 VM 上进行。VM 必须专用于 NetApp Console 本地部署。</block>
+  <block id="9d22f7f3fcf091469f2515885be2bfb9" category="paragraph">第三方代理或虚拟机扩展在 NetApp Console 本地部署虚拟机上不受支持。</block>
 </blocks>
