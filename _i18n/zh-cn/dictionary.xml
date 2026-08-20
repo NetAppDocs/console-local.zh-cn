@@ -3633,4 +3633,7 @@
   <block id="66ae36e07e30e4c89165201182d037be" category="cell">必须先配置 SMTP 电子邮件服务器，然后才能邀请本地用户或为本地用户使用密码重置。</block>
   <block id="d433d6de6ccf389e02982430306a440f" category="cell">本地用户和 Active Directory 用户不支持重复的电子邮件地址。例如，如果初始本地组织管理员后来将自己添加为 Active Directory 用户，则必须使用其他电子邮件地址。</block>
   <block id="3be37f60cf59fb4438b6120b07ffd2e9" category="admonition">本地用户邀请链接为一次性链接，7 天后失效。如果链接在用户完成设置之前过期，请删除用户并重新添加，以发送新的邀请链接。</block>
+  <block id="d2a0f46558d1ad15a1efcaa26aef1b39" category="inline-link">了解 NetApp Console 本地部署与 NetApp Console SaaS 和私有模式之间的区别</block>
+  <block id="fc43c258a671e0d243e8a95a48956300" category="paragraph"><block ref="a79ef635b40614d2cd5c555de517dd6f" category="inline-link-rx"></block>。</block>
+  <block id="4688d87a2acbed67ab6380ef3dbee717" category="paragraph"><block ref="dff1bfa50abe498b973310763c6748f5" category="inline-link-macro-rx"></block>。</block>
 </blocks>
