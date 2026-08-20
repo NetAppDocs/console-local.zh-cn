@@ -3057,8 +3057,6 @@
   <block id="bb1e1ef266584a5a332dfd21a0ceff90" category="list-text">如果选择了显式代理，请输入代理服务器主机名或 IP 地址和端口号，以及用户名和密码。</block>
   <block id="777fde86c6354cd539ec78cfac87b390" category="list-text">如果选择了透明代理，请上传相应的证书。</block>
   <block id="f6b06d7af2e17b031527e55078cf6bda" category="list-text">*虚拟机配置*</block>
-  <block id="536601d5f2a0ce3000ead0f9e4f4cfc2" category="list-text">*跳过配置检查*：默认情况下，此复选框未选中，这意味着 NetApp Console 本地部署将运行配置检查以验证网络访问。</block>
-  <block id="04157edfd56e309364a7442b42b155a9" category="list-text">NetApp 建议不选中此框，以便安装包括对 NetApp Console 本地部署的配置检查。配置检查验证 NetApp Console 本地部署是否具有所需端点的网络访问权限。如果由于连接问题导致部署失败，您可以从 NetApp Console 本地部署主机访问验证报告和日志。在某些情况下，如果您确信 NetApp Console 本地部署具有网络访问权限，则可以选择跳过检查。</block>
   <block id="4dbd3c987fc3c99f4068f93b9ddf0271" category="list-text">*维护密码*：为<block ref="67f50785d40416a7a7689c5c353f1128" prefix=" " category="inline-code"></block>用户设置密码，该用户可访问 NetApp Console 本地部署维护控制台。</block>
   <block id="cb059a17daa0db402273fce83326bc2b" category="list-text">*NTP servers*：指定一个或多个用于时间同步的 NTP 服务器。</block>
   <block id="fea958d8a6639552d2e73dadaab0eb59" category="list-text">*主机名*：设置此虚拟机的主机名。它不能包含搜索域。例如，console10.searchdomain.company.com 的 FQDN 应输入为 console10。</block>
@@ -3626,4 +3624,13 @@
   <block id="d2102c65ff11954ccbf42346bfdd3f4f" category="list-text">在支持卡上，选择 *创建* 以创建日志和配置数据捆绑包。</block>
   <block id="6d6556399a0b8fc0d6acf274ab50bd15" category="list-text">创建捆绑包后，选择 *下载*。系统会提示您下载 ZIP 文件。</block>
   <block id="c5303cf1b99e0c56f64b84d5b1fa0e9a" category="paragraph">系统一次只保留一个捆绑包。创建新的支持捆绑包将取代之前的支持捆绑包。</block>
+  <block id="5a416b505eeb414e2a13458a4f94ecbf" category="admonition">警报在 NetApp Console 本地部署中自发出之时起保留 7 天。</block>
+  <block id="ddd48b069384a5d886b18fc4008bcb18" category="admonition">Console UI 通知将保留 24 小时。</block>
+  <block id="3732468e73bd908d56c8b63b5774bb20" category="section-title">身份和访问限制</block>
+  <block id="deec4ff19974f12ed781cb9a59064214" category="cell">区域</block>
+  <block id="f3d9abb903127694db460aa9c7f4d7be" category="cell">限制</block>
+  <block id="16492f4d2028d9a0f96c4e1590b65f2c" category="cell">本地用户引导和账号恢复</block>
+  <block id="66ae36e07e30e4c89165201182d037be" category="cell">必须先配置 SMTP 电子邮件服务器，然后才能邀请本地用户或为本地用户使用密码重置。</block>
+  <block id="d433d6de6ccf389e02982430306a440f" category="cell">本地用户和 Active Directory 用户不支持重复的电子邮件地址。例如，如果初始本地组织管理员后来将自己添加为 Active Directory 用户，则必须使用其他电子邮件地址。</block>
+  <block id="3be37f60cf59fb4438b6120b07ffd2e9" category="admonition">本地用户邀请链接为一次性链接，7 天后失效。如果链接在用户完成设置之前过期，请删除用户并重新添加，以发送新的邀请链接。</block>
 </blocks>

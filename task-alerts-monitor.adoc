@@ -26,6 +26,9 @@ summary: 从 NetApp Console 本地部署中的警报概述页面查看整个组�
 对于外部报告，您可以将警报列表导出为 CSV 文件进行离线分析。
 
 
+NOTE: 警报在 NetApp Console 本地部署中自发出之时起保留 7 天。
+
+
 NOTE: 您还可以设置通知规则，以通过电子邮件或 Webhook 接收警报。link:task-alert-rules-manage.html["了解如何设置警报通知"]。
 
 

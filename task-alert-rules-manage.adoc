@@ -36,6 +36,9 @@ summary: 在 NetApp Console 本地部署中配置通知规则，以控制哪些�
 
 
 
+NOTE: Console UI 通知将保留 24 小时。
+
+
 
 [[view-notification-rules]]
 == 查看通知规则

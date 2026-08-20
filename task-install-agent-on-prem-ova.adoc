@@ -108,11 +108,6 @@ NetApp 支持在 VCenter 环境中安装 NetApp Console 本地部署。OVA 文�
 
 ** *虚拟机配置*
 +
-*** *跳过配置检查*：默认情况下，此复选框未选中，这意味着 NetApp Console 本地部署将运行配置检查以验证网络访问。
-+
-**** NetApp 建议不选中此框，以便安装包括对 NetApp Console 本地部署的配置检查。配置检查验证 NetApp Console 本地部署是否具有所需端点的网络访问权限。如果由于连接问题导致部署失败，您可以从 NetApp Console 本地部署主机访问验证报告和日志。在某些情况下，如果您确信 NetApp Console 本地部署具有网络访问权限，则可以选择跳过检查。
-
-
 *** *维护密码*：为 `maint`用户设置密码，该用户可访问 NetApp Console 本地部署维护控制台。
 *** *NTP servers*：指定一个或多个用于时间同步的 NTP 服务器。
 *** *主机名*：设置此虚拟机的主机名。它不能包含搜索域。例如，console10.searchdomain.company.com 的 FQDN 应输入为 console10。
