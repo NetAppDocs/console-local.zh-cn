@@ -31,7 +31,7 @@ summary: 在 NetApp Console 本地部署中配置通知规则，以控制哪些�
 [[before-you-begin]]
 == 开始之前
 
-* 若要通过电子邮件发送通知，您的组织管理员必须在 Console 本地部署中配置电子邮件服务器。要向外部系统发送通知，您的组织管理员必须配置 webhook。有关步骤，请参见 link:task-console-configure-notifications-delivery.html["配置通知传送"]。
+* 若要通过电子邮件发送通知，您的组织管理员必须在 Console 本地部署中配置电子邮件服务器。要向外部系统发送通知，您的组织管理员必须配置 webhook。link:task-console-configure-notifications-delivery.html["了解如何配置 Webhook"].
 * 默认情况下，Console 本地部署通知中心会显示通知，因此无需对控制台内通知进行其他设置。
 
 

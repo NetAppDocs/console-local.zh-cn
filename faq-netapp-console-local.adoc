@@ -156,13 +156,19 @@ link:reference-iam-predefined-roles.html["了解预定义的访问角色"]。
 == AI 辅助管理
 
 .NetApp Console 本地部署支持哪些 LLM 提供商进行 AI 辅助管理？
-您可以为以下受支持的提供程序类型提供自己的订阅或服务访问权限：OpenAI 或 OpenAI 兼容。然后在配置过程中提供有效的 API 密钥。您还需要部署具有集群访问权限的 Console、到已配置端点的出站网络连接、组织管理员角色以及用于指导配置的存储类。link:concept-llm-integration.html["了解 LLM 集成"]。
+您可以为受支持的提供程序类型（OpenAI、OpenAI 兼容或 Anthropic）提供自己的订阅或服务访问权限（由您的版本和端点支持）。然后在配置过程中提供有效的 API 密钥。您还需要与已配置的端点建立出站网络连接，并具有组织管理员或超级管理员角色才能配置集成。link:concept-llm-integration.html["了解 LLM 集成"]。
 
 .启用 LLM 集成是否会将我的存储数据或查询发送给第三方服务？
 控制台仅将提示和相关上下文发送到您配置的 LLM 端点。如果该端点是第三方云服务，则数据将通过 HTTPS 发送到该服务。如果该端点是与 OpenAI 兼容的内部服务，则数据将保留在该集成的内部路径上。所有 AI 操作也遵循您的 RBAC，敏感操作需要您的确认。link:concept-llm-integration.html["了解 LLM 集成"]。
 
 .Console 助理可以做什么，以及如何控制它是否会更改我的存储？
-连接 LLM 后，Console 助手允许用户使用自然语言配置存储、调查警报并获取答案。用户选择一种访问模式：在*只读*模式下，助手应答并提供指导而不进行任何更改；而在*读/写*模式下，它可以对存储基础架构执行操作，但会显示详细信息，供用户在每次更改前查看和确认。link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"].
+连接 LLM 后，Console 助理允许用户使用自然语言获得指导、分析支持的指标、配置存储、调查警报以及请求支持的 ONTAP 操作。在*只读*模式下，助理不会进行任何更改。在*读/写*模式下，它会显示建议的存储更改操作，以便在执行前进行审核和确认。link:task-console-asst-use.html["使用 NetApp Console 助手"]。
+
+.Console 助理支持哪些操作？
+Console 助理支持对话式指导、只读指标分析、存储配置、警报调查和选定的 ONTAP 管理操作。可用操作取决于版本、配置的端点以及您的角色和资源范围。link:reference-console-assistant-operations.html["查看受支持的 Console 助手操作"].
+
+.Console 助手执行异步操作时会发生什么？
+对于无法立即完成的受支持操作，助手将创建一个作业，并在您询问请求时返回当前状态。link:task-console-asst-use.html["使用 NetApp Console 助手"]。
 
 
 

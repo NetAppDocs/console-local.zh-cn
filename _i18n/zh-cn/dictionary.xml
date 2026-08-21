@@ -694,7 +694,6 @@
   <block id="df583ae7ba964fd4806b55904da81813" category="list-text">警报</block>
   <block id="4c086d3715a8b22b3c143d19166de38e" category="list-text">关键警报计数、按严重程度划分的警报、按受影响区域划分的警报、最近的警报以及一段时间内的警报趋势。</block>
   <block id="b42fdc31e61410be0c86a5b9f19f19ca" category="inline-link-macro">了解 NetApp Console 本地部署中的自定义仪表板卡和指标</block>
-  <block id="38d88cefcc7a0718a9c0bcce1717fce6" category="paragraph">有关预定义卡片和指标的完整目录，请参见 <block ref="3c1edbc90178caabd44cba55bcbaa0a8" category="inline-link-macro-rx"></block>。</block>
   <block id="b6af2b8fdca63591236d48930018b8db" category="section-title">资源类型</block>
   <block id="bfd5a6ae9cda3045e7221edca5e40d50" category="paragraph">您可以将卡片范围扩展到 ONTAP 存储层次结构的任何级别：舰队、群集、系统（节点）、SVM、卷、LUN 和本地层（聚合）。可用的资源类型取决于您选择的卡片模板。</block>
   <block id="f74a30443ec29f100214ac2ade776efa" category="section-title">计划信息板视图</block>
@@ -890,13 +889,10 @@
   <block id="d0be151a63fab72d6333774c4ad643bb" category="inline-link">了解用于 NetApp Console IAM 的 API</block>
   <block id="d7726716920c51dac9e8d3b944fb1d9c" category="list-text"><block ref="d7726716920c51dac9e8d3b944fb1d9c" category="inline-link-rx"></block></block>
   <block id="aaa31fb12388ee6f380920310c04b753" category="doc">了解 LLM 在 NetApp Console 本地部署中的集成</block>
-  <block id="345b50b0707634d277d7a44851e59fe4" category="paragraph">NetApp Console 本地部署连接到大型语言模型 (LLM)，用于 AI 辅助存储管理。设置完成后，用户可以使用自然语言配置存储、调查警报并获取存储指导。</block>
   <block id="4f9d5100edf765a8f2ae1c53a1a257cc" category="paragraph">AI 辅助管理让用户能够以简单语言描述请求，同时 Console 本地部署应用您的存储策略。</block>
   <block id="60fbe3f23efb906d26a4c4bbd9ca4833" category="paragraph">控制台本地部署仅向您配置的端点发送 LLM 请求。</block>
   <block id="cab4ccf93d529848163ed08f0ada7f06" category="section-title">您可以使用 AI 辅助存储管理做什么</block>
-  <block id="3f38bedfc27f189a284145765b9a449b" category="paragraph">当您启用 LLM 集成时，Console 本地部署通过 Console 助手提供三种功能：</block>
   <block id="cf8a6bb8b76d2d0b249ebb7a5adc9be3" category="list-text">*Storage provisioning* 以通俗易懂的语言描述工作负载要求。Console 本地部署根据您的存储类推荐并运行配置计划。</block>
-  <block id="28f3b1780ea624d65d217245143767c1" category="list-text">*Alert response* 要求 Console 本地部署调查活动警报。它会分析问题，并根据分配的权限建议或运行操作。</block>
   <block id="39602a23041c5f7b663f3da5d0e00558" category="list-text">*搜索和指导* 询问有关您的存储环境或 ONTAP 管理的问题。Console 本地部署从文档和当前集群状态返回上下文答案。</block>
   <block id="5f7253fc639860a02e10fa7f2828ed5c" category="section-title">为 Console assistant 选择只读或读/写访问权限</block>
   <block id="bbe76109c7fbe5aecb4f4a81f82d5417" category="paragraph">用户根据他们想要的结果选择助手访问模式：</block>
@@ -913,20 +909,13 @@
   <block id="fee6af50bc6105fefb846f7e518fb7cf" category="list-text">*OpenAI-compatible* 适用于兼容的端点，例如企业网关或代理服务。</block>
   <block id="7de1d980a668ed0c9d00649c3750c5d1" category="paragraph">模型可用性取决于您配置的端点。在 Console 本地部署的列表中选择一个模型。</block>
   <block id="64c716e8b3c375cb10518555f2cc559d" category="inline-link-macro">了解 NetApp Console 本地部署中受支持的 LLM 提供程序和模型</block>
-  <block id="42e3047ea36dd2b663d0f3f5d7b20152" category="paragraph">有关支持的型号详细信息，请参见 <block ref="1a3a7e8df14b08dab1953f3a058a454f" category="inline-link-macro-rx"></block>。</block>
-  <block id="422101339203679b06feb11e89eaddee" category="section-title">了解 LLM 请求的去向</block>
-  <block id="9558d54e54b350a8e1a8d840174a01d2" category="paragraph">数据流取决于您选择的端点路径：</block>
-  <block id="1b9758ab620ca9cdf6403026ad8296a9" category="list-text">如果配置 OpenAI 端点，Console 本地部署会将提示和上下文发送到 OpenAI 端点。</block>
-  <block id="12d8fe4fe548c2403000b35372fb4f89" category="list-text">如果配置与 OpenAI 兼容的终结点，则 Console 本地部署会将提示和上下文发送到组织配置的兼容终结点。</block>
   <block id="26973ca0129cd9b839210e7a88910363" category="section-title">保护 LLM 凭据并控制管理员访问</block>
   <block id="2772caebca7670bd33b60c225f1e6e00" category="paragraph">保护与这些控件的集成：</block>
   <block id="69f9166e1bc0ee68a717caa86c61c0ed" category="list-text">将 API 密钥视为特权凭据，并根据组织策略进行轮换。</block>
   <block id="f6e53988ba18fbea16b697bbb45138b4" category="list-text">查看提供商端的使用情况和警报，以检测意外活动。</block>
   <block id="a522d99644d6d85ac7382eaf2e2d4c05" category="section-title">连接 LLM</block>
   <block id="97c3ffcb37aa0f2c1a487457b78e22d2" category="inline-link-macro">连接您的 LLM 并启用 NetApp Console 助理</block>
-  <block id="1d391b5ecd383efab633bc06537f6377" category="paragraph">做出这些决定后，请继续<block ref="0c62c57f6bc2623f5886c16a048a7f64" category="inline-link-macro-rx"></block>。</block>
   <block id="8116430033c6b5f8f6545eebccfd8429" category="inline-link-macro">对 LLM 集成进行故障排除</block>
-  <block id="602d4acd38bae620a7cc9e4fb8acc871" category="paragraph">如果连接或运行时检查失败，请参见 <block ref="0a33e06ad623a7ea3644eaec2b7d3695" category="inline-link-macro-rx"></block>。</block>
   <block id="38c8b5197ae6f48260ff2edca54448f4" category="summary">了解有关在 NetApp Console 本地部署中管理存储的信息，包括存储类、策略和置备方法。</block>
   <block id="3b495f6b085b370d0fc9fbecd94193a2" category="doc">NetApp Console 本地部署中的存储管理工作流程概述</block>
   <block id="9f0d8205383391e4bcee4e39b5a47105" category="paragraph">在 NetApp Console 本地部署中，netApp Console（本地）可帮助您使用一致、可重用的标准大规模管理 ONTAP 存储。您无需为每个卷或 LUN 做出一次性决策，而是一次性定义已批准的行为，并将其应用于整个集群——无论是手动配置、使用自动放置，还是使用 AI 辅助的计划与审批工作流。</block>
@@ -971,7 +960,6 @@
   <block id="fbda47b9907c4910495133059586edf7" category="list-text">*治理和控制* - 随着团队的成长，需要明确界定谁可以管理什么。Fleet management 通过组织结构和访问控制提供这些边界，确保存储决策始终受到管理且可审计。</block>
   <block id="d4d4881ce496e1c9ced87e9ddc5c24de" category="section-title">队列如何组织您的资源</block>
   <block id="ed36d27fd3d784f75bc4e95f9c5d9bab" category="paragraph">您组织的资源层次结构由文件夹和队列组成：</block>
-  <block id="96fb720c859e15c5611f5bb8e74bcb92" category="paragraph">有关层次结构和访问模型的详细概述，请参见 <block ref="d07384ef73e7914a88e8fd2435c2eb27" category="inline-link-macro-rx"></block>。</block>
   <block id="93188c76880b80093e9bb0b625dda8c9" category="list-text">*组织* - 代表贵公司的顶层。</block>
   <block id="f62a689acdcb6a2cee436effe083f024" category="list-text">*Folders* - 帮助您组织相关的 fleet。例如，您可以为每个地区或业务部门创建一个文件夹，然后在每个文件夹中创建 fleet。文件夹可以包含其他文件夹或 fleet。当您在文件夹级别分配角色时，成员将继承该文件夹内所有 fleet 的相应角色。</block>
   <block id="568367fa2b5f52767293ebbd0abe589a" category="list-text">*Fleets* - 将您管理的存储系统分组在一起。您将存储系统与 Fleets 关联，并将成员分配给 Fleets 以授予其访问权限。</block>
@@ -1002,9 +990,6 @@
   <block id="8070eb0b00a3637e1cc617ccae39a765" category="list-text">*AI 辅助（代理）配置* - 您用自然语言描述所需内容。Console 本地部署提出一个受 RBAC 和存储类约束的计划，然后仅在您审核并批准后进行配置。</block>
   <block id="3163b3d4dc92f42d04ad4c79906dcdc3" category="section-title">后续步骤</block>
   <block id="4687a271cd6bee287b9ef74078e0d610" category="inline-link-macro">了解 NetApp Console 本地部署中的存储类和策略</block>
-  <block id="ceab724e78618b5f1158c38dc82aeadd" category="list-text">要了解存储标准，请参见 <block ref="091e8c8fe9f2d7d00a71788386fcbe28" category="inline-link-macro-rx"></block>。</block>
-  <block id="09b4fb9c519c7b32e176f5b13226fc0a" category="inline-link-macro">管理文件夹和队列</block>
-  <block id="dff51bcbaaa971512ca0f18440810108" category="list-text">要创建和管理队列，请参见 <block ref="e60e2f54a818b7abd8e7f20686567eb6" category="inline-link-macro-rx"></block>。</block>
   <block id="8fab4a7bf5aa87ccfa487603d06afe37" category="inline-link-macro">手动预配存储</block>
   <block id="db2b7390ec9b3e4fc8c8630658ede1c4" category="list-text"><block ref="db2b7390ec9b3e4fc8c8630658ede1c4" category="inline-link-macro-rx"></block></block>
   <block id="b2616964d51b081a64cd32c5987bb43d" category="inline-link-macro">自动配置存储</block>
@@ -1281,11 +1266,7 @@
   <block id="4c24782166765ed0ecf73dc338eaee4b" category="list-text">*修正漂移以恢复合规性* - 当检测到漂移或性能不合规时，您可以按照指导步骤手动纠正问题，让 Console 本地部署自动解决常见的漂移条件，或者在需要更改其设置时将工作负载与其存储类解除关联。</block>
   <block id="792a20076f5be715e2bc7691d34eb87f" category="section-title">存储类如何与队列配合使用</block>
   <block id="fd32177227b2e1a8f54a4a0e61faff04" category="paragraph">存储类与队列相关联。当您将存储类与队列关联时，该类将可用于队列内的所有配置。这可确保在队列中配置的每个工作负载都遵循相同的标准，使队列成为跨相关集群实施一致存储行为的主要方式。</block>
-  <block id="845057ca05c9dd57e612009f918546d2" category="paragraph">有关如何组织车队的详细信息，请参见 <block ref="db9b96303a8e941f40944ec886cf0ba1" category="inline-link-macro-rx"></block>。</block>
-  <block id="282bf41f7883989b4cfb23e79bcf8587" category="list-text">要了解车队组织，请参见 <block ref="db9b96303a8e941f40944ec886cf0ba1" category="inline-link-macro-rx"></block>。</block>
   <block id="d583d8c6f74d877962807ff61ff1f0ad" category="inline-link-macro">管理存储类和策略</block>
-  <block id="b3578b2947412769eaa0d865f7566d63" category="list-text">要创建策略和存储类，请参见 <block ref="130e257000a6cd23784d6444ddff3ea4" category="inline-link-macro-rx"></block>。</block>
-  <block id="c099b69ff5969d5fa0df3d96a690d645" category="list-text">要分析和修复漂移，请参见 <block ref="2945052ecb7e00bcbe7209543ea78a15" category="inline-link-macro-rx"></block></block>
   <block id="68acd361711f151c44997846746f2774" category="summary">存储群组对您在 NetApp Console 本地部署中共同管理的存储系统进行分组。使用文件夹对相关群组进行分组。您可以在所需范围内应用策略、授予访问权限和监控运行状况。</block>
   <block id="2ab6f9761744c4c00754544731fa746c" category="section-title">为何需要关注机群</block>
   <block id="c7abac757cf7ea7b2744ef118c1de04c" category="paragraph">随着存储环境的增长，单独管理单个集群变得不切实际。Fleet 为您提供了一种结构化的方式来对相关存储系统进行分组，以便您可以将其作为一个整体进行操作。无需逐个集群配置策略或访问控制，只需在 fleet 级别应用一次即可。这减少了重复的管理工作，并确保 fleet 中的每个集群都按照相同的标准运行。</block>
@@ -1437,11 +1418,9 @@
   <block id="251b3f0f2d74ad68082fdfbe4e030798" category="section-title">AI 辅助管理</block>
   <block id="9144aed32c3947c3f6c915dc667afa48" category="paragraph-title">NetApp Console 本地部署支持哪些 LLM 提供商进行 AI 辅助管理？</block>
   <block id="bde5aef56c75d1b40669feeeaa6d189e" category="inline-link-macro">了解 LLM 集成</block>
-  <block id="ba0dbc4b8aaac2e9b705bbdcf93005aa" category="paragraph">您可以为以下受支持的提供程序类型提供自己的订阅或服务访问权限：OpenAI 或 OpenAI 兼容。然后在配置过程中提供有效的 API 密钥。您还需要部署具有集群访问权限的 Console、到已配置端点的出站网络连接、组织管理员角色以及用于指导配置的存储类。<block ref="470eda43e450182c243ef76ccd1f9255" category="inline-link-macro-rx"></block>。</block>
   <block id="ce9dbbbce76848eef723ebc6c26618fd" category="paragraph-title">启用 LLM 集成是否会将我的存储数据或查询发送给第三方服务？</block>
   <block id="cf9f2412b65fd4c0739ede3eadcd4bc7" category="paragraph">控制台仅将提示和相关上下文发送到您配置的 LLM 端点。如果该端点是第三方云服务，则数据将通过 HTTPS 发送到该服务。如果该端点是与 OpenAI 兼容的内部服务，则数据将保留在该集成的内部路径上。所有 AI 操作也遵循您的 RBAC，敏感操作需要您的确认。<block ref="470eda43e450182c243ef76ccd1f9255" category="inline-link-macro-rx"></block>。</block>
   <block id="c8bfe037e2674cf290bd34c015885d33" category="paragraph-title">Console 助理可以做什么，以及如何控制它是否会更改我的存储？</block>
-  <block id="aa95c154e986d1901c90d69d45d2f85e" category="paragraph">连接 LLM 后，Console 助手允许用户使用自然语言配置存储、调查警报并获取答案。用户选择一种访问模式：在*只读*模式下，助手应答并提供指导而不进行任何更改；而在*读/写*模式下，它可以对存储基础架构执行操作，但会显示详细信息，供用户在每次更改前查看和确认。<block ref="0c62c57f6bc2623f5886c16a048a7f64" category="inline-link-macro-rx"></block>.</block>
   <block id="e70a0f55fac9d337b8fc9f4a5eed76ea" category="section-title">数据保护和审计</block>
   <block id="a2acd4e5b8eeb2c4eb2049373cc4a3d6" category="paragraph-title">NetApp Console 本地部署提供哪些数据保护功能？</block>
   <block id="67a4b4d0a88d7fc6b0ef85b232ef7613" category="inline-link-macro">了解数据服务</block>
@@ -1920,7 +1899,6 @@
   <block id="758cbeb7242c0d95a1ba25a826bf7466" category="list-text">*OpenAI* — 提供直接 OpenAI 集成的模型。</block>
   <block id="f8882d796dcd55911551ffa65e9934af" category="list-text">*OpenAI-compatible* — 提供企业兼容端点公开的模型。</block>
   <block id="8c705cedce8873cec4385d32a46d41f7" category="list-text">*Anthropic* — 提供用于直接 Anthropic 集成的模型。</block>
-  <block id="51fdad81afa838750840be2f600de9f8" category="paragraph">根据端点配置、代理或网关行为以及组织策略，您看到的模型可能会有所不同。提供程序类型因连接的端点和端点公开的模型而不同，而非传输协议。</block>
   <block id="08a146c5c0cb45bfe3682f78567b0421" category="section-title">支持的 OpenAI 模型</block>
   <block id="5b6c99e4c6c823fdc627954b67266130" category="list-text">GPT-5.4</block>
   <block id="de392d99e073d932039aa08f1f59041b" category="list-text">GPT-5.5</block>
@@ -2311,7 +2289,6 @@
   <block id="ab92140b4fca6a428c4d9dd6177333dc" category="paragraph">超级管理员、组织管理员、存储管理员、运营支持分析员或 NetApp Backup and Recovery 的任何管理员角色。<block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>。</block>
   <block id="181c0a0c09dfe0f8ba7b3346903c6def" category="paragraph">使用通知规则，通过适合您环境的渠道将正确的警报发送给正确的人，同时减少与您无关的警报带来的噪音。通知规则是对"警报"页面的补充：您可以在"警报"工作流程中调查或修复警报，然后使用规则来控制将来发送类似警报的方式。</block>
   <block id="ef9e7cefa30ba8567d3175e4dd97d705" category="inline-link-macro">配置通知传送</block>
-  <block id="ed25804203fe0cfacd7338fe370fab02" category="list-text">若要通过电子邮件发送通知，您的组织管理员必须在 Console 本地部署中配置电子邮件服务器。要向外部系统发送通知，您的组织管理员必须配置 webhook。有关步骤，请参见 <block ref="672eea012e5868d936761017846dcdbf" category="inline-link-macro-rx"></block>。</block>
   <block id="6be1395fcc81300b6bceb20c8b98659a" category="list-text">默认情况下，Console 本地部署通知中心会显示通知，因此无需对控制台内通知进行其他设置。</block>
   <block id="aa0688cb1a2561ce4a0b9e33ec24c385" category="section-title">查看通知规则</block>
   <block id="3fd13d8d5fe12b342d50496d8c1b14ea" category="paragraph">通知规则页面是查看和管理适用于贵组织的每个规则的中心位置。每个规则都会显示其关键属性，以便您可以快速评估和调整警报行为。</block>
@@ -2516,21 +2493,17 @@
   <block id="5393c2b8908e1f48ca31ccf7d8bb057c" category="section-title">从审核页面下载审核日志</block>
   <block id="95e9b23238ddd8479992115173ab7048" category="paragraph">您可以将审核日志从"审核"页面下载到 CSV 文件中。这使您能够记录用户在组织中执行的操作。下载的 CSV 文件包括所有审核日志列，无论"审核"页面上的过滤器或显示的列如何。</block>
   <block id="a485c1defdaf491b2f5cf7219289d8cc" category="list-text">在*审核*页面中，选择表格右上角的下载图标。</block>
-  <block id="ce92a41c26b3eebfca3ce82d2ed7d946" category="summary">使用控制台助手在 NetApp Console 本地部署中配置存储、调查警报并获取自然语言答案。</block>
   <block id="61698078caca443ab3276eaf6da68c26" category="doc">在 NetApp Console 本地部署中使用 NetApp Console 助理</block>
   <block id="59142dd8097fc5d816523b76490538ee" category="paragraph">使用 NetApp Console 本地部署中的 NetApp Console 助手来管理存储并通过自然语言获取答案。用简单的语言描述您的需求，NetApp Console 本地部署将在您的存储策略和基于角色的访问权限范围内执行相应操作。</block>
   <block id="cebceed3e52d61da104d709d7fd52f64" category="paragraph">助理的操作受您分配的基于角色的访问权限的限制。<block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>。</block>
   <block id="79a8d49114f4c57f8615836d0fbd9a6e" category="section-title">了解您可以使用控制台助理执行的操作</block>
-  <block id="44f46c68c044ca6bc826f2070cb8b0fb" category="paragraph">控制台助手是 NetApp Console 本地部署的自然语言界面。提出问题或描述任务，它会返回答案或建议的操作。该助手提供以下功能：</block>
   <block id="eb164d1b95f721517463fac94e0c232b" category="list-text">*调配存储* 用通俗易懂的语言描述工作负载。Assistant 会推荐一个存储类和位置，然后在您确认详细信息后创建卷或 LUN。例如，要求其创建具有特定容量的 CIFS 卷。Assistant 标识集群和存储虚拟机 (SVM)，填写所需参数，并预配存储。</block>
   <block id="80ec6f74b9c11afc0493a49dc2ed5880" category="list-text">*搜索并获取指导* 询问有关存储环境的问题，查找 Console 本地部署功能，并从 NetApp 文档和当前机群状态中获取上下文答案。</block>
   <block id="8f85ab1426c6a97b7f27ff0a64189e0d" category="list-text">*Investigate alerts* 要求助理查看活动警报。它会分析问题并提出修复建议，或者在您确认的情况下执行补救措施。</block>
   <block id="4d4201f172588de834e98c686fa4e70d" category="paragraph">助理仅向管理员在 Console 本地部署中配置的 LLM 端点发送请求。它会在执行存储更改操作之前请求确认，所有操作均遵循分配给您帐户的基于角色的访问控制。</block>
   <block id="1646e83ecacdbfca35b7035c36d17902" category="section-title">确认您可以使用 Console 助手</block>
-  <block id="447ba774f83dff318547a6ed4188be4e" category="list-text">组织管理员或超级管理员必须通过将大型语言模型 (LLM) 连接到 Console 本地部署来启用 Console 助理。如果您在仪表板上没有看到 *Console 助理* 按钮，请让您的管理员启用它。有关详细信息，请参见 <block ref="0c62c57f6bc2623f5886c16a048a7f64" category="inline-link-macro-rx"></block>。</block>
   <block id="dea2a7e837aa4048051b43f95def7b7b" category="list-text">确保您具有希望助理执行的操作所需的基于角色的访问控制。</block>
   <block id="5716899e4d4f84a6f0338e39a6dbae95" category="section-title">向 Console 助理提问或请求操作</block>
-  <block id="acf4008535e52c8a7a0c01bf71aed735" category="paragraph">打开 Console 助理，选择访问模式，然后输入描述您的请求的提示。</block>
   <block id="a01a8afdc9473eb09e91ee338b83c764" category="list-text">从 NetApp Console 本地部署仪表板中，选择 *Console assistant* 按钮。</block>
   <block id="0d4e49e4c9814c6a19f7ea22506c8390" category="list-text">选择访问模式：</block>
   <block id="baa7f738c248456fd2ade1cf90ab4eaa" category="list-text">选择*只读*即可提出问题并获得指导，无需进行更改。</block>
@@ -2958,7 +2931,6 @@
   <block id="d9613d9880d0f8ba12fda6a2e9d388b1" category="paragraph">如果您有_文件夹或车队管理员_角色，该页面将显示组织中的所有成员。但是，您只能查看和管理您所管理的文件夹和车队的权限。<block ref="8ccbb3041729be4bc278ed61135bfa9c" category="inline-link-macro-rx"></block>。</block>
   <block id="644ed7e725ca7a7a2108f353f403ae81" category="section-title">分配或修改成员访问权限</block>
   <block id="6b6981b3ecd57254f87269c9a7bb333a" category="paragraph">每当职责发生变化时，您都可以调整成员的访问权限。例如，当团队成员承担第二个区域的备份职责时，请在该区域的机群中添加 Backup and Recovery 管理员角色，而无需更改其现有的存储角色。</block>
-  <block id="f955499f62dbb4edbf385d3a7a960528" category="paragraph">如果需要添加新成员并分配其第一个角色，请参阅 <block ref="91ad8701e2dee484ad75d90050d10ec4" category="inline-link-macro-rx"></block>。</block>
   <block id="c323dfe4bfabb938f780b4b7d546c9b0" category="section-title">向现有成员添加访问角色</block>
   <block id="dd1ad82c7de8ea1d9224b58fdb2b344a" category="paragraph">当成员的职责范围扩大时，为其授予组织、文件夹或 fleet 级别的额外角色。例如，为 Storage admin 指定组织级别的 Backup and recovery admin 角色，以便他们可以跨每个 fleet 管理备份和恢复任务，而不会失去其现有存储权限。</block>
   <block id="9faffc990c3127454a9cf05bef90bbef" category="paragraph">您可以为成员分配组织、文件夹或队列的访问角色。</block>
@@ -3069,49 +3041,33 @@
   <block id="310f705969896b4d59368edab71d1d87" category="list-text">查看*准备完成*窗口中的详细信息，选择*完成*。</block>
   <block id="e10d92d1786b3cdd3dbeba70b55cf973" category="paragraph">vSphere 任务栏显示部署 NetApp Console 本地部署时的进度。</block>
   <block id="54453e0b33b1c136b904d49d40e5584f" category="list-text">启动此虚拟机。</block>
-  <block id="56c613fb0424d7f13733ef150e334c26" category="summary">连接 OpenAI 或兼容 OpenAI 的端点，以在 NetApp Console 本地部署中启用 Console 助理和 AI 辅助管理。</block>
   <block id="2ac259cc9722764f511c25ee28b40616" category="doc">连接您的 LLM 并在 NetApp Console 本地部署中启用 NetApp Console 助手</block>
-  <block id="bfb7707f64c08883a1d0f2aaa8204091" category="paragraph">将您的大型语言模型 (LLM) 连接到 NetApp Console 本地部署，以启用 Console 助理和 AI 辅助存储管理。</block>
   <block id="17abc48cf3411ff16b4582375b97de22" category="paragraph">设置完成后，用户从控制面板打开 Console 助理并选择访问模式：</block>
   <block id="45dcb8347c7045ac1ea1ed3f1fd6f1d3" category="list-text">在*只读*模式下，助手回答问题并提供指导，而不进行任何更改。</block>
   <block id="3bd3a3686b7176c32e3b12727e98ec87" category="list-text">在"读/写"模式下，助手可以对存储基础设施进行操作。它会在每次更改前显示详细信息以供审核和确认。对于异步操作（例如创建卷），它会创建一个作业，用户可以从助手检查该作业。</block>
   <block id="185163aa217fa2fc072c5f14236ca72a" category="paragraph">要连接您的 LLM，请选择提供程序路径，输入端点详细信息和 API 密钥，然后在 *Administration &gt; AI Tools* 中选择一个模型。助手操作在您的存储策略和基于角色的访问控制范围内执行。</block>
   <block id="5fc0a856a394f8c04ef5ff5374c766d3" category="section-title">在连接 LLM 之前，请先收集所需信息</block>
-  <block id="7cf0713cb6862c8d869de102444bc058" category="paragraph">在连接 LLM 之前，请收集以下信息：</block>
-  <block id="4bdc2b0afb2016e71f49debc29862e0f" category="inline-link-macro">了解提供者的选择。</block>
-  <block id="336e4351e57a856f458961abc5062751" category="list-text">您的提供程序类型决定：OpenAI 或 OpenAI 兼容。 <block ref="78f935c14127e9543a594b2e8112c798" category="inline-link-macro-rx"></block></block>
   <block id="d8bd49d8fe4a0de7a2b03c1aec99e88b" category="list-text">您选择的提供程序路径的有效 API 密钥。</block>
   <block id="12415726cf97af159e3e05710842f040" category="list-text">提供程序路径的端点 URL。</block>
   <block id="cfe024af8356a3decd0f09b47eff88fa" category="list-text">从 Console 本地部署到选定端点的网络访问。</block>
-  <block id="1f3d7608a574b42ba681dcef64704661" category="list-text">计划允许的助理操作的存储类和基于角色的访问控制。</block>
   <block id="6d4074b2f4345e60985cf590c19c3368" category="section-title">将 LLM 连接到 NetApp Console 本地部署</block>
-  <block id="1ad8081ba1205278968b9c4aee3e50af" category="paragraph">输入提供程序设置、API 密钥和模型，将 LLM 连接到 Console 本地部署。</block>
   <block id="f88a0cbb78fae5f3111d6d10db7c5597" category="list-text">登录到 NetApp Console 本地部署。</block>
   <block id="e63bd278e9f3067278f0c1de02ea51d1" category="list-text">选择 *Administration &gt; AI Tools*。</block>
   <block id="fce40004669eef7e64c789d1aba006e4" category="list-text">选择菜单，然后选择 *Edit*。</block>
   <block id="7f15a21cfa00dfd7d41b88b3e1451357" category="list-text">在*提供程序类型*中，选择一个提供程序类型。</block>
   <block id="cf72c8170aef768cae71f4e2a449acaf" category="list-text">如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。</block>
-  <block id="0bb644c5b092ae6dc29b1cb8f4f06967" category="list-text">输入代理或网关 URL 和凭据。</block>
   <block id="d78f26f4373007724d98776e20cd9322" category="list-text">在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。</block>
   <block id="b2914c614292093e506dbf4a10fd671c" category="list-text">在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。</block>
   <block id="73d0a6de3953116536b1666d0db7c78a" category="list-text">从列表中选择一个模型。</block>
   <block id="f646c307a4396cd41f6593ce84be57d7" category="list-text">查看配置，然后选择 *Save*。</block>
-  <block id="5648efa514fe8196ba399910bb0eb531" category="paragraph">如果保存或测试失败，请验证提供程序类型、端点 URL、API 密钥和所选模型，然后重试。</block>
-  <block id="9cf8774c3baeb070428c648054d7d24a" category="inline-link-macro">排查 LLM 集成故障</block>
-  <block id="1de83f5da1c16cfca8ca9ae1534dcf3b" category="paragraph"><block ref="263da31548d1ff54f99ec1ad656a62e4" category="inline-link-macro-rx"></block>。</block>
   <block id="4e0ef856d01b17ebeacb44ab6e813a5b" category="section-title">验证 LLM 集成是否有效</block>
-  <block id="649811a3ff05f0c93f06c2fdaa3bbeed" category="paragraph">保存配置后，请验证助手的可用性和行为。</block>
   <block id="b9218edb7fcba77407a69cc8446ba839" category="list-text">验证需要操作工作流的用户是否具有所需的基于角色的访问控制。</block>
   <block id="3bc0e23bd46bad08da1876b2cc4430a7" category="inline-link-macro">使用 NetApp Console 助手</block>
-  <block id="7d69bfcb234231881e32fc0c2d9f1364" category="paragraph">完成验证后，用户可以从仪表板打开 Console 助理，并以简单的语言描述任务。有关使用示例和最终用户工作流，请参见 <block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block>。</block>
   <block id="fc9577b448da71bbbc03dcdb4d914f81" category="section-title">保护凭据并监控 LLM 使用情况</block>
   <block id="37b26df9f5774fb277ce6408503c5677" category="list-text">尽可能使用专用 API 密钥进行 Console 本地部署集成。</block>
   <block id="95856ec02ad5b7d7cee102aa9ad5af55" category="list-text">根据您的组织策略轮换 API 密钥。</block>
-  <block id="190a2694407d226555de2087b9d1904c" category="list-text">将可以编辑 AI Tools 设置的人员限制为仅所需的管理员角色。</block>
-  <block id="1c8d15d10f068c63827f873ef7cad063" category="list-text">监控提供商端 API 使用情况和警报，以跟踪异常活动或成本峰值。</block>
   <block id="0a4e1261dd22ab21fdd948f324d9de9b" category="summary">通过设置、助手可用性、运行时错误和凭据问题的快速分类流程，对 NetApp Console 本地部署中的 LLM 集成进行故障排除。</block>
   <block id="ddfbe43817a433ffd54b8a30a5ea7e8e" category="doc">排除 NetApp Console 本地部署中的 LLM 集成故障</block>
-  <block id="feac9faca2350b85c19776bf4902e7a0" category="paragraph">使用此快速分流流程来诊断和解决 NetApp Console 本地部署中的常见 LLM 集成问题。</block>
   <block id="df329b70beb5e90d896034f48ef8cbc2" category="paragraph">如果您尚未完成设置，请参见 <block ref="0c62c57f6bc2623f5886c16a048a7f64" category="inline-link-macro-rx"></block>。</block>
   <block id="a02d415ac796cf16dae4cab7c8ba8370" category="section-title">快速分类 LLM 集成问题</block>
   <block id="c9541189aa749534605523e54cb1faec" category="list-text">在*管理 &gt; AI Tools*中验证 AI Tools 配置。</block>
@@ -3130,8 +3086,6 @@
   <block id="d14bb5fad558ea5cad8e313bb415d379" category="cell">提供程序类型、端点 URL、API 密钥格式、所选模型和出站访问</block>
   <block id="db55f13382d52e64285ac9a3f031d1b8" category="cell">请更正验证失败的值，然后再次保存</block>
   <block id="75c661dabf312b48c1e945bfecc84b33" category="cell">*Console assistant* 按钮缺失</block>
-  <block id="4075b5acdb4d5a8eff5467d981ede6aa" category="cell">不正常的集成状态、组织不匹配或 RBAC 不匹配</block>
-  <block id="e6685677e50c25ce6bb330b8b728b88c" category="cell">成功的 AI Tools 保存、集成状态、当前组织和预期访问角色</block>
   <block id="d4338e4524c2f2b8cc99a7ab334e1d3c" category="cell">刷新会话并使用已知良好的管理员账号进行验证</block>
   <block id="1b977b36b6a765d48f91ef10be75e2ee" category="cell">助手已打开但请求失败</block>
   <block id="f3d32e9d5050f0fb014bf917d41b98d8" category="cell">提供程序或运行时路径问题</block>
@@ -3177,23 +3131,18 @@
   <block id="d999f1f9870b33a6f990ea80c528cd45" category="list-text">选择是删除还是禁用用户的 MFA 配置。</block>
   <block id="85aa860fee126cdca80b809c375778ce" category="paragraph">查看审核日志，以确认谁更改了 MFA 访问权限、何时更改以及操作是否成功。<block ref="d77547ef27346a5e3d858216dfd41684" category="inline-link-macro-rx"></block>。</block>
   <block id="a657b530c9804722859fcb4792bf4466" category="section-title">重新创建服务帐户的凭据</block>
-  <block id="3a09c67515f2086631474e15f73de6c7" category="paragraph">如果丢失或需要更新，您可以为服务帐户创建新凭据。</block>
   <block id="cbb983c8b2240366fdf2e6a4ca41bee0" category="paragraph">创建新凭据会删除旧凭据。不能使用旧的凭据。</block>
   <block id="2a8af9814216612acb3d97c9c2e363bf" category="list-text">在 Members 表中，导航到服务帐户，选择 <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block>，然后选择 *Recreate secrets*。</block>
   <block id="8de213850e1e3dc79a14014382d25163" category="list-text">选择*重新创建*。</block>
   <block id="842b78e990c1bcb6ecd6f6d3502a80e1" category="paragraph">Console 本地部署仅显示一次客户端密码。请务必复制或下载并安全存储。</block>
-  <block id="f1edd9f95e01d5e077a85e747833fbd2" category="summary">使用 AI 驱动的代理配置自主完成 NetApp Console 本地部署中的存储请求。</block>
   <block id="9cc2452429913b270189381056266c1f" category="doc">在 NetApp Console 本地部署中使用 AI 辅助（代理）工作流程调配存储</block>
-  <block id="3dc6f8478de12a2130120c0861a97514" category="paragraph">在 NetApp Console 本地部署中，如果要以对话方式请求存储、查看建议的计划并批准更改，请使用 AI 辅助（代理）配置。如果您希望以更快的速度提交请求、减少 UI 导航操作，同时仍使配置与存储类和 RBAC 保持一致，则此方法非常有用。</block>
   <block id="abbcf954598f470ff036de76ef87bb49" category="paragraph">超级管理员、组织管理员、文件夹或舰队管理员或存储管理员。您的 AI 辅助操作受到与基于 UI 的操作相同的基于角色的访问权限的限制。<block ref="358dd7829c43f386bdd1bc16bf83b432" category="inline-link-macro-rx"></block>。</block>
   <block id="7e77d8c212cb920bf80baefd3e4f84bd" category="paragraph">代理配置需要配置 LLM 集成，并在 NetApp Console 本地部署环境中可用。</block>
   <block id="0e37a98340ea1efd343ffc16528dfd6b" category="list-text">确保为 NetApp Console 本地部署配置并启用了 LLM 集成。</block>
   <block id="b602c2b6042c9852669a4070bad055b9" category="list-text">确保目标机群包含已发现的存储系统。</block>
   <block id="8a797101f27fb91dbfde08d5dafe5a58" category="list-text">确保已配置存储类并将其与队列关联，以便助手可以提出与类对齐的计划。</block>
-  <block id="1c5aa0a55ec38e7a2896da2387989eaa" category="list-title">步骤（待重新审视）</block>
   <block id="0bac4d651b89773695617a95d16eb82b" category="list-text">打开 NetApp Console 助理。</block>
   <block id="96856aab291d4ec635cda593158436db" category="list-text">用通俗易懂的语言描述您的需求（例如，协议、规模、环境、性能目标以及目标机群（如适用））。</block>
-  <block id="ad82849b62ed2d6137578f79d12eb9fd" category="list-text">审核提议的计划，包括：所选机群和目标系统布局（如适用）所选或推荐的存储类别将应用的关键设置（容量行为、保护计划、安全要求以及任何与 QoS 相关的意图（如显示））</block>
   <block id="9a68116ebd01ecfb132f0548f9dec65e" category="list-text">确认或调整方案。如果计划选择了意外的类或放置位置，请指定所需的类、队列或约束条件，然后重新生成计划。</block>
   <block id="417fabd69538dfc4f67bdfbe3d03a4d3" category="list-text">批准执行以配置工作负载。</block>
   <block id="d84e668c89e4c7cd302b38780154ffac" category="list-text">验证存储库存中创建的资源，并确认其与用于持续漂移监控的预期存储类关联。</block>
@@ -3542,7 +3491,6 @@
   <block id="5d888c34f4251b9bdd3ba8412b69ff87" category="cell">Marketplace 订阅和自带许可证</block>
   <block id="c7eca4d9dd171fc4b4a21c3425a47aa6" category="cell">自带许可证</block>
   <block id="955bb7127a670884e7aac906d810238a" category="sidebar">控制台本地部署 API 参考</block>
-  <block id="c88543bdef944177133ea29faedf50df" category="summary">了解 NetApp Console 本地部署如何与 OpenAI 和 OpenAI 兼容模型集成，包括提供商和安全决策。</block>
   <block id="7886cf4f03a683503e8235a0eef59e73" category="list-text">*Anthropic* 适用于 Anthropic 的 Claude 模型。</block>
   <block id="dc666edc3ed6edcb6babcae67d26fcd2" category="list-text">从 <block ref="5574d9b8352359225831a51c7e6c17ee" category="inline-link-macro-rx"></block> 下载 Console 本地部署软件。</block>
   <block id="ad8f5be1c708f8e891508a0a9c643e0a" category="sidebar">NetApp 信任中心</block>
@@ -3636,4 +3584,105 @@
   <block id="d2a0f46558d1ad15a1efcaa26aef1b39" category="inline-link">了解 NetApp Console 本地部署与 NetApp Console SaaS 和私有模式之间的区别</block>
   <block id="fc43c258a671e0d243e8a95a48956300" category="paragraph"><block ref="a79ef635b40614d2cd5c555de517dd6f" category="inline-link-rx"></block>。</block>
   <block id="4688d87a2acbed67ab6380ef3dbee717" category="paragraph"><block ref="dff1bfa50abe498b973310763c6748f5" category="inline-link-macro-rx"></block>。</block>
+  <block id="308fca2a4a1364a6f322b2c118b7b61f" category="inline-link-macro">查看 NetApp Console 本地部署中的自定义仪表板卡和指标目录</block>
+  <block id="a0f815fa331e417e035c94057c02da63" category="paragraph"><block ref="9cb01a50e3be9e51b4836d3b61b3a330" category="inline-link-macro-rx"></block>.</block>
+  <block id="12818197bdccc6b71577f79083f87ab9" category="summary">了解 NetApp Console 本地部署如何与 LLM 提供商集成，以支持 AI 辅助存储管理、分析和操作。</block>
+  <block id="a2dfb8028327c74e6dcd4f59c80cf8cc" category="paragraph">NetApp Console 本地部署连接到大型语言模型 (LLM)，用于 AI 辅助存储管理。设置完成后，用户可以使用自然语言进行存储指导、分析、配置和支持的操作。</block>
+  <block id="86bd9186f70e386755999e81499ded00" category="paragraph">启用 LLM 集成后，Console 本地部署将通过 Console 助手提供以下功能：</block>
+  <block id="3bbe97361de9c8c53c88bf2d9e8c64a0" category="list-text">*Metrics and analytics* 询问有关当前机群状态下的存储容量、性能和其他支持指标的问题。此功能为只读。</block>
+  <block id="9471394d83a3e1cfd009afa44b8ab232" category="list-text">*警报响应* 要求 Console 本地部署调查活动警报。它会分析问题，并根据分配的权限建议或运行受支持的操作。</block>
+  <block id="f6f41613e5a60a7ef8f9fea0817e5740" category="list-text">*ONTAP 管理* 要求助理在已注册的 ONTAP 系统上查看或执行支持的管理操作。写操作需要审核和确认。</block>
+  <block id="59772d058082216c0ad36e64556c225e" category="list-text">助手在访问队列、系统和存储资源时使用已登录用户的作用域。</block>
+  <block id="70215a79da775b85263f210fed046e9d" category="paragraph"><block ref="1a3a7e8df14b08dab1953f3a058a454f" category="inline-link-macro-rx"></block>.</block>
+  <block id="d49c8ce9358d0437778308c33e11e8d7" category="inline-link-macro">连接您的 LLM 以启用 NetApp Console 助理</block>
+  <block id="9c8c3b21e2f65283b0264a06ae25ccf1" category="paragraph">在您做出这些决定后，<block ref="37482822d9b3368bafb48a4cd1e69aa0" category="inline-link-macro-rx"></block>。</block>
+  <block id="14cbab43b1b73784473641a579f441cb" category="inline-link-macro">详细了解 NetApp Console 本地部署中的文件夹和机群</block>
+  <block id="71034945100a7032d7ff28ceab11c41f" category="paragraph"><block ref="054c3e5ebcb94ba42a77f67aedc0b310" category="inline-link-macro-rx"></block>.</block>
+  <block id="e859dfab2ec3d57d35cb6286952461c1" category="list-text"><block ref="091e8c8fe9f2d7d00a71788386fcbe28" category="inline-link-macro-rx"></block>.</block>
+  <block id="c68352f63feed607f9a921b49938ad4e" category="inline-link-macro">了解如何创建和管理队列</block>
+  <block id="c5efe13a3738df4f6befae61c1cf5629" category="list-text"><block ref="07ac86035f9108c61da780967a52fd7f" category="inline-link-macro-rx"></block>.</block>
+  <block id="f541b58efff953bd8e3be0b471693869" category="inline-link-macro">查看受支持的 Console 助手操作</block>
+  <block id="dd8c951af3ad634c9f93a524a7b628c3" category="list-text"><block ref="dd8c951af3ad634c9f93a524a7b628c3" category="inline-link-macro-rx"></block></block>
+  <block id="c9fcbea76605871581a2e35dfbd4699c" category="paragraph"><block ref="db9b96303a8e941f40944ec886cf0ba1" category="inline-link-macro-rx"></block>.</block>
+  <block id="82b67b1eab84a35e6b425089eb157147" category="list-text"><block ref="130e257000a6cd23784d6444ddff3ea4" category="inline-link-macro-rx"></block>.</block>
+  <block id="95847954aedcd8c7811c2a4901112ea6" category="inline-link-macro">了解如何修复存储类漂移</block>
+  <block id="8433ac145fee5e5f64990cdc0f364c59" category="list-text"><block ref="8433ac145fee5e5f64990cdc0f364c59" category="inline-link-macro-rx"></block></block>
+  <block id="061a8b04d0511678aa72605c1685e930" category="paragraph">您可以为受支持的提供程序类型（OpenAI、OpenAI 兼容或 Anthropic）提供自己的订阅或服务访问权限（由您的版本和端点支持）。然后在配置过程中提供有效的 API 密钥。您还需要与已配置的端点建立出站网络连接，并具有组织管理员或超级管理员角色才能配置集成。<block ref="470eda43e450182c243ef76ccd1f9255" category="inline-link-macro-rx"></block>。</block>
+  <block id="d9d9b26883256b91beb0f1ec9f2d43db" category="paragraph">连接 LLM 后，Console 助理允许用户使用自然语言获得指导、分析支持的指标、配置存储、调查警报以及请求支持的 ONTAP 操作。在*只读*模式下，助理不会进行任何更改。在*读/写*模式下，它会显示建议的存储更改操作，以便在执行前进行审核和确认。<block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block>。</block>
+  <block id="047cef47f85ce2fa43f24e2f56ac9991" category="paragraph-title">Console 助理支持哪些操作？</block>
+  <block id="d5eefe905dd1017aff3fae90092217c2" category="paragraph">Console 助理支持对话式指导、只读指标分析、存储配置、警报调查和选定的 ONTAP 管理操作。可用操作取决于版本、配置的端点以及您的角色和资源范围。<block ref="dd8c951af3ad634c9f93a524a7b628c3" category="inline-link-macro-rx"></block>.</block>
+  <block id="2c212b08e4736776d7319ed0a5f0035b" category="paragraph-title">Console 助手执行异步操作时会发生什么？</block>
+  <block id="01d252d292ef2fa1ec4e87035d62b0ff" category="paragraph">对于无法立即完成的受支持操作，助手将创建一个作业，并在您询问请求时返回当前状态。<block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block>。</block>
+  <block id="0ac7c7f441c2811eca6f1a53e0cc4415" category="summary">查看 NetApp Console 本地部署中 Console 助手支持的面向客户的操作类别。</block>
+  <block id="85bf6002699be71eba50e47fb9bfd4c1" category="doc">NetApp Console 本地部署中支持的 Console 助手操作</block>
+  <block id="563f4fbc7c399302e702b396b6962087" category="paragraph">控制台助手支持自然语言问题和选定的存储操作。可用操作取决于版本、配置的 LLM 端点和您分配的权限。</block>
+  <block id="e595004f51bd799a728be4e3b594fcd0" category="paragraph">在不更改基础架构的情况下，使用 *只读* 模式下的 Console 助手进行问题解答和分析。对于可以更改存储或 ONTAP 系统的受支持操作，请使用 *读/写* 模式。助手会显示建议的更改，并在执行写入操作之前要求确认。</block>
+  <block id="0c3b317be5b2bb916652eceef25c2446" category="section-title">会话引导和搜索</block>
+  <block id="2c377b791aed117e43f0a6c81044bce4" category="paragraph">询问有关 NetApp Console 本地部署、存储环境或支持的 ONTAP 管理工作流程的问题。助手使用配置的 LLM 端点以及可用的文档和集群环境上下文来返回答案或请求其他上下文。</block>
+  <block id="55490a2d250ada7c70e503e7b86bb3da" category="section-title">指标和分析</block>
+  <block id="bb8be897830de5647e5d1894f9ebe3a9" category="paragraph">针对您允许范围内的资源，询问有关支持的存储容量、性能和其他指标的只读问题。当这些详细信息与您的问题相关时，请包括资源、指标和时间段。</block>
+  <block id="56836aa8c36f40ecb89a0e4c2367d066" category="paragraph">助手返回分析，并且不会在*只读*模式下更改存储。</block>
+  <block id="6ba6ceafe8bda6d338b883b2b39f45f1" category="section-title">存储配置</block>
+  <block id="3ffedc67f75e0f4d147056a9bf25f066" category="paragraph">用自然语言描述工作负载及其存储要求。助手可以推荐存储类和放置位置，识别缺失的详细信息，并提供配置计划以供审核。</block>
+  <block id="100bc2e2a20e7ce958593a0d05afc0c6" category="inline-link-macro">了解如何使用人工智能辅助工作流程配置存储</block>
+  <block id="cbdbb49c3c83f87c7341673121c514f1" category="paragraph">批准计划后，助手会在您的角色权限和存储类策略范围内配置受支持的卷或 LUN 操作。<block ref="1b5b8c5997353b7aabbb30633f8a4653" category="inline-link-macro-rx"></block>。</block>
+  <block id="ec34af6bd148135244cacb1e26e16b97" category="section-title">警报调查和修复</block>
+  <block id="45867710357b5b0f50631031775b1817" category="paragraph">请助理调查受支持的活动警报。它会分析警报，并可能建议采取补救措施。当受支持的修正更改存储时，助理会呈现操作以供审核，并要求在执行前进行确认。</block>
+  <block id="040360382f7205dbe8c14babe21f1f10" category="section-title">ONTAP 管理</block>
+  <block id="79ce2be78836813592ebf411e031cded" category="paragraph">以自然语言请求已注册 ONTAP 系统支持的管理操作。当您知道目标集群、SVM 或资源时，请指定它，以便助手可以使用正确的上下文。</block>
+  <block id="cedb71b26ba4e3df138c7912c7840e34" category="paragraph">助理将只读请求与写入操作区分开来。在确认写入操作之前，请查看目标和建议的更改。可用的操作集取决于 Console 本地部署版本以及分配给您帐户的权限。</block>
+  <block id="58dd82c11548cddba3b3f34021d1584c" category="section-title">权限和范围</block>
+  <block id="e9ac0af69146f2419ab6d771536a605c" category="paragraph">助手使用登录用户的权限和资源范围：</block>
+  <block id="b84f73e57fbeeeec34e2bb90579be4ce" category="list-text">您的角色决定了您可以查看或更改哪些资源和操作。</block>
+  <block id="37a5812a05e19af3ee627e60c15c7db6" category="list-text">组织、文件夹和队列范围限制了助手可用的系统和工作负载。</block>
+  <block id="df84d67f514675b861778c76b8a6a614" category="list-text">存储类策略限制了 AI 辅助配置。</block>
+  <block id="d567ccd2ac57ad2a43fa88120c847309" category="list-text">助手不会绕过 Console 本地部署访问控制。</block>
+  <block id="109a8ebaf5d17fd52cd0cedbd294848c" category="inline-link-macro">了解 NetApp Console 本地部署访问角色</block>
+  <block id="ba6f7f76a855b2fc7d63c83f41c23e52" category="paragraph"><block ref="4560386b07ef22f3583d98e6a67e39c0" category="inline-link-macro-rx"></block>.</block>
+  <block id="4546d7c5f1604db2d9865ec0658ee574" category="section-title">异步操作</block>
+  <block id="610ff444091a8d5a8e4d08c8e34ed1b7" category="paragraph">某些受支持的写入操作不会立即完成。对于这些操作，助手将创建一个作业。请向助手查询请求状态，以监控完成情况。</block>
+  <block id="ab74dc1a527eb39bc2a75230306dc5a0" category="list-text"><block ref="ab74dc1a527eb39bc2a75230306dc5a0" category="inline-link-macro-rx"></block></block>
+  <block id="c8bbfbc1e29e08fb75792570f8da2288" category="list-text"><block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block></block>
+  <block id="7770f03f53e256d55b44faa7b5b1c1a3" category="list-text"><block ref="7770f03f53e256d55b44faa7b5b1c1a3" category="inline-link-macro-rx"></block></block>
+  <block id="1d0c70d69fe69f6422869da4c9f85df8" category="cell">配置 LLM 集成并启用 Console 助手</block>
+  <block id="f3e5aa0c754758ae8ba5235340e18232" category="cell">配置通知传递和电子邮件服务器设置</block>
+  <block id="cc208136ed66d8be6e30eed429e8198d" category="paragraph">根据端点配置、代理或网关行为、版本支持和组织策略，您看到的模型可能会有所不同。提供程序类型因连接的端点和端点公开的模型而不同，而非传输协议。</block>
+  <block id="8c6ec3d71610da2323f8a0d4bf1cc952" category="inline-link-macro">了解如何配置 Webhook</block>
+  <block id="c5ed2fa54f60fceea32401d4d28620a2" category="list-text">若要通过电子邮件发送通知，您的组织管理员必须在 Console 本地部署中配置电子邮件服务器。要向外部系统发送通知，您的组织管理员必须配置 webhook。<block ref="f3c52c8e646f7bab6c54f37065734593" category="inline-link-macro-rx"></block>.</block>
+  <block id="d6364709e85199698077ea2221b6cc5a" category="summary">使用 Console 助手在 NetApp Console 本地部署中进行存储指导、分析、配置和支持的操作。</block>
+  <block id="53e18ee08d24e9c17895d47a3dd34166" category="paragraph">通过一个对话界面识别存储条件和支持的操作，以便您可以决定何时需要指导或干预。提出问题或描述任务，它会返回答案、分析或建议的操作。该助手提供以下功能：</block>
+  <block id="8ddb49feff7961c071eec6cb71ef40e4" category="list-text">*分析指标* 询问允许范围内资源的受支持容量、性能和存储指标。助理根据可用的机群状态返回只读分析。</block>
+  <block id="1e452dcff511c7097712e60cfaf5c28e" category="list-text">*管理 ONTAP 系统* 以自然语言请求受支持的 ONTAP 管理操作。助手会识别缺少的系统或 SVM 上下文，呈现建议的操作，并在执行写入操作前要求确认。</block>
+  <block id="dc8736e0412bd3d1386d928dc57c00a6" category="inline-link-macro">了解如何连接您的 LLM 并启用 NetApp Console 助理</block>
+  <block id="351bf1cee2d203043d7c8694e72832a7" category="list-text">组织管理员或超级管理员必须通过将大型语言模型 (LLM) 连接到 Console 本地部署来启用 Console 助理。如果您在仪表板上没有看到 *Console 助理* 按钮，请让您的管理员启用它。<block ref="184a90bf2acb5b061c7dc2b4dcb64467" category="inline-link-macro-rx"></block>.</block>
+  <block id="58501690578abc96980f69a9f3694b55" category="paragraph">以会话方式请求受支持的存储工作，以便您可以在建议的更改影响您的基础架构之前对其进行评估。</block>
+  <block id="a0f4a83e648fb4aed450e560789131f0" category="section-title">使用助手进行指标和分析</block>
+  <block id="fab19ba8fb5bfe09d2af357771050725" category="paragraph">询问只读问题，确定您想要了解的资源、范围、指标和时间段。助手将返回受支持指标的分析，并且不会更改您的存储。</block>
+  <block id="1d054bfa483e4be3faf418d083bdd3ef" category="section-title">使用助理进行 ONTAP 管理</block>
+  <block id="9f6c8c6993979cb1877a9e86b9a8d0ce" category="paragraph">通过已审核的助理提案管理受支持的 ONTAP 操作，以便基础设施更改保持审慎且受权限控制。</block>
+  <block id="d5fc4106714e4828d2904733226a81fc" category="inline-link-macro">了解受支持的控制台助手操作</block>
+  <block id="7becbfb07bf54d9cf645b2f81e7a6590" category="paragraph"><block ref="4d7a86fccb2254d6cedae676f2157eab" category="inline-link-macro-rx"></block>.</block>
+  <block id="1c0b13974e165ed22019e869049df6d4" category="inline-link-macro">了解如何添加成员和分配角色</block>
+  <block id="db830c34683e05539af2a3f56d942d2f" category="paragraph"><block ref="2a51355ed5754464f193ef2e666c601e" category="inline-link-macro-rx"></block>.</block>
+  <block id="06f4b3c533aaacbe7f5b54e11890ed43" category="summary">连接受支持的 LLM 端点，以在 NetApp Console 本地部署中启用 Console 助理和 AI 辅助管理。</block>
+  <block id="c85a5bee169bf00565c85292d26490c9" category="paragraph">连接受支持的 LLM 端点，使受管理的自然语言存储指导和操作可供 NetApp Console 本地部署用户使用。</block>
+  <block id="d8d4c492ef9ce07470fd7c71a7074375" category="paragraph">准备提供商凭据和端点访问权限，以便 Console 助手可以在组织配置的治理边界内运行。</block>
+  <block id="755c1d5c75ebb1af53c8d9be3e7bd559" category="list-text">您的提供程序类型决定：OpenAI、OpenAI 兼容或 Anthropic，由版本和端点支持。</block>
+  <block id="433b02ac268c7f9d577bf9be57b5c3eb" category="paragraph">通过经过验证的提供程序配置启用助手功能，同时保留对端点凭据的管理控制。</block>
+  <block id="26033ba1ab8ce1319bdb0de963d1cdcc" category="paragraph">在保存配置之前，请检查提供程序类型、端点 URL、API 密钥和所选模型。</block>
+  <block id="eddb36c1b2e3f9e786d7cccf7782664c" category="paragraph">确认助理的可用性和审批行为，以便用户可以依靠配置的集成进行受管操作。</block>
+  <block id="3f9a5821f38ce494dd45cf9edfdf74d3" category="inline-link-macro">了解如何使用 NetApp Console 助手</block>
+  <block id="634f9e5260713299abe36310597702d1" category="paragraph">完成验证后，用户可以从仪表板打开 Console 助理，并以简单的语言描述任务。<block ref="8dfd03d5e9a3a9ef76c8379ee37ac6ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="bb5810dadd5175496182052d2de15fea" category="paragraph">保护 LLM 凭据并监控提供商活动，以减少未经授权使用集成并支持组织治理。</block>
+  <block id="977dccb231b4b0190cc19909bd5e2b81" category="list-text">根据组织的治理要求，监控提供商端 API 使用情况和警报。</block>
+  <block id="89de26853ae08e2e1eca92041c9aee61" category="paragraph">诊断 NetApp Console 本地部署中的 LLM 集成故障，以恢复 Console 助理的访问权限以及存储指导和操作的可靠响应。</block>
+  <block id="e16bb502112ccf0ba7e2576aa84b360e" category="cell">集成状态不正常</block>
+  <block id="5d51fa5a0136c09330f9c7a707995cbb" category="cell">成功的 AI Tools 保存、集成状态和预期访问角色</block>
+  <block id="aa1f45d9a4e867bc07e3b720f5437cae" category="paragraph">在安全要求更改时轮换服务帐户凭据，使以前的密钥无效并保留受控的 API 访问权限。</block>
+  <block id="dd0d49763648b2ed5bab7cf76b57126d" category="summary">使用 AI 辅助配置来请求存储、审查建议的计划以及批准 NetApp Console 本地部署中的更改。</block>
+  <block id="663af2f8dbfa6e16165ed0a44aeb0b6d" category="paragraph">在 NetApp Console 本地部署中，以对话方式请求存储，同时跨托管集群保留已批准的存储类意图和基于角色的控制。</block>
+  <block id="aa61f4e9d254d9e185de69ff3b105179" category="paragraph">准备队列、系统、存储类和 LLM 访问，以便助手可以在批准的配置范围内生成计划。</block>
+  <block id="25c218c5bf35c2c497390dbd2a954660" category="list-text">审核提议的计划，包括：所选机群和目标系统布局（如适用）。所选或推荐的存储类。将应用的关键设置，例如容量行为、保护计划、安全要求和与 QoS 相关的意图（如果显示）。</block>
+  <block id="2d3db212529548d7afc49cfc5cb8bcf1" category="sidebar">支持的控制台助理操作</block>
+  <block id="f6aca2dcfee051b254bbcb878dc70d09" category="sidebar">许可证</block>
 </blocks>

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-console-asst-use.html 
 keywords: console assistant, ai assistant, ask questions, provision storage, natural language, agentic, netapp console local 
-summary: 使用控制台助手在 NetApp Console 本地部署中配置存储、调查警报并获取自然语言答案。 
+summary: 使用 Console 助手在 NetApp Console 本地部署中进行存储指导、分析、配置和支持的操作。 
 ---
 = 在 NetApp Console 本地部署中使用 NetApp Console 助理
 :hardbreaks:
@@ -26,11 +26,13 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 [[see-what-you-can-do-with-the-console-assistant]]
 == 了解您可以使用控制台助理执行的操作
 
-控制台助手是 NetApp Console 本地部署的自然语言界面。提出问题或描述任务，它会返回答案或建议的操作。该助手提供以下功能：
+通过一个对话界面识别存储条件和支持的操作，以便您可以决定何时需要指导或干预。提出问题或描述任务，它会返回答案、分析或建议的操作。该助手提供以下功能：
 
 * *调配存储* 用通俗易懂的语言描述工作负载。Assistant 会推荐一个存储类和位置，然后在您确认详细信息后创建卷或 LUN。例如，要求其创建具有特定容量的 CIFS 卷。Assistant 标识集群和存储虚拟机 (SVM)，填写所需参数，并预配存储。
+* *分析指标* 询问允许范围内资源的受支持容量、性能和存储指标。助理根据可用的机群状态返回只读分析。
 * *搜索并获取指导* 询问有关存储环境的问题，查找 Console 本地部署功能，并从 NetApp 文档和当前机群状态中获取上下文答案。
 * *Investigate alerts* 要求助理查看活动警报。它会分析问题并提出修复建议，或者在您确认的情况下执行补救措施。
+* *管理 ONTAP 系统* 以自然语言请求受支持的 ONTAP 管理操作。助手会识别缺少的系统或 SVM 上下文，呈现建议的操作，并在执行写入操作前要求确认。
 
 
 助理仅向管理员在 Console 本地部署中配置的 LLM 端点发送请求。它会在执行存储更改操作之前请求确认，所有操作均遵循分配给您帐户的基于角色的访问控制。
@@ -40,7 +42,7 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 [[confirm-that-you-can-use-the-console-assistant]]
 == 确认您可以使用 Console 助手
 
-* 组织管理员或超级管理员必须通过将大型语言模型 (LLM) 连接到 Console 本地部署来启用 Console 助理。如果您在仪表板上没有看到 *Console 助理* 按钮，请让您的管理员启用它。有关详细信息，请参见 link:task-llm-connect.html["连接您的 LLM 并启用 NetApp Console 助理"]。
+* 组织管理员或超级管理员必须通过将大型语言模型 (LLM) 连接到 Console 本地部署来启用 Console 助理。如果您在仪表板上没有看到 *Console 助理* 按钮，请让您的管理员启用它。link:task-llm-connect.html["了解如何连接您的 LLM 并启用 NetApp Console 助理"].
 * 确保您具有希望助理执行的操作所需的基于角色的访问控制。
 
 
@@ -49,7 +51,7 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 [[ask-the-console-assistant-a-question-or-request-an-action]]
 == 向 Console 助理提问或请求操作
 
-打开 Console 助理，选择访问模式，然后输入描述您的请求的提示。
+以会话方式请求受支持的存储工作，以便您可以在建议的更改影响您的基础架构之前对其进行评估。
 
 .步骤
 . 从 NetApp Console 本地部署仪表板中，选择 *Console assistant* 按钮。
@@ -72,3 +74,19 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 . 确认操作。对于异步操作，例如卷创建，助手创建作业以完成请求。
 . 要查看请求，请咨询助手。例如，输入 `Let me know when the job completes`，助手将返回当前状态。
 
+
+
+
+[[use-the-assistant-for-metrics-and-analytics]]
+== 使用助手进行指标和分析
+
+询问只读问题，确定您想要了解的资源、范围、指标和时间段。助手将返回受支持指标的分析，并且不会更改您的存储。
+
+
+
+[[use-the-assistant-for-ontap-management]]
+== 使用助理进行 ONTAP 管理
+
+通过已审核的助理提案管理受支持的 ONTAP 操作，以便基础设施更改保持审慎且受权限控制。
+
+link:reference-console-assistant-operations.html["了解受支持的控制台助手操作"].

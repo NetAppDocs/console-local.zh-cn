@@ -101,17 +101,18 @@ summary: 了解 NetApp Console 本地部署中的存储类和存储类策略如�
 
 存储类与队列相关联。当您将存储类与队列关联时，该类将可用于队列内的所有配置。这可确保在队列中配置的每个工作负载都遵循相同的标准，使队列成为跨相关集群实施一致存储行为的主要方式。
 
-有关如何组织车队的详细信息，请参见 link:concept-manage-storage.html["了解 NetApp Console 本地部署中的机群管理"]。
+link:concept-manage-storage.html["了解 NetApp Console 本地部署中的机群管理"].
 
 
 
 [[where-to-go-next]]
 == 后续步骤
 
-* 要了解车队组织，请参见 link:concept-manage-storage.html["了解 NetApp Console 本地部署中的机群管理"]。
-* 要创建策略和存储类，请参见 link:task-storage-class-manage.html["管理存储类和策略"]。
+* link:concept-manage-storage.html["了解 NetApp Console 本地部署中的机群管理"].
+* link:task-storage-class-manage.html["管理存储类和策略"].
 * link:task-provisioning-manual.html["手动预配存储"]
 * link:task-provisioning-automated.html["自动配置存储"]
 * link:task-provisioning-agentic.html["在 AI 辅助下配置存储"]
-* 要分析和修复漂移，请参见 link:task-storage-class-drift-remediate.html["补救存储类漂移"]
+* link:reference-console-assistant-operations.html["查看受支持的 Console 助手操作"]
+* link:task-storage-class-drift-remediate.html["了解如何修复存储类漂移"]
 

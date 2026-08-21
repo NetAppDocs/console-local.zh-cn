@@ -53,7 +53,7 @@ summary: 了解预定义的主页仪表板和自定义仪表板如何在 NetApp 
 警报:: 关键警报计数、按严重程度划分的警报、按受影响区域划分的警报、最近的警报以及一段时间内的警报趋势。
 
 
-有关预定义卡片和指标的完整目录，请参见 link:reference-dashboard-card-templates.html["了解 NetApp Console 本地部署中的自定义仪表板卡和指标"]。
+link:reference-dashboard-card-templates.html["查看 NetApp Console 本地部署中的自定义仪表板卡和指标目录"].
 
 
 

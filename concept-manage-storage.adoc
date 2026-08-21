@@ -37,8 +37,6 @@ NetApp Console 本地部署中的群组管理是将存储系统组织成逻辑�
 
 您组织的资源层次结构由文件夹和队列组成：
 
-有关层次结构和访问模型的详细概述，请参见 link:concept-folders-fleets-overview.html["了解 NetApp Console 本地部署中的文件夹和机群"]。
-
 * *组织* - 代表贵公司的顶层。
 * *Folders* - 帮助您组织相关的 fleet。例如，您可以为每个地区或业务部门创建一个文件夹，然后在每个文件夹中创建 fleet。文件夹可以包含其他文件夹或 fleet。当您在文件夹级别分配角色时，成员将继承该文件夹内所有 fleet 的相应角色。
 * *Fleets* - 将您管理的存储系统分组在一起。您将存储系统与 Fleets 关联，并将成员分配给 Fleets 以授予其访问权限。
@@ -46,6 +44,8 @@ NetApp Console 本地部署中的群组管理是将存储系统组织成逻辑�
 
 
 NOTE: 文件夹是一种组织工具，对于不具备 Organization admin、Folder admin 或 Fleet admin 角色等 IAM 权限的的成员不可见。成员访问的是 Fleet，而不是文件夹。
+
+link:concept-folders-fleets-overview.html["详细了解 NetApp Console 本地部署中的文件夹和机群"].
 
 
 
@@ -108,9 +108,10 @@ Console 本地部署提供集群组级运行状况和性能监控，让您可以
 [[where-to-go-next]]
 == 后续步骤
 
-* 要了解存储标准，请参见 link:concept-storage-classes.html["了解 NetApp Console 本地部署中的存储类和策略"]。
-* 要创建和管理队列，请参见 link:task-iam-manage-folders-fleets.html["管理文件夹和队列"]。
+* link:concept-storage-classes.html["了解 NetApp Console 本地部署中的存储类和策略"].
+* link:task-iam-manage-folders-fleets.html["了解如何创建和管理队列"].
 * link:task-provisioning-manual.html["手动预配存储"]
 * link:task-provisioning-automated.html["自动配置存储"]
 * link:task-provisioning-agentic.html["在 AI 辅助下配置存储"]
+* link:reference-console-assistant-operations.html["查看受支持的 Console 助手操作"]
 

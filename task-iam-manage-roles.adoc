@@ -63,7 +63,7 @@ link:concept-iam-rbac.html#role-inheritance["了解 NetApp Console 本地部署�
 
 每当职责发生变化时，您都可以调整成员的访问权限。例如，当团队成员承担第二个区域的备份职责时，请在该区域的机群中添加 Backup and Recovery 管理员角色，而无需更改其现有的存储角色。
 
-如果需要添加新成员并分配其第一个角色，请参阅 link:task-iam-manage-members-permissions.html#add-members["添加成员并分配角色"]。
+link:task-iam-manage-members-permissions.html#add-members["了解如何添加成员和分配角色"].
 
 
 

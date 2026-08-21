@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: reference-console-assistant-operations.html 
+keywords: Console assistant, AI-assisted management, agentic operations, metrics, storage provisioning, ONTAP management, netapp console local 
+summary: 查看 NetApp Console 本地部署中 Console 助手支持的面向客户的操作类别。 
+---
+= NetApp Console 本地部署中支持的 Console 助手操作
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+控制台助手支持自然语言问题和选定的存储操作。可用操作取决于版本、配置的 LLM 端点和您分配的权限。
+
+
+NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理以启用 AI 功能的文档。通过此预览产品，NetApp 保留在正式发布之前修改产品详情、内容和时间表的权利。
+
+在不更改基础架构的情况下，使用 *只读* 模式下的 Console 助手进行问题解答和分析。对于可以更改存储或 ONTAP 系统的受支持操作，请使用 *读/写* 模式。助手会显示建议的更改，并在执行写入操作之前要求确认。
+
+
+
+[[conversational-guidance-and-search]]
+== 会话引导和搜索
+
+询问有关 NetApp Console 本地部署、存储环境或支持的 ONTAP 管理工作流程的问题。助手使用配置的 LLM 端点以及可用的文档和集群环境上下文来返回答案或请求其他上下文。
+
+
+
+[[metrics-and-analytics]]
+== 指标和分析
+
+针对您允许范围内的资源，询问有关支持的存储容量、性能和其他指标的只读问题。当这些详细信息与您的问题相关时，请包括资源、指标和时间段。
+
+助手返回分析，并且不会在*只读*模式下更改存储。
+
+
+
+[[storage-provisioning]]
+== 存储配置
+
+用自然语言描述工作负载及其存储要求。助手可以推荐存储类和放置位置，识别缺失的详细信息，并提供配置计划以供审核。
+
+批准计划后，助手会在您的角色权限和存储类策略范围内配置受支持的卷或 LUN 操作。link:task-provisioning-agentic.html["了解如何使用人工智能辅助工作流程配置存储"]。
+
+
+
+[[alert-investigation-and-remediation]]
+== 警报调查和修复
+
+请助理调查受支持的活动警报。它会分析警报，并可能建议采取补救措施。当受支持的修正更改存储时，助理会呈现操作以供审核，并要求在执行前进行确认。
+
+
+
+[[ontap-management]]
+== ONTAP 管理
+
+以自然语言请求已注册 ONTAP 系统支持的管理操作。当您知道目标集群、SVM 或资源时，请指定它，以便助手可以使用正确的上下文。
+
+助理将只读请求与写入操作区分开来。在确认写入操作之前，请查看目标和建议的更改。可用的操作集取决于 Console 本地部署版本以及分配给您帐户的权限。
+
+
+
+[[permissions-and-scope]]
+== 权限和范围
+
+助手使用登录用户的权限和资源范围：
+
+* 您的角色决定了您可以查看或更改哪些资源和操作。
+* 组织、文件夹和队列范围限制了助手可用的系统和工作负载。
+* 存储类策略限制了 AI 辅助配置。
+* 助手不会绕过 Console 本地部署访问控制。
+
+
+link:reference-iam-predefined-roles.html["了解 NetApp Console 本地部署访问角色"].
+
+
+
+[[asynchronous-operations]]
+== 异步操作
+
+某些受支持的写入操作不会立即完成。对于这些操作，助手将创建一个作业。请向助手查询请求状态，以监控完成情况。
+
+
+
+[[related-information]]
+== 相关信息
+
+* link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]
+* link:task-console-asst-use.html["使用 NetApp Console 助手"]
+* link:reference-llm-supported-models.html["支持的 LLM 提供商和模型"]
+
