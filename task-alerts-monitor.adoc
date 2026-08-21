@@ -166,6 +166,8 @@ image:screenshot-alerts-details.png["查看警报详细信息并导航到System 
 
 您可以在 Workload Analyzer 中分析 ONTAP 警报，以了解触发它的原因。
 
+使用 Workload Analyzer 对受影响的卷进行详细、基于时间的分析。对于自然语言问题或对允许资源的高级分析，请使用 Console 助手。 link:reference-console-assistant-operations.html["了解受支持的控制台助理操作。"]
+
 在调查 ONTAP 警报时，您还可以直接转到生成警报的系统的 System Manager 界面，以查看其他详细信息并采取相应措施。
 
 .步骤

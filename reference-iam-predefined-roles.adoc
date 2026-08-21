@@ -28,7 +28,7 @@ NetApp Console 本地部署中的标识和访问管理 (IAM) 提供预定义的�
 | 平台角色 | 职责 
 
 
-| link:reference-iam-platform-roles.html#organization-admin-roles["组织管理员"] | 允许用户无限制地访问组织内的所有 fleet 和文件夹，将成员添加到任何 fleet 或文件夹，以及执行任何任务和使用任何未关联明确角色的数据服务。具有此角色的用户通过创建文件夹和 fleet、分配角色、添加用户以及在拥有适当凭据的情况下管理系统来管理您的组织。 
+| link:reference-iam-platform-roles.html#organization-admin-roles["组织管理员"] | 允许用户无限制地访问组织内的所有队列和文件夹，将成员添加到任何队列或文件夹，以及执行任何任务和使用任何未关联明确角色的数据服务。具有 Org admin 角色的用户还可以配置 LLM 集成、电子邮件服务器设置和添加 Webhook。具有此角色的用户通过创建文件夹和队列、分配角色、添加用户以及在拥有适当凭据的情况下管理系统来管理您的组织。 
 
 
 | link:reference-iam-platform-roles.html#organization-admin-roles["文件夹或舰队管理员"] | 允许用户不受限制地访问指定的队列和文件夹。可以将成员添加到其管理的文件夹或队列，以及在分配给他们的文件夹或队列内的资源上执行任何任务并使用任何数据服务或应用程序。 
@@ -68,6 +68,13 @@ NetApp Console 本地部署中的标识和访问管理 (IAM) 提供预定义的�
 
 | link:reference-iam-storage-roles.html["系统运行状况专家"] | 管理存储、运行状况和治理功能，存储管理员的所有权限，但不能修改或删除现有系统。 
 |===
+
+
+[[console-assistant-access]]
+== Console 助理访问
+
+组织管理员或超级管理员必须先配置 LLM 集成，然后成员才能使用 Console 助理。每个成员只能查看或更改其分配的角色和组织、文件夹或 fleet 范围所允许的资源。 link:reference-console-assistant-operations.html["了解受支持的控制台助理操作。"]
+
 
 
 [[data-service-roles]]

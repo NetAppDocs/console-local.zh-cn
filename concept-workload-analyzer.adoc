@@ -16,6 +16,8 @@ summary: 了解 Workload Analyzer 如何帮助您调查卷级性能、容量和�
 [role="lead"]
 使用 NetApp Console 本地部署 Workload Analyzer 查看单个卷在一段时间内的行为。您可以从卷本身、警报或清单中调查性能降级、容量趋势和资源争用问题。
 
+对于自然语言问题和跨许可资源的高级分析，请使用 Console 助手。 link:reference-console-assistant-operations.html["了解受支持的控制台助理操作。"]
+
 
 
 [[how-workload-analyzer-identifies-root-causes]]

@@ -88,6 +88,8 @@ link:reference-llm-supported-models.html["了解 NetApp Console 本地部署中�
 * 查看提供商端的使用情况和警报，以检测意外活动。
 
 
+通过选择合适的 LLM 提供商和模型、与提供商一起设置使用限制和警报以及监控令牌使用情况，来控制 Console assistant 的成本。只有向 LLM 发送请求的活动才会消耗提供商令牌；后端操作不会。
+
 
 
 [[connect-your-llm]]

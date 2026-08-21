@@ -1249,7 +1249,6 @@
   <block id="6e1c38ddd586797730ea0df647629a04" category="paragraph">问题分为两类：</block>
   <block id="b2139b8b3fb4e451508ab9ac2f835837" category="list-text">*配置漂移*：受存储类策略管理的存储设置不再与预期配置匹配。当直接在 ONTAP 集群上进行更改或在标准配置工作流之外进行更改时，可能会发生这种情况。</block>
   <block id="59072520e4f2616c4b2bcfcd91e655a4" category="list-text">*性能不合规*：工作负载的运行时行为不再符合存储类性能意图（例如，接近 QoS 限制的持续压力或尾部延迟升高）。</block>
-  <block id="8b28c607e89c4d12a57efea503e12786" category="paragraph">分析视图解释了更改的内容及其原因。引导式修正操作（例如，*修复它*）可能有助于恢复合规性。某些修正措施可以就地应用，而其他修正措施可能需要将工作负载调整到不同的存储类以恢复预期的行为。</block>
   <block id="9c742348fc7b32cb0b0ddc09ade7c30c" category="paragraph-title">调查位置</block>
   <block id="3177fad58e4e5f42f318d596eaf3515a" category="paragraph">您通常可以从以下位置之一调查偏差和不合规情况（可用性取决于您的部署和权限）：</block>
   <block id="c3c2e403128e14f60d91a1906ccd901f" category="list-text">*存储类：* 漂移/合规性</block>
@@ -1450,7 +1449,6 @@
   <block id="3f9d40767d631ca1877761df588f20ae" category="paragraph"><block ref="2fdb3c88062031f1ec65eef60690cee3" category="inline-link-macro-rx"></block>。</block>
   <block id="634fb1708a50f4d5e0c983d5692e82f4" category="summary">NetApp Console 本地部署中可用修复操作的参考，包括相关警报、影响区域和操作摘要。</block>
   <block id="c07e34e3413c5d5032d16c1c9c060537" category="doc">NetApp Console 本地部署中的警报修复操作</block>
-  <block id="45d983f965ad7e6aaa785e4257aa7394" category="paragraph">使用此参考了解 NetApp Console 本地部署中*修复*可用的修复操作。对于每个操作，表格描述了操作的功能和相关警报。在运行之前，请查看确认对话框中的操作详细信息。</block>
   <block id="16148542ba5ae5056532aab5c669031a" category="section-title">修复操作</block>
   <block id="3d5ac3a0c07be5ecab17905b616f096d" category="cell">修正操作</block>
   <block id="d1e98b80ce256bde51850d0018afe053" category="cell">警报名称</block>
@@ -1824,7 +1822,6 @@
   <block id="3aba2887bff41f744b43940b1b82080a" category="cell">平台角色</block>
   <block id="460874c7c996eb6762b8a5b10ff2d76f" category="cell">职责</block>
   <block id="ebf2e736fadeb05a39d24aa702faf1b3" category="cell"><block ref="ebf2e736fadeb05a39d24aa702faf1b3" category="inline-link-macro-rx"></block></block>
-  <block id="2375e267010e0dd20db116c9efebfe89" category="cell">允许用户无限制地访问组织内的所有 fleet 和文件夹，将成员添加到任何 fleet 或文件夹，以及执行任何任务和使用任何未关联明确角色的数据服务。具有此角色的用户通过创建文件夹和 fleet、分配角色、添加用户以及在拥有适当凭据的情况下管理系统来管理您的组织。</block>
   <block id="2c7c987872ad47ae35313d90886ee881" category="cell"><block ref="2c7c987872ad47ae35313d90886ee881" category="inline-link-macro-rx"></block></block>
   <block id="835b68ffc816ee8b825d044d18e8b4fd" category="cell">允许用户不受限制地访问指定的队列和文件夹。可以将成员添加到其管理的文件夹或队列，以及在分配给他们的文件夹或队列内的资源上执行任何任务并使用任何数据服务或应用程序。</block>
   <block id="e8df21ebe8cfc76c6960895bb0bc899b" category="cell"><block ref="e8df21ebe8cfc76c6960895bb0bc899b" category="inline-link-macro-rx"></block></block>
@@ -3046,7 +3043,6 @@
   <block id="45dcb8347c7045ac1ea1ed3f1fd6f1d3" category="list-text">在*只读*模式下，助手回答问题并提供指导，而不进行任何更改。</block>
   <block id="3bd3a3686b7176c32e3b12727e98ec87" category="list-text">在"读/写"模式下，助手可以对存储基础设施进行操作。它会在每次更改前显示详细信息以供审核和确认。对于异步操作（例如创建卷），它会创建一个作业，用户可以从助手检查该作业。</block>
   <block id="185163aa217fa2fc072c5f14236ca72a" category="paragraph">要连接您的 LLM，请选择提供程序路径，输入端点详细信息和 API 密钥，然后在 *Administration &gt; AI Tools* 中选择一个模型。助手操作在您的存储策略和基于角色的访问控制范围内执行。</block>
-  <block id="5fc0a856a394f8c04ef5ff5374c766d3" category="section-title">在连接 LLM 之前，请先收集所需信息</block>
   <block id="d8bd49d8fe4a0de7a2b03c1aec99e88b" category="list-text">您选择的提供程序路径的有效 API 密钥。</block>
   <block id="12415726cf97af159e3e05710842f040" category="list-text">提供程序路径的端点 URL。</block>
   <block id="cfe024af8356a3decd0f09b47eff88fa" category="list-text">从 Console 本地部署到选定端点的网络访问。</block>
@@ -3229,7 +3225,6 @@
   <block id="1618ab37d780874b04a6f2084be19d80" category="list-text">选择*分析*。</block>
   <block id="c17bbf96636407e4f3e1d90e7db54e7d" category="list-text">请查看 *Workload analyzer* 中的结果。</block>
   <block id="3e0572efd2e39415bf33c55a4e66f459" category="paragraph">有关配置漂移结果，请比较预期设置和实际设置，以确定更改的内容。</block>
-  <block id="c11209a5c5b7a8071ad4f5309a43eef6" category="list-text">选择建议的修正操作，例如 *Fix it*。</block>
   <block id="731f90a1920169d4a0aeadf09e5cd125" category="list-text">查看建议的更改并应用修复措施。</block>
   <block id="dfe03a61bc074ecf1e2fa920b3de5870" category="list-text">返回 *Storage &gt; Storage classes*，确认工作负载不再显示为已漂移。</block>
   <block id="3a9bfa87650c8ec650e8744f55298c03" category="paragraph">合规性评估可能需要几分钟才能反映最近的配置更改。如果工作负载仍列为"漂移"，请返回警报详细信息页面并选择*分析*以查看任何剩余结果。</block>
@@ -3615,10 +3610,8 @@
   <block id="01d252d292ef2fa1ec4e87035d62b0ff" category="paragraph">对于无法立即完成的受支持操作，助手将创建一个作业，并在您询问请求时返回当前状态。<block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block>。</block>
   <block id="0ac7c7f441c2811eca6f1a53e0cc4415" category="summary">查看 NetApp Console 本地部署中 Console 助手支持的面向客户的操作类别。</block>
   <block id="85bf6002699be71eba50e47fb9bfd4c1" category="doc">NetApp Console 本地部署中支持的 Console 助手操作</block>
-  <block id="563f4fbc7c399302e702b396b6962087" category="paragraph">控制台助手支持自然语言问题和选定的存储操作。可用操作取决于版本、配置的 LLM 端点和您分配的权限。</block>
   <block id="e595004f51bd799a728be4e3b594fcd0" category="paragraph">在不更改基础架构的情况下，使用 *只读* 模式下的 Console 助手进行问题解答和分析。对于可以更改存储或 ONTAP 系统的受支持操作，请使用 *读/写* 模式。助手会显示建议的更改，并在执行写入操作之前要求确认。</block>
   <block id="0c3b317be5b2bb916652eceef25c2446" category="section-title">会话引导和搜索</block>
-  <block id="2c377b791aed117e43f0a6c81044bce4" category="paragraph">询问有关 NetApp Console 本地部署、存储环境或支持的 ONTAP 管理工作流程的问题。助手使用配置的 LLM 端点以及可用的文档和集群环境上下文来返回答案或请求其他上下文。</block>
   <block id="55490a2d250ada7c70e503e7b86bb3da" category="section-title">指标和分析</block>
   <block id="bb8be897830de5647e5d1894f9ebe3a9" category="paragraph">针对您允许范围内的资源，询问有关支持的存储容量、性能和其他指标的只读问题。当这些详细信息与您的问题相关时，请包括资源、指标和时间段。</block>
   <block id="56836aa8c36f40ecb89a0e4c2367d066" category="paragraph">助手返回分析，并且不会在*只读*模式下更改存储。</block>
@@ -3627,20 +3620,14 @@
   <block id="100bc2e2a20e7ce958593a0d05afc0c6" category="inline-link-macro">了解如何使用人工智能辅助工作流程配置存储</block>
   <block id="cbdbb49c3c83f87c7341673121c514f1" category="paragraph">批准计划后，助手会在您的角色权限和存储类策略范围内配置受支持的卷或 LUN 操作。<block ref="1b5b8c5997353b7aabbb30633f8a4653" category="inline-link-macro-rx"></block>。</block>
   <block id="ec34af6bd148135244cacb1e26e16b97" category="section-title">警报调查和修复</block>
-  <block id="45867710357b5b0f50631031775b1817" category="paragraph">请助理调查受支持的活动警报。它会分析警报，并可能建议采取补救措施。当受支持的修正更改存储时，助理会呈现操作以供审核，并要求在执行前进行确认。</block>
   <block id="040360382f7205dbe8c14babe21f1f10" category="section-title">ONTAP 管理</block>
-  <block id="79ce2be78836813592ebf411e031cded" category="paragraph">以自然语言请求已注册 ONTAP 系统支持的管理操作。当您知道目标集群、SVM 或资源时，请指定它，以便助手可以使用正确的上下文。</block>
-  <block id="cedb71b26ba4e3df138c7912c7840e34" category="paragraph">助理将只读请求与写入操作区分开来。在确认写入操作之前，请查看目标和建议的更改。可用的操作集取决于 Console 本地部署版本以及分配给您帐户的权限。</block>
   <block id="58dd82c11548cddba3b3f34021d1584c" category="section-title">权限和范围</block>
-  <block id="e9ac0af69146f2419ab6d771536a605c" category="paragraph">助手使用登录用户的权限和资源范围：</block>
   <block id="b84f73e57fbeeeec34e2bb90579be4ce" category="list-text">您的角色决定了您可以查看或更改哪些资源和操作。</block>
-  <block id="37a5812a05e19af3ee627e60c15c7db6" category="list-text">组织、文件夹和队列范围限制了助手可用的系统和工作负载。</block>
   <block id="df84d67f514675b861778c76b8a6a614" category="list-text">存储类策略限制了 AI 辅助配置。</block>
   <block id="d567ccd2ac57ad2a43fa88120c847309" category="list-text">助手不会绕过 Console 本地部署访问控制。</block>
   <block id="109a8ebaf5d17fd52cd0cedbd294848c" category="inline-link-macro">了解 NetApp Console 本地部署访问角色</block>
   <block id="ba6f7f76a855b2fc7d63c83f41c23e52" category="paragraph"><block ref="4560386b07ef22f3583d98e6a67e39c0" category="inline-link-macro-rx"></block>.</block>
   <block id="4546d7c5f1604db2d9865ec0658ee574" category="section-title">异步操作</block>
-  <block id="610ff444091a8d5a8e4d08c8e34ed1b7" category="paragraph">某些受支持的写入操作不会立即完成。对于这些操作，助手将创建一个作业。请向助手查询请求状态，以监控完成情况。</block>
   <block id="ab74dc1a527eb39bc2a75230306dc5a0" category="list-text"><block ref="ab74dc1a527eb39bc2a75230306dc5a0" category="inline-link-macro-rx"></block></block>
   <block id="c8bbfbc1e29e08fb75792570f8da2288" category="list-text"><block ref="c8bbfbc1e29e08fb75792570f8da2288" category="inline-link-macro-rx"></block></block>
   <block id="7770f03f53e256d55b44faa7b5b1c1a3" category="list-text"><block ref="7770f03f53e256d55b44faa7b5b1c1a3" category="inline-link-macro-rx"></block></block>
@@ -3657,7 +3644,6 @@
   <block id="351bf1cee2d203043d7c8694e72832a7" category="list-text">组织管理员或超级管理员必须通过将大型语言模型 (LLM) 连接到 Console 本地部署来启用 Console 助理。如果您在仪表板上没有看到 *Console 助理* 按钮，请让您的管理员启用它。<block ref="184a90bf2acb5b061c7dc2b4dcb64467" category="inline-link-macro-rx"></block>.</block>
   <block id="58501690578abc96980f69a9f3694b55" category="paragraph">以会话方式请求受支持的存储工作，以便您可以在建议的更改影响您的基础架构之前对其进行评估。</block>
   <block id="a0f4a83e648fb4aed450e560789131f0" category="section-title">使用助手进行指标和分析</block>
-  <block id="fab19ba8fb5bfe09d2af357771050725" category="paragraph">询问只读问题，确定您想要了解的资源、范围、指标和时间段。助手将返回受支持指标的分析，并且不会更改您的存储。</block>
   <block id="1d054bfa483e4be3faf418d083bdd3ef" category="section-title">使用助理进行 ONTAP 管理</block>
   <block id="9f6c8c6993979cb1877a9e86b9a8d0ce" category="paragraph">通过已审核的助理提案管理受支持的 ONTAP 操作，以便基础设施更改保持审慎且受权限控制。</block>
   <block id="d5fc4106714e4828d2904733226a81fc" category="inline-link-macro">了解受支持的控制台助手操作</block>
@@ -3685,4 +3671,48 @@
   <block id="25c218c5bf35c2c497390dbd2a954660" category="list-text">审核提议的计划，包括：所选机群和目标系统布局（如适用）。所选或推荐的存储类。将应用的关键设置，例如容量行为、保护计划、安全要求和与 QoS 相关的意图（如果显示）。</block>
   <block id="2d3db212529548d7afc49cfc5cb8bcf1" category="sidebar">支持的控制台助理操作</block>
   <block id="f6aca2dcfee051b254bbcb878dc70d09" category="sidebar">许可证</block>
+  <block id="310fc755e8c25e9b37b2afcf813c40ca" category="paragraph">使用 Console 助手对您权限范围内的资源进行自然语言问题解答和高级分析。如果需要对单个卷进行详细的基于时间的分析（包括延迟、吞吐量、资源利用率、容量、事件和预测），请使用 Workload Analyzer。</block>
+  <block id="2b5307add304f1c8c92393150946d025" category="paragraph">通过选择合适的 LLM 提供商和模型、与提供商一起设置使用限制和警报以及监控令牌使用情况，来控制 Console assistant 的成本。只有向 LLM 发送请求的活动才会消耗提供商令牌；后端操作不会。</block>
+  <block id="054ee380a765c9e1038010ff9205d7e1" category="paragraph">分析视图解释了更改的内容及其原因。可以使用引导式补救措施（例如 *Fix It*）来帮助恢复合规性。某些补救措施可以就地应用，而其他补救措施可能需要将工作负载调整到不同的存储类以恢复预期的行为。</block>
+  <block id="4c004d4211fa2f90ed0be1573cc5ccb2" category="inline-link-macro">了解受支持的控制台助理操作。</block>
+  <block id="840a40a87e4cc31b2e72efea3ecd3915" category="paragraph">对于自然语言问题和跨许可资源的高级分析，请使用 Console 助手。 <block ref="e4efdca82358d9cc87f41eee06c8a6e8" category="inline-link-macro-rx"></block></block>
+  <block id="1dbb5d4e508753021ab3e51d05e20069" category="paragraph">使用此参考了解从 NetApp Console 本地部署中的 *Fix It* 可用的修复操作。对于每个操作，表格描述了操作的功能和相关警报。运行之前，请在确认对话框中查看操作详细信息。此参考描述了警报工作流中的操作；它不标识 Console 助理可以建议的操作。</block>
+  <block id="8f5b0338214ee81ee1a65bd1d82429ee" category="paragraph">使用 NetApp Console 本地部署中的 Console 助手提问自然语言问题并执行选定的存储操作。可用操作取决于您分配的访问角色。注意：有关将 LLM 连接到 Console 助手以启用 AI 功能的文档作为技术预览提供。通过此预览产品，NetApp 保留在正式发布之前修改产品详情、内容和时间表的权利。</block>
+  <block id="ea4da7c9e30fb1719ea7c84cf0b93119" category="section-title">Console 助理功能</block>
+  <block id="ee0f5f4c072bf12d553bc98bb266882a" category="paragraph">Console 助理支持以下操作类别。可用操作取决于您的版本、配置的 LLM 端点、分配的角色和资源范围。</block>
+  <block id="fa97f6975c9b94a252d204cd22159ff4" category="cell">功能</block>
+  <block id="5ab83f35784f154d55ea7ab58c8e503b" category="cell">访问模式</block>
+  <block id="c87fb7d832cb7211d7231582eb48cbb3" category="cell">请将其用于</block>
+  <block id="358388857b3167886e81189ce45f87ef" category="cell">只读</block>
+  <block id="7cdc22d363c4628c002d0531f1a15678" category="cell">询问有关 NetApp Console 本地部署、您的存储环境和支持的 ONTAP 管理工作流程的问题。</block>
+  <block id="4f22c16dbd24a89b3fd4002ed3cf8f3e" category="cell">在允许的范围内分析支持的容量、性能和其他指标。</block>
+  <block id="05cc0e531c89a2617c0047161c8a7ddd" category="cell">读/写</block>
+  <block id="66c09c89f281507e0fb6685cb50059a1" category="cell">在审核并确认建议的操作后，规划和配置支持的卷或 LUN。</block>
+  <block id="0d9ecf438dcacd8b127086940976cfaf" category="cell">只读或读/写</block>
+  <block id="8d09fdd4e99af75c37672b7013a4a86b" category="cell">在更改存储之前，调查活动警报并查看支持的修复操作。</block>
+  <block id="5afcff55c824eace9a359b2137f2dfc4" category="cell">查看或执行与 Console 关联的系统上受支持的管理操作。</block>
+  <block id="af55bc0ef8b5b981a54821e9fefdf333" category="paragraph">使用分配的角色和组织、文件夹或舰队范围来确定助手可以访问哪些系统和工作负载。助手不会绕过 Console 本地部署访问控制。</block>
+  <block id="96da7e67f56817e2b919703d8aac899a" category="paragraph">使用 Console 助手对您权限范围内的资源进行自然语言问题查询和高级分析。如果需要对一个卷进行详细的基于时间的分析，包括延迟、吞吐量、资源利用率、容量、事件和预测，请使用 Workload Analyzer。 <block ref="8abfd8e6ef83a7a1339d62c46936fd02" category="inline-link-macro-rx"></block></block>
+  <block id="e2e001d117089b3ef000a8132e26faf0" category="paragraph">要求助理调查活动警报。它会分析警报，并可能建议采取补救措施。当受支持的修复操作更改存储时，助理会呈现操作以供审核，并要求在执行前进行确认。</block>
+  <block id="7210f33407934a30d7318efa223041cd" category="paragraph">查看建议的修复详细信息并确认操作，然后助手才会更改存储。</block>
+  <block id="4dc7e1629902d44fd5c0d723601a7e2f" category="inline-link-macro">了解有关警报修复操作的信息。</block>
+  <block id="7274e37c4b3c76ff3ba4d1f88eccfa71" category="paragraph"><block ref="7274e37c4b3c76ff3ba4d1f88eccfa71" category="inline-link-macro-rx"></block></block>
+  <block id="6dd1e8e7e2440eadee65b3ef48d74941" category="paragraph">以自然语言为已注册的 ONTAP 系统请求受支持的管理操作。当您知道目标集群、存储虚拟机 (SVM) 或资源时，请指定它，以便助手可以使用正确的上下文。</block>
+  <block id="8c11dc99a05bf3815fd072b359243f79" category="paragraph">检查您的请求是否仅读取信息或更改 ONTAP 系统，然后确认任何建议的写入操作。可用操作集取决于 Console 本地部署版本和分配给您帐户的权限。</block>
+  <block id="7fb9babbd7dea197556eda0957b9c97a" category="inline-link-macro">了解如何使用控制台助手。</block>
+  <block id="6910756915e502f9d6aae5512cd256f0" category="paragraph"><block ref="6910756915e502f9d6aae5512cd256f0" category="inline-link-macro-rx"></block></block>
+  <block id="0dc9ffe7d4afc6e9aaa9c89368a2823f" category="paragraph">助手使用登录用户的权限和资源范围。您分配的组织、文件夹或队列范围决定了助手可以访问哪些系统和工作负载。</block>
+  <block id="1dc99a23e6bcad5455c3d2709cd052bf" category="paragraph">向助手询问异步运行的受支持的写入操作的状态。助手为未立即完成的操作创建作业。</block>
+  <block id="623f362360f5cceef39f971b792bd357" category="cell">允许用户无限制地访问组织内的所有队列和文件夹，将成员添加到任何队列或文件夹，以及执行任何任务和使用任何未关联明确角色的数据服务。具有 Org admin 角色的用户还可以配置 LLM 集成、电子邮件服务器设置和添加 Webhook。具有此角色的用户通过创建文件夹和队列、分配角色、添加用户以及在拥有适当凭据的情况下管理系统来管理您的组织。</block>
+  <block id="7ea7b36ac0da3e4d88bf08816b2c49b4" category="section-title">Console 助理访问</block>
+  <block id="d0d7aafd8ba4e397c62335e6963210a9" category="paragraph">组织管理员或超级管理员必须先配置 LLM 集成，然后成员才能使用 Console 助理。每个成员只能查看或更改其分配的角色和组织、文件夹或 fleet 范围所允许的资源。 <block ref="e4efdca82358d9cc87f41eee06c8a6e8" category="inline-link-macro-rx"></block></block>
+  <block id="cc0c180b880d732044a7ee8a1c2a3aff" category="paragraph">使用 Workload Analyzer 对受影响的卷进行详细、基于时间的分析。对于自然语言问题或对允许资源的高级分析，请使用 Console 助手。 <block ref="e4efdca82358d9cc87f41eee06c8a6e8" category="inline-link-macro-rx"></block></block>
+  <block id="09010f6464000c516397f38442e92b49" category="section-title">使用提示库中的提示</block>
+  <block id="332dd967753e852ca2532d5b18cb4611" category="paragraph">浏览提示库，为有关存储管理和机群状态的问题找到合适的起点。</block>
+  <block id="a63ed3a501b21622c504e2682f6b5dae" category="list-text">打开 Console 助理。</block>
+  <block id="7ddd4458be421a9f9f12dd578da390d7" category="list-text">从助手标题中的按钮打开提示库。</block>
+  <block id="b24605f30ca0232c8b68c77c61fcec7e" category="list-text">从库中选择一个提示，查看并提交请求。</block>
+  <block id="beb0e01e7e36ff62ee977dd31ad8b0c7" category="list-text">按照助手的响应操作。根据请求，助手可能会返回信息、询问更多详细信息，或在执行操作之前请求确认。</block>
+  <block id="69200085693b2c07a9fd57550280affd" category="paragraph">在不更改存储环境的情况下，在允许的范围内调查容量和性能状况。提出只读问题，以确定您想要了解的资源、范围、指标和时间段。助手将返回受支持指标的分析，且不会更改您的存储。</block>
+  <block id="a320b4ddc74c3e0d5cf1e99a74a477c7" category="list-text">选择建议的修正操作，例如 *Fix It*。</block>
 </blocks>

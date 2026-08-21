@@ -32,8 +32,8 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 
 
 
-[[gather-what-you-need-before-you-connect-an-llm]]
-== 在连接 LLM 之前，请先收集所需信息
+[[before-you-begin]]
+== 开始之前
 
 准备提供商凭据和端点访问权限，以便 Console 助手可以在组织配置的治理边界内运行。
 
