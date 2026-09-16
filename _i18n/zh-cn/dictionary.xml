@@ -453,8 +453,6 @@
   <block id="c689fa25946d46da8f6a7efbcd7168ea" category="paragraph">代理使用<block ref="68ab1268abb7e5f5688810968df97d6b" prefix=" " category="inline-code"></block>安装<block ref="a23365e1ae67810a7446b65d3be9a5d0" prefix=" " category="inline-code"></block>目录及其内容。</block>
   <block id="bb10ef2c23f410792fcbd03b913a73b2" category="list-text"><block ref="ca905eb4a00d34150573153a09e2e79b" prefix="" category="inline-code"></block>：必须有 40 GiB 的可用空间</block>
   <block id="27ff1f9070d810259fd05323c4e31904" category="paragraph">Console 代理需要此空间，<block ref="ca905eb4a00d34150573153a09e2e79b" prefix=" " category="inline-code"></block>因为 Docker 或 Podman 的架构设计是在此目录中创建容器。具体来说，它们将在<block ref="af5045a6e72956f67984a97cd3e8b9da" prefix=" " category="inline-code"></block>目录中创建容器。外部挂载或符号链接不适用于此空间。</block>
-  <block id="57d8ea3b46119392eb93bf8ac3897270" category="list-text">CPU：16 核或 16 个 vCPU</block>
-  <block id="66359cf2dd3a32d550ed76b685e652e1" category="list-text">内存：64 GB</block>
   <block id="680bf96524219dc64fa3e3d6074bf710" category="list-text">磁盘空间：596 GB（建议使用厚资源调配）</block>
   <block id="6fc0cd97e3282b970c695d7dbeebf3f2" category="list-text">vSphere 7.0u3 或更高版本，使用虚拟硬件版本 19 或更高版本</block>
   <block id="fea0f702d4271201382c08e403cebafd" category="admonition">Console 代理保留 19000 至 19200 的 UID 和 GID 范围。此范围是固定的，无法修改。如果主机上的任何第三方软件正在使用此范围内的 UID 或 GID，则代理安装将失败。NetApp 建议使用没有第三方软件的主机以避免冲突。</block>
@@ -3512,7 +3510,6 @@
   <block id="30ed16d592d987bc97f9c257fb0d026c" category="list-text">LLM 提供商帐户的用户名或 ID（如有需要）。</block>
   <block id="e90cfbea605d047e2c768be5cc0d5d90" category="list-text">在*只读*模式下打开*控制台助手*并运行基本查询。</block>
   <block id="ddbbb4fd6daa8474cc88e6beb3919a85" category="list-text">在*读/写*模式下打开*控制台助手*，确认更改存储的操作需要用户确认后才能执行。</block>
-  <block id="f9fe4a5426c609bf7ec63303066954e3" category="list-text">当虚拟机开机时，CPU 和内存将在 ESXi 主机上预留，而不仅仅是分配。确保目标主机至少有 16 个 CPU 核心和 64 GB 可用作未预留容量。主机上的现有虚拟机预留会减少可用容量。</block>
   <block id="fb2aa2f24e94d02ba0aa39b5b1953b02" category="list-text">数据存储必须满足最低磁盘写入性能：fsync p99 写入延迟 ≤ 20 ms，4K 随机写入 IOPS ≥ 200。延迟超过 50 ms 或 IOPS 低于 30 会导致部署失败。</block>
   <block id="bc30837cb3bcee1ef470300a93faccd1" category="list-text">不支持 IPv6。需要提供静态 IPv4 地址。</block>
   <block id="2938c9aef13e6b9e5ef64008f86cbed9" category="summary">NetApp Console 本地部署 OVA 管理自己的内部防火墙。如果您的环境在虚拟机上实施了外部防火墙策略，请确保可以从管理主机访问以下入站端口。</block>
@@ -3716,4 +3713,7 @@
   <block id="4e1a1e7b8efe108b690da878451d0a8b" category="paragraph">+ 例如，您可以使用 *Service* 筛选器显示与特定服务相关的操作，也可以使用 *User* 筛选器显示与特定用户帐户相关的操作。</block>
   <block id="ae8c879a42f4e5075028b4c740849cdf" category="paragraph">查看访问管理更改，以确认谁修改了组织资源，并支持准确的安全调查。</block>
   <block id="1c0679d5195b4dd09500e158593c6031" category="paragraph">保留组织行动的独立记录，以支持合规审查和未来的事件调查。下载的 CSV 文件包括所有审核日志列，即使您应用筛选器或更改显示的列也是如此。</block>
+  <block id="4e2631c6a272a31e284ef25e345044a4" category="list-text">CPU：16 核或 16 个 vCPU（预留）</block>
+  <block id="1c79bf4bb50e04e0a86202e73216460a" category="list-text">RAM: 64 GB（保留）</block>
+  <block id="43e1d149efe94e65609c12dcb5cab779" category="list-text">当虚拟机通电时，CPU 和内存在 ESXi 主机上保留，而不仅仅是分配。确保目标主机至少有 16 个 CPU 核心和 64 GB 可用作保留容量。主机上的现有虚拟机保留会降低可用容量。</block>
 </blocks>
