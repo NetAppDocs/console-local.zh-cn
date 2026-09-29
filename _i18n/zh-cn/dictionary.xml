@@ -3716,4 +3716,6 @@
   <block id="4e2631c6a272a31e284ef25e345044a4" category="list-text">CPU：16 核或 16 个 vCPU（预留）</block>
   <block id="1c79bf4bb50e04e0a86202e73216460a" category="list-text">RAM: 64 GB（保留）</block>
   <block id="43e1d149efe94e65609c12dcb5cab779" category="list-text">当虚拟机通电时，CPU 和内存在 ESXi 主机上保留，而不仅仅是分配。确保目标主机至少有 16 个 CPU 核心和 64 GB 可用作保留容量。主机上的现有虚拟机保留会降低可用容量。</block>
+  <block id="e68d2c37dd2355df41bb544adc897de6" category="inline-link-macro">NetApp 支持站点知识库文章</block>
+  <block id="29bfebf6dcc74c9e558756ca6998173c" category="admonition">要使用自己的 TLS 证书保护通信，请按照此 <block ref="eb10a8c97ab666bf81650f11f6a3aa78" category="inline-link-macro-rx"></block> 中的说明进行操作。</block>
 </blocks>
