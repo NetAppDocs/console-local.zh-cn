@@ -169,7 +169,7 @@ AWS EC2 实例类型:: 符合上述 CPU 和 RAM 要求的实例类型。建议�
 使用 IMDSv2 时的 PUT 响应跃点限制:: 如果在 EC2 实例上启用了 IMDSv2（这是新 EC2 实例的默认设置），则必须将实例上的 PUT 响应跃点限制更改为 3。如果不更改 EC2 实例的限制，尝试设置代理时将收到 UI 初始化错误。
 +
 --
-* link:task-require-imdsv2.html["需要在 Amazon EC2 实例上使用 IMDSv2"]
+* https://docs.netapp.com/us-en/console-setup-admin/task-require-imdsv2.html["需要在 Amazon EC2 实例上使用 IMDSv2"^]
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-existing-instances.html#modify-PUT-response-hop-limit["AWS 文档：更改 PUT 响应跃点限制"^]
 
 

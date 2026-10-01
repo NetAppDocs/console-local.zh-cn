@@ -50,6 +50,6 @@ summary: 通过安装软件、规划和创建组织、配置集成以及设置�
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 设置 NetApp Backup and Recovery
 [role="quick-margin-list"]
 * link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-byol-license["获取 NetApp Backup and Recovery 许可证"^].如果不想访问高级备份和恢复服务，则可以跳过此步骤。
-* 将 NetApp Backup and Recovery 许可证添加到 NetApp Console 本地部署。link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["将许可证添加到 NetApp Console 本地部署"^]。
+* 将 NetApp Backup and Recovery 许可证添加到 NetApp Console 本地部署。link:task-manage-licenses.html["在 NetApp Console 本地部署中管理许可证"]。
 * link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["授予用户访问 NetApp Backup and Recovery 的权限"]。
 

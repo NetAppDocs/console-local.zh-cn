@@ -507,7 +507,6 @@
   <block id="c8e7383477673ee726b6ba29dc487444" category="list-text">使用 IMDSv2 时的 PUT 响应跃点限制</block>
   <block id="6072a0c0865bf8071e3960e01a77d5f4" category="list-text">如果在 EC2 实例上启用了 IMDSv2（这是新 EC2 实例的默认设置），则必须将实例上的 PUT 响应跃点限制更改为 3。如果不更改 EC2 实例的限制，尝试设置代理时将收到 UI 初始化错误。</block>
   <block id="98dddf7eafbbdfa88756d62945237473" category="inline-link-macro">需要在 Amazon EC2 实例上使用 IMDSv2</block>
-  <block id="8d8efedf65fe740dfe59c5779c9d745c" category="list-text"><block ref="8d8efedf65fe740dfe59c5779c9d745c" category="inline-link-macro-rx"></block></block>
   <block id="75c0fbf84b1614b17a984df62bf849f6" category="inline-link">AWS 文档：更改 PUT 响应跃点限制</block>
   <block id="ca7f44589a06d75665d92002d6148e98" category="list-text"><block ref="ca7f44589a06d75665d92002d6148e98" category="inline-link-rx"></block></block>
   <block id="893ba5865a015de9dc77765cdf7184e3" category="list-text">Azure VM 大小</block>
@@ -614,7 +613,6 @@
   <block id="1727dc0bbb7fbac9af669b5ee698c1ac" category="paragraph">如果您（客户）需要停止然后启动 Console 代理虚拟机，则应从云提供商的控制台或使用本地管理的标准程序来执行此操作。</block>
   <block id="2402a0b8d9aa0c3e1beaccf0071277cc" category="doc">介绍 NetApp Console 本地部署</block>
   <block id="258ea65dfbe28db96b93f873d22fbf91" category="inline-link">了解 NetApp Console 本地部署</block>
-  <block id="01d7fad8bf6934be5b2c4a94892a6089" category="summary">了解如何管理和监控 NetApp Console 本地部署，包括审核活动、订阅、维护、故障排除和成员访问。</block>
   <block id="c6c906d845365b31f1a3d974e79792f1" category="doc">了解 NetApp Console 本地部署中的管理和监控</block>
   <block id="670ed77781e2c20b187adbc14ae28dad" category="paragraph">部署 NetApp Console 本地部署后，使用管理和监控工具查看活动、维护 VM 和管理成员访问。</block>
   <block id="980949ecd0b09f55572260f966480f7c" category="section-title">审核活动</block>
@@ -623,10 +621,6 @@
   <block id="e1de85747c549269b8ff9d47258fa0f5" category="list-text"><block ref="e1de85747c549269b8ff9d47258fa0f5" category="inline-link-macro-rx"></block></block>
   <block id="e464be32a656da70e4497036dd7bfa27" category="inline-link-macro">在 NetApp Console 本地部署中设置通知传递渠道</block>
   <block id="390314978359a827205be20044a720d7" category="list-text"><block ref="390314978359a827205be20044a720d7" category="inline-link-macro-rx"></block></block>
-  <block id="0e83ec1135d78041291977ef91f42a52" category="section-title">Licenses and subscriptions</block>
-  <block id="d3750dc5d54e736686cf3b9cc84cc828" category="paragraph">使用 Licenses and subscriptions 信息了解 NetApp Console 环境的服务授权和订阅状态。</block>
-  <block id="1a64901c54ab09814efdf25e5f43e721" category="inline-link-macro">了解许可证和订阅</block>
-  <block id="2911a770deda0bb77566f78d552dfda4" category="paragraph"><block ref="0af2069e5399d38f7197920e16d3e933" category="inline-link-macro-rx"></block>。</block>
   <block id="3104f37255772981acbacccf67d9e69d" category="section-title">维护控制台本地部署虚拟机并排除故障</block>
   <block id="0d37b7263460fc595f1d4f006dc06a67" category="paragraph">维护托管 Console 本地部署的虚拟机，检查网络和系统设置，访问诊断工具，并在服务或代理不按预期运行时排除问题。</block>
   <block id="3971ca1022683ea0d36cbdd46c250ee4" category="inline-link-macro">维护您的 vCenter 或 ESXi 主机以进行控制台本地部署</block>
@@ -3192,8 +3186,6 @@
   <block id="e230576dace207ebd856e57c6fe8e15a" category="list-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 设置 NetApp Backup and Recovery</block>
   <block id="eca3fd2056bf98a6c5e6cef89ccab0f7" category="inline-link-macro">获取 NetApp Backup and Recovery 许可证</block>
   <block id="f0babb8294f33c3aef3243c2efb1cc1a" category="list-text"><block ref="490656acfefe9653179282fa7c05f8f5" category="inline-link-macro-rx"></block>.如果不想访问高级备份和恢复服务，则可以跳过此步骤。</block>
-  <block id="f8b074d6473f4ccd3b5744a93a40658f" category="inline-link-macro">将许可证添加到 NetApp Console 本地部署</block>
-  <block id="d5c8020a1894db77e7f90ec62af195a1" category="list-text">将 NetApp Backup and Recovery 许可证添加到 NetApp Console 本地部署。<block ref="76a2d5b2eea7a314e0fcef167796a267" category="inline-link-macro-rx"></block>。</block>
   <block id="d31be9c871f00244df75cc58f27c83c2" category="inline-link-macro">授予用户访问 NetApp Backup and Recovery 的权限</block>
   <block id="f1632e37ec141a641ef4e45008b6c65b" category="list-text"><block ref="2f2dc60c865addcfc19ab84f30977762" category="inline-link-macro-rx"></block>。</block>
   <block id="e7563db134aee8b1b774296ac9f4f6e5" category="summary">在 NetApp Console 本地部署中查找、分析和修正存储类漂移。</block>
@@ -3715,4 +3707,41 @@
   <block id="e68d2c37dd2355df41bb544adc897de6" category="inline-link-macro">NetApp 支持站点知识库文章</block>
   <block id="29bfebf6dcc74c9e558756ca6998173c" category="admonition">要使用自己的 TLS 证书保护通信，请按照此 <block ref="eb10a8c97ab666bf81650f11f6a3aa78" category="inline-link-macro-rx"></block> 中的说明进行操作。</block>
   <block id="e1b143775fd4087c8f3fffb22a2a2569" category="list-text">在 *自定义模板* 窗口中，填写以下字段：</block>
+  <block id="b874ba81953e4df46329ee5a8e8b7ce0" category="list-text"><block ref="b874ba81953e4df46329ee5a8e8b7ce0" category="inline-link-rx"></block></block>
+  <block id="d8333cc7485c82a7c067cc852cfce42a" category="summary">了解如何管理和监控 NetApp Console 本地部署，包括审核活动、许可证、维护、故障排除和成员访问。</block>
+  <block id="176f491924b5945481f66571c5dec3a1" category="paragraph">使用许可信息了解 Console 本地部署的服务授权。</block>
+  <block id="f2a9940fd0d7a08ae86365be93b73609" category="inline-link-macro">在 NetApp Console 本地部署中管理许可证</block>
+  <block id="b245df0c039209d78d5353ec232ea246" category="paragraph"><block ref="b245df0c039209d78d5353ec232ea246" category="inline-link-macro-rx"></block></block>
+  <block id="5ea7a0024ab1d2b3244ba0c699b3390c" category="summary">管理 NetApp Console 本地部署中 NetApp Backup and Recovery 的直接许可证。</block>
+  <block id="1414b8807db3a544302b461e7372d3d9" category="paragraph">在 NetApp Console 本地部署中管理 NetApp Backup and Recovery 许可证。这是一个浮动许可证，您可以在与 NetApp Console 组织关联的所有系统上使用。如果许可证提供足够的备份容量，则无需购买其他许可证。您可以添加、更新和删除许可证，并查看其消耗的容量、许可证容量和许可证到期时间。</block>
+  <block id="db999994b08c5c61418e4ca147392c08" category="inline-link-macro">NetApp Backup and Recovery 许可文档</block>
+  <block id="4aa97d391dbc667c46beaaf39dfb7ddd" category="admonition">NetApp Console 本地部署不需要许可证。NetApp Backup and Recovery 是目前 NetApp Console 本地部署中唯一支持直接许可的服务。此许可证也称为自带许可证 （BYOL）。有关详细信息，请参见 <block ref="b68a6b1a846d68bcaf8da70ea0f764ae" category="inline-link-macro-rx"></block>。</block>
+  <block id="7b17f4802e5875aea6b273b7dfe498f3" category="paragraph">要管理 Console 本地部署中的许可证，您必须具有超级管理员或组织管理员角色。</block>
+  <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="section-title">添加许可证</block>
+  <block id="ba11df1d1373b340eae5ee22a7703b40" category="paragraph">通过上传许可证文件向 Console 组织添加许可证。</block>
+  <block id="a03e1a44589be8a351ff3a7a1d863c97" category="paragraph">您需要云服务序列号和 NetApp Console 组织 ID 才能生成许可证文件。</block>
+  <block id="c2dab7efe42335c34a0f152ae2750987" category="list-text">选择 *Administration &gt; Licenses*。</block>
+  <block id="e8287c7448cfd8625359581b1cb6deb2" category="list-text">选择 *Direct licenses* 选项卡。</block>
+  <block id="37fcb8e7d30cc5903f7318cd979d8ae4" category="list-text">选择*添加许可证*。</block>
+  <block id="bc8ae46a6370e9f316f1e4bfce188513" category="list-text">转到 NetApp 支持站点的*系统 &gt; 软件许可证*选项卡并生成许可证文件。</block>
+  <block id="1794b7dae269471cf87de4697f4ba5b0" category="list-text">返回*添加许可证*对话框，选择*上传*，然后选择许可证文件。</block>
+  <block id="b74e2bce077ef14025639b4f19ad4337" category="list-text">选择*添加许可证*以安装许可证。</block>
+  <block id="bbc338806b3fde403217598842ed392b" category="paragraph">许可证显示在*直接许可证*表中，*许可证和容量分配*摘要也随之更新。</block>
+  <block id="6d6c2071320d39aedc7f752f83e093e6" category="section-title">查看许可证状态</block>
+  <block id="d82718ab00ad307fce581d5eb2860f64" category="paragraph">从 *直接许可证* 选项卡查看已安装的许可证及其状态。该表显示了服务、序列号、类型、消耗容量、许可证容量和许可证到期时间。*许可证和容量分配* 摘要显示已安装的许可证数量以及分配给 NetApp Backup and Recovery 的容量。</block>
+  <block id="21a7e07f0125ddcf392e4ca0d7d37806" category="paragraph">在每行的操作菜单 <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block> 中，您可以更新或删除许可证。</block>
+  <block id="7e1885787a91975e343dfdb2b890f307" category="list-text">查看表格和*许可证和容量分配*摘要。</block>
+  <block id="6c1c5737355a8b30e87ad5d7c6da9553" category="section-title">更新许可证</block>
+  <block id="f09c55ca898583bd4ec051e61c0d6cdb" category="paragraph">替换 Console 组织中的现有许可证，例如，当续订许可证或其容量或到期日期发生变化时。</block>
+  <block id="e3e575e1c2597108bb52d42a805493f3" category="list-text">选择要更新的许可证的操作菜单 <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block>，然后选择*更新许可证*。</block>
+  <block id="973469f4c553cd4cf50320ce0103e19c" category="list-text">在*更新许可证*对话框中，选择*上传*并选择新的许可证文件。</block>
+  <block id="290735d09687ddc37259135c5300ba5f" category="list-text">选择 *Update license* 确认更新。</block>
+  <block id="fb5fa0478317073a0a52cdc3a1dde652" category="paragraph">更新许可证后，所选行将显示新的许可证容量和许可证到期时间。*许可证和容量分布*摘要也会更新。</block>
+  <block id="621e98bbd8c91680af3f444c8d10eaa3" category="section-title">删除许可证</block>
+  <block id="542cace16423f513003aaff591c943db" category="paragraph">从 Console 组织中删除许可证。删除许可证是永久性的。已删除的许可证不再为 NetApp Backup and Recovery 提供容量或持续时间。如果许可证过期，现有策略的备份和还原将继续进行，但您无法创建新的备份策略或将保护扩展到其他工作负载和数据存储区。</block>
+  <block id="b0baed4c31346f82a57cdffed05036ec" category="list-text">选择要删除的许可证的操作菜单 <block ref="c838adf4502bfb790ed3df711c4a4613" category="inline-image-macro-rx" type="image"></block>，然后选择*删除许可证*。</block>
+  <block id="ddfe8d8ce6e3dfceb7a2039cd142aa3e" category="list-text">在*删除许可证*确认对话框中，验证提示中的序列号。</block>
+  <block id="37bea8c46b8d33fa477648eba0912d07" category="list-text">选择*删除*以永久删除许可证。</block>
+  <block id="2c6ce7383b3cc986a190791da38b9a2a" category="paragraph">该许可证将从*直接许可证*表中删除，*许可证和容量分布*摘要也会随之更新。</block>
+  <block id="81c2b56f99167782a533db86470cac6e" category="list-text">将 NetApp Backup and Recovery 许可证添加到 NetApp Console 本地部署。<block ref="b245df0c039209d78d5353ec232ea246" category="inline-link-macro-rx"></block>。</block>
 </blocks>

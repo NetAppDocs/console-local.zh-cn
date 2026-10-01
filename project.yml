@@ -169,8 +169,8 @@ sidebar:
       url: "/concept-administer-netapp-console-local.html"
     - title: 审核 NetApp Console 本地部署操作
       url: "/task-audit-console-activity.html"
-    - title: 许可证
-      url: https://docs.netapp.com/us-en/console-licenses-subscriptions/index.html
+    - title: 在 NetApp Console 本地部署中管理许可证
+      url: "/task-manage-licenses.html"
     - title: 维护 NetApp Console
       entries:
       - title: 维护 NetApp Console VM

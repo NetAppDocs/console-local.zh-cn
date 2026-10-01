@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: task-manage-licenses.html 
+keywords: licenses, licensing, NetApp Backup and Recovery, NetApp Console local deployment, BYOL, bring-your-own-license, direct license 
+summary: 管理 NetApp Console 本地部署中 NetApp Backup and Recovery 的直接许可证。 
+---
+= 在 NetApp Console 本地部署中管理许可证
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 NetApp Console 本地部署中管理 NetApp Backup and Recovery 许可证。这是一个浮动许可证，您可以在与 NetApp Console 组织关联的所有系统上使用。如果许可证提供足够的备份容量，则无需购买其他许可证。您可以添加、更新和删除许可证，并查看其消耗的容量、许可证容量和许可证到期时间。
+
+
+NOTE: NetApp Console 本地部署不需要许可证。NetApp Backup and Recovery 是目前 NetApp Console 本地部署中唯一支持直接许可的服务。此许可证也称为自带许可证 （BYOL）。有关详细信息，请参见 link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html["NetApp Backup and Recovery 许可文档"^]。
+
+.必需的访问角色
+要管理 Console 本地部署中的许可证，您必须具有超级管理员或组织管理员角色。
+
+
+
+[[add-a-license]]
+== 添加许可证
+
+通过上传许可证文件向 Console 组织添加许可证。
+
+.开始之前
+您需要云服务序列号和 NetApp Console 组织 ID 才能生成许可证文件。
+
+.步骤
+. 选择 *Administration > Licenses*。
+. 选择 *Direct licenses* 选项卡。
+. 选择*添加许可证*。
+. 转到 NetApp 支持站点的*系统 > 软件许可证*选项卡并生成许可证文件。
+. 返回*添加许可证*对话框，选择*上传*，然后选择许可证文件。
+. 选择*添加许可证*以安装许可证。
+
+
+许可证显示在*直接许可证*表中，*许可证和容量分配*摘要也随之更新。
+
+
+
+[[view-license-status]]
+== 查看许可证状态
+
+从 *直接许可证* 选项卡查看已安装的许可证及其状态。该表显示了服务、序列号、类型、消耗容量、许可证容量和许可证到期时间。*许可证和容量分配* 摘要显示已安装的许可证数量以及分配给 NetApp Backup and Recovery 的容量。
+
+在每行的操作菜单 image:icon-action.png["带三个点的图标"] 中，您可以更新或删除许可证。
+
+.步骤
+. 选择 *Administration > Licenses*。
+. 选择 *Direct licenses* 选项卡。
+. 查看表格和*许可证和容量分配*摘要。
+
+
+
+
+[[update-a-license]]
+== 更新许可证
+
+替换 Console 组织中的现有许可证，例如，当续订许可证或其容量或到期日期发生变化时。
+
+.步骤
+. 选择 *Administration > Licenses*。
+. 选择 *Direct licenses* 选项卡。
+. 选择要更新的许可证的操作菜单 image:icon-action.png["带三个点的图标"]，然后选择*更新许可证*。
+. 在*更新许可证*对话框中，选择*上传*并选择新的许可证文件。
+. 选择 *Update license* 确认更新。
+
+
+更新许可证后，所选行将显示新的许可证容量和许可证到期时间。*许可证和容量分布*摘要也会更新。
+
+
+
+[[remove-a-license]]
+== 删除许可证
+
+从 Console 组织中删除许可证。删除许可证是永久性的。已删除的许可证不再为 NetApp Backup and Recovery 提供容量或持续时间。如果许可证过期，现有策略的备份和还原将继续进行，但您无法创建新的备份策略或将保护扩展到其他工作负载和数据存储区。
+
+.步骤
+. 选择 *Administration > Licenses*。
+. 选择 *Direct licenses* 选项卡。
+. 选择要删除的许可证的操作菜单 image:icon-action.png["带三个点的图标"]，然后选择*删除许可证*。
+. 在*删除许可证*确认对话框中，验证提示中的序列号。
+. 选择*删除*以永久删除许可证。
+
+
+该许可证将从*直接许可证*表中删除，*许可证和容量分布*摘要也会随之更新。
