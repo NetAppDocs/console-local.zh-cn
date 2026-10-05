@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-llm-integration.html 
-keywords: LLM, AI, artificial intelligence, AI-assisted management, large language model,  openai-compatible, netapp console 
+keywords: LLM, AI, artificial intelligence, AI-assisted management, large language model,  openai-compatible proxy, netapp console 
 summary: 了解 NetApp Console 本地部署如何与 LLM 提供商集成，以支持 AI 辅助存储管理、分析和操作。 
 ---
 = 了解 LLM 在 NetApp Console 本地部署中的集成
@@ -69,7 +69,7 @@ Console 本地部署通过平台上使用的相同治理模型控制 Console 助
 NetApp Console 本地部署支持以下 LLM 提供程序类型：
 
 * *OpenAI* 用于直接访问 OpenAI 模型。
-* *OpenAI-compatible* 适用于兼容的端点，例如企业网关或代理服务。
+* *OpenAI 兼容代理*用于使用企业网关或代理服务。
 * *Anthropic* 适用于 Anthropic 的 Claude 模型。
 
 

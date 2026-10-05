@@ -898,7 +898,6 @@
   <block id="752430c5b5b9939ef8d9fafde15e90dc" category="section-title">选择 LLM 提供商路径</block>
   <block id="fcc55126fd45a515695466fda4602164" category="paragraph">NetApp Console 本地部署支持以下 LLM 提供程序类型：</block>
   <block id="873109553cafbb3e957f0cc91186aa99" category="list-text">*OpenAI* 用于直接访问 OpenAI 模型。</block>
-  <block id="fee6af50bc6105fefb846f7e518fb7cf" category="list-text">*OpenAI-compatible* 适用于兼容的端点，例如企业网关或代理服务。</block>
   <block id="7de1d980a668ed0c9d00649c3750c5d1" category="paragraph">模型可用性取决于您配置的端点。在 Console 本地部署的列表中选择一个模型。</block>
   <block id="64c716e8b3c375cb10518555f2cc559d" category="inline-link-macro">了解 NetApp Console 本地部署中受支持的 LLM 提供程序和模型</block>
   <block id="26973ca0129cd9b839210e7a88910363" category="section-title">保护 LLM 凭据并控制管理员访问</block>
@@ -1886,7 +1885,6 @@
   <block id="75e4289188e6a7cd06138286c091fab0" category="section-title">了解提供程序类型如何影响模型可用性</block>
   <block id="94fdc96c690956dfeb881e08a7738112" category="paragraph">您选择的提供程序类型决定了哪些模型显示在 Console 本地部署模型列表中：</block>
   <block id="758cbeb7242c0d95a1ba25a826bf7466" category="list-text">*OpenAI* — 提供直接 OpenAI 集成的模型。</block>
-  <block id="f8882d796dcd55911551ffa65e9934af" category="list-text">*OpenAI-compatible* — 提供企业兼容端点公开的模型。</block>
   <block id="8c705cedce8873cec4385d32a46d41f7" category="list-text">*Anthropic* — 提供用于直接 Anthropic 集成的模型。</block>
   <block id="08a146c5c0cb45bfe3682f78567b0421" category="section-title">支持的 OpenAI 模型</block>
   <block id="5b6c99e4c6c823fdc627954b67266130" category="list-text">GPT-5.4</block>
@@ -3031,11 +3029,6 @@
   <block id="e63bd278e9f3067278f0c1de02ea51d1" category="list-text">选择 *Administration &gt; AI Tools*。</block>
   <block id="fce40004669eef7e64c789d1aba006e4" category="list-text">选择菜单，然后选择 *Edit*。</block>
   <block id="7f15a21cfa00dfd7d41b88b3e1451357" category="list-text">在*提供程序类型*中，选择一个提供程序类型。</block>
-  <block id="cf72c8170aef768cae71f4e2a449acaf" category="list-text">如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。</block>
-  <block id="d78f26f4373007724d98776e20cd9322" category="list-text">在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。</block>
-  <block id="b2914c614292093e506dbf4a10fd671c" category="list-text">在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。</block>
-  <block id="73d0a6de3953116536b1666d0db7c78a" category="list-text">从列表中选择一个模型。</block>
-  <block id="f646c307a4396cd41f6593ce84be57d7" category="list-text">查看配置，然后选择 *Save*。</block>
   <block id="4e0ef856d01b17ebeacb44ab6e813a5b" category="section-title">验证 LLM 集成是否有效</block>
   <block id="b9218edb7fcba77407a69cc8446ba839" category="list-text">验证需要操作工作流的用户是否具有所需的基于角色的访问控制。</block>
   <block id="3bc0e23bd46bad08da1876b2cc4430a7" category="inline-link-macro">使用 NetApp Console 助手</block>
@@ -3630,9 +3623,7 @@
   <block id="06f4b3c533aaacbe7f5b54e11890ed43" category="summary">连接受支持的 LLM 端点，以在 NetApp Console 本地部署中启用 Console 助理和 AI 辅助管理。</block>
   <block id="c85a5bee169bf00565c85292d26490c9" category="paragraph">连接受支持的 LLM 端点，使受管理的自然语言存储指导和操作可供 NetApp Console 本地部署用户使用。</block>
   <block id="d8d4c492ef9ce07470fd7c71a7074375" category="paragraph">准备提供商凭据和端点访问权限，以便 Console 助手可以在组织配置的治理边界内运行。</block>
-  <block id="755c1d5c75ebb1af53c8d9be3e7bd559" category="list-text">您的提供程序类型决定：OpenAI、OpenAI 兼容或 Anthropic，由版本和端点支持。</block>
   <block id="433b02ac268c7f9d577bf9be57b5c3eb" category="paragraph">通过经过验证的提供程序配置启用助手功能，同时保留对端点凭据的管理控制。</block>
-  <block id="26033ba1ab8ce1319bdb0de963d1cdcc" category="paragraph">在保存配置之前，请检查提供程序类型、端点 URL、API 密钥和所选模型。</block>
   <block id="eddb36c1b2e3f9e786d7cccf7782664c" category="paragraph">确认助理的可用性和审批行为，以便用户可以依靠配置的集成进行受管操作。</block>
   <block id="3f9a5821f38ce494dd45cf9edfdf74d3" category="inline-link-macro">了解如何使用 NetApp Console 助手</block>
   <block id="634f9e5260713299abe36310597702d1" category="paragraph">完成验证后，用户可以从仪表板打开 Console 助理，并以简单的语言描述任务。<block ref="8dfd03d5e9a3a9ef76c8379ee37ac6ff" category="inline-link-macro-rx"></block>.</block>
@@ -3744,4 +3735,9 @@
   <block id="37bea8c46b8d33fa477648eba0912d07" category="list-text">选择*删除*以永久删除许可证。</block>
   <block id="2c6ce7383b3cc986a190791da38b9a2a" category="paragraph">该许可证将从*直接许可证*表中删除，*许可证和容量分布*摘要也会随之更新。</block>
   <block id="81c2b56f99167782a533db86470cac6e" category="list-text">将 NetApp Backup and Recovery 许可证添加到 NetApp Console 本地部署。<block ref="b245df0c039209d78d5353ec232ea246" category="inline-link-macro-rx"></block>。</block>
+  <block id="06b44c661a84a26e0ce1a017b3a10bf5" category="list-text">*OpenAI 兼容代理*用于使用企业网关或代理服务。</block>
+  <block id="06cec8d93319a0a41f62ded52e6e388b" category="list-text">*OpenAI 兼容代理* — 使用企业网关或代理服务连接到支持的模型。</block>
+  <block id="b1cda2c8041bdb2e7c757f55bc07d4e0" category="list-text">您的提供程序类型决策：OpenAI、OpenAI 兼容代理或 Anthropic</block>
+  <block id="a9e0ed29bcf0eb9114558aea8e38b3dd" category="paragraph"><block ref="ab74dc1a527eb39bc2a75230306dc5a0" category="inline-link-macro-rx"></block>。。如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。。在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。。在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。。从列表中选择一个模型。。查看配置，然后选择 *Save*。</block>
+  <block id="3202e0a5b24589a1f3bedee597ddb7d9" category="paragraph">+ 在保存配置之前检查提供程序类型、端点 URL、API 密钥和所选模型。</block>
 </blocks>

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-llm-connect.html 
-keywords: LLM, AI, connect, large language model, console assistant, openai, openai-compatible, proxy, netapp console 
+keywords: LLM, AI, connect, large language model, console assistant, openai, openai-compatible proxy, netapp console 
 summary: 连接受支持的 LLM 端点，以在 NetApp Console 本地部署中启用 Console 助理和 AI 辅助管理。 
 ---
 = 连接您的 LLM 并在 NetApp Console 本地部署中启用 NetApp Console 助手
@@ -37,7 +37,7 @@ NOTE: 本文档以技术预览形式提供有关将 LLM 连接到 Console 助理
 
 准备提供商凭据和端点访问权限，以便 Console 助手可以在组织配置的治理边界内运行。
 
-* 您的提供程序类型决定：OpenAI、OpenAI 兼容或 Anthropic，由版本和端点支持。
+* 您的提供程序类型决策：OpenAI、OpenAI 兼容代理或 Anthropic
 * 您选择的提供程序路径的有效 API 密钥。
 * 提供程序路径的端点 URL。
 * LLM 提供商帐户的用户名或 ID（如有需要）。
@@ -59,17 +59,16 @@ link:reference-llm-supported-models.html["了解 NetApp Console 本地部署中�
 . 选择菜单，然后选择 *Edit*。
 . 在*提供程序类型*中，选择一个提供程序类型。
 +
-link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]。
-
-. 如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。
-. 在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。
-. 在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。
-. 从列表中选择一个模型。
-. 查看配置，然后选择 *Save*。
-+
-在保存配置之前，请检查提供程序类型、端点 URL、API 密钥和所选模型。
+** *OpenAI* 用于直接访问 OpenAI 模型。
+** *OpenAI 兼容代理*用于使用企业网关或代理服务。
+** *Anthropic* 适用于 Anthropic 的 Claude 模型。
 
 
+
+
+link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]。。如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。。在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。。在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。。从列表中选择一个模型。。查看配置，然后选择 *Save*。
+
++ 在保存配置之前检查提供程序类型、端点 URL、API 密钥和所选模型。
 
 
 
