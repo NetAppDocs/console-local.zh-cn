@@ -3738,6 +3738,10 @@
   <block id="06b44c661a84a26e0ce1a017b3a10bf5" category="list-text">*OpenAI 兼容代理*用于使用企业网关或代理服务。</block>
   <block id="06cec8d93319a0a41f62ded52e6e388b" category="list-text">*OpenAI 兼容代理* — 使用企业网关或代理服务连接到支持的模型。</block>
   <block id="b1cda2c8041bdb2e7c757f55bc07d4e0" category="list-text">您的提供程序类型决策：OpenAI、OpenAI 兼容代理或 Anthropic</block>
-  <block id="a9e0ed29bcf0eb9114558aea8e38b3dd" category="paragraph"><block ref="ab74dc1a527eb39bc2a75230306dc5a0" category="inline-link-macro-rx"></block>。。如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。。在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。。在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。。从列表中选择一个模型。。查看配置，然后选择 *Save*。</block>
-  <block id="3202e0a5b24589a1f3bedee597ddb7d9" category="paragraph">+ 在保存配置之前检查提供程序类型、端点 URL、API 密钥和所选模型。</block>
+  <block id="cf72c8170aef768cae71f4e2a449acaf" category="list-text">如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。</block>
+  <block id="d78f26f4373007724d98776e20cd9322" category="list-text">在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。</block>
+  <block id="b2914c614292093e506dbf4a10fd671c" category="list-text">在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。</block>
+  <block id="73d0a6de3953116536b1666d0db7c78a" category="list-text">从列表中选择一个模型。</block>
+  <block id="f646c307a4396cd41f6593ce84be57d7" category="list-text">查看配置，然后选择 *Save*。</block>
+  <block id="26033ba1ab8ce1319bdb0de963d1cdcc" category="paragraph">在保存配置之前，请检查提供程序类型、端点 URL、API 密钥和所选模型。</block>
 </blocks>

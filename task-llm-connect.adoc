@@ -62,13 +62,20 @@ link:reference-llm-supported-models.html["了解 NetApp Console 本地部署中�
 ** *OpenAI* 用于直接访问 OpenAI 模型。
 ** *OpenAI 兼容代理*用于使用企业网关或代理服务。
 ** *Anthropic* 适用于 Anthropic 的 Claude 模型。
++
+link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]。
 
 
 
+. 如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。
+. 在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。
+. 在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。
+. 从列表中选择一个模型。
+. 查看配置，然后选择 *Save*。
++
+在保存配置之前，请检查提供程序类型、端点 URL、API 密钥和所选模型。
 
-link:concept-llm-integration.html["了解 LLM 在 NetApp Console 本地部署中的集成"]。。如果提示输入提供程序端点，请输入所选提供程序路径的端点 URL。。在*用户名*字段中，输入您的用户名或 SSO ID（如果您的提供商路径需要）。。在 *API key* 字段中，粘贴您所选提供商路径中的 API 密钥。。从列表中选择一个模型。。查看配置，然后选择 *Save*。
 
-+ 在保存配置之前检查提供程序类型、端点 URL、API 密钥和所选模型。
 
 
 
