@@ -457,7 +457,6 @@
   <block id="6fc0cd97e3282b970c695d7dbeebf3f2" category="list-text">vSphere 7.0u3 或更高版本，使用虚拟硬件版本 19 或更高版本</block>
   <block id="fea0f702d4271201382c08e403cebafd" category="admonition">Console 代理保留 19000 至 19200 的 UID 和 GID 范围。此范围是固定的，无法修改。如果主机上的任何第三方软件正在使用此范围内的 UID 或 GID，则代理安装将失败。NetApp 建议使用没有第三方软件的主机以避免冲突。</block>
   <block id="e19ab56fe7d068f23f59ec27ff41af1f" category="paragraph">NetApp Console 本地部署使用固定地址空间进行服务间通信。IP 范围 10.42.0.0/16 和 10.43.0.0/16 用于内部网络。在部署 Console 本地部署之前，请确保这些 IP 范围未分配给 Console 本地部署可用的 VLAN 上的其他虚拟机、DHCP 范围、DNS 记录或负载均衡器 VIP 池。</block>
-  <block id="7f8d694395341d127a68a60f906b9eb5" category="paragraph">有关如何更改代理接口的 IP 地址的说明，请参阅知识库文章 Agent IP conflict with existing network。</block>
   <block id="1b21b0d71706897b69f108572c444d40" category="list-text">虚拟机管理程序</block>
   <block id="06cfdcafd69514150ade31a714fa78db" category="list-text">需要具有运行受支持操作系统认证的裸机或托管虚拟机管理程序。</block>
   <block id="96c5b00de0b07499da2e803348fefa3a" category="list-text">[[podman-versions]]操作系统和容器要求</block>
@@ -3420,8 +3419,6 @@
   <block id="69c0257b1ba8a3ba7687d4f7a9883d7f" category="list-text">配置电子邮件和 Webhook 通知渠道，以便在存储条件发生变化时向正确的团队发送警报。Webhook 与您现有的监控和事件管理工具集成。</block>
   <block id="00c24ecc0e9a6f1c6a5202f40e8c96c1" category="paragraph">控制台本地部署支持本地 ONTAP 集群和 NetApp Backup and Recovery。它与 Active Directory 集成以进行联合身份验证，并支持本地用户的多因素身份验证。</block>
   <block id="be6ca74d1ea996c7c4fe59d3f22d39a4" category="paragraph">控制台本地部署最适合需要策略驱动的配置、自动合规性检查和完整数据主权的大型本地 ONTAP 环境的组织。</block>
-  <block id="70b86d6aa7fb00fd1d760b33b8607159" category="inline-link-macro">了解 NetApp Console 本地部署^。</block>
-  <block id="f64bf1d04df251b82d06554b478f9ae4" category="paragraph"><block ref="f64bf1d04df251b82d06554b478f9ae4" category="inline-link-macro-rx"></block></block>
   <block id="0161e3d40bdbea6ca6998c8c60165b33" category="section-title">功能对比</block>
   <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">功能</block>
   <block id="23dad8eedc041cc12dbd56726f7f5a94" category="cell">是（需要 Console 代理）</block>
@@ -3744,4 +3741,8 @@
   <block id="73d0a6de3953116536b1666d0db7c78a" category="list-text">从列表中选择一个模型。</block>
   <block id="f646c307a4396cd41f6593ce84be57d7" category="list-text">查看配置，然后选择 *Save*。</block>
   <block id="26033ba1ab8ce1319bdb0de963d1cdcc" category="paragraph">在保存配置之前，请检查提供程序类型、端点 URL、API 密钥和所选模型。</block>
+  <block id="81d1e7a3b14de10c56b06058647a18fc" category="inline-link-macro">了解如何更改虚拟机接口的 IP 地址。</block>
+  <block id="91e8c43ac47611ef9752c24803152f9b" category="paragraph"><block ref="91e8c43ac47611ef9752c24803152f9b" category="inline-link-macro-rx"></block></block>
+  <block id="52ae244e9f2a39b24f6e7062c06f1548" category="inline-link-macro">了解 NetApp Console 本地部署。</block>
+  <block id="a8f4a115cb2472a4344e18b6a59c28a7" category="paragraph"><block ref="a8f4a115cb2472a4344e18b6a59c28a7" category="inline-link-macro-rx"></block></block>
 </blocks>
